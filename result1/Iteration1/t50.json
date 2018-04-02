@@ -1,0 +1,67 @@
+{      "Loginshort": [
+  {
+        "Id": "",
+        "Shortkey": "alt+f12",
+        "Placeholder": "Show help"
+      },
+      {
+        "Id": "0",
+        "Shortkey": "esc",
+        "Placeholder": "Hide help"
+      },
+      {
+        "Id": "userID",
+        "Shortkey": "alt+1",
+        "Placeholder": "UserName"
+      }, {
+        "Id": "password",
+        "Shortkey": "alt+2",
+        "Placeholder": "Password"
+      },
+      {
+        "Id": "advancedAnchor",
+        "Shortkey": "alt+3",
+        "Placeholder": "Advanced Setting"
+      },{
+        "Id": "dropdownMenu1",
+        "Shortkey": "alt+4",
+        "Placeholder": "Select Mode"
+      }, {
+        "Id": "dropdownMenu2",
+        "Shortkey": "alt+5",
+        "Placeholder": "Select Language"
+      },
+      {
+        "Id": "value",
+        "Shortkey": "alt+6",
+        "Placeholder": "Captcha"
+      },
+      {
+        "Id": "advSet",
+        "Shortkey": "alt+f7",
+        "Placeholder": ""
+      },
+      {
+        "Id": "needHelpOpen",
+        "Shortkey": "shift+f1",
+        "Placeholder": ""
+      },
+      {
+        "Id": "needHelpClose",
+        "Shortkey": "shift+f2",
+        "Placeholder": ""
+      },
+      {
+        "Shortkey": "alt+down",
+        "Placeholder": ""
+      },
+      {
+        "Shortkey": "down",
+        "Placeholder": ""
+      },
+      {
+        "Shortkey": "up",
+        "Placeholder": ""
+      }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "resourceHelp": [
+        {
+            "data1": [
+                {
+                    "shortkey": "Alt+1",
+                    "comments": "delayed Bag"
+                },
+                {
+                    "shortkey": "Alt+2",
+                    "comments": "Rush Bag"
+                },
+                {
+                    "shortkey": "Alt+3",
+                    "comments": "Station Inbox"
+                },
+                {
+                    "shortkey": "Alt+4",
+                    "comments": "Lost and Found"
+                },
+                {
+                    "shortkey": "Alt+6",
+                    "comments": "Station"
+                },
+                {
+                    "shortkey": "Alt + F7",
+                    "comments": "Expand and collapse the expandable area"
+                },
+                {
+                    "shortkey": "Tab",
+                    "comments": "Tab"
+                },
+                {
+                    "shortkey": "Shift+Tab",
+                    "comments": "Shift tab"
+                },
+                {
+                    "shortkey": "Down arrow",
+                    "comments": "Focus On Sub Menu Elements"
+                },
+                {
+                    "shortkey": "Up arrow",
+                    "comments": "Focus On Sub Menu Elements"
+                },
+                {
+                    "shortkey": "Alt+F11",
+                    "comments": "Shortcut keys help"
+                },
+                {
+                    "shortkey": "Alt + F6",
+                    "comments": "Profile configuration"
+                },
+                {
+                  "shortkey": "Alt + F7",
+                  "comments": "Open home page of contextual help"
+                },
+                {
+                    "shortkey": "Alt + F8",
+                    "comments": "Open page wise contextual help"
+                },
+                {
+                    "shortkey": "Alt + F10",
+                    "comments": "Close contextual help"
+                }
+            ],
+            "data2": [
+                {
+                    "shortKey": "Alt+1",
+                    "comments": "Passenger tab"
+                },
+                {
+                    "shortKey": "Alt+2",
+                    "comments": "Bag tab"
+                },
+                {
+                    "shortKey": "Alt+3",
+                    "comments": "Flight tab"
+                },
+                {
+                    "shortKey": "Alt+4",
+                    "comments": "Delivery tab"
+                },
+                {
+                    "shortKey": "Alt+5",
+                    "comments": "Claim tab"
+                },
+                {
+                    "shortKey": "Alt+6",
+                    "comments": "More tab"
+                },
+                {
+                    "shortKey": "Alt+7",
+                    "comments": "Summary tab"
+                },
+                {
+                    "shortKey": "Alt + F7",
+                    "comments": "Expand and collapse the expandable area"
+                },
+                {
+                    "shortKey": "Alt+F11",
+                    "comments": "Shortcut keys help"
+                },
+                {
+                    "shortKey": "Esc",
+                    "comments": "Clear input fields"
+                },
+                {
+                    "shortKey": "Alt+Q",
+                    "comments": "Landing page"
+                },
+                {
+                    "shortKey": "Alt + F6",
+                    "comments": "Quick Access to station/airline dialogue"
+                }
+            ],
+            "data3": [
+                {
+                    "shortKey": "Alt + F7",
+                    "comments": "Expand and collapse messages"
+                }
+            ]
+        }
+    ]
+}

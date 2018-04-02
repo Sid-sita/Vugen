@@ -1,0 +1,3 @@
+StationCode,AirlineCode,FlightNo,IssuerCode,Origin,Destination,FamilyName
+AAA,QC,101,123,CDG,AAA,FAMILY
+AAA,QC,101,234,CDG,AAA,FAMILY

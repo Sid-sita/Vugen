@@ -1,0 +1,49 @@
+{
+    "resourceOne": [
+        {
+            "shortKey": "alt+c",
+            "Id": "cancelButton",
+            "tab": "",
+            "commentss": "Cancel Button help"
+        },
+        {
+            "shortKey": "ctrl+q",
+            "Id": "signOutt",
+            "tab": "",
+            "commentss": " logout"
+        },
+        {
+            "shortKey": "alt+m",
+            "Id": "refreshLanding",
+            "tab": "",
+            "commentss": " refresh"
+        },
+        {
+            "shortKey": "alt+k",
+            "Id": null,
+            "tab": 100,
+            "commentss": "next tab"
+        },
+        {
+            "shortKey": "alt+f11",
+            "Id": "showShort",
+            "tab": 0,
+            "commentss": "showing help"
+        },
+        {
+          "shortKey": "esc",
+          "Id": "hideTab",
+          "tab": 0,
+          "comments": ""
+        },
+        {
+         "shortKey": "alt+q",
+         "Id": "viewlandingPages",
+         "tab": "",
+         "commentss": "landing page"
+       }
+    ],
+    "EscSnap": {
+        "commentss": "Short Cut Key Help"
+    }
+}

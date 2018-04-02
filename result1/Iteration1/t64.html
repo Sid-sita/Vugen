@@ -1,0 +1,86 @@
+<div class="modal fade in" id="convertCurrencyModal" tabindex="-1" role="dialog" ng-init="convertCurrency.setFocusModal();">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+		    	<div class="modal-header">
+			      <a href="" class="pull-right" shift-tab-focus data-dismiss="modal" aria-label="Close"><i class="close fa fa-times"></i></a>
+            <h4 class="modal-title" localize>Convert Currency</h4>
+
+						<!-- <alert ng-if="convertCurrency.gridError" type="danger" id="gridError" class="text-center" close="convertCurrency.gridWarningClose('gridError')" style="float:none;text-align:center;width:92%;margin-left:-1% !important;position:fixed">{{convertCurrency.gridError}}</alert> -->
+
+
+									 <alert ng-if="convertCurrency.appMessage.ErrorMessage" type="danger"
+								    style="float:none;text-align:center;width:92%;margin-left:-2% !important;position:fixed;height:15%;z-index:0;"
+								    close="convertCurrency.CloseMessageAlert('ERROR')">{{convertCurrency.appMessage.ErrorMessage}}</alert>
+
+										<alert ng-if="convertCurrency.appMessage.WarningMessage" type="warning"
+										  style="float:none;text-align:center;width:92%;margin-left:-2% !important;position:fixed;height:15%;z-index:0;"
+									close="convertCurrency.CloseMessageAlert('WARNING')">{{convertCurrency.appMessage.WarningMessage}}</alert>
+
+
+			    </div>
+
+		    	<div class="modal-body">
+
+				<div class="col-sm-3">
+					<label for="fromC" localize>From Currency</label>
+					<div ng-class="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.GetParentDivCss()">
+						<span  ng-class="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.GetParentSpanCss()"
+						ng-if="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.IsMandatory || convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.IsError"
+						 ></span>
+            <input class="form-control" id="fromCurrency" type="text" ng-model="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.DisplayValue" ng-keypress = "disable_specialCharsWithSpace($event);" maxlength="3" size="3" typeahead="currency as currency.code +' '+ currency.name for currency in convertCurrency.convertCurrencyModel.currencyCode | filter:$viewValue:autoSubString | orderBy:'code'" autocomplete="off" typeaheadscroll type-ahead-init-scroll   tooltip-trigger="focus mouseover blur mouseleave never" data-title=""            typeahead-on-select="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.DisplayValue = convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.DisplayValue.code;convertCurrency.convertCurrencyPerformanceEntity.isDuplicate();" ng-blur ="convertCurrency.convertCurrencyPerformanceEntity.isDuplicate();" tooltip="{{convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.ToolTipErrorMessage}}">
+					</div>
+				</div>
+
+				<!-- <div class="col-sm-2">
+		      <label for="" localize>Currency</label>
+					convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.checkForDuplicate();
+		      <div ng-class="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.GetParentDivCss()">
+		        <span ng-class="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.GetParentSpanCss()" ng-if="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.IsMandatory || convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.IsError"></span>
+		        <input class="form-control" id="fromCurrency" type="text"
+		        ng-model="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.DisplayValue"
+		        maxlength="3" size="3"
+		        typeahead="currency as currency.code +' '+ currency.name for currency in convertCurrency.convertCurrencyModel.currencyCode | filter:$viewValue:autoSubString | orderBy:'code'" autocomplete="off" typeaheadscroll type-ahead-init-scroll tooltip-validate tooltip-trigger="focus" data-title=""
+		        typeahead-on-select="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.DisplayValue = convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.DisplayValue.code;" tooltip="{{convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.ToolTipErrorMessage}}" ng-blur="convertCurrency.convertCurrencyPerformanceEntity.FromCurrency.HandleErrorAndTooltip()">
+		      </div>
+		    </div> -->
+				<div class="col-sm-3">
+					<label for="fromA" localize>From Amount</label>
+					<div ng-class="convertCurrency.convertCurrencyPerformanceEntity.FromAmount.GetParentDivCss()">
+						<span ng-class="convertCurrency.convertCurrencyPerformanceEntity.FromAmount.GetParentSpanCss()"
+						ng-if="convertCurrency.convertCurrencyPerformanceEntity.FromAmount.IsMandatory || convertCurrency.convertCurrencyPerformanceEntity.FromAmount.IsError"></span>
+						<input class="form-control" id="fromAmount" type="text" ng-model="convertCurrency.convertCurrencyPerformanceEntity.FromAmount.DisplayValue" maxlength="10"  data-title=""   tooltip="{{convertCurrency.convertCurrencyPerformanceEntity.FromAmount.ToolTipErrorMessage}}"
+						ng-blur="convertCurrency.convertCurrencyPerformanceEntity.FromAmount.HandleErrorAndTooltip()">
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<label for="fromC" localize>To Currency</label>
+					<div ng-class="convertCurrency.convertCurrencyPerformanceEntity.ToCurrency.GetParentDivCss()">
+						<span  ng-class="convertCurrency.convertCurrencyPerformanceEntity.ToCurrency.GetParentSpanCss()"
+						ng-if="convertCurrency.convertCurrencyPerformanceEntity.ToCurrency.IsMandatory || convertCurrency.convertCurrencyPerformanceEntity.ToCurrency.IsError"
+						 ></span>
+            <input class="form-control" id="toCurrency" type="text" ng-model="convertCurrency.convertCurrencyPerformanceEntity.ToCurrency.DisplayValue" maxlength="3" size="3" typeahead="currency as currency.code +' '+ currency.name for currency in convertCurrency.convertCurrencyModel.currencyCode | filter:$viewValue:autoSubString | orderBy:'code'" autocomplete="off" typeaheadscroll type-ahead-init-scroll   tooltip-trigger="focus mouseover blur mouseleave never" ng-keypress = "disable_specialCharsWithSpace($event);" data-title=""            typeahead-on-select="convertCurrency.convertCurrencyPerformanceEntity.ToCurrency.DisplayValue = convertCurrency.convertCurrencyPerformanceEntity.ToCurrency.DisplayValue.code;convertCurrency.convertCurrencyPerformanceEntity.isDuplicate();" ng-blur = "convertCurrency.convertCurrencyPerformanceEntity.isDuplicate();" tooltip="{{convertCurrency.convertCurrencyPerformanceEntity.ToCurrency.ToolTipErrorMessage}}">
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<label for="result" localize>Result Amount</label>
+					<div class="no-style" id="result" style="margin-top:5px;" ng-bind = "convertCurrency.convertCurrencyPerformanceEntity.ToResult.DisplayValue"  disabled="">{{convertCurrency.convertCurrencyPerformanceEntity.ToResult.DisplayValue}}</div>
+				</div>
+		    		<div class="clearfix"></div>
+		      	</div>
+
+		      	<div class="modal-footer">
+				<div class="col-sm-4 col-sm-offset-4">
+		      			<button type="button" class="btn btn-primary btn-block submit convertCurrBtn forEnterButtonModal"
+								ng-disabled="!convertCurrency.convertCurrencyPerformanceEntity.IsValidConvertCurrencyEntity()"
+								 ng-click="convertCurrency.UpdateConvertCurrencyPerformance(convertCurrency.convertCurrencyPerformanceEntity)" localize>Convert</button>
+		      		</div>
+
+		      		<div class="col-sm-4">
+		      			<a href="#" tab-btn-focus class="pull-right margin-top-5 blue convert-close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" ></i><span>&nbsp</span><span localize>Cancel</span></a>
+		      		</div>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>

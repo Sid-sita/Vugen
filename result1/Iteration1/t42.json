@@ -1,0 +1,814 @@
+{
+    "resource": [{
+            "ValidationRule": "tagNo",
+            "pattern": "^([0-9][0-9][0-9][0-9](?!000000)[0-9xX]{6}|^[a-zA-Z][0-9](?!000000)[0-9xX]{6}|^[0-9][a-zA-Z](?!000000)[0-9xX]{6}|^[a-zA-Z][a-zA-Z](?!000000)[0-9xX]{6}|^[a-zA-Z][a-zA-Z][a-zA-Z](?!000000)[0-9xX]{6}|)$",
+            "message": "Should comprise of 10 numeric characters or 1A1N or 1N1A or 2A or 3A followed by 6N and up to a maximum of three wildcard ‘X’ characters are allowed within the last 6N except 000000"
+        }, {
+            "ValidationRule": "freeForm1-5742",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|//\/\"]|-|){1,5742}$",
+            "message": "Should consist of 1 to 5742(not containing . ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-15",
+            "pattern":"^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://.//;//'/////<//>//,//|//\/\"]|-|){1,15}$",
+            "message": "Should consist of 1 to 15(not containing ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-58",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|//\/\"]|-|){1,58}$",
+            "message": "Should consist of 1 to 58(not containing . ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-29",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|//\/\"]|-|){1,29}$",
+            "message": "Should consist of 1 to 29(not containing . ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-30",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|//\/\"]|-|){1,30}$",
+            "message": "Should consist of 1 to 30(not containing . ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-174",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|//\/\"]|-|){1,174}$",
+            "message": "Should consist of 1 to 174(not containing . ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-36",
+            "pattern":"^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|//\/\"]|-|){1,36}$",
+            "message": "Should consist of 1 to 36(not containing . ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-54",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|//\/\"]|-|){1,54}$",
+            "message": "Should consist of 1 to 54(not containing . ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-60",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//.//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|//\/\"]|-|){1,60}$",
+            "message": "Should consist of 1 to 60(not containing ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm1-38",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,38}$",
+            "message": "Should consist of 1 to 38 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm2-58",
+            "pattern": "^(([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){2,58}|)$",
+            "message": "Should consist of 2 to 58 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm2-54",
+            "pattern": "^(([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){2,54}|)$",
+            "message": "Should consist of 2 to 54 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-1159",
+            "pattern": "^(?:[0-9a-zA-z\\s]{1,58}|(?=[0-9a-zA-z\\s]+[\\s]*[-][\\s]*[0-9a-zA-z\\s]+$)[0-9a-zA-z-\\s]{1,58}|)$",
+            "message": "Should consist of 1 to 58(not containing . ?) free-form text characters"
+        }, {
+            "ValidationRule": "freeForm2-58dot",
+            "pattern": "^([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]+([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){1,57}|)$",
+            "message": "Should consist of 2 to 58 free-form(not containing ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-58dot",
+            "pattern": "^(([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){1,58}|)$",
+            "message": "Should consist of 1 to 58 free-form(not containing ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-63dot",
+            "pattern": "^(([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){1,58}|)$",
+            "message": "Should consist of 1 to 63 free-form(not containing ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-64dot",
+            "pattern": "^(([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){1,63}|)$",
+            "message": "Should consist of 1 to 64 free-form(not containing ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-2000",
+            "pattern": "^([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,2000}$",
+            "message": "Should consist of 1 to 2000 free-form(not containing  ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-18",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,18}$",
+            "message": "Should consist of 1 to 18 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-32",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,32}$",
+            "message": "Should consist of 1 to 32 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm3-12",
+            "pattern": "^(([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){3,12}|)$",
+            "message": "Should consist of 3 to 12 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-45",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,45}$",
+            "message": "Should consist of 1 to 45 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm2-26",
+            "pattern": "^(([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){2,26}|)$",
+            "message": "Should consist of 2 to 26 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-12",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,12}$",
+            "message": "Should consist of 1 to 12 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm2-20",
+            "pattern": "^(([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){2,20}|)$",
+            "message": "Should consist of 2 to 20 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-20",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,20}$",
+            "message": "Should consist of 1 to 20 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "numeric1-45s",
+            "pattern": "^([1-9]|[12]\\d|3[0-9]|4[0-5]|)$",
+            "message": "Should consist of 1 to 45 numeric characters"
+        }, {
+            "ValidationRule": "numeric0-45s",
+            "pattern": "^([0-9]|[12]\\d|3[0-9]|4[0-5]|)$",
+            "message": "Should consist of 0 to 45 numeric characters"
+        }, {
+            "ValidationRule": "numeric0-29s",
+            "pattern": "^([0-9]|0[0-9]|[12]\\d|2[0-9]|2[0-9]|)$",
+            "message": "Should consist of 0 to 29 numeric characters"
+        }, {
+            "ValidationRule": "alphaNumSpace1-20",
+            "pattern": "^([0-9a-zA-Z\\s]{1,20}|)$",
+            "message": "Should consist of 1 to 20 alphanumeric characters space also allowed"
+        }, {
+            "ValidationRule": "freeForm4-22",
+            "pattern": "^(([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){4,22}|)$",
+            "message": "Should consist of 4 to 22 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm4-12",
+            "pattern": "^(([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){4,12}|)$",
+            "message": "Should consist of 4 to 12 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "numericvalue1-50",
+            "pattern": "^([1-9]|[1-4][0-9]|[5][0]|)$",
+            "message": "Should consist of 1 to 50 numeric value"
+        }, {
+            "ValidationRule": "freeForm4-1000",
+            "pattern": "^(([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-){4,1000}|)$",
+            "message": "Should consist of 4 to 1000 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-25",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,25}$",
+            "message": "Should consist of 1 to 25 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-9",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,9}$",
+            "message": "Should consist of 1 to 9 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "alphaNum1-6",
+            "pattern": "^([0-9a-zA-Z]{1,6}|)$",
+            "message": "Should consist of 1 to 6 alphanumeric characters"
+        }, {
+            "ValidationRule": "alphaNum1-15",
+            "pattern": "^([0-9a-zA-Z]{1,15}|)$",
+            "message": "Should consist of 1 to 15 alphanumeric characters"
+        }, {
+            "ValidationRule": "alphaNum1-7",
+            "pattern": "^([0-9a-zA-Z]{1,7}|)$",
+            "message": "Should consist of 1 to 7 alphanumeric characters"
+        }, {
+            "ValidationRule": "alpha3-40",
+            "pattern": "^([a-zA-Z]{3}|[ A-Za-z /,.()*]{4,120}|)$",
+            "message": "Enter a valid IATA Station Code e.g. DUS"
+        }, {
+            "ValidationRule": "alpha3s",
+            "pattern": "^([a-zA-Z]{3}[a-zA-Z\\s]*|)$",
+            "message": "Enter a valid IATA Station Code e.g. DUS"
+        }, {
+            "ValidationRule": "airline-char",
+            "pattern": "^([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z0-9/,.()*]{4,120}|[A-Za-z][0-9]|[0-9][A-Za-z]|)$",
+            "message": "Enter a valid IATA Airline Code"
+        }, {
+            "ValidationRule": "airline-handler",
+            "pattern": "^([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z0-9/,.()*]{4,120}|[A-Za-z][0-9]|[0-9][A-Za-z]|[0-9]{2,3}|)$",
+            "message": "Enter a valid IATA Airline Code"
+        },
+        {
+            "ValidationRule": "frequentFlier",
+            "pattern": "^(([A-Za-z]{2}|[A-Za-z]{3})([0-9]{1,23})|)$",
+            "message": "Should consist of 2A followed by up to 23N or 3A followed by up to 22N"
+        }, {
+            "ValidationRule": "Fault-Terminal",
+            "pattern": "^([A-Za-z0-9]{1,2}|)$",
+            "message": "Enter a valid IATA Fault Terminal Code 1-2AN"
+        }, {
+            "ValidationRule": "airline-N",
+            "pattern": "^([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z0-9/,.()*]{4,120}|[A-Za-z][0-9]|[0-9][A-Za-z]|[nN]{1}|)$",
+            "message": "Enter a valid IATA Airline Code or None(N)"
+        }, {
+            "ValidationRule": "airline-withnum",
+            "pattern": "^([A-Za-z]{2}|[A-Za-z]{3}|[0-9]{2}|[0-9]{3}|[A-Za-z0-9/,.()*]{4,120}|[A-Za-z][0-9]|[0-9][A-Za-z]|)$",
+            "message": "Enter a valid IATA Airline Code"
+        }, {
+            "ValidationRule": "alphaNum1-2",
+            "pattern": "^([0-9a-zA-Z]{1,2}|)$",
+            "message": "Should consist of 1 or 2 alphanumeric characters"
+        }, {
+            "ValidationRule": "alphaNum1-25",
+            "pattern": "^([0-9a-zA-Z]{1,25}|)$",
+            "message": "Should consist of 1 to 25 alphanumeric characters"
+        }, {
+            "ValidationRule": "alphaNum2-3",
+            "pattern": "^([0-9a-zA-Z]{2,3}|)$",
+            "message": "Should consist of 2 to 3 alphanumeric characters"
+        }, {
+            "ValidationRule": "numeric2-3",
+            "pattern": "^([0-9]{2,3}|)$",
+            "message": "Should consist of 2 to 3 numeric characters"
+        }, {
+            "ValidationRule": "numeric2_3Alpha3",
+            "pattern": "^([0-9]{2,3}|[a-zA-Z]{3}|)$",
+            "message": "Should consist of 2 to 3 numeric characters or 3 alphabetic characters"
+        }, {
+            "ValidationRule": "numeric2_3_2AN_Alpha3",
+            "pattern": "^([0-9]{2,3}|[0-9a-zA-Z]{2}|[a-zA-Z]{3}|)$",
+            "message": "Should consist of 2 to 3 numeric characters or 2 alphanumeric or 3 alphabetic characters"
+        }, {
+            "ValidationRule": "numeric10-99",
+            "pattern": "^(([1-9][0-9])|)$",
+            "message": "Should contain between 10 to 99 "
+        }, {
+            "ValidationRule": "numeric80-99",
+            "pattern": "^(([8-9][0-9])|)$",
+            "message": "Should contain between 80 to 99 "
+        }, {
+            "ValidationRule": "reasonforlossprimedelay",
+            "pattern": "^(([1-7][0])|)$",
+            "message": "Actor can only provide primary codes (10, 20,...70) "
+        }, {
+            "ValidationRule": "reasonforlossdamage",
+            "pattern": "^(([8-9][0])|)$",
+            "message": "Actor can only provide primary codes (80 ,90) "
+        }, {
+            "ValidationRule": "alphaNum10-18",
+            "pattern": "^(([0-9a-zA-Z]){10,18}|^(([0-9a-zA-Z]{4}-)([0-9a-zA-Z]{4}-)([0-9a-zA-Z]{4}))|)$",
+            "message": "Should consist of 10 to 18 Alphanumeric characters or 4 alphanumeric followed by hyphen three times like AAYA-AAFG-S3DR"
+        }, {
+            "ValidationRule": "alphaNum1-20",
+            "pattern": "^([0-9a-zA-Z]{1,20}|)$",
+            "message": "Should consist of 1 to 20 alphanumeric characters"
+        }, {
+            "ValidationRule": "alpha1-27",
+            "pattern": "^([a-zA-Z\\- \\s]{1,27}|)$",
+            "message": "Should consist of 1 to 27 alphabetic characters"
+        }, {
+            "ValidationRule": "alpha2-26",
+            "pattern": "^([a-zA-Z]{2,26}|)$",
+            "message": "Should consist of 2 to 26 alphabetic characters"
+        }, {
+            "ValidationRule": "alpha2-16",
+            "pattern": "^([a-zA-Z]{2,16}|)$",
+            "message": "Should consist of 2 to 16 alphabetic characters"
+        }, {
+            "ValidationRule": "alpha2_16",
+            "pattern": "^([a-zA-Z]{2,16}|[a-zA-Z]{15}[-]{1}|)$",
+            "message": "Should consist of 2 to 16 alphabetic characters, with the 16th character exceptionally being either a letter or a hyphen (‘-‘)"
+        }, {
+            "ValidationRule": "alpha2-30",
+            "pattern": "^([a-zA-Z ]{2,30}|)$",
+            "message": "Should consist of 2 to 30 alphabetic characters"
+        }, {
+            "ValidationRule": "alpha3-12",
+            "pattern": "^([a-zA-Z]{3,12}|)$",
+            "message": "Should consist of 3 to 12 alphabetic characters"
+        }, {
+            "ValidationRule": "bagContentCategory",
+            "pattern": "^([a-zA-Z]{3,12}-[0-9]{1}|[a-zA-Z]{3,12}|)$",
+            "message": "Should consist of 3 to 12 alphabetic characters"
+        }, {
+            "ValidationRule": "alpha1-4",
+            "pattern": "^([a-zA-Z]{1,4}|)$",
+            "message": "Should consist of 1 to 4 alphabetic characters"
+        }, {
+            "ValidationRule": "alpha1-3",
+            "pattern": "^([a-zA-Z]{1,3}|)$",
+            "message": "Should consist of 1 to 3 alphabetic characters"
+        }, {
+            "ValidationRule": "alphaNum1-3",
+            "pattern": "^([0-9a-zA-Z]{1,3}|)$",
+            "message": "Should consist of 1 to 3 Alphanumeric characters"
+        }, {
+            "ValidationRule": "alpha2",
+            "pattern": "^([a-zA-Z]{2}|)$",
+            "message": "Should consist of 2 alphabetic characters"
+        }, {
+            "ValidationRule": "alpha3",
+            "pattern": "^([a-zA-Z]{3}|)$",
+            "message": "Should consist of 3 alphabetic characters"
+        }, {
+            "ValidationRule": "alpha3-30",
+            "pattern": "^([a-zA-Z]{3,30}|)$",
+            "message": "Should consist of 3 to 30 alphabetic characters"
+        }, {
+            "ValidationRule": "decimal-3",
+            "pattern": "^([0-9]{1,2}|[0-9]{2}[.][0-9]{1}|[0-9]{1}[.][0-9]{1,2}|)$",
+            "message": "1N with up to 2 optional decimals E.g. 5, 3.34, 0.2, 0.56, 8.00 or 2N with 1 optional decimal E.g. 65, 23.5 or 1-2N with 1 optional decimal E.g. 3.3, 30.3"
+        }, {
+            "ValidationRule": "refNum",
+            "pattern": "^([0-9]{5,6}|)$",
+            "message": "Should consist of 5 or 6 numeric characters"
+        }, {
+            "ValidationRule": "msgId",
+            "pattern": "^([0-9]{1,5}|)$",
+            "message": "Should consist of 1 to 5 numeric characters"
+        }, {
+            "ValidationRule": "numeric1-2",
+            "pattern": "^([0-9]{1,2}|)$",
+            "message": "Should consist of 1 to 2 numeric characters"
+        }, {
+            "ValidationRule": "numericForRegions",
+            "pattern": "^([0-2]{1}[0-9]{1}|[0-9]{1}|[]{0})$",
+            "message": "Should consist of 1-2N (values from 0 to 29 only)"
+        }, {
+            "ValidationRule": "damage-code",
+            "pattern": "^(0[1-9]|1[0-6]|)$",
+            "message": "Should consist from 01 to 16"
+        }, {
+            "ValidationRule": "numeric1-10",
+            "pattern": "^([0-9]{1,10}|)$",
+            "message": "Should consist of 1 to 10 numeric characters"
+        },{
+            "ValidationRule": "numeric16",
+            "pattern": "^([0-9]{1,6}|)$",
+            "message": "Should consist of 1 to 6 numeric characters"
+        }, {
+            "ValidationRule": "numeric1_10",
+            "pattern": "^([0-9]{1,10}|)$",
+            "message": "Should consist of 1 to 10 numeric characters"
+        }, {
+            "ValidationRule": "numericc1_10",
+            "pattern": "^([0-9]{1,10}|)$",
+            "message": "Should consist of 1 to 10 numeric characters greater than 0"
+        }, {
+            "ValidationRule": "numeric1-9",
+            "pattern": "^([0-9]{1,9}|)$",
+            "message": "Should consist of 1 to 9 numeric characters"
+        }, {
+            "ValidationRule": "numeric1-6",
+            "pattern": "^([0-9]{9,14}|)$",
+            "message": "Should consist of 9 to 12 numeric characters"
+        },
+        {
+            "ValidationRule": "numeric1-5",
+            "pattern": "^([0-9]{1,5}|)$",
+            "message": "Should consist of 1 to 5 numeric characters"
+        }, {
+            "ValidationRule": "numeric1-20s",
+            "pattern": "^([0-9\\s]{1,20}|)$",
+            "message": "Should consist of 1 to 20 numeric characters space also allowed"
+        }, {
+            "ValidationRule": "numeric1-20",
+            "pattern": "^([0-9]{1}|[1][0-9]|[2][0]|)$",
+            "message": "Should consist of 1 to 20 numeric characters"
+        }, {
+            "ValidationRule": "refNumNew",
+            "pattern": "^([a-zA-Z]{5,6}[0-9]{5,6}|)$",
+            "message": "Should consist of 5 or 6 Alphabetic characters followed by 5 or 6 numeric characters"
+        }, {
+            "ValidationRule": "refrenceNumber",
+            "pattern": "^([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})[0-9]{5}|)$",
+            "message": "Should consist of 3A + 1A1N, 1N1A,1A1A or 3A followed by 5 numeric characters ex : ATLQC21148"
+        }, {
+            "ValidationRule": "forwardRefNum",
+            "pattern": "^(([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})[0-9]{5,6})|([0-9]{9,14})|)$",
+            "message": "Should consist of 3A+1A1N,1N1A,2A, or 3A+5N or 6N or 9-14 numeric ex : ATLQC21148,123456789"
+        },
+        {
+            "ValidationRule": "5-6NumRefNumber",
+            "pattern": "^(([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})[0-9]{5,6})|)$",
+            "message": "Should consist of 3A+1A1N,1N1A,2A, or 3A+5N or 6N ex : ATLQC21148"
+        }, {
+            "ValidationRule": "RushRefNum",
+            "pattern": "^(([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})[0-9]{1,6})|([0-9]{9,14})|)$",
+            "message": "Should consist of 3A+1A1N,1N1A,2A, or 3A+1N to 6N or 9-14 numeric ex : ATLQC21148,123456789"
+        }, {
+            "ValidationRule": "ReferenceNumMisscelaneous",
+            "pattern": "^(([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})[0-9]{5})|)$",
+            "message": "Should consist of 3A+1A1N,1N1A,2A, or 3A+5N ex : ATLQC21148"
+        }, {
+            "ValidationRule": "offlineRefNum",
+            "pattern": "^([0-9]{9,14}|)$",
+            "message": "Should consist of 9 to 14 numeric characters ex : 123456789"
+        }, {
+            "ValidationRule": "OnlineOfflineFileReference",
+            "pattern": "^([0-9]{9,14}|([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})[0-9]{5}|))$",
+            "message": "Should consist of 3A + 1A1N or 1N1A or 2A followed by 5N, or 9-14N. E.g. FRALH12345, 98765432123456."
+        }, {
+            "ValidationRule": "station-Air",
+            "pattern": "^([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})|)$",
+            "message": "Should consist of 3A+1A1N,1N1A,2A, or 3A ex : ATLQC"
+        }, {
+            "ValidationRule": "numeric5",
+            "pattern": "^([0-9]{5}|)$",
+            "message": "Should consist of 5 numeric characters"
+        }, {
+            "ValidationRule": "numeric5-6",
+            "pattern": "^([0-9]{5,6}|)$",
+            "message": "Should consist of 5 or 6 numeric characters"
+        }, {
+            "ValidationRule": "numeric2",
+            "pattern": "^([1-7][0-9]|)$",
+            "message": "Enter code between 10 to 79"
+        }, {
+            "ValidationRule": "totalWorstFlight",
+            "pattern": "^([0][1-9]|[1-9]|[1-9][0-9]|)$",
+            "message": "Actor must provide a number between 1-99"
+        }, {
+            "ValidationRule": "MXRLossCode",
+            "pattern": "^([5][0-9]|)$",
+            "message": "Enter code between 50 to 59"
+        }, {
+            "ValidationRule": "numeric0-5WithEmpty",
+            "pattern": "^(?:[0-5]{1}|)$",
+            "message": "Enter a value between 0 and 5"
+        },
+        {
+            "ValidationRule": "numeric0-5",
+            "pattern": "^([0-5]|5)$",
+            "message": "Enter a value between 0 and 5"
+        }, {
+            "ValidationRule": "numeric2Rush",
+            "pattern": "^([1-9]|[1-9][0-9]|)$",
+            "message": "Enter 2N characters"
+        }, {
+            "ValidationRule": "RFL",
+            "pattern": "^([8-9][0-9]|)$",
+            "message": "Enter reason for loss code between 80 to 99"
+        }, {
+            "ValidationRule": "regionvalidation",
+            "pattern": "^([0-9]{1}|[0-2][0-9]|)$",
+            "message": "Enter code between 0 to 29"
+        }, {
+            "ValidationRule": "flightNum",
+            "pattern": "^(?:[1-9]{1}|[1-9][A-Za-z]{1}|[1-9][0-9]{1,3}|[0-9][1-9]{1,3}|[0-9]{1,3}[1-9]|[1-9][0-9]{1,3}[a-zA-Z]{1}|[0-9][1-9]{1,3}[a-zA-Z]{1}|[0-9]{1,3}[1-9][a-zA-Z]{1}|)$",
+            "message": "Should consist of 1 to 4 non-zero numeric characters or 1 to 4 non-zero numeric characters and 1 alphabet"
+        }, {
+            "ValidationRule": "LiscencePlate",
+            "pattern": "^([0-9]{1,4}|)$",
+            "message": "Should consist of 1 to 4 numeric characters"
+        }, {
+            "ValidationRule": "Airlineflightcombo",
+            "pattern": "^(([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z])([1-9]{1}|[1-9][A-Za-z]{1}|[1-9][0-9]{1,3}|[0-9][1-9]{1,3}|[0-9]{1,3}[1-9]|[1-9][0-9]{1,3}[a-zA-Z]{1}|[0-9][1-9]{1,3}[a-zA-Z]{1}|[0-9]{1,3}[1-9][a-zA-Z]{1})|)$",
+            "message": "Enter a valid IATA Airline Code followed by 1 to 4 non-zero numeric characters or 1 to 4 non-zero numeric characters and 1 alphabet"
+        }, {
+            "ValidationRule": "mobile",
+            "pattern": "^(?:[0-9\\s]{8,20}|(?=[0-9\\s]+[\\s]*[-][\\s]*[0-9\\s]+$)[0-9-\\s]{8,20}|)$",
+            "message": "Should consist of 8 to 20 numeric characters including spaces and one hyphen, and hyphen cannot be the first or the last character."
+        }, {
+            "ValidationRule": "mobile1-20",
+            "pattern": "^(?:[0-9\\s]{1,20}|(?=[0-9\\s]+[\\s]*[-][\\s]*[0-9\\s]+$)[0-9-\\s]{1,20}|)$",
+            "message": "Should consist of 1 to 20 numeric characters including spaces and one hyphen, and hyphen cannot be the first or the last character."
+        }, {
+            "ValidationRule": "time",
+            "pattern": "^((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]|)$",
+            "message": "Should be a valid time (Format: HH:MM)"
+        }, {
+            "ValidationRule": "timeVal",
+            "pattern": "^(([0-9]|0[0-9]|1[0-9]|2[0-3]):[0][0]|)$",
+            "message": "Should be a valid time (Format: HH:MM) and minute should always be 00"
+        }, {
+            "ValidationRule": "yesNo",
+            "pattern": "^([yY]|[nN]|)$",
+            "message": "Should be 'Y' or 'N'"
+        }, {
+            "ValidationRule": "airline",
+            "pattern": "^([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z]|)$",
+            "message": "Enter a valid IATA Airline Code"
+        }, {
+            "ValidationRule": "date",
+            "pattern": "^((0?[1-9]|[12][0-9]|3[01])(jan|Jan|JAN|feb|Feb|FEB|mar|Mar|MAR|apr|Apr|APR|may|May|MAY|jun|Jun|JUN|jul|Jul|JUL|aug|Aug|AUG|sep|Sep|SEP|oct|Oct|OCT|nov|Nov|NOV|dec|Dec|DEC)|)$",
+            "message": "Should be a valid date (Format: DDMMM)"
+        }, {
+            "ValidationRule": "datedob",
+            "pattern": "^((0?[1-9]|[12][0-9]|3[01])(jan|Jan|JAN|feb|Feb|FEB|mar|Mar|MAR|apr|Apr|APR|may|May|MAY|jun|Jun|JUN|jul|Jul|JUL|aug|Aug|AUG|sep|Sep|SEP|oct|Oct|OCT|nov|Nov|NOV|dec|Dec|DEC)[0-9]{4}|)$",
+            "message": "Should be a valid date (Format: DDMMMYYYY)"
+        },
+        {
+            "ValidationRule": "partnerCodeReports",
+            "pattern": "^(([0-9]{1}[a-zA-z]{1})|([a-zA-Z]{1}[0-9]{1})|[a-zA-Z]{2}|[a-zA-Z]{3}|)$",
+            "message": "Should be either two alphanumeric characters or three alphabetic characters"
+        },
+
+
+        {
+            "ValidationRule": "partnerCode",
+            "pattern": "^(([0-9]{1}[a-zA-z]{1})|([a-zA-Z]{1}[0-9]{1})|[a-zA-Z]{2}|[a-zA-Z]{3}|[nN]|)$",
+            "message": "Should be either two alphanumeric characters or three alphabetic characters or 'N'"
+        }, {
+            "ValidationRule": "userId",
+            "pattern": "^([0-9a-zA-Z]{1,12}[@][0-9a-zA-Z]{2,13}|)$",
+            "message": "Should consist of 4AN-15AN with at least 1AN before and atleast 2AN after a mandatory '@' symbol."
+        }, {
+            "ValidationRule": "newPass",
+            "pattern": "^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"-_ ])[0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"-_ ]{8,24}|)$",
+            "message": "Password comprises of alphabets [upper case(A-Z), lower case(a-z)] and numeral (0-9) and at least one ASCII special character of length 8 to 24"
+        }, {
+            "ValidationRule": "language",
+            "pattern": "^([^?]{1}|){1,25}$",
+            "message": "Should consist of 1 to 25 free-form(not containing?) text characters"
+        }, {
+            "ValidationRule": "email-58",
+            "pattern": "^(?!.{59})(?!.*\\.\\.)(?:[0-9a-zA-Z/.//!////#//$//%//^//&//*//_//|//+//=//{//}//'///-]+?[^.]@((?!.*--)(?!.*__)[a-zA-Z0-9]+([//-]{0,58}|[a-zA-Z0-9]|[//_]{0,58})+[a-zA-Z0-9])+(((?!.*--)(?!.*__)([/.]([a-zA-Z]+([//-]{0,1}|[a-zA-Z]|[//_]{0,1})+[a-zA-Z]{1,})))*)+([/.][a-zA-Z]{2,})|)$",
+            "message": "Please enter valid email address"
+        }, {
+            "ValidationRule": "email-44",
+            "pattern": "^(?:[0-9a-zA-Z/.//!////#//$//%//^//&//*//_//|//+//=//{//}//'///-]+?[^.]@((?!.*--)(?!.*__)[a-zA-Z0-9]+([//-]{0,44}|[a-zA-Z0-9]|[//_]{0,44})+[a-zA-Z0-9])+(((?!.*--)(?!.*__)([/.]([a-zA-Z]+([//-]{0,1}|[a-zA-Z]|[//_]{0,1})+[a-zA-Z]{1,})))*)+([/.][a-zA-Z]{2,})|)$",
+            "message": "Please enter valid email address"
+        }, {
+            "ValidationRule": "teletype",
+            "pattern": "^([a-zA-Z]{3}([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})|)$",
+            "message": "Enter a valid sequence of 3 letters followed by two sets of 2 letters or 2 alphanumeric characters"
+        }, {
+            "ValidationRule": "3teletypes",
+            "pattern": "^([a-zA-Z]{3}[a-zA-Z0-9]{2}([a-zA-Z]{2}|[0-9][a-zA-Z]|[a-zA-Z][0-9])|[a-zA-Z]{3}[a-zA-Z0-9]{2}([a-zA-Z]{2}|[0-9][a-zA-Z]|[a-zA-Z][0-9])[\/][a-zA-Z]{3}[a-zA-Z0-9]{2}([a-zA-Z]{2}|[0-9][a-zA-Z]|[a-zA-Z][0-9])|[a-zA-Z]{3}[a-zA-Z0-9]{2}([a-zA-Z]{2}|[0-9][a-zA-Z]|[a-zA-Z][0-9])[\/][a-zA-Z]{3}[a-zA-Z0-9]{2}([a-zA-Z]{2}|[0-9][a-zA-Z]|[a-zA-Z][0-9])[\/][a-zA-Z]{3}[a-zA-Z0-9]{2}([a-zA-Z]{2}|[0-9][a-zA-Z]|[a-zA-Z][0-9])|)$",
+            "message": "3A+2AN+2AN The last 2AN must contain one alphabet Up to 3 teletype addresses separated by ‘/’ are allowed E.g. ATLLLZL/ATLDDXS/ATLWWXS"
+        }, {
+            "ValidationRule": "elementDelivery",
+            "pattern": "^(of([0-9]{1}[1-9]{1})|up([0-9]{1}[1-9]{1})|OF([0-9]{1}[1-9]{1})|UP([0-9]{1}[1-9]{1})|of[123456789]\\d|OF[123456789]\\d|UP[123456789]\\d|up[123456789]\\d|se|SE|tx|TX|cw|CW|tr|TR|tr10|TR10|se00|SE00|tx00|TX00|)$",
+            "message": "Invalid delivery element"
+        }, {
+            "ValidationRule": "teletypes",
+            "pattern": "^([a-zA-Z]{3}([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})|)$",
+            "message": "Enter a valid sequence of 3 letters followed by two sets of 2 letters or 2 alphanumeric characters"
+        }, {
+            "ValidationRule": "teletypes7",
+            "pattern": "^([a-zA-Z]{3}([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})|)$",
+            "message": "Enter a valid sequence of 3 letters followed by two sets of 2 letters or 2 alphanumeric characters"
+        }, {
+            "ValidationRule": "teletypeValid",
+            "pattern": "^([a-zA-Z]{3}([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})|)$",
+            "message": "Enter a valid sequence of 3 letters followed by two sets of 2 letters or 2 alphanumeric characters"
+        }, {
+            "ValidationRule": "teletype2AN",
+            "pattern": "^([a-zA-Z]{3}([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})([0-9]{1}[a-zA-Z]{1}|[a-zA-Z]{1}[0-9]{1}|[a-zA-Z]{2})|)$",
+            "message": "Enter a valid sequence of 3 letters followed by two sets of 2 letters or 2 alphanumeric characters"
+        }, {
+            "ValidationRule": "station_airline_concat",
+            "pattern": "^(([a-zA-Z]{3})([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z])|)$",
+            "message": "Station code followed by Airline code"
+        }, {
+            "ValidationRule": "from-station",
+            "pattern": "^([a-zA-Z]{3}|)$",
+            "message": "Enter a valid IATA Station Code e.g. DUS"
+        }, {
+            "ValidationRule": "from_station",
+            "pattern": "^([a-zA-Z]{3}|)$",
+            "message": "Enter a valid IATA Station Code e.g. DUS"
+        }, {
+            "ValidationRule": "airline-without3N",
+            "pattern": "^([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z]|)$",
+            "message": "Enter a valid IATA Airline Code"
+        }, {
+            "ValidationRule": "airline-newMessage",
+            "pattern": "^([A-Za-z]{2}|[0-9]{2,3}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z]|)$",
+            "message": "Enter a valid IATA Airline Code"
+        },
+        {
+            "ValidationRule": "airline_newMessage",
+            "pattern": "^([A-Za-z]{2}|[0-9]{2,3}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z]|)$",
+            "message": "Enter a valid IATA Airline Code"
+        }, {
+            "ValidationRule": "airline-newMessageModified",
+            "pattern": "^([A-Za-z]{2}|[0-9]{2,3}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z]|)$",
+            "message": "Enter a valid IATA Airline Code"
+        }, {
+            "ValidationRule": "sequenceNo",
+            "pattern": "^([a-zA-Z0-9]{5}|)$",
+            "message": "Should consist of 5 alphanumeric characters"
+        }, {
+            "ValidationRule": "freeForm1-1769",
+            "pattern": "^([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,1769}$",
+            "message": "Should consist of 1 to 1769 free-form(not containing  ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-172",
+            "pattern": "^([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,172}$",
+            "message": "Should consist of 1 to 172 free-form(not containing  ?) text characters"
+        }, {
+            "ValidationRule": "freeForm1-3000",
+            "pattern": "^([0-9a-zA-z~/.//!/\\s/@//?//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,3000}$",
+            "message": "Should consist of 1 to 3000 free-form text characters"
+        }, {
+            "ValidationRule": "alpha1-27-WithHypen",
+            "pattern": "^([a-zA-Z-\\s]{1,27}|)$",
+            "message": "Should consist of 1 to 27 alphabetic characters including Space or Hyphen"
+        }, {
+            "ValidationRule": "range40-100",
+            "pattern": "^(([4-9]{1}[0-9]{1})|100|)$",
+            "message": "Value should be between 40-100"
+        }, {
+            "ValidationRule": "lessthan100",
+            "pattern": "^(([1-9]{1}[0-9]{1})|[1-9]{1}|)$",
+            "message": "Value should be between 1-99"
+        }, {
+            "ValidationRule": "RushLossCode",
+            "pattern": "^(([1-9][0-9])|)$",
+            "message": "Enter 2N characters between 10 to 99"
+        }, {
+            "ValidationRule": "rushTagNum",
+            "pattern": "^([0-9][0-9][0-9][0-9](?!000000)[0-9]{6}|^[a-zA-Z][0-9](?!000000)[0-9]{6}|^[0-9][a-zA-Z](?!000000)[0-9]{6}|^[a-zA-Z][a-zA-Z](?!000000)[0-9]{6}|^[a-zA-Z][a-zA-Z][a-zA-Z](?!000000)[0-9]{6}|)$",
+            "message": "Should comprise of 10 numeric characters or 1A1N or 1N1A or 2A or 3A followed by 6N except 000000"
+        }, {
+            "ValidationRule": "TagNumRange",
+            "pattern": "^([0-9][0-9][0-9][0-9](?!000000)[0-9]{6}|^[a-zA-Z][0-9](?!000000)[0-9]{6}|^[0-9][a-zA-Z](?!000000)[0-9]{6}|^[a-zA-Z][a-zA-Z](?!000000)[0-9]{6}|^[a-zA-Z][a-zA-Z][a-zA-Z](?!000000)[0-9]{6}|[0-9][0-9][0-9][0-9](?!000000)[0-9]{6}(-)[0-9]{2}|^[a-zA-Z][0-9](?!000000)[0-9]{6}(-)[0-9]{2}|^[0-9][a-zA-Z](?!000000)[0-9]{6}(-)[0-9]{2}|^[a-zA-Z][a-zA-Z](?!000000)[0-9]{6}(-)[0-9]{2}|^[a-zA-Z][a-zA-Z][a-zA-Z](?!000000)[0-9]{6}(-)[0-9]{2}|)$",
+            "message": "Should comprise of 10 numeric characters or 1A1N or 1N1A or 2A or 3A followed by 6N except 000000 or Tag Number Range using -NN after one valid tag number"
+        }, {
+            "ValidationRule": "num1-18",
+            "pattern": "^(([1]|[1][0-8])|)$",
+            "message": "Should consist of 1 to 18 numeric values"
+        }, {
+            "ValidationRule": "AirlineFlight",
+            "pattern": "^(([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z])([1-9]{1}|[1-9][A-Za-z]{1}|[1-9][0-9]{1,3}|[0-9][1-9]{1,3}|[0-9][1-9][0-9]{0,2}|[0-9]{1,3}[1-9]|[1-9][0-9]{1,3}[a-zA-Z]{1}|[0-9][1-9]{1,3}[a-zA-Z]{1}|[0-9]{1,3}[1-9][a-zA-Z]{1})|)$",
+            "message": "Enter a valid IATA Airline Code followed by 1 to 4 non-zero numeric characters or 1 to 4 non-zero numeric characters and 1 alphabet"
+        }, {
+            "ValidationRule": "AirlineFlightYY",
+            "pattern": "^(([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z])([1-9]{1}|[1-9][A-Za-z]{1}|[1-9][0-9]{1,3}|[0-9][1-9]{1,3}|[0-9][1-9][0-9]{0,2}|[0-9]{1,3}[1-9]|[1-9][0-9]{1,3}[a-zA-Z]{1}|[0-9][1-9]{1,3}[a-zA-Z]{1}|[0-9]{1,3}[1-9][a-zA-Z]{1})|([yY]{2})|)$",
+            "message": "Enter a valid IATA Airline Code followed by 1 to 4 non-zero numeric characters or 1 to 4 non-zero numeric characters and 1 alphabet or YY for Unknown Flight"
+        }, {
+            "ValidationRule": "freeForm1-174",
+            "pattern": "^([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,174}$",
+            "message": "Should consist of 1 to 174 free-form(not containing  ?) text characters"
+        }, {
+            "ValidationRule": "num1-9999",
+            "pattern": "^(([1-9][0-9]{0,3})|)$",
+            "message": "value should be between 1-9999"
+        }, {
+            "ValidationRule": "freeForm1-20dot",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://.//;//'/////<//>//,//|//\/\"]|-|){1,20}$",
+            "message": "Should consist of 1 to 20(not containing ?) free-form text characters"
+        }, {
+            "ValidationRule": "website",
+            "pattern": "^(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$",
+            "message": "Enter valid website address"
+        }, {
+            "ValidationRule": "freeForm1-44",
+            "pattern": "^([A-Za-z0-9_@.~+]{1,42}[.][a-zA-Z]{2,4}|)$",
+            "message": "Should consist of 1 to 44 free-form must be one ‘.’ character (‘.’ can not be the last character and 2 to 4 alphabetic characters should be present after it) and (not containing  ?) text characters."
+        }, {
+            "ValidationRule": "startTimePattern",
+            "pattern": "^([0-9]{1,3}|)$",
+            "message": "Enter 1N-3N characters"
+        }, {
+            "ValidationRule": "ReferenceNumMisscelaneous",
+            "pattern": "^(([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})[0-9]{5})|)$",
+            "message": "Should consist of 3A+1A1N,1N1A,2A, or 3A+5N   ex :ATLQC21148"
+        }, {
+            "ValidationRule": "number0-29",
+            "pattern": "^([0-2]{1}[0-9]{1}|[0-9]{1}|)$",
+            "message": "Should consist of a number between 0-29"
+        },
+        {
+            "ValidationRule": "number0-96",
+            "pattern": "^([1-8]{1}[0-9]{1}|[9]{1}[0-6]{1}|[1-9]{1}|)$",
+
+            "message": "Should consist of a number between 1-96"
+        }, {
+            "ValidationRule": "dateMMMYY",
+            "pattern": "^((jan|Jan|JAN|feb|Feb|FEB|mar|Mar|MAR|apr|Apr|APR|may|May|MAY|jun|Jun|JUN|jul|Jul|JUL|aug|Aug|AUG|sep|Sep|SEP|oct|Oct|OCT|nov|Nov|NOV|dec|Dec|DEC)[0-9]{2}|)$",
+            "message": "Should be a valid date (Format: MMMYY)"
+
+        }, {
+            "ValidationRule": "freeForm",
+            "pattern": "^([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,44}$",
+            "message": "Should consist of 1 to 44(not containing ?) free-form text characters"
+        }, {
+            "ValidationRule": "emailFreeForm",
+            "pattern": "^[-_.A-Za-z0-9!#@%^&*+=]*$",
+            "message": "Should consist of 1-44FF including only the special characters ! # @% . ^&*_-+= and excluding ‘?’"
+        }, {
+            "ValidationRule": "freeForm1-10",
+            "pattern": "^([0-9a-zA-z~/.//!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,10}$",
+            "message": "Should consist of 1-10FF(not containing ?) including only the special characters `! # @%^&*_-+=."
+        }, {
+            "ValidationRule": "geoArea",
+            "pattern": "^([A-Za-z]{2}|)$",
+            "message": "Should be 2 letter alphabetic code(2A) like EU, AF."
+        }, {
+            "ValidationRule": "alpha1-30",
+            "pattern": "^([A-Za-z ]{1,30}|)$",
+            "message": "Should be alphabetic(1-30A) format "
+        },
+        {
+            "ValidationRule": "time_Hour",
+            "pattern": "^((0[0-9]|1[0-9]|2[0-3])|)$",
+            "message": "Should be a valid hour (Format HH 00-23)"
+        },
+        {
+            "ValidationRule": "time_Minute",
+            "pattern": "^([0-5][0-9]|)$",
+            "message": "Should be a valid minute (Format MM 00-59)"
+        },
+        {
+            "ValidationRule": "flightDayRange",
+            "pattern": "^(([1-9][0-9]{0,3})|)$",
+            "message": "Should be a valid Number (1-N)"
+        },
+        {
+            "ValidationRule": "pageValues1_3",
+            "pattern": "^(([1-3]{1})|)$",
+            "message": "Should be a valid Number (1-3)"
+        },
+        {
+            "ValidationRule": "airlineListLimit",
+            "pattern": "^((([A-Za-z]{2}|[0-9]{2,3}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z])[//,])*([A-Za-z]{2}|[A-Za-z]{3}|[A-Za-z][0-9]|[0-9][A-Za-z])|)$",
+            "message": "Should be a valid airline(s) seperated by Comma"
+        },
+
+        {
+            "ValidationRule": "currency-3A",
+            "pattern": "^([A-Za-z]{3}|)$",
+            "message": "Should consist of 3A"
+        }, {
+            "ValidationRule": "reasonCode10-79",
+            "pattern": "^([1-7][0-9]|)$",
+            "message": "Should consist of 10 to 79 numeric values"
+        }, {
+            "ValidationRule": "reasonCode80-89",
+            "pattern": "^([8][0-9]|)$",
+            "message": "Should consist of 80 to 89 numeric values"
+        }, {
+            "ValidationRule": "MRDreasonforloss",
+            "pattern": "^(80|90|)$",
+            "message": "Should be either 80 or 90"
+        }, {
+            "ValidationRule": "PassengerFig1-7",
+            "pattern": "^([0-9]{0,7}|)$",
+            "message": "Should consist of a number between 1-7"
+        }, {
+            "ValidationRule": "StationAirline-Teletype",
+            "pattern": "^(([a-zA-Z]{3}([a-zA-Z][0-9] |[0-9][a-zA-Z]|[a-zA-Z]{2}|[a-zA-Z]{3}))|([a-zA-Z]{3}[0-9a-zA-Z]{2}[0-9a-zA-z]{2})|)$",
+            "message": "Should consist of Station Code and Airline Code of 3A+1A1N,1N1A,2A, or 3A ex : ATLQC OR 3 alphabetic characters for IATA station code followed by 4 alphanumeric characters for office designator and airline code. E.g. ATLLLZ1"
+        }, {
+            "ValidationRule": "1to4N-with-3decimal",
+            "pattern": "^([0-9]{1,4}|[0-9]{1,4}[.][0-9]{1,3}|)$",
+            "message": "Should consist of a 1-4N followed by an optional 1-3 decimal values E.g. 9.346"
+        }, {
+            "ValidationRule": "station-AirPrompt",
+            "pattern": "^([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2,3}|[0-9]{2,3})|)$",
+            "message": "Should consist of 3A+1A1N,1N1A,2A,3A,2N or 3N ex : ATLQC"
+        }, {
+            "ValidationRule": "numeric8-20s",
+            "pattern": "^([0-9]([0-9\\s]{6,18})[0-9]|)$",
+            "message": "Should consist of 8 to 20 numeric characters, space also allowed"
+        }, {
+            "ValidationRule": "numeric8_20s",
+            "pattern": "^([0-9]([0-9\\s]{6,18})[0-9]|)$",
+            "message": "Should consist of 8 to 20 numeric characters, space also allowed"
+        }, {
+            "ValidationRule": "decimal-6op",
+            "pattern": "^([0-9]{1,5}|[0-9]{1}[.][0-9]{1,5}|[0-9]{2}[.][0-9]{1,4}|[0-9]{3}[.][0-9]{1,3}|[0-9]{4}[.][0-9]{1,2}|[0-9]{5}[.][0-9]{1}|)$",
+            "message": "1-6N with optional decimals or 1-5N"
+        }, {
+            "ValidationRule": "decimal-0op",
+            "pattern": "^([1-9][0-9][.][0-9]{1}|[1-9][0-9]|[1-9]|[1-9]{1}[.][0-9]{1,2}|)$",
+            "message": "1-2N + two optional decimal between 1-99, total length must not exceed 4 characters including '.'"
+        }, {
+            "ValidationRule": "bagType",
+            "pattern": "^(01|02|03|05|06|07|08|09|10|12|20|22|22D|22R|23|25|26|27|28|29|50|51|52|53|54|55|56|57|58|59|60|61|62|63|64|65|66|67|68|69|71|72|73|74|75|81|82|83|85|89|90|92|93|94|95|96|97|98|99|)$",
+            "message": "Should be a valid bag type"
+        }, {
+            "ValidationRule": "bagColor",
+            "pattern": "^(WT|BK|GY|BU|RD|YW|BE|BN|GN|MC|PU|PR|wt|bk|gy|bu|rd|yw|be|bn|gn|mc|pu|pr|)$",
+            "message": "Should be a valid color"
+        }, {
+            "ValidationRule": "freeForm1-44BagDesc2",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://;//'/////<//>//,//|///\"]|-|){1,44}$",
+            "message": "Should consist of 1 to 44 free-form(not containing . ?) text characters"
+        }, {
+            "ValidationRule": "LHZambas",
+            "pattern": "^(((^[a-zA-Z][0-9]|^[0-9]{4}|^[0-9][a-zA-Z]|^[a-zA-Z]{2,3})(?!000000)[0-9]{6})|([a-zA-Z0-9]){5,6}|)$",
+            "message": "PNR should be 5,6 alphanumeric, Tag number should be 10 numeric characters or 1A1N or 1N1A or 2A or 3A followed by 6N"
+        }, {
+            "ValidationRule": "TagNumberRule",
+            "pattern": "^([0-9][0-9][0-9][0-9][0-9]{6}|^[a-zA-Z][0-9][0-9]{6}|^[0-9][a-zA-Z][0-9]{6}|^[a-zA-Z][a-zA-Z][0-9]{6}|^[a-zA-Z][a-zA-Z][a-zA-Z][0-9]{6}|^[0-9][0-9][0-9][0-9][0-9]{6}-[0-9]{2}|^[a-zA-Z][0-9][0-9]{6}-[0-9]{2}|^[0-9][a-zA-Z][0-9]{6}-[0-9]{2}|^[a-zA-Z][a-zA-Z][0-9]{6}-[0-9]{2}|^[a-zA-Z][a-zA-Z][a-zA-Z][0-9]{6}-[0-9]{2}|)$",
+            "message": "Should comprise of 10 numeric characters or 1A1N or 1N1A or 2A or 3A followed by 6N"
+        },
+        {
+            "ValidationRule": "freeForm1-20questionMark",
+            "pattern": "^([0-9a-zA-z~/!/\\s/@//#//$//%//^//&//*//(//)//+//=//{//}//://?//;//'/////<//>//,//|//\/\"]|-|){1,20}$",
+            "message": "Should consist of 1 to 20(not containing . ?) free-form text characters"
+        },
+        {
+            "ValidationRule": "closedFileReferenceNumber",
+            "pattern": "^(([a-zA-Z]{3}([a-zA-Z][0-9]|[0-9][A-Za-z]|[a-zA-Z]{2}|[a-zA-Z]{3})[0-9]{5,6}\/[cC])|)$",
+            "message": "Should consist of 3A + 1A1N, 1N1A,1A1A or 3A followed by 5 numeric characters ex : ATLQC21148/C"
+        }, {
+            "ValidationRule": "alpha1-2",
+            "pattern": "^(DB|db|LB|lb|LK|lk|dk|DK|MB|mb|MK|mk|RB|rb|RK|rk|TB|tb|TK|tk|BD|bd|BL|bl|KL|kl|kd|KD|BM|bm|KM|km|BR|br|KR|kr|BT|bt|KT|kt|d|D|l|L|m|M|r|R|t|T|B|b|k|K|)$",
+            "message": "Please enter valid descriptor"
+        },{
+            "ValidationRule": "airlineHandler",
+            "pattern": "^([a-zA-Z]{2,3}|[0-9][A-Za-z]|[A-Za-z][0-9]|[0-9]{2,3}|)$",
+            "message": "Should consist of 1A1N, 1N1A, 2A or 3A or 2N or 3N ex : 123"
+        }, {
+            "ValidationRule": "alphaNum4",
+            "pattern": "^([0-9a-zA-Z]{4}|)$",
+            "message": "Enter valid password format. Must be 4 alpha numeric characters."
+        },{
+            "ValidationRule": "numberOfRushBags",
+            "pattern": "^([0-1]{1}[0-8]{1}|[1-9]{1}|[0]{1}[0-9]{1}|)$",
+            "message": "Should consist of 1-2N (values from 1 to 18 only)"
+        }, {
+            "ValidationRule": "numeric0-25",
+            "pattern": "^([0-9]|0[0-9]|1[0-9]|2[0-5]|)$",
+            "message": "Should consist of 0 to 25 numeric characters"
+        }, {
+            "ValidationRule": "numeric1-50",
+            "pattern": "^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|50|)$",
+            "message": "Should consist of 1 to 50 numeric characters"
+        }
+
+    ]
+}

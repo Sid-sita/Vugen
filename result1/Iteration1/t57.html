@@ -1,0 +1,52 @@
+
+<div class="modal fade" id="shortCutHelpModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+  <div class="singles page">
+    <div class="overlay"></div>
+
+    <div class="preview-large" style="margin-top:0;top:13%;">
+      <h3 class="pull-left">{{EscShortKey.commentss}}</h3>
+      <br><br><br/>
+      <div class="shortkeysTemp" ng-repeat="info in filterdinfo">
+        <kbd class="stylekbd">{{info.SectionShortKey}}</kbd>:{{info.SectionName}}
+        <div>
+          <span ng-repeat="infoElem in info.Elements">
+            <kbd class="stylekbd">{{infoElem.Shortkey}}</kbd>
+            :{{infoElem.Placeholder}}&nbsp;</b>
+          </span>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h6 localize>For landing page</b></h6>
+      <span class="shortkeysTemp" ng-repeat="infoHelp in informationHelpHelp[0].data1">
+        <kbd class="stylekbd">{{infoHelp.shortkey}}</kbd>:{{infoHelp.comments}}
+      </span>
+      <br><br>
+      <hr>
+      <div ng-show="eng">
+        <h6 localize>For Create page</b></h6>
+        <span class="shortkeysTemp" ng-repeat="infoOne in informationHelpHelp[0].data2">
+          <kbd class="stylekbd">{{infoOne.shortKey}}</kbd>:{{infoOne.comments}}
+        </span>
+        <br><br>
+        <hr>
+        <h6 localize>For Action files</b></h6>
+        <span class="shortkeysTemp" ng-repeat="infoMess in informationHelpHelp[0].data3">
+          <kbd class="stylekbd">{{infoMess.shortKey}}</kbd>:{{infoMess.comments}}
+        </span>
+        <br><br>
+      <div ng-show="chn">
+        <h6>Ch-For landing page</h6>
+        <kbd class="stylekbd">ctrl+b</kbd>
+        Ch-Delayed Bag&nbsp;
+        <kbd class="stylekbd">alt+b+1</kbd>
+        Ch-Create delayed Bag&nbsp;</div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>

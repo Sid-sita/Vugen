@@ -1,0 +1,27 @@
+{
+  "FileStatus":[
+  {
+    "id": 1,
+    "key": "All",
+    "value": "All",
+    "hideOrDisable": false
+  },
+  {
+    "id": 2,
+    "key": "Offline",
+    "value": "offline",
+    "hideOrDisable": false
+  },
+  {
+    "id": 3,
+    "key": "Failed",
+    "value": "offline",
+    "hideOrDisable": false
+  },
+  {
+    "id": 4,
+    "key": "Online",
+    "value": "Online",
+    "hideOrDisable": false
+  }]
+}

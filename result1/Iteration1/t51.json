@@ -1,0 +1,45 @@
+{
+  "Lang" : [
+             {
+               "placeholderEmail" : "Login ID",
+               "placeholderPassword" : "Password",
+               "signAccount" : "Sign in with your account",
+               "advanceSet" : "Advance Setting",
+               "chooseLang" : "Choose Language",
+               "login" : "Login",
+               "langu": "English",
+               "help" : "Need help?",
+               "access" : "Can't access your account?",
+               "advanced" : "Advanced Settings",
+               "active" : "Active",
+               "training" : "Training",
+               "enterTheCaptcha": "Enter the text above"
+             }
+
+],
+
+ "Languages" : [
+                { "id": 1, "name": "English","code" : "en-US"},
+                { "id":2, "name": "中国", "code" : "zh-CN"}
+              ],
+  "errors" : {"enterUId" : "Please enter the user credentials",
+              "enterPass" : "Please enter the user credentials",
+              "enterCap" : "Please enter the captcha",
+              "provide" : "Please provide valid credentials",
+              "ServerProb" : "Apologies!.. Please contact the administrator",
+
+              "USER_ACCOUNT_003" : "Login ID or Password are invalid. Try again.",
+              "InvalidCaptcha" : "The confirmation text for the CAPTCHA image did not match. Try again.",
+              "CAPTCHA_EXCEPTION_001" : "The confirmation text for the CAPTCHA image did not match. Try again.",
+              "EXCEPTION_0010" : "The confirmation text for the CAPTCHA image did not match. Try again.",
+              "AUTHEN_001" : "Login ID or Password are invalid. Try again.",
+              "EXCEPTION_003" :"Apologies!.. Please contact the administrator",
+              "1000" : "Login ID or Password are invalid. Try again.",
+              "1001": "User account is locked due to invalid login attempts",
+              "1002" : "Disabled User",
+              "1003" : "Password Expired",
+              "STATION_001":"Could not retrieve station list",
+              "reset" : "Success - password reset."
+            }
+
+}

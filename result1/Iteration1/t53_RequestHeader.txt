@@ -1,0 +1,11 @@
+POST /1.2.0.11/wtrui-web/v6.0/Proxy/login/loginAuth HTTP/1.1
+Content-Type: application/json; charset=UTF-8
+Referer: https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.5
+Accept: */*
+Connection: Keep-Alive
+Host: desktop-perf2.worldtracer.aero
+Content-Length: 120
+

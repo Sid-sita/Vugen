@@ -1,0 +1,1080 @@
+Virtual User Script started at: 28-03-2018 11:33:00
+Starting action vuser_init.
+Web Turbo Replay of LoadRunner 12.55.0 for Windows 10; build 911 (Jul 24 2017 19:46:00)  	[MsgId: MMSG-26983]
+Run mode: HTML  	[MsgId: MMSG-26993]
+Replay user agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0  	[MsgId: MMSG-26988]
+Run-Time Settings file: "C:\Users\siddharth.sharma\Desktop\WTD Scripts\WTD-Scripts v2\SC04_CreateForwardBag_FWD\\default.cfg"  	[MsgId: MMSG-27141]
+vuser_init.c(24): Notify: Saving Parameter "P_hostName = desktop-perf2.worldtracer.aero".
+vuser_init.c(25): Notify: Saving Parameter "P_codeVersion1 = 1.2.0.43".
+vuser_init.c(26): Notify: Saving Parameter "P_codeVersion2 = 1.2.0.11".
+vuser_init.c(28): web_set_sockets_option started  	[MsgId: MMSG-26355]
+vuser_init.c(28): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+vuser_init.c(30): web_set_sockets_option started  	[MsgId: MMSG-26355]
+vuser_init.c(30): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+vuser_init.c(32): web_url("{P_codeVersion1}") started  	[MsgId: MMSG-26355]
+vuser_init.c(32): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(32): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(32): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(32): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(32): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/bootstrap-switch.min.css" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_init.c(32): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/font-awesome.min.css" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_init.c(32): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/hotkeys.min.scss.css" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_init.c(32): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/ui-grid.min.css" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_init.c(32): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/locales/en_US/i18n.js" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_init.c(32): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/libs/wtrui_lib_20180309144023.js" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_init.c(32): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/wtrui_app_20180309144023.js" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_init.c(32): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/WTDesktopHelp/Default.js" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_init.c(32): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/fonts/fontawesome-webfont.woff?v=4.3.0" (specified by argument number 9)  	[MsgId: MMSG-26577]
+vuser_init.c(32): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/themes/main.css" (specified by argument number 12)  	[MsgId: MMSG-26577]
+vuser_init.c(32): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/img/SITA_logo.png" (specified by argument number 14)  	[MsgId: MMSG-26577]
+vuser_init.c(32): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/themes/main_LH.css" (specified by argument number 16)  	[MsgId: MMSG-26577]
+vuser_init.c(32): web_url("{P_codeVersion1}") was successful, 1735102 body bytes, 6562 header bytes, 1455 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(46): web_url("data.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(46): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(46): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(46): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(46): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(46): web_url("data.json") was successful, 269 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(55): web_url("airports.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(55): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(55): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(55): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(55): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(55): web_url("airports.json") was successful, 32316 body bytes, 519 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(64): web_url("delayedBags_en-US.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(64): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(64): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(64): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(64): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(64): web_url("delayedBags_en-US.json") was successful, 3732 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(73): web_url("imagepopup.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(73): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(73): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(73): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(73): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(73): web_url("imagepopup.json") was successful, 648 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(82): web_url("primaryLanguage.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(82): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(82): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(82): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(82): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(82): web_url("primaryLanguage.json") was successful, 2237 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(91): web_url("airlines.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(91): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(91): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(91): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(91): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(91): web_url("airlines.json") was successful, 20554 body bytes, 519 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(100): web_url("completionTimeListAirline.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(100): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(100): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(100): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(100): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(100): web_url("completionTimeListAirline.json") was successful, 48 body bytes, 464 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(109): web_url("phoneCode.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(109): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(109): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(109): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(109): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(109): web_url("phoneCode.json") was successful, 1241 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(118): web_url("deliveryAddressType.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(118): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(118): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(118): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(118): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(118): web_url("deliveryAddressType.json") was successful, 229 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(127): web_url("sendMessege.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(127): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(127): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(127): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(127): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(127): web_url("sendMessege.json") was successful, 1710 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(136): web_url("countryCellPhoneCode.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(136): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(136): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(136): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(136): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(136): web_url("countryCellPhoneCode.json") was successful, 2444 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(145): web_url("titleData.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(145): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(145): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(145): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(145): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(145): web_url("titleData.json") was successful, 79 body bytes, 516 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(154): web_url("forAirlineMandatory.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(154): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(154): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(154): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(154): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(154): web_url("forAirlineMandatory.json") was successful, 972 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(163): web_url("btpIssuerCodes.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(163): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(163): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(163): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(163): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(163): web_url("btpIssuerCodes.json") was successful, 2981 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(172): web_url("IssuerCode.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(172): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(172): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(172): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(172): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(172): web_url("IssuerCode.json") was successful, 5785 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(181): web_url("transactionList.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(181): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(181): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(181): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(181): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(181): web_url("transactionList.json") was successful, 1053 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(190): web_url("brandInformation.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(190): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(190): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(190): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(190): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(190): web_url("brandInformation.json") was successful, 896 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(199): web_url("bagTypedesc.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(199): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(199): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(199): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(199): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(199): web_url("bagTypedesc.json") was successful, 1827 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(208): web_url("states.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(208): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(208): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(208): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(208): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(208): web_url("states.json") was successful, 546 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(217): web_url("bagColor.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(217): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(217): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(217): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(217): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(217): web_url("bagColor.json") was successful, 446 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(226): web_url("bagDescDetailJson.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(226): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(226): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(226): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(226): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(226): web_url("bagDescDetailJson.json") was successful, 369 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(235): web_url("airlineIssuercodes.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(235): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(235): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(235): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(235): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(235): web_url("airlineIssuercodes.json") was successful, 2942 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(244): web_url("citynames.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(244): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(244): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(244): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(244): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(244): web_url("citynames.json") was successful, 30860 body bytes, 519 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(253): web_url("regioncode.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(253): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(253): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(253): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(253): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(253): web_url("regioncode.json") was successful, 349 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(262): web_url("btpDefault.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(262): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(262): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(262): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(262): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(262): web_url("btpDefault.json") was successful, 448 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(271): web_url("lossCode.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(271): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(271): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(271): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(271): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(271): web_url("lossCode.json") was successful, 1294 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(280): web_url("currencyCode.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(280): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(280): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(280): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(280): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(280): web_url("currencyCode.json") was successful, 3877 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(289): web_url("emailDomain.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(289): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(289): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(289): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(289): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(289): web_url("emailDomain.json") was successful, 256 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(298): web_url("configurationData.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(298): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(298): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(298): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(298): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(298): web_url("configurationData.json") was successful, 1357 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(307): web_url("airlineConfigurationTransactions.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(307): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(307): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(307): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(307): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(307): web_url("airlineConfigurationTransactions.json") was successful, 637 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(316): web_url("fileStatus.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(316): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(316): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(316): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(316): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(316): web_url("fileStatus.json") was successful, 144 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(325): web_url("messageType.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(325): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(325): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(325): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(325): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(325): web_url("messageType.json") was successful, 400 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(334): web_url("PIR-language.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(334): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(334): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(334): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(334): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(334): web_url("PIR-language.json") was successful, 1042 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(343): web_url("claimSettlementCostJson.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(343): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(343): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(343): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(343): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(343): web_url("claimSettlementCostJson.json") was successful, 260 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(352): web_url("urlJson.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(352): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(352): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(352): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(352): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(352): web_url("urlJson.json") was successful, 4118 body bytes, 516 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(361): web_url("externalUrl.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(361): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(361): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(361): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(361): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(361): web_url("externalUrl.json") was successful, 195 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(370): web_url("handledAirlineCopyJson.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(370): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(370): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(370): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(370): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(370): web_url("handledAirlineCopyJson.json") was successful, 356 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(379): web_url("countryCodesName.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(379): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(379): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(379): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(379): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(379): web_url("countryCodesName.json") was successful, 3958 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(388): web_url("reportsData.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(388): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(388): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(388): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(388): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(388): web_url("reportsData.json") was successful, 1751 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(397): web_url("colorTypeDescLang.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(397): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(397): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(397): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(397): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(397): web_url("colorTypeDescLang.json") was successful, 3683 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(406): web_url("error_en-US.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(406): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(406): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(406): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(406): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(406): web_url("error_en-US.json") was successful, 6145 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(415): web_url("errorCodes.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(415): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(415): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(415): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(415): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(415): web_url("errorCodes.json") was successful, 2208 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(424): web_url("localization_en_US.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(424): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(424): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(424): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(424): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(424): web_url("localization_en_US.json") was successful, 1216 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(433): web_url("footer.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(433): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(433): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(433): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(433): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(433): web_url("footer.html") was successful, 670 body bytes, 525 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(442): web_url("main.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(442): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(442): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(442): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(442): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(442): web_url("main.html") was successful, 2309 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(451): web_url("bagsContent.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(451): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(451): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(451): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(451): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(451): web_url("bagsContent.json") was successful, 1067 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(460): web_url("languages.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(460): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(460): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(460): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(460): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(460): web_url("languages.json") was successful, 187 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(469): web_url("header.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(469): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(469): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(469): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(469): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(469): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/shared/header/assets/img/SITA_logo.png" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/shared/header/header.html"  	[MsgId: MMSG-26659]
+vuser_init.c(469): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/shared/header/assets/img/SITA_logo.png"  	[MsgId: MWAR-26627]
+vuser_init.c(469): web_url("header.html") highest severity level was "warning", 375 body bytes, 782 header bytes  	[MsgId: MMSG-26388]
+vuser_init.c(478): web_url("shortkeyLogin_en-US.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(478): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(478): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(478): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(478): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(478): web_url("shortkeyLogin_en-US.json") was successful, 312 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(487): web_url("Login_en-US.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(487): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(487): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(487): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(487): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(487): web_url("Login_en-US.json") was successful, 694 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(498): Notify: Transaction "SC04_01_Login" started.
+vuser_init.c(501): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+vuser_init.c(501): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+vuser_init.c(508): web_custom_request("loginAuth") started  	[MsgId: MMSG-26355]
+vuser_init.c(508): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(508): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_init.c(508): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(508): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(508): Warning: The string '"userId":"WTDADMIN","companyId":"LH","password":"Sita@123","stationType":"A"' with parameter delimiters is not a parameter.
+vuser_init.c(508): Warning: The string '"capId":"No_Captcha"' with parameter delimiters is not a parameter.
+vuser_init.c(508): Notify: Saving Parameter "C_UserToken = ".
+vuser_init.c(508): Continuing after Error -35060: No matches were found for the specified query: "$.hash"  	[MsgId: MERR-35060]
+vuser_init.c(508): web_custom_request("loginAuth") highest severity level was "continue on error", 144 body bytes, 702 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26387]
+vuser_init.c(508): Continuing after error in Vuser script.
+vuser_init.c(520): web_add_header("User-Token") started  	[MsgId: MMSG-26355]
+vuser_init.c(520): web_add_header("User-Token") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(523): web_custom_request("validate") started  	[MsgId: MMSG-26355]
+vuser_init.c(523): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(523): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_init.c(523): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(523): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(523): web_custom_request("validate") was successful, 121 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(534): web_url("landing.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(534): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(534): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(534): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(534): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(534): web_url("landing.html") was successful, 1437 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(543): web_url("grid.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(543): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(543): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(543): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(543): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(543): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/components/homeBaggage/assets/img/SITA_logo.png" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/components/homeBaggage/grid.html"  	[MsgId: MMSG-26659]
+vuser_init.c(543): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/components/homeBaggage/assets/img/SITA_logo.png"  	[MsgId: MWAR-26627]
+vuser_init.c(543): web_url("grid.html") highest severity level was "warning", 11712 body bytes, 784 header bytes  	[MsgId: MMSG-26388]
+vuser_init.c(554): web_url("shortcut-help.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(554): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(554): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(554): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(554): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(554): web_url("shortcut-help.html") was successful, 565 body bytes, 525 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(563): web_add_header("User-Token") started  	[MsgId: MMSG-26355]
+vuser_init.c(563): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+vuser_init.c(563): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+vuser_init.c(563): web_add_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+vuser_init.c(566): web_custom_request("read") started  	[MsgId: MMSG-26355]
+vuser_init.c(566): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(566): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_init.c(566): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(566): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(566): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+vuser_init.c(566): Warning: The string '"AirlineCode":"LH","StationCode":"AAA"' with parameter delimiters is not a parameter.
+vuser_init.c(566): web_custom_request("read") was successful, 145 body bytes, 702 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(578): web_url("landing_en-US.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(578): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(578): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(578): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(578): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(578): web_url("landing_en-US.json") was successful, 1155 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(587): web_url("prefill_data_errors_en-US.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(587): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(587): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(587): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(587): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(587): web_url("prefill_data_errors_en-US.json") was successful, 557 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(596): web_url("shortkeyOne_en-US.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(596): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(596): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(596): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(596): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(596): web_url("shortkeyOne_en-US.json") was successful, 305 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(605): web_url("shortkeyThr.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(605): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(605): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(605): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(605): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(605): web_url("shortkeyThr.json") was successful, 2892 body bytes, 518 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(614): web_url("shortKeyManageFileSummary.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(614): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(614): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(614): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(614): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(614): web_url("shortKeyManageFileSummary.json") was successful, 2 body bytes, 463 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(623): web_url("convertCurrency.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(623): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(623): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(623): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(623): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(623): web_url("convertCurrency.html") was successful, 1544 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(632): web_add_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+vuser_init.c(632): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+vuser_init.c(632): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+vuser_init.c(632): web_add_auto_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+vuser_init.c(635): web_custom_request("userstations") started  	[MsgId: MMSG-26355]
+vuser_init.c(635): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(635): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_init.c(635): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(635): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(635): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+vuser_init.c(635): Warning: The string '"Airline":"LH","Status":"T"' with parameter delimiters is not a parameter.
+vuser_init.c(635): web_custom_request("userstations") was successful, 101 body bytes, 588 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(647): web_custom_request("getmandatories") started  	[MsgId: MMSG-26355]
+vuser_init.c(647): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(647): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_init.c(647): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(647): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(647): Warning: The string '"airlineCode":"LH","stationCode":"AAA","transaction":false' with parameter delimiters is not a parameter.
+vuser_init.c(647): web_custom_request("getmandatories") was successful, 119 body bytes, 588 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(659): web_remove_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+vuser_init.c(659): Previous automatically added web header for "User-Token" removed  	[MsgId: MMSG-26587]
+vuser_init.c(659): web_remove/revert_auto_header("User-Token") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(661): web_url("sendDelayFile.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(661): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(661): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(661): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(661): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(661): web_url("sendDelayFile.html") was successful, 3038 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(670): web_url("dashBoardTemplate.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(670): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(670): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(670): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(670): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(670): web_url("dashBoardTemplate.html") was successful, 1446 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(679): web_url("emailMessage.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(679): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(679): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(679): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(679): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(679): web_url("emailMessage.html") was successful, 3311 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(688): web_add_header("User-Token") started  	[MsgId: MMSG-26355]
+vuser_init.c(688): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+vuser_init.c(688): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+vuser_init.c(688): web_add_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+vuser_init.c(691): web_custom_request("read_2") started  	[MsgId: MMSG-26355]
+vuser_init.c(691): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(691): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_init.c(691): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(691): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(691): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+vuser_init.c(691): Warning: The string '"AirlineCode":"LH","StationCode":"AAA"' with parameter delimiters is not a parameter.
+vuser_init.c(691): web_custom_request("read_2") was successful, 145 body bytes, 588 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(703): web_url("reassign.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(703): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(703): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(703): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(703): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(703): web_url("reassign.html") was successful, 1639 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(712): web_url("newMessage.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(712): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(712): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(712): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(712): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(712): web_url("newMessage.html") was successful, 5847 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(721): web_url("reopen.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(721): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(721): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(721): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(721): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(721): web_url("reopen.html") was successful, 2420 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(730): web_url("reactiveTemplate.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(730): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(730): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(730): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(730): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(730): web_url("reactiveTemplate.html") was successful, 3013 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(739): web_url("rematchModal.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(739): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(739): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(739): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(739): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(739): web_url("rematchModal.html") was successful, 2927 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(748): web_url("sendTeletypeMessage.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(748): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(748): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(748): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(748): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(748): web_url("sendTeletypeMessage.html") was successful, 2744 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(757): web_url("cloneStation.html") started  	[MsgId: MMSG-26355]
+vuser_init.c(757): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(757): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(757): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(757): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(757): web_url("cloneStation.html") was successful, 1461 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(766): web_url("shortKeyHelp.json") started  	[MsgId: MMSG-26355]
+vuser_init.c(766): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(766): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(766): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(766): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(766): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(766): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_init.c(766): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_init.c(766): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/img/SITA_logo_LH_2.png" (specified by argument number 9)  	[MsgId: MMSG-26577]
+vuser_init.c(766): web_url("shortKeyHelp.json") was successful, 6847 body bytes, 976 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(777): Notify: Transaction "SC04_01_Login" ended with a "Fail" status (Duration: 18.3103 Wasted Time: 0.6061).
+vuser_init.c(777): Notify: Transaction "SC04_01_Login" has 0 error message(s).
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Warning -27077: The "vuser_init" section contains web function(s) when the "Simulate a new user on each iteration" Run-Time Setting is ON.  This may produce unpredictable results with multiple iterations  	[MsgId: MWAR-27077]
+Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
+Starting action Action.
+Action.c(6): web_add_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(6): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+Action.c(6): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+Action.c(6): web_add_auto_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(11): web_custom_request("roles") started  	[MsgId: MMSG-26355]
+Action.c(11): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(11): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(11): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(11): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(11): Warning: The string '"userId":"WTDADMIN","companyId":"LH","applicationId":"WTD","resourceId":"FORWARDBAG"' with parameter delimiters is not a parameter.
+Action.c(11): Warning: The string '"capId":"No_Captcha"' with parameter delimiters is not a parameter.
+Action.c(11): web_custom_request("roles") was successful, 117 body bytes, 593 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(23): web_custom_request("validate_2") started  	[MsgId: MMSG-26355]
+Action.c(23): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(23): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(23): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(23): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(23): web_custom_request("validate_2") was successful, 119 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(34): web_remove_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(34): Previous automatically added web header for "User-Token" removed  	[MsgId: MMSG-26587]
+Action.c(34): web_remove/revert_auto_header("User-Token") was successful  	[MsgId: MMSG-26392]
+Action.c(36): web_url("RushBagIndex.html") started  	[MsgId: MMSG-26355]
+Action.c(36): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(36): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(36): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(36): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(36): web_url("RushBagIndex.html") was successful, 1446 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(45): web_url("bag.html") started  	[MsgId: MMSG-26355]
+Action.c(45): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(45): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(45): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(45): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(45): web_url("bag.html") was successful, 3702 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(54): web_url("more.html") started  	[MsgId: MMSG-26355]
+Action.c(54): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(54): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(54): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(54): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(54): web_url("more.html") was successful, 3539 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(63): web_url("flight.html") started  	[MsgId: MMSG-26355]
+Action.c(63): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(63): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(63): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(63): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(63): web_url("flight.html") was successful, 4157 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(72): web_url("summary.html") started  	[MsgId: MMSG-26355]
+Action.c(72): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(72): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(72): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(72): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(72): web_url("summary.html") was successful, 7514 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(81): web_url("commonHeaderComponent.html") started  	[MsgId: MMSG-26355]
+Action.c(81): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(81): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(81): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(81): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(81): web_url("commonHeaderComponent.html") was successful, 3732 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(92): web_url("bagType.json") started  	[MsgId: MMSG-26355]
+Action.c(92): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(92): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(92): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(92): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(92): web_url("bagType.json") was successful, 185 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+Action.c(103): web_url("onClickTemp.html") started  	[MsgId: MMSG-26355]
+Action.c(103): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(103): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(103): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(103): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(103): web_url("onClickTemp.html") was successful, 515 body bytes, 525 header bytes  	[MsgId: MMSG-26386]
+Action.c(112): web_url("afterError.html") started  	[MsgId: MMSG-26355]
+Action.c(112): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(112): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(112): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(112): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(112): web_url("afterError.html") was successful, 450 body bytes, 525 header bytes  	[MsgId: MMSG-26386]
+Action.c(121): web_add_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(121): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+Action.c(121): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+Action.c(121): web_add_auto_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(126): web_custom_request("LH") started  	[MsgId: MMSG-26355]
+Action.c(126): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(126): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(126): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(126): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(126): web_custom_request("LH") was successful, 101 body bytes, 702 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(137): web_custom_request("rlcreadall") started  	[MsgId: MMSG-26355]
+Action.c(137): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(137): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(137): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(137): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(137): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+Action.c(137): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(137): web_custom_request("rlcreadall") was successful, 119 body bytes, 702 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(149): web_custom_request("LH_2") started  	[MsgId: MMSG-26355]
+Action.c(149): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(149): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(149): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(149): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(149): web_custom_request("LH_2") was successful, 101 body bytes, 588 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(162): web_custom_request("read_3") started  	[MsgId: MMSG-26355]
+Action.c(162): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(162): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(162): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(162): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(162): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+Action.c(162): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(162): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(162): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(162): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(162): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(162): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/fonts/bootstrap/glyphicons-halflings-regular.woff" (specified by argument number 12)  	[MsgId: MMSG-26577]
+Action.c(162): web_custom_request("read_3") was successful, 23569 body bytes, 1107 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(178): Notify: Transaction "SC04_02_CreateForwardBag_FWD" started.
+Action.c(184): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(184): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(211): web_custom_request("createread") started  	[MsgId: MMSG-26355]
+Action.c(211): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(211): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(211): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(211): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(211): Notify: Parameter Substitution: parameter "P_FlightNo" =  "101"
+Action.c(211): Notify: Parameter Substitution: parameter "P_OriginalFlightDate" =  "2018-03-25"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Notify: Parameter Substitution: parameter "P_FlightNo" =  "101"
+Action.c(211): Notify: Parameter Substitution: parameter "P_RushFlightDate" =  "2018-03-28"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Notify: Parameter Substitution: parameter "P_FamilyName" =  "FAMILY"
+Action.c(211): Notify: Parameter Substitution: parameter "P_IssueCode" =  "123"
+Action.c(211): Notify: Parameter Substitution: parameter "P_Tag" =  "295181"
+Action.c(211): Notify: Parameter Substitution: parameter "P_IssueCode" =  "123"
+Action.c(211): Notify: Parameter Substitution: parameter "P_Tag" =  "295181"
+Action.c(211): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(211): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+Action.c(211): Notify: Parameter Substitution: parameter "P_DateTime" =  "Wed, 28 Mar 2018 06:02:58"
+Action.c(211): Notify: Parameter Substitution: parameter "P_DateTime" =  "Wed, 28 Mar 2018 06:02:58"
+Action.c(211): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Warning: The string '"isGeneratedTag":"false"' with parameter delimiters is not a parameter.
+Action.c(211): Notify: Saving Parameter "C_RefNumber = ".
+Action.c(211): Continuing after Error -35060: No matches were found for the specified query: "$.CreateResponse.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber"  	[MsgId: MERR-35060]
+Action.c(211): web_custom_request("createread") highest severity level was "continue on error", 119 body bytes, 588 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26387]
+Action.c(211): Continuing after error in Vuser script.
+Action.c(226): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(226): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(226): Notify: Parameter Substitution: parameter "C_RefNumber" =  ""
+Action.c(226): Notify: Parameter Substitution: parameter "P_FamilyName" =  "FAMILY"
+Action.c(226): Notify: Parameter Substitution: parameter "P_IssueCode" =  "123"
+Action.c(226): Notify: Parameter Substitution: parameter "P_Tag" =  "295181"
+Action.c(226): AAA,QC,,FAMILY,1,123,295181
+Action.c(227): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(227): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(227): Notify: Parameter Substitution: parameter "C_RefNumber" =  ""
+Action.c(227): Notify: Parameter Substitution: parameter "P_FamilyName" =  "FAMILY"
+Action.c(227): Notify: Parameter Substitution: parameter "P_IssueCode" =  "123"
+Action.c(227): Notify: Parameter Substitution: parameter "P_Tag" =  "295181"
+AAA,QC,,FAMILY,1,123,295181
+Action.c(229): web_custom_request("validate_3") started  	[MsgId: MMSG-26355]
+Action.c(229): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(229): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(229): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(229): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(229): web_custom_request("validate_3") was successful, 119 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(240): web_remove_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(240): Previous automatically added web header for "User-Token" removed  	[MsgId: MMSG-26587]
+Action.c(240): web_remove/revert_auto_header("User-Token") was successful  	[MsgId: MMSG-26392]
+Action.c(242): web_url("rushBagFileDetails.html") started  	[MsgId: MMSG-26355]
+Action.c(242): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(242): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(242): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(242): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(242): web_url("rushBagFileDetails.html") was successful, 7710 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(253): web_url("SendPirModal.html") started  	[MsgId: MMSG-26355]
+Action.c(253): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(253): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(253): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(253): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(253): web_url("SendPirModal.html") was successful, 2885 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(262): web_url("copyMessageTemplate.html") started  	[MsgId: MMSG-26355]
+Action.c(262): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(262): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(262): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(262): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(262): web_url("copyMessageTemplate.html") was successful, 1224 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(271): Notify: Transaction "SC04_02_CreateForwardBag_FWD" ended with a "Fail" status (Duration: 1.5774 Wasted Time: 0.0935).
+Action.c(271): Notify: Transaction "SC04_02_CreateForwardBag_FWD" has 0 error message(s).
+Action.c(275): web_add_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(275): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+Action.c(275): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+Action.c(275): web_add_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(280): web_custom_request("validate_4") started  	[MsgId: MMSG-26355]
+Action.c(280): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(280): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(280): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(280): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(280): web_custom_request("validate_4") was successful, 119 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Ending action Action.
+Ending iteration 1.
+Starting iteration 2.
+Notify: Next row for parameter P_IssueCode = 2 [table  = P_IssueCode].
+Notify: Getting new value for parameter 'P_IssueCode': table = 'SC04_CreateForwardBag_FWD.dat' column = '3' row = '2'.
+Notify: Next row for parameter P_FamilyName = 2 [table  = P_FamilyName].
+Notify: Getting new value for parameter 'P_FamilyName': table = 'SC04_CreateForwardBag_FWD.dat' column = '6' row = '2'.
+Notify: Next row for parameter P_Origin = 2 [table  = P_Origin].
+Notify: Getting new value for parameter 'P_Origin': table = 'SC04_CreateForwardBag_FWD.dat' column = '4' row = '2'.
+Notify: Next row for parameter P_AirlineCode = 2 [table  = P_AirlineCode].
+Notify: Getting new value for parameter 'P_AirlineCode': table = 'SC04_CreateForwardBag_FWD.dat' column = '1' row = '2'.
+Notify: Next row for parameter P_Destination = 2 [table  = P_Destination].
+Notify: Getting new value for parameter 'P_Destination': table = 'SC04_CreateForwardBag_FWD.dat' column = '5' row = '2'.
+Notify: Next row for parameter P_StationCode = 2 [table  = P_StationCode].
+Notify: Getting new value for parameter 'P_StationCode': table = 'SC04_CreateForwardBag_FWD.dat' column = '0' row = '2'.
+Notify: Next row for parameter P_FlightNo = 2 [table  = P_FlightNo].
+Notify: Getting new value for parameter 'P_FlightNo': table = 'SC04_CreateForwardBag_FWD.dat' column = '2' row = '2'.
+Starting action Action.
+Action.c(6): web_add_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(6): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+Action.c(6): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+Action.c(6): web_add_auto_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(11): web_custom_request("roles") started  	[MsgId: MMSG-26355]
+Action.c(11): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(11): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(11): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(11): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(11): Warning: The string '"userId":"WTDADMIN","companyId":"LH","applicationId":"WTD","resourceId":"FORWARDBAG"' with parameter delimiters is not a parameter.
+Action.c(11): Warning: The string '"capId":"No_Captcha"' with parameter delimiters is not a parameter.
+Action.c(11): web_custom_request("roles") was successful, 117 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(23): web_custom_request("validate_2") started  	[MsgId: MMSG-26355]
+Action.c(23): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(23): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(23): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(23): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(23): web_custom_request("validate_2") was successful, 119 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(34): web_remove_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(34): Previous automatically added web header for "User-Token" removed  	[MsgId: MMSG-26587]
+Action.c(34): web_remove/revert_auto_header("User-Token") was successful  	[MsgId: MMSG-26392]
+Action.c(36): web_url("RushBagIndex.html") started  	[MsgId: MMSG-26355]
+Action.c(36): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(36): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(36): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(36): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(36): web_url("RushBagIndex.html") was successful, 1446 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(45): web_url("bag.html") started  	[MsgId: MMSG-26355]
+Action.c(45): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(45): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(45): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(45): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(45): web_url("bag.html") was successful, 3702 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(54): web_url("more.html") started  	[MsgId: MMSG-26355]
+Action.c(54): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(54): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(54): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(54): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(54): web_url("more.html") was successful, 3539 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(63): web_url("flight.html") started  	[MsgId: MMSG-26355]
+Action.c(63): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(63): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(63): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(63): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(63): web_url("flight.html") was successful, 4157 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(72): web_url("summary.html") started  	[MsgId: MMSG-26355]
+Action.c(72): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(72): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(72): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(72): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(72): web_url("summary.html") was successful, 7514 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(81): web_url("commonHeaderComponent.html") started  	[MsgId: MMSG-26355]
+Action.c(81): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(81): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(81): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(81): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(81): web_url("commonHeaderComponent.html") was successful, 3732 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(92): web_url("bagType.json") started  	[MsgId: MMSG-26355]
+Action.c(92): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(92): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(92): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(92): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(92): web_url("bagType.json") was successful, 185 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+Action.c(103): web_url("onClickTemp.html") started  	[MsgId: MMSG-26355]
+Action.c(103): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(103): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(103): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(103): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(103): web_url("onClickTemp.html") was successful, 515 body bytes, 525 header bytes  	[MsgId: MMSG-26386]
+Action.c(112): web_url("afterError.html") started  	[MsgId: MMSG-26355]
+Action.c(112): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(112): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(112): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(112): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(112): web_url("afterError.html") was successful, 450 body bytes, 525 header bytes  	[MsgId: MMSG-26386]
+Action.c(121): web_add_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(121): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+Action.c(121): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+Action.c(121): web_add_auto_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(126): web_custom_request("LH") started  	[MsgId: MMSG-26355]
+Action.c(126): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(126): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(126): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(126): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(126): web_custom_request("LH") was successful, 101 body bytes, 702 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(137): web_custom_request("rlcreadall") started  	[MsgId: MMSG-26355]
+Action.c(137): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(137): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(137): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(137): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(137): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+Action.c(137): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(137): web_custom_request("rlcreadall") was successful, 119 body bytes, 702 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(149): web_custom_request("LH_2") started  	[MsgId: MMSG-26355]
+Action.c(149): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(149): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(149): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(149): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(149): web_custom_request("LH_2") was successful, 101 body bytes, 588 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(162): web_custom_request("read_3") started  	[MsgId: MMSG-26355]
+Action.c(162): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(162): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(162): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(162): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(162): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+Action.c(162): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(162): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(162): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(162): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(162): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(162): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/fonts/bootstrap/glyphicons-halflings-regular.woff" (specified by argument number 12)  	[MsgId: MMSG-26577]
+Action.c(162): web_custom_request("read_3") was successful, 23569 body bytes, 1107 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(178): Notify: Transaction "SC04_02_CreateForwardBag_FWD" started.
+Action.c(184): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(184): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(211): web_custom_request("createread") started  	[MsgId: MMSG-26355]
+Action.c(211): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(211): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(211): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(211): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(211): Notify: Parameter Substitution: parameter "P_FlightNo" =  "101"
+Action.c(211): Notify: Parameter Substitution: parameter "P_OriginalFlightDate" =  "2018-03-25"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Notify: Parameter Substitution: parameter "P_FlightNo" =  "101"
+Action.c(211): Notify: Parameter Substitution: parameter "P_RushFlightDate" =  "2018-03-28"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Notify: Parameter Substitution: parameter "P_FamilyName" =  "FAMILY"
+Action.c(211): Notify: Parameter Substitution: parameter "P_IssueCode" =  "234"
+Action.c(211): Notify: Parameter Substitution: parameter "P_Tag" =  "159222"
+Action.c(211): Notify: Parameter Substitution: parameter "P_IssueCode" =  "234"
+Action.c(211): Notify: Parameter Substitution: parameter "P_Tag" =  "159222"
+Action.c(211): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(211): Warning: The string '"AirlineVendorID":"LH"' with parameter delimiters is not a parameter.
+Action.c(211): Notify: Parameter Substitution: parameter "P_DateTime" =  "Wed, 28 Mar 2018 06:03:49"
+Action.c(211): Notify: Parameter Substitution: parameter "P_DateTime" =  "Wed, 28 Mar 2018 06:03:49"
+Action.c(211): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(211): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(211): Warning: The string '"isGeneratedTag":"false"' with parameter delimiters is not a parameter.
+Action.c(211): Notify: Saving Parameter "C_RefNumber = ".
+Action.c(211): Continuing after Error -35060: No matches were found for the specified query: "$.CreateResponse.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber"  	[MsgId: MERR-35060]
+Action.c(211): web_custom_request("createread") highest severity level was "continue on error", 119 body bytes, 702 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26387]
+Action.c(211): Continuing after error in Vuser script.
+Action.c(226): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(226): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(226): Notify: Parameter Substitution: parameter "C_RefNumber" =  ""
+Action.c(226): Notify: Parameter Substitution: parameter "P_FamilyName" =  "FAMILY"
+Action.c(226): Notify: Parameter Substitution: parameter "P_IssueCode" =  "234"
+Action.c(226): Notify: Parameter Substitution: parameter "P_Tag" =  "159222"
+Action.c(226): AAA,QC,,FAMILY,1,234,159222
+Action.c(227): Notify: Parameter Substitution: parameter "P_StationCode" =  "AAA"
+Action.c(227): Notify: Parameter Substitution: parameter "P_AirlineCode" =  "QC"
+Action.c(227): Notify: Parameter Substitution: parameter "C_RefNumber" =  ""
+Action.c(227): Notify: Parameter Substitution: parameter "P_FamilyName" =  "FAMILY"
+Action.c(227): Notify: Parameter Substitution: parameter "P_IssueCode" =  "234"
+Action.c(227): Notify: Parameter Substitution: parameter "P_Tag" =  "159222"
+AAA,QC,,FAMILY,1,234,159222
+Action.c(229): web_custom_request("validate_3") started  	[MsgId: MMSG-26355]
+Action.c(229): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(229): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(229): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(229): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(229): web_custom_request("validate_3") was successful, 119 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(240): web_remove_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(240): Previous automatically added web header for "User-Token" removed  	[MsgId: MMSG-26587]
+Action.c(240): web_remove/revert_auto_header("User-Token") was successful  	[MsgId: MMSG-26392]
+Action.c(242): web_url("rushBagFileDetails.html") started  	[MsgId: MMSG-26355]
+Action.c(242): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(242): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(242): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(242): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(242): web_url("rushBagFileDetails.html") was successful, 7710 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(253): web_url("SendPirModal.html") started  	[MsgId: MMSG-26355]
+Action.c(253): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(253): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(253): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(253): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(253): web_url("SendPirModal.html") was successful, 2885 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(262): web_url("copyMessageTemplate.html") started  	[MsgId: MMSG-26355]
+Action.c(262): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(262): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(262): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(262): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(262): web_url("copyMessageTemplate.html") was successful, 1224 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+Action.c(271): Notify: Transaction "SC04_02_CreateForwardBag_FWD" ended with a "Fail" status (Duration: 1.3485 Wasted Time: 0.1415).
+Action.c(271): Notify: Transaction "SC04_02_CreateForwardBag_FWD" has 0 error message(s).
+Action.c(275): web_add_header("User-Token") started  	[MsgId: MMSG-26355]
+Action.c(275): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+Action.c(275): Warning -26597: Added header value is NULL, empty or contains white spaces only. It is added anyway  	[MsgId: MWAR-26597]
+Action.c(275): web_add_header("User-Token") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(280): web_custom_request("validate_4") started  	[MsgId: MMSG-26355]
+Action.c(280): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(280): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+Action.c(280): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+Action.c(280): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+Action.c(280): web_custom_request("validate_4") was successful, 119 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+Ending action Action.
+Ending iteration 2.
+Ending Vuser...
+Starting action vuser_end.
+vuser_end.c(6): Notify: Transaction "SC04_03_Logout" started.
+vuser_end.c(8): web_custom_request("logoutAuth") started  	[MsgId: MMSG-26355]
+vuser_end.c(8): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(8): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_end.c(8): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(8): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(8): Notify: Parameter Substitution: parameter "C_UserToken" =  ""
+vuser_end.c(8): web_custom_request("logoutAuth") was successful, 119 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_end.c(20): web_url("{P_codeVersion1}_2") started  	[MsgId: MMSG-26355]
+vuser_end.c(20): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(20): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(20): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/bootstrap-switch.min.css" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_end.c(20): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/font-awesome.min.css" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_end.c(20): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/hotkeys.min.scss.css" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_end.c(20): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/ui-grid.min.css" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_end.c(20): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/locales/en_US/i18n.js" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_end.c(20): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/libs/wtrui_lib_20180309144023.js" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_end.c(20): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/wtrui_app_20180309144023.js" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_end.c(20): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/WTDesktopHelp/Default.js" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/"  	[MsgId: MMSG-26659]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/custom.css" (specified by argument number 10)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/libs/wtrui_lib_20171123080216.js" (specified by argument number 18)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/wtrui_app_20171123080216.js" (specified by argument number 22)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/data.json" (specified by argument number 26)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/countryCodesName.json" (specified by argument number 28)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/languages/en-US/delayedBags_en-US.json" (specified by argument number 30)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/errorCodes.json" (specified by argument number 32)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/bagData/imagepopup.json" (specified by argument number 34)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/flightsData/airlines.json" (specified by argument number 36)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/deliveryAddressType.json" (specified by argument number 38)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/countryCellPhoneCode.json" (specified by argument number 40)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/flightsData/airports.json" (specified by argument number 42)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/forAirlineMandatory.json" (specified by argument number 44)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/sendMessege.json" (specified by argument number 46)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/IssuerCode.json" (specified by argument number 48)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/transactionList.json" (specified by argument number 50)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/btpIssuerCodes.json" (specified by argument number 52)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/emailDomain.json" (specified by argument number 54)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/brandInformation.json" (specified by argument number 56)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/bagData/bagColor.json" (specified by argument number 58)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/bagData/bagTypedesc.json" (specified by argument number 60)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/bagData/bagDescDetailJson.json" (specified by argument number 62)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/airlineIssuercodes.json" (specified by argument number 64)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/btpDefault.json" (specified by argument number 66)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/regioncode.json" (specified by argument number 68)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/passengerData/primaryLanguage.json" (specified by argument number 70)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/flightsData/citynames.json" (specified by argument number 72)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/currencyCode.json" (specified by argument number 74)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/bagData/bagsContent.json" (specified by argument number 76)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/WTRUIReportsJsonData/reportsData.json" (specified by argument number 78)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/lossCode.json" (specified by argument number 80)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/WTRUIConfigurationJsonData/configurationData.json" (specified by argument number 82)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/OfflineStoriesData/fileStatus.json" (specified by argument number 84)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/handledAirlineCopyJson.json" (specified by argument number 86)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/WTRUIConfigurationJsonData/airlineConfigurationTransactions.json" (specified by argument number 88)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/claimSettlementCostJson.json" (specified by argument number 90)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/phoneCode.json" (specified by argument number 92)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/actionFileData/messageType.json" (specified by argument number 94)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/PIR-language.json" (specified by argument number 96)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/urlJson.json" (specified by argument number 98)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/bagData/colorTypeDescLang.json" (specified by argument number 100)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/passengerData/states.json" (specified by argument number 102)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/passengerData/titleData.json" (specified by argument number 104)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/externalUrl.json" (specified by argument number 106)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/errorMessages/error_en-US.json" (specified by argument number 108)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/completionTimeListAirline.json" (specified by argument number 110)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Downloading resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/img/SITA_logo.png" (specified by argument number 112)  	[MsgId: MMSG-26577]
+vuser_end.c(20): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/css/custom.css"  	[MsgId: MWAR-26627]
+vuser_end.c(20): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/libs/wtrui_lib_20171123080216.js"  	[MsgId: MWAR-26627]
+vuser_end.c(20): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/wtrui_app_20171123080216.js"  	[MsgId: MWAR-26627]
+vuser_end.c(20): Notify: Transaction "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/assets/data/regioncode.json" will be skipped - could not calculate the transaction time (duration=0.6965, think_time=0.0000, wasted_time=2.5261).
+vuser_end.c(20): web_url("{P_codeVersion1}_2") highest severity level was "warning", 1726574 body bytes, 28108 header bytes, 1455 chunking overhead bytes  	[MsgId: MMSG-26387]
+vuser_end.c(82): web_add_header("User-Token") started  	[MsgId: MMSG-26355]
+vuser_end.c(82): web_add_header("User-Token") was successful  	[MsgId: MMSG-26392]
+vuser_end.c(85): web_custom_request("validate_5") started  	[MsgId: MMSG-26355]
+vuser_end.c(85): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(85): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_end.c(85): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(85): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(85): web_custom_request("validate_5") was successful, 121 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_end.c(96): web_url("languages.json_2") started  	[MsgId: MMSG-26355]
+vuser_end.c(96): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(96): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(96): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(96): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(96): web_url("languages.json_2") was successful, 187 body bytes, 517 header bytes  	[MsgId: MMSG-26386]
+vuser_end.c(105): web_url("footer.html_2") started  	[MsgId: MMSG-26355]
+vuser_end.c(105): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(105): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(105): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(105): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(105): web_url("footer.html_2") was successful, 670 body bytes, 525 header bytes  	[MsgId: MMSG-26386]
+vuser_end.c(113): web_add_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+vuser_end.c(113): web_add_auto_header("User-Token") was successful  	[MsgId: MMSG-26392]
+vuser_end.c(116): web_custom_request("validate_6") started  	[MsgId: MMSG-26355]
+vuser_end.c(116): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(116): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_end.c(116): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(116): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(116): web_custom_request("validate_6") was successful, 121 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_end.c(127): web_custom_request("validate_7") started  	[MsgId: MMSG-26355]
+vuser_end.c(127): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(127): Notify: Parameter Substitution: parameter "P_codeVersion2" =  "1.2.0.11"
+vuser_end.c(127): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(127): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(127): web_custom_request("validate_7") was successful, 121 body bytes, 707 header bytes, 16 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_end.c(138): web_remove_auto_header("User-Token") started  	[MsgId: MMSG-26355]
+vuser_end.c(138): Previous automatically added web header for "User-Token" removed  	[MsgId: MMSG-26587]
+vuser_end.c(138): web_remove/revert_auto_header("User-Token") was successful  	[MsgId: MMSG-26392]
+vuser_end.c(140): web_url("main.html_2") started  	[MsgId: MMSG-26355]
+vuser_end.c(140): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(140): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(140): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(140): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(140): web_url("main.html_2") was successful, 2309 body bytes, 526 header bytes  	[MsgId: MMSG-26386]
+vuser_end.c(148): web_url("header.html_2") started  	[MsgId: MMSG-26355]
+vuser_end.c(148): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(148): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(148): Notify: Parameter Substitution: parameter "P_hostName" =  "desktop-perf2.worldtracer.aero"
+vuser_end.c(148): Notify: Parameter Substitution: parameter "P_codeVersion1" =  "1.2.0.43"
+vuser_end.c(148): Found resource "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/shared/header/assets/img/SITA_logo.png" in HTML "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/shared/header/header.html"  	[MsgId: MMSG-26659]
+vuser_end.c(148): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://desktop-perf2.worldtracer.aero/desktop/1.2.0.43/app/shared/header/assets/img/SITA_logo.png"  	[MsgId: MWAR-26627]
+vuser_end.c(148): web_url("header.html_2") highest severity level was "warning", 375 body bytes, 782 header bytes  	[MsgId: MMSG-26388]
+vuser_end.c(156): Notify: Transaction "SC04_03_Logout" ended with a "Pass" status (Duration: 8.8297 Wasted Time: 3.1761).
+Ending action vuser_end.
+Vuser Terminated.

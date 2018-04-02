@@ -1,0 +1,95 @@
+<div class="homeS rushBagTemplates" ng-init="applyRoles();initiate();prefillOfflineProcessedWithError()" id="RUSHBAGCREATESCREEN" component-id="RUSH BAG CREATE SCREEN" screenid="rushBags_">
+
+  <div class="h">
+    <div ng-init="showScrn()">
+<div>
+
+      <common-header-component></common-header-component>
+      <!-- <div ng-include="'app/components/RushBags/templates/HeaderRushBag.html'"></div> -->
+            <div class="col-xs-12 bottom-border"></div><!-- orange line -->
+
+      <div class="header-options">
+        <div class="col-xs-12 no-padding">
+          <div class="col-sm-12 no-padding">
+              <div class="navigation col-sm-12 headerbar no-padding no-margin" ng-class="{'navigationOffline':(showOffline || globalLandingVars.statusTrainingMode)}">
+                <off-line classnameoffline="offlineManage" show-offline="showOffline" is-back-to-online="isBackToOnline"></off-line>
+                <training-mode></training-mode>
+                <div class="pages">
+                      <a addarrow="arrow" avoid-focus-on-drag class=' active' href="" ng-class="{'active':isSet(1)}" ng-click="setTab(1);" >
+                        <i class="fa fa-suitcase fa-2x"></i>
+                        <i class="showicon fa fa-exclamation fa-lg status check-size" id="showicon1"></i>
+                        <span localize>Bag</span>
+                        <div class="arrow"></div>
+                      </a>
+
+                      <a addarrow="arrow" avoid-focus-on-drag class='' href="" ng-class="{'active':isSet(2)}" ng-click="setTab(2);" >
+                        <i class="fa fa-plane fa-2x"></i>
+                        <i class="fa fa-check fa-lg status showicon check-size" id="showicon2"></i>
+                        <span localize>Flight</span>
+                      </a>
+
+                      <a addarrow="arrow" avoid-focus-on-drag class='' href="" ng-class="{'active':isSet(3)}" ng-click="setTab(3);" >
+                        <i class="fa fa-ellipsis-h fa-2x"></i>
+                        <i class="fa fa-check fa-lg status showicon check-size" id="showicon3"></i>
+                        <span localize>More</span>
+                      </a>
+
+                    <a addarrow="arrow" avoid-focus-on-drag class='' href="" ng-class="{'active':isSet(4)}" ng-click="setTab(4);" >
+                        <i class="fa fa-file-text-o fa-2x"></i>
+                        <span class="showicon"></span>
+                        <span localize>Summary</span>
+                        <div ng-class="{'arrow':isSet(4)}"></div>
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="actions">
+                  <!-- <button class="" id="actionTab"  ng-disabled="ButtonDisabled()" ng-click="validateAll()" ><i class="fa fa-suitcase fa-2x"></i>
+                    <i class="fa fa-plane fa-2x status " ></i> Forward Bag</Button> -->
+                    <button id="actionTab" class="width-105 CreateButton2 btn btn-primary btn-createRush heightRush forEnterButton" style="width: 85px;border-radius: 0px;" ng-disabled="(exclamationVariable.value1 || exclamationVariable.value2 || exclamationVariable.value3 || !headerModelsFilled)" 
+                    ng-click="generateRushTagNumbers()">
+                      <i class="fa fa-plus fa-2x"></i><br/> <span localize>Create</span></button>
+
+                    <button class="btn btn-primary width-105 CreateButton2 heightRush" href="" ng-click="cancelButtonFun()" id="cancelButton" >
+              				<i class="fa fa-times fa-2x"></i><br/>
+              				<span localize>Cancel</span>
+              			</button>
+
+
+                </div>
+		<div class="clearfix"></div>
+	</div>
+          </div>
+
+
+          <div class="clearit"></div>
+
+          <div class="main-content padding-top-5" ng-class="{'margin-top-50': !showOffline, 'margin-top-85': (showOffline || globalLandingVars.statusTrainingMode)}">
+            <!-- error message div -->
+            <!-- <div class="col-sm-12 margin-top-20" data-ng-show="RushBag.RushBagError">
+             <div class="alert alert-danger alert-dismissible fade in" role="alert" id="rushError">
+            	 <button type="button" class="close" ng-click="RushBag.RushBagError=false" aria-label="Close">
+            		 <span aria-hidden="true">×</span>
+            	 </button>
+            		 {{RushBag.RushBagError}}
+             </div>
+            </div> -->
+
+            <alert ng-if="RushBag.RushBagError" type="danger" style="z-index:99999;position: fixed;" id="rushError" class="margin-top-20" close="closeAlertBox('RushBag.RushBagError')">{{RushBag.RushBagError}}</alert>
+
+                    <div ui-view="view1"></div>
+                    <div ui-view="view2"></div>
+                    <div ui-view="view3"></div>
+                    <div ui-view="view4"></div>
+
+          </div>
+
+<!-- login -->
+        </div>
+        <aside class="col-md-3 col-lg-4"></aside>
+      </div>
+<!-- content -->
+    </div>
+  </div>
+  </div>
+</div>

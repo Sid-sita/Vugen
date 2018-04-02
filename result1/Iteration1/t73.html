@@ -1,0 +1,121 @@
+<div class="modal fade" id="reopenFile">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	    		<div class="modal-header customModalHeader">		        
+					<span class="resetPwd-pop" ng-if="epicName === 'ONHANDBAG' && hidepasswordLabel && !(restriction.indexOf('PASSWORD')!=-1) && !(restrictionDis.indexOf('PASSWORD')!=-1)" ng-click="clickPasswordLabelReopen()">						
+						<span class="fa-stack fa-lg blue">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-key fa-stack-1x fa-inverse fa-rotate-180"></i>
+						</span>
+						<a href=""  shift-tab-focus class="blue makeBold">Password</a>				
+					</span>
+					<h4 class="modal-title customModalTitle pull-left col-sm-8 col-lg-8">Recreate File - <span>{{OnHandBagUpdate.stationCode}}{{OnHandBagUpdate.airlineCode}}{{OnHandBagUpdate.CreationNumber}}</span></h4>
+					<a href="" data-dismiss="modal" aria-label="Close" class="pull-right" ng-click="clearValues()" id="closeBtn"><i class="close fa fa-times"></i></a>
+			    </div>
+
+	      		<div class="modal-body modal-body-overflow">
+							<div class="alert alert-warning alert-dismissible fade in" role="alert" id="reopenWarning" ng-show="reopen.WarningMsg">
+					        <button type="button" class="close" ng-click="onClickCloseWarning('WarningMsg');" aria-label="Close"><span aria-hidden="true">×</span></button>
+					        {{reopen.WarningMsg}}
+					    </div>
+						<alert ng-if="reopenPasswordError" type="danger" id="GridErrorReopen" close="GridWarningCloseMsgReopen('GridErrorReopen')">{{reopenPasswordError}}</alert>
+					  <div class="setPwd-text-reasign margin-left-15" style="display: block;" ng-show="passwordLabel === true">
+						<p>Provide password if action is protected</p>
+						<div class="col-sm-3 margin-left--15">
+							<div>
+								<span></span>
+								<input type="password" class="form-control" maxlength="4" ng-model="setPasswordRecreateModel" tooltip-trigger='focus' error-validate validation-rule="alphaNum4" ng-blur="checkButtonEnable();" id="setPasswordRecreate" autocomplete="new-password">
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+	        		<div class="col-sm-3">
+						<label for="station">Station</label>
+						<div class="input-group required position-static">
+							<span class="input-group-addon mandatory-bar"></span>
+    					<input autocomplete="off"  type-ahead-exact-match class="form-control" type="text" id="selectStation" required="" data-title="" data-toggle="tooltip" tooltip="{{reopenStationTool}}" error-validate
+              typeahead="state.code as formTypeaheadResult(state) for state in airportsInfoSource | filter:$viewValue:stationSearchPreferance | orderBy:'code' | limitTo:20"
+              validation-rule="from-station" maxlength="3" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);handleSmartSearchErrorBorder('selectStation')" ng-blur="updateModel('selectStation');airlineServiceCall();checkButtonEnable()"
+              ng-model="reopenStaion">
+						</div>
+					</div>
+
+					<div class="col-sm-3" >
+						<label for="airline">Airline</label>
+						<div class="input-group required position-static">
+							<span class="input-group-addon mandatory-bar"></span>
+              <input autocomplete="off" tab-btn-focus class="form-control" type="text" id="selectAirline" required="" ng-blur="updateModel('selectAirline');airCodeValidate();checkButtonEnable()"
+              typeahead="state.code as state.code +' - '+ state.name for state in airlinesInfo | filter:$viewValue:stationSearchPreferance | limitTo:20 | orderBy:'code'" data-title="" data-toggle="tooltip" tooltip="{{reopenAirlineTool}}" maxlength="3" error-validate tooltip-trigger="focus mouseover blur mouseleave never"
+              validation-rule="airline-newMessage" ng-model="reopenAirline" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);handleSmartSearchErrorBorder('selectAirline');" >
+						</div>
+					</div>
+					<div class="clearfix"></div>
+
+					<div class="col-sm-12 margin-top-10" ng-if="(typeOfButton === 'DELAYED')">
+						<span>Recreate using all attributes?</span>
+						<div class="btn-group selection" role="group">
+              <button type="button" class="btn btn-default" ng-class="{'active':yesNo}" ng-click="allCheckUncheck(true)">Yes</button>
+    					<button type="button" class="btn btn-default" ng-class="{'active':!yesNo}" ng-click="allCheckUncheck(false)">No</button>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+<div ng-if="typeOfButton === 'DELAYED'">
+					<table class="table action-files-search table-striped reopen-table">
+						<thead>
+							<tr>
+								<th></th>
+								<th>
+                  <input class="allCheck" ng-click="colCheckUncheck('checkAllTagNo')" ng-model="reopen['checkAllTagNo']" type="checkbox" >
+      					<strong>	Tag Number</strong>
+								</th>
+								<th style="vertical-align:top!important;">
+                  <input class="allCheck" ng-click="colCheckUncheck('checkAllColorType')"ng-model="reopen['checkAllColorType']" type="checkbox" >
+      					<strong>	Color/Type/Descriptive Elements</strong>
+								</th>
+								<th>
+                  <input class="allCheck" ng-click="colCheckUncheck('checkAllBrandInfo')" ng-model="reopen['checkAllBrandInfo']" type="checkbox" >
+      					<strong>	Brand Information</strong>
+								</th>
+							</tr>
+						</thead>
+
+						<tbody ng-repeat="bag in totalBags">
+							<tr>
+								<td>{{$index+1}}</td>
+								<td>
+                  <span class="hide" ng-model="bag.BagTag.TagSequence"></span><input class="allCheck"  ng-hide="!bag.BagTag.TagSequence"
+                  type="checkbox" ng-click="checkOne('checkAllTagNo',$index)" ng-model="reopen['checkAllTagNo'+$index]" >&nbsp;<span id="checkAllTagNo{{$index}}"  ng-if="!bag.BagTag.AirlineCode">{{bag.BagTag.LicenseNumber.TagType}}{{bag.BagTag.LicenseNumber.IssuerCode}}{{bag.BagTag.TagSequence}}</span>
+									<span id="checkAllTagNo{{$index}}" ng-if="bag.BagTag.AirlineCode">{{bag.BagTag.AirlineCode}}{{bag.BagTag.TagSequence}}
+									</span>
+								</td>
+								<td>
+                  <span class="hide" ng-model="bag.ColorTypeDesc.ColorCode"></span><input class="allCheck" ng-hide="!bag.ColorTypeDesc.ColorCode"
+                  type="checkbox" ng-click="checkOne('checkAllColorType',$index)" ng-model="reopen['checkAllColorType'+$index]">&nbsp;<span id="checkAllColorType{{$index}}" >
+                    {{bag.ColorTypeDesc.ColorCode}}, {{bag.ColorTypeDesc.TypeCode}},{{bag.ColorTypeDesc.Descriptor.MtrlElement }},{{bag.ColorTypeDesc.Descriptor.OtherElement[0]}},{{bag.ColorTypeDesc.Descriptor.OtherElement[1]}}</span>
+								</td>
+								<td >
+                  <span class="hide" ng-model="bag.BrandInfo.value"></span><input class="allCheck" ng-hide="!bag.BrandInfo.value"
+                  type="checkbox" ng-click="checkOne('checkAllBrandInfo',$index)"  ng-model="reopen['checkAllBrandInfo'+$index]">&nbsp;<span id="checkAllBrandInfo{{$index}}" >{{bag.BrandInfo.value}}</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+</div>
+					<div class="clearfix"></div>
+	      		</div>
+
+	      		<div class="modal-footer">
+	      			<div class="col-sm-4 col-sm-offset-4"  ng-if="typeOfButton === 'DELAYED'">
+	      				<button type="button" data-dismiss="modal" class="btn btn-primary btn-block reopenButton forEnterButtonModal" ng-click="reopenFileFunction()" ng-disabled="!reopenAirline || !reopenStaion || !colorDisable"><i class="fa fa-unlock-alt fa-lg"></i> Recreate</button>
+	      			</div>
+              <div class="col-sm-4 col-sm-offset-4" ng-if="typeOfButton === 'ON-HAND'">
+	      				<button type="button" class="btn btn-primary btn-block reopenButton forEnterButtonModal" ng-click="reopenFileFunction()" ng-disabled="!reopenAirline || !reopenStaion"><i class="fa fa-unlock-alt fa-lg"></i> Recreate</button>
+	      			</div>
+	        		<div class="col-sm-4" >
+	      				<a href="#" class="pull-right margin-top-5 blue" ng-click="clearValues()" tab-btn-focus="" id="cancelReopen" data-dismiss="modal"><i class="fa fa-times-circle blue"></i><span localize="">Cancel</span></a>
+
+	      			</div>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	</div>

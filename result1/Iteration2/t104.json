@@ -1,0 +1,11 @@
+{
+    "Languages": [
+        { "id": 1, "name": "English", "code": "en_US" },
+        { "id": 1, "name": "Germany", "code": "de_DE" },
+        { "id": 2, "name": "中国", "code": "zh_CN" }
+
+
+    ],
+    "showCaptcha": false,
+    "customerBrandingList": ["LH","AC"]
+}

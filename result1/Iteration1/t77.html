@@ -1,0 +1,75 @@
+<div class="modal fade in" id="clonestation" tabindex="-1" role="dialog" ng-controller="cloneStationController as cloneCtrl">
+  <off-line classnameoffline="offlineManage" show-offline="showOffline" is-back-to-online="isBackToOnline"></off-line>
+    <div class="modal-dialog modal-sm clone-popup-en" role="document">
+        <div class="modal-content">
+          <input type="button" id="cloneStationHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1093, null, null, null );" class="hide" />
+          <input type="button" id="wTRHelpClose" value="Close contextual help" onclick="FMCCloseHelp ();" class="hide" />
+          <input type="button" id="wTRHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1000, null, null, null );" class="hide"/>
+            <div class="modal-header">
+                <a href="" shift-tab-focus data-dismiss="modal" class="pull-right"><i class="close fa fa-times" aria-label="Close"></i></a>
+                <h4 class="modal-title"><span localize>Clone Station</span></h4>
+            </div>
+            <div class="modal-body cloneStation-wrapper">
+            <div ng-if="trainingModeForClone===false">
+
+              <div class="col-sm-6">
+                  <label localize for="fromStation">From Station</label>
+                  <div ng-class="cloneCtrl.cloneStationEntity.ExistingStation.GetParentDivCss()">
+                      <span ng-class="cloneCtrl.cloneStationEntity.ExistingStation.GetParentSpanCss()" ng-if="cloneCtrl.cloneStationEntity.ExistingStation.IsMandatory || cloneCtrl.cloneStationEntity.ExistingStation.IsError"></span>
+                      <input class="form-control" id="txtExistingStation" type="text" ng-model="cloneCtrl.cloneStationEntity.ExistingStation.DisplayValue" ng-keypress="cloneCtrl.Disable_exclamations($event);" maxlength="3" size="3" typeahead="state as state.code +' - '+ state.name for state in cloneCtrl.cloneStationEntity.stationList | filter:$viewValue:cloneCtrl.StationSearchPreferance | orderBy:'code'" autocomplete="off" typeaheadscroll tooltip-trigger="focus mouseover blur mouseleave never" data-title="" typeahead-on-select="cloneCtrl.cloneStationEntity.ExistingStation.DisplayValue = cloneCtrl.cloneStationEntity.ExistingStation.DisplayValue.code;cloneCtrl.cloneStationEntity.IsValidIATAStationCode(cloneCtrl.cloneStationEntity.stationList);" ng-blur="cloneCtrl.cloneStationEntity.IsValidIATAStationCode(cloneCtrl.cloneStationEntity.stationList)" tooltip="{{cloneCtrl.cloneStationEntity.ExistingStation.ToolTipErrorMessage}}">
+                  </div>
+              </div>
+              <div class="cloneStation">
+            <div class="pull-left icons"><i class="fa fa-2x fa-arrow-right"></i></div>
+          </div>
+                <div class="col-sm-6">
+                    <label for="toStation" localize>To Station</label>
+                    <div ng-class="cloneCtrl.cloneStationEntity.NewStation.GetParentDivCss()">
+                        <span ng-class="cloneCtrl.cloneStationEntity.NewStation.GetParentSpanCss()" ng-if="cloneCtrl.cloneStationEntity.NewStation.IsMandatory || cloneCtrl.cloneStationEntity.NewStation.IsError"></span>
+                        <input class="form-control" id="txtNewStation" type="text" ng-model="cloneCtrl.cloneStationEntity.NewStation.DisplayValue" ng-keypress="cloneCtrl.Disable_exclamations($event);" maxlength="3" size="3" typeahead="state as state.code +' - '+ state.name for state in cloneCtrl.cloneStationEntity.stationList | filter:$viewValue:cloneCtrl.StationSearchPreferance | limitTo:20 | orderBy:'code'" autocomplete="off" typeaheadscroll tooltip-trigger="focus mouseover blur mouseleave never" data-title="" typeahead-on-select="cloneCtrl.cloneStationEntity.NewStation.DisplayValue = cloneCtrl.cloneStationEntity.NewStation.DisplayValue.code;cloneCtrl.cloneStationEntity.IsValidIATAStationCode(cloneCtrl.cloneStationEntity.stationList)" ng-blur="cloneCtrl.cloneStationEntity.IsValidIATAStationCode(cloneCtrl.cloneStationEntity.stationList)" tooltip="{{cloneCtrl.cloneStationEntity.NewStation.ToolTipErrorMessage}}">
+                    </div>
+                </div>
+                <p>Cloning may take a minute or more.</p>
+					      <p>Any Management data in 'To Station' will be overwritten.</p>
+					<p></p>
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="modal-body" ng-if="trainingModeForClone===true">
+
+              <div class="col-sm-5">
+                  <label localize for="fromStation">From Station</label>
+                  <div ng-class="cloneCtrl.cloneStationEntity.ExistingStation.GetParentDivCss()">
+                      <span ng-class="cloneCtrl.cloneStationEntity.ExistingStation.GetParentSpanCss()" ng-if="cloneCtrl.cloneStationEntity.ExistingStation.IsMandatory || cloneCtrl.cloneStationEntity.ExistingStation.IsError"></span>
+                      <input class="form-control" id="txtExistingStation" type="text" ng-model="cloneCtrl.cloneStationEntity.ExistingStation.DisplayValue" ng-keypress="cloneCtrl.Disable_exclamations($event);" maxlength="3" size="3" typeahead="state as state.code  for state in cloneCtrl.cloneStationEntity.trainingStationList | filter:$viewValue:cloneCtrl.StationSearchPreferance | limitTo:20 | orderBy:'code'" autocomplete="off" typeaheadscroll type-ahead-init-scroll tooltip-trigger="focus mouseover blur mouseleave never" data-title="" typeahead-on-select="cloneCtrl.cloneStationEntity.ExistingStation.DisplayValue = cloneCtrl.cloneStationEntity.ExistingStation.DisplayValue.code;cloneCtrl.cloneStationEntity.isDuplicate();" ng-blur="cloneCtrl.cloneStationEntity.IsValidIATAStationCode(cloneCtrl.cloneStationEntity.trainingStationList);" tooltip="{{cloneCtrl.cloneStationEntity.ExistingStation.ToolTipErrorMessage}}" ng-change="cloneCtrl.cloneStationEntity.IsValidIATAStationCode(cloneCtrl.cloneStationEntity.trainingStationList);">
+                  </div>
+              </div>
+              <div class="cloneStation">
+              <div class="pull-left icons"><i class="fa fa-2x fa-arrow-right"></i></div> </div>
+                <div class="col-sm-5">
+                    <label for="toStation" localize>To Station</label>
+                    <div ng-class="cloneCtrl.cloneStationEntity.NewStation.GetParentDivCss()">
+                        <span ng-class="cloneCtrl.cloneStationEntity.NewStation.GetParentSpanCss()" ng-if="cloneCtrl.cloneStationEntity.NewStation.IsMandatory || cloneCtrl.cloneStationEntity.NewStation.IsError"></span>
+                        <input class="form-control" id="txtNewStation" type="text" ng-model="cloneCtrl.cloneStationEntity.NewStation.DisplayValue" ng-keypress="cloneCtrl.Disable_exclamations($event);" maxlength="3" size="3" typeahead="state as state.code  for state in cloneCtrl.cloneStationEntity.trainingStationList | filter:$viewValue:cloneCtrl.StationSearchPreferance | limitTo:20 | orderBy:'code'" autocomplete="off" typeaheadscroll type-ahead-init-scroll tooltip-trigger="focus mouseover blur mouseleave never" data-title="" typeahead-on-select="cloneCtrl.cloneStationEntity.NewStation.DisplayValue = cloneCtrl.cloneStationEntity.NewStation.DisplayValue.code;cloneCtrl.cloneStationEntity.isDuplicate();" ng-blur="cloneCtrl.cloneStationEntity.IsValidIATAStationCode(cloneCtrl.cloneStationEntity.trainingStationList);" tooltip="{{cloneCtrl.cloneStationEntity.NewStation.ToolTipErrorMessage}}" ng-change="cloneCtrl.cloneStationEntity.IsValidIATAStationCode(cloneCtrl.cloneStationEntity.trainingStationList);">
+                    </div>
+                </div>
+                <p>Cloning may take a minute or more.</p>
+                <p>Any Management data in 'To Station' will be overwritten.</p>
+          <p></p>
+
+                <div class="clearfix"></div>
+            </div>
+          </div>
+
+            <div class="modal-footer" style="padding: 14px;">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary btn-block submit forEnterButtonModal" ng-disabled="!(cloneCtrl.cloneStationEntity.IsValidCloneEntity())" data-dismiss="modal" ng-click="cloneCtrl.CloneStationFunc(cloneCtrl.cloneStationEntity.NewStation.DisplayValue,cloneCtrl.cloneStationEntity.ExistingStation.DisplayValue);"><span localize>Clone</span></button>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#" tab-btn-focus class="pull-right-clone margin-top-5 blue" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle"></i> <span localize>Cancel</span></a>
+                </div>
+            </div>
+      </div>
+    </div>
+</div>

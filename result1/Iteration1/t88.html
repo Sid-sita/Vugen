@@ -1,0 +1,24 @@
+<div class="modal fade" id="onClickHome" ng-init="setFocusModal()">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <a href="" class="pull-right" shift-tab-focus><i class="close fa fa-times" data-dismiss="modal" aria-label="Close"></i></a>
+            <h4 class="modal-title" ng-if="MultipleOperations.TypeOfOperation.S" localize>Cancel Suspend Processing of Files</h4>
+            <h4 class="modal-title" ng-if="MultipleOperations.TypeOfOperation.C" localize>Cancel Close Processing of Files</h4>
+            <h4 class="modal-title" ng-if="MultipleOperations.TypeOfOperation.R" localize>Cancel Reinstate Processing of Files</h4>
+        </div>
+
+          <div class="modal-footer">
+            <div class="col-sm-5">
+              <a href="" type="button" ng-click="ClearingMultiselectVar()" class="btn btn-primary btn-block" localize id="suspendCancelAllRemaining">Cancel All Remaining</a>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-primary btn-block" ng-click="multipleOperationFromManage(multiselectIndex+1)" localize>Skip File</button>
+            </div>
+            <div class="col-sm-3 margin-top-5">
+              <a href="#" data-dismiss="modal" tab-btn-focus><i class="fa fa-times-circle"></i><span localize>Cancel</span></a>
+            </div>
+          </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

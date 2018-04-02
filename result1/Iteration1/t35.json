@@ -1,0 +1,39 @@
+{
+  "typeCategory" : [ {
+    "code" : "A",
+    "item" : "Advance"
+    },{
+      "code" : "D",
+      "item" : "Delivery"
+      },{
+        "code" : "F",
+        "item" : "Final"
+        },{
+          "code" : "G",
+          "item" : "Goodwill"
+          },{
+        "code" : "I",
+        "item" : "Insurance"
+        },{
+            "code" : "X",
+            "item" : "Other"
+            }],
+
+            "typeCategoryUpdate" : [ {
+                "code" : "D",
+                "item" : "Delivery"
+                }],
+
+      "relatedFileType" : [{
+        "code" : "DELAYED",
+        "item" : "Delayed Bag"
+        },
+      {
+        "code" : "ON-HAND",
+        "item" : "On-Hand Bag"
+        },
+      {
+        "code" : "DAMAGED",
+        "item" : "Damaged Bag"
+        }]
+}

@@ -1,0 +1,197 @@
+<header>
+    <div class="header-bar lineHeightNormal height-33" ng-if="!managePageHeader" ng-init="initiateCommonHeader()">
+      <span class="menu-container">
+        <a style="cursor: pointer;"  class="back-arrow" ng-if="showBack" ng-click="goBack()">
+        <i class="fa fa-lg fa-arrow-left"></i>
+        </a>
+        <a href="" class="home" id="viewlandingPages"  ng-if="(!(MultipleOperations.TypeOfOperation.S || MultipleOperations.TypeOfOperation.R || MultipleOperations.TypeOfOperation.C))&&(!MultipleOperations.errorRefNumber)" ng-click="confirmRouteToLanding();">
+          <i  class="fa fa-home fa-lg"></i></a>
+          <a href="" id="viewlandingPages" class="fa fa-home fa-lg" ng-if="((MultipleOperations.TypeOfOperation.S || MultipleOperations.TypeOfOperation.R || MultipleOperations.TypeOfOperation.C)&&(!MultipleOperations.errorRefNumber))" data-target="#onClickHome" data-toggle="modal" ><i>{{MultipleOperations.errorRefNumber}}{{MultipleOperations.ErrorMessageForMultiple}}</i></a>
+          <a href="" id="viewlandingPages" ng-if="(MultipleOperations.errorRefNumber || MultipleOperations.ErrorMessageForMultiple)" data-target="#afterError" data-toggle="modal"><i class="fa fa-home fa-lg afterErrorClass"></i></a>
+        </span>
+
+        <div class="current-page" ng-if="headerWithOnlyName">{{typeBagName}}</div>
+        <!-- new case added for #sq3167 fix. -->
+        <div class="current-page" ng-if="headerWithNameAndFileNumber">{{typeBagName}}&nbsp;{{currentFileNumber}}</div>
+
+        <div class="current-page" ng-if="headerWithPopup">{{typeBagName}} <span ng-if="!stationInputRemove" localize>at</span>
+            <a href="" ng-if="!stationInputHide && !stationInputRemove" ng-click="stationAirlineDropdown()" id="StationStationHeader" class="blue-link station-airline-dropdown icon-text update_station">{{mainstation_code}}</a>
+            <span ng-if="stationInputHide && !statigonInputRemove">{{mainstation_code}}</span> <span localize>for</span>
+            <a href="" ng-if="!airlineInputHide" ng-click="stationAirlineDropdown()" id="StationAirlineHeader" class="blue-link station-airline-dropdown icon-text update_airline">{{mainairline_code}}</a>
+            <span ng-if="airlineInputHide">{{mainairline_code}}</span>
+          <span  ng-if="typeBagName !== 'Trace Bag' && typeBagName!== 'Lost & Found Property' && !fullTraceHide && typeBagName!=='Rush Bag' && typeBagName!=='Handover Files' && typeBagName!=='Forward Bag' && typeBagName!=='Damaged Bag'"> [<a localize href="" id="tracingOption" class="blue-link tracing-option-dropdown icon-text tracing-option" ng-click="toggletracing();">{{main_tracing_option}}</a>]</span>
+        </div>
+
+        <div class="current-page" ng-if="plainHeader">
+            {{typeBagName}} <span localize>at</span>
+            <span ng-if="(!pastDateMode && (typeBagName=='Delayed Bag'))">
+              <span>{{DelayedBagUpdate.stationCode}}</span> <span localize>for</span> <span>{{DelayedBagUpdate.airlineCode}}</span> {{DelayedBagUpdate.CreationNumber}} ({{DelayedBagUpdate.CreationDate}}) [<span>{{StatusOfUpdate}}</span><span ng-if="DelayedBag.delayedBagTracingType && StatusOfUpdate!='Closed' && StatusOfUpdate!='CLOSED' && StatusOfUpdate!='Suspended' && StatusOfUpdate!='SUSPENDED'" localize>/{{DelayedBag.delayedBagTracingType}}</span><span ng-if="StatusOfUpdate!='Closed' && StatusOfUpdate!='Suspended' && StatusOfUpdate!='CLOSED' && StatusOfUpdate!='SUSPENDED'">/{{DelayedBagUpdate.stationCode}}</span>]
+            </span>
+            <span ng-if="(pastDateMode && (typeBagName=='Delayed Bag'))">
+              <span>{{DelayedBagUpdate.stationCode}}</span> <span localize>for</span> <span>{{DelayedBagUpdate.airlineCode}}</span> {{DelayedBagUpdate.CreationNumber}} ({{DelayedBagUpdate.CreationDate}}) [<span>{{StatusOfUpdate}}</span><span ng-if="StatusOfUpdate != 'Closed'">/<span localize>Retired</span></span>/<span>{{DelayedBagUpdate.stationCode}}</span>]
+            </span>
+            <span ng-if="typeBagName=='Damaged Bag'" >
+              <span>{{DamagedBagUpdate.stationCode}}</span> <span localize>for</span> <span>{{DamagedBagUpdate.airlineCode}}</span> {{DamagedBagUpdate.CreationNumber}} ({{DamagedBagUpdate.CreationDate}}) [<span>{{StatusOfUpdate}}</span><span ng-if="StatusOfUpdate!='Closed'">/{{DamagedBagUpdate.stationCode}}</span>]
+            </span>
+            <span ng-if="(!pastDateMode && (typeBagName=='On-Hand Bag'))" >
+              <span>{{OnHandBagUpdateTracing.stationCode}}</span> <span localize>for</span> <span>{{OnHandBagUpdateTracing.airlineCode}}</span> {{OnHandBagUpdateTracing.CreationNumber}} ({{OnHandBagUpdateTracing.CreationDate}}) [<span>{{StatusOfUpdate}}</span><span ng-if="StatusOfUpdate!='Closed' && StatusOfUpdate!='Suspended'" localize>/{{typeOfTracing}}</span><span ng-if="StatusOfUpdate!='Closed' && StatusOfUpdate!='Suspended'">/{{OnHandBagUpdateTracing.stationCode}}</span>]
+            </span>
+            <span ng-if="(pastDateMode && (typeBagName=='On-Hand Bag'))">
+              <span>{{OnHandBagUpdateTracing.stationCode}}</span> <span localize>for</span> <span>{{OnHandBagUpdateTracing.airlineCode}}</span> {{OnHandBagUpdateTracing.CreationNumber}} ({{OnHandBagUpdateTracing.CreationDate}}) [<span>{{StatusOfUpdate}}</span><span ng-if="StatusOfUpdate != 'Closed'">/<span localize>Retired</span></span>/<span>{{OnHandBagUpdateTracing.stationCode}}</span>]
+            </span>
+
+        </div>
+        <div class="blue-link setPassword-popup pull-right" ng-click="onSetPasswordHandlerClick()" style="display: inline" ng-if="(showPassword && plainHeader && (typeBagName==='On-Hand Bag' || typeBagName==='Damaged Bag') && !(restriction.indexOf('PASSWORD')!=-1) && !(restrictionDis.indexOf('PASSWORD')!=-1)) || (typeBagName==='Trace Bag' && TracebagType != 'DELAYEDBAG' && !(restriction.indexOf('PASSWORD')!=-1) && !(restrictionDis.indexOf('PASSWORD')!=-1))">
+                <span class="fa-stack fa-lg keyIconPixel">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i ng-if="setPasswordTick" style="display:inline" class="fa fa-check fa-lg status tickMark"></i>
+                        <i class="fa fa-key fa-stack-1x fa-inverse fa-rotate-180"></i>
+                      </span>
+        <b> <a href="" class="blue-link" >Password</a></b>
+        </div>
+
+        <div class="pull-right" ng-if="headerVariables.dateTimeInHeader || headerVariables.showPrintButtonHeader">
+          <span ng-if="headerVariables.dateTimeInHeader">Last Update: {{headerVariables.dateTimeInHeader}}</span>
+          <a href="" ng-if="headerVariables.showPrintButtonHeader" ng-click="PrintFromHeader()" class="pull-right blue focusOnPrintIcon3">
+            <i class="fa fa-print fa-lg pull-right blue margin-top-8 printIconLarge" ng-class="{'configurationPrintIcon' : typeBagName === 'Custom Pages'}"></i>
+          </a>
+        </div>
+
+    </div>
+
+    <div class="header-bar" ng-if="managePageHeader">
+      <span class="menu-container">
+        <a href="" id="viewlandingPages"  href="#/landingPage/grid" class="home" ui-sref="landing.grid">
+        <i class="fa fa-home fa-lg"></i>
+        </a>
+      </span>
+      <span ng-if ="(typeOfFile !='Rush Bag')" class="current-page">{{typeOfFile}}</span>
+      <span ng-if ="(typeOfFile =='Rush Bag')" class="current-page" localize>Forward Bag</span>
+        <p ng-if ="checkLoggedInIsLHuseragentId !='LH'"class="pull-right"><span ng-if="gridOptions.data.length" ><span localize>Last </span> {{gridOptions.data.length}} <span localize>file</span><span ng-if="gridOptions.data.length >1"><span localize>s</span></span> <span localize>managed since logged in </span><span ng-if="gridOptions.data.length === 0" localize>Last logged on </span><span > {{LoggedDate.toUpperCase()}}</span></p>
+        <!--//{{LoggedDate | date:'dd MMMM yyyy @ H:mm'}} -->
+    </div>
+
+
+
+</header>
+<ul class="tracing-option-menu list-unstyled tracing-option-color" style="display:none;">
+    <li class="dropdown-header" localize>Select Tracing Option</li>
+    <li ng-click="AppendDropdownContent('Full Tracing','tracing-option');main_tracing_option='Full Tracing';"><a href="" id="fullTracing" full-tracing-focus localize>Full Tracing</a></li>
+    <li ng-click="AppendDropdownContent('No Tracing','tracing-option');main_tracing_option='No Tracing';"><a href="" localize>No Tracing</a></li>
+    <li ng-click="AppendDropdownContent('Online Tracing only','tracing-option');main_tracing_option='Online Tracing only';" ng-if="!OHD_actionId"><a href="" localize>Online Tracing only</a></li>
+    <li ng-click="AppendDropdownContent('Suspended Tracing','tracing-option');main_tracing_option='Suspended Tracing';"><a href="" id="suspendTracing" full-tracing-focus localize>Suspended Tracing</a></li>
+</ul>
+<div id="StationAirlinePopup">
+  <div class="station-airline-menu" ng-class="{'single-input': stationInputHide || airlineInputHide || stationInputRemove}" id="showHeaderDelayed">
+      <div class="header header-text-normal">
+          <span ng-if="stationInputRemove" localize>Change Airline/Handler</span>
+           <span ng-if="!stationInputHide && !airlineInputHide && !stationInputRemove" localize>Change station and/or airline</span>
+           <span ng-if="stationInputHide || airlineInputHide"><span localize>Select</span>
+             <span ng-if="stationInputHide"><span localize>Airline for</span> {{mainstation_code}}</span>
+             <span ng-if="airlineInputHide"><span localize>Station for</span> {{mainairline_code}}</span>
+           </span>
+          <a href="" shift-tab-focus ng-click="stationAirlineDropdown()" data-dismiss="modal" aria-label="Close" id="closeBtn" class="close"><i class="close fa fa-times"></i></a>
+       </div>
+
+      <div class="body">
+          <div ng-class="{'col-sm-8': airlineInputHide, 'col-sm-6': !airlineInputHide}" ng-if="!stationInputHide && !stationInputRemove">
+            <label for="selectStation" localize>Station</label>
+              <div ng-class="{'input-group required emptyborder': headerWithPopup}" id="stationHeaderDiv">
+                  <span ng-class="{'input-group-addon mandatory-bar': headerWithPopup}" id="stationHeaderSpan"></span>
+                  <input  class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="staId" maxlength="3" size="3" data-title="" data-toggle="tooltip"ng-keypress="disable_specialCharsWithSpace($event);"  ng-required="headerWithPopup" ng-model="homeModels.staCode" type="text" typeahead-on-select="commonHeaderHandleSmartSearchErrorBorder('staId');preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead)"tooltip="{{tooltipValue1}}" typeahead="state.code as formTypeaheadResult(state) for state in stationCode | filter:$viewValue:headerTypeaheadFilter | orderBy:'code' | limitTo:20" fieldtype="mandatory" autocomplete="off" typeaheadscroll type-ahead-init-scroll ng-blur="airlineServiceCommonHeader();" aria-autocomplete="list" aria-expanded="false" error-validate validation-rule="alpha3s" tab-btn-focus tooltip-trigger='focus blur mouseover mouseleave click'>
+              </div>
+          </div>
+
+          <div ng-class="{'col-sm-8': stationInputHide || stationInputRemove, 'col-sm-6': !stationInputHide && !stationInputRemove}" ng-if="!airlineInputHide">
+            <label for="selectAirline" localize>Airline/Handler</label>
+              <div ng-class="{'input-group required emptyborder': headerWithPopup}">
+                  <span ng-class="{'input-group-addon mandatory-bar': headerWithPopup}"></span>
+                  <input  autocomplete="off" typeaheadscroll type-ahead-init-scroll class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" data-title="" data-toggle="tooltip" id="read_only" ng-model="homeModels.airCode" type="text" typeahead-select-on-exact typeahead="state.code as formTypeaheadResult(state) for state in airline_code | filter:$viewValue:headerTypeaheadFilter | orderBy:'code' | limitTo:20" typeahead-on-select="commonHeaderHandleSmartSearchErrorBorder('read_only');airCodeValidate();preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead)" ng-required="headerWithPopup" maxlength="3" size="3" fieldtype="mandatory" tooltip="{{tooltipValue2}}" ng-keypress="disable_specialCharsWithSpace($event)"  ng-blur="airCodeValidate('blur')" aria-autocomplete="list" aria-expanded="false" ng-readonly="airlineReadonly" tooltip-trigger='focus' tooltip-validate>
+              </div>
+          </div>
+          <div class="clearit"></div>
+  </div>
+    <div class="modal-footer margin-top--5">
+        <div class="col-sm-8">
+          <button type="button" class="btn btn-primary update-station-airline forEnterButtonModal" id="updateButtonForHeader"  ng-click="updateStationAirline();mandatory();readServiceCustomConfig('','update');" disabled="disabled" ><i class="fa fa-refresh"></i><span localize>Update</span></button>
+        </div>
+        <div class="col-sm-4">
+	       <a href="" tab-btn-focus class="pull-right  blue add-margin-top margin-left--13" data-dismiss="modal" ng-click="stationAirlineDropdown()" aria-label="Close" id="closeBtn"><i class="fa fa-times-circle"></i><span localize> Cancel</span></a>
+	    </div>
+      </div>
+</div>
+
+<on-click-home></on-click-home>
+<after-error></after-error>
+<!-- <div class="modal fade " id="homeButtonConfirmation" ng-if="editMode == 1" tabindex="-1" role="dialog" ng-init="setFocusModal()">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="" class="pull-right" data-dismiss="modal" aria-label="Close" shift-tab-focus><i class="close fa fa-times"></i></a>
+                <h4 class="modal-title" localize>Warning</h4>
+            </div>
+<div class="modal-body" localize>Do you want to end the current process.<br> Any unsaved data will be lost.</div>
+
+            <div class="modal-footer">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <button type="button" id="backToLand" class="btn btn-primary btn-block submit" ng-click="backToLanding()" data-toggle="modal" data-dismiss="modal" localize>Ok</button>
+                </div>
+
+                <div class="col-sm-4">
+<a href="" class="pull-right margin-top-5 blue" data-dismiss="modal" aria-label="Close" tab-btn-focus><i class="fa fa-times-circle"></i><span localize>Cancel</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#warningMessage">Open Modal</button> -->
+
+<div class="modal fade " id="warningMessage" ng-if="showMessage" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="close fa fa-times" data-dismiss="modal" aria-label="Close"></i>
+                <h4 class="modal-title" localize>Warning</h4>
+            </div>
+            <div class="modal-body">
+                {{showMessage}}
+            </div>
+
+            <div class="modal-footer">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <button type="button" class="btn btn-primary btn-block submit" data-toggle="modal" data-dismiss="modal" ng-click="subModal('true',indexOfBag)" localize>OK</button>
+                </div>
+
+                <div class="col-sm-4">
+<a href="" class="pull-right margin-top-5 blue" data-dismiss="modal" ng-click="subModal('false')" aria-label="Close">
+                        <i class="fa fa-times-circle"></i> <span localize>Cancel</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="warningMessageSuspend" ng-show="showHeaderSuspend" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="" class="pull-right"shift-tab-focus  data-dismiss="modal" aria-label="Close"> <i class="close fa fa-times"></i></a>
+                <h4 class="modal-title" localize>Success</h4>
+            </div>
+            <div class="modal-body">
+                {{showHeaderSuspend}}
+            </div>
+
+            <div class="modal-footer">
+                <div class="col-sm-4 col-sm-offset-4">
+  <button type="button" id="warningSuspend" class="btn btn-primary btn-block submit" data-toggle="modal" data-dismiss="modal" ng-click="subModal('true',indexOfBag)" localize>OK</button>
+                </div>
+
+                <div class="col-sm-4">
+  <a href="" class="pull-right margin-top-5 blue" tab-btn-focus  data-dismiss="modal" ng-click="managePage();subModal('false')" aria-label="Close">
+                        <i class="fa fa-times-circle"></i><span localize>Cancel</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

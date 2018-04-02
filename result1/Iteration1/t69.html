@@ -1,0 +1,184 @@
+<div class="modal fade" id="notifyPassenger" tabindex="-1" role="dialog" ng-init="setFocusModal()">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+		    	<div class="modal-header customModalHeader">			        
+					<span class="resetPwd-pop" ng-if="(epicName === 'ONHANDBAG' || epicName==='DAMAGEDBAG') && hidepasswordLabel && !(restriction.indexOf('PASSWORD')!=-1) && !(restrictionDis.indexOf('PASSWORD')!=-1)" ng-click="clickPasswordLabelNotify()">						
+							<span class="fa-stack fa-lg blue">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-key fa-stack-1x fa-inverse fa-rotate-180"></i>
+							</span>
+							<a href="" shift-tab-focus class="blue makeBold">Password</a>						
+					</span>
+						<h4 localize class="modal-title customModalTitle pull-left col-sm-8 col-lg-8 colorBlack">Notify Passenger</h4>
+					<a href="" data-dismiss="modal" aria-label="Close" ng-click="cancelNotify()" class="pull-right blue"><i class="close fa fa-times"></i></a>					
+			    </div>
+
+		    	<div class="modal-body" ng-keydown="preventPopup($event)">
+					<alert ng-if="notifyPasswordError" type="danger" id="GridErrorNotify" close="GridWarningCloseMsgNotify('GridErrorNotify')">{{notifyPasswordError}}</alert>
+					  <div class="setPwd-text-reasign margin-left-15" style="display: block;" ng-show="passwordLabel === true">
+						<p>Provide password if action is protected</p>
+						<div class="col-sm-3 margin-left--15">
+							<div>
+								<span></span>
+								<input type="password" class="form-control" maxlength="4" ng-model="setPasswordModel" tooltip-trigger='focus' error-validate validation-rule="alphaNum4" ng-blur="checkNotifyEnable();" id="setNotifyPassword" autocomplete="new-password">
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+		    		<div class="col-sm-12">
+		    			<label localize for="notifyVia" class="colorBlack">Notify Via</label>
+						<div class="dropdown mandatory" id="emailMessageTo">
+							<span class="input-group-addon mandatory-bar"></span>
+							<button prevent-closing-dropdown class="btn btn-default"
+							type="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="true" id="notifyEmailId">
+								<span ng-model="emailMessage['notificationType']"
+								ng-required="true"
+								ng-if="emailMessage['notificationType']">{{Notify.NotificationType}}</span>
+								<span localize ng-model="emailMessage['notificationType']"
+								ng-required="true" ng-if="!emailMessage['notificationType']">Select Notification</span>
+								<i class="fa fa-chevron-down pull-right"></i>
+							</button>
+
+							<ul class="dropdown-menu" style="z-index:3;">
+							<li class="dropdown-header" ng-class="{'selected': !emailMessage['notificationType']}"><a href="">Select Notification</a></li>
+
+							<li ng-class="{'selected': emailMessage['notificationType'] == notify.code}" ng-repeat="notify in notificationList" ng-click="emailMessage['notificationType']=notify.code;Notify.NotificationType=(($index+1)+'. ')+notify.type;getdefaultpreformatedMsg(emailMessage['notificationType']);disableMessageArea(emailMessage['notificationType']);changeValidationRule(emailMessage['notificationType']);checkNotifyEnable();"><a href="">{{($index+1)+'. '}}{{notify.type}}</a></li>
+
+						</ul>
+						</div>
+		    		</div>
+
+		    		<div class="email notifyEmail" style="display:block;" ng-if="emailMessage['notificationType'] == 'email' || emailMessage['notificationType'] == 'both'" componentId="EMAIL">
+			    		<div class="col-sm-6">
+			    			<label class="colorBlack"for="email1" localize>Email Address #1</label>
+			    			<div class="input-group required">
+								<span class="input-group-addon mandatory-bar"></span>
+								<input autocomplete="off"
+								typeaheadscroll
+								type-ahead-init-scroll
+								tooltip-on-blur
+								type-ahead-exact-match
+								class="form-control" type="text" id="email1" maxlength="58" size="58" error-validate data-title="" data-toggle="tooltip" tooltip={{message[1]}} validation-rule="email-58" ng-model="emailMessage['email1']" ng-blur="checkEmaillength('email1',58,1);checkNotifyEnable();" ng-change="checkNotifyEnable();updateUserNameNotify($index,emailMessage['email1'],'email1');" ng-required="(emailMessage['notificationType'] == 'email' || emailMessage['notificationType'] == 'both')"
+							 typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);appendUserEmailNotify($model,'email1');removeErrorFromInput('email1');" typeahead="state for state in domain | filter:$viewValue:emailDomains">
+							</div>
+			    		</div>
+
+                        <div class="col-sm-6" ng-show="!(restriction.indexOf('EMAIL_ADDRESS_TWO')!=-1)">
+                            <label for="email2" class="colorBlack" localize>Email Address #2</label>
+                            <div class="position-static">
+                                <span></span>
+                                <input autocomplete="off" typeaheadscroll type-ahead-init-scroll tooltip-on-blur type-ahead-exact-match class="form-control" type="text" id="email2" maxlength="58" size="58" error-validate data-title="" data-toggle="tooltip" tooltip={{message[2]}} validation-rule="email-58" ng-model="emailMessage['email2']" ng-blur="checkEmaillength('email2',58,2);checkNotifyEnable();" ng-change="checkNotifyEnable();updateUserNameNotify($index,emailMessage['email2'],'email2');"
+                                       typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);appendUserEmailNotify($model,'email2');removeErrorFromInput('email2');" typeahead="state for state in domain | filter:$viewValue:emailDomains"
+                                       ng-disabled="(restrictionDis.indexOf('EMAIL_ADDRESS_TWO')!=-1)">
+                            </div>
+                        </div>
+						<div class="clearit"></div>
+					</div>
+
+					<div class="SMS notifySms" style="display:block;" ng-if="emailMessage['notificationType'] == 'sms' || emailMessage['notificationType'] == 'both'" componentId="SMS">
+						<div class="col-sm-6">
+							<label for="phone1" class="colorBlack" localize >Cell/Mobile Phone #1</label>
+			    			<div class="input-group required">
+								<span class="input-group-addon mandatory-bar"></span>
+								<input  class="form-control" type="text" autocomplete="off" typeaheadscroll type-ahead-init-scroll type-ahead-exact-match ng-required="(emailMessage['notificationType'] == 'sms' || emailMessage['notificationType'] == 'both')" id="phone1" error-validate data-title="" data-toggle="tooltip" validation-rule="mobile"
+								typeahead="state as state.code +' '+ state.country for state in data_obj | filter:$viewValue | orderBy:'code'"
+								typeahead-input-formatter="phoneCodeSplit($model)"  ng-keypress="disable_specialChars($event)" accept="" maxlength="20" size="20" ng-model="emailMessage['phone1']" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);removeErrorFromInput('phone1');" ng-blur="checkNotifyEnable();" ng-change="checkNotifyEnable();checkDuplicate(emailMessage['phone1'],emailMessage['phone2'],'phone2');">
+							</div>
+						</div>
+
+                        <div class="col-sm-6" ng-show="!(restriction.indexOf('CELL_PHONE_TWO')!=-1)">
+                            <label for="phone2" class="colorBlack" localize >Cell/Mobile Phone #2</label>
+                            <div>
+                                <span></span>
+                                <input  class="form-control" type="text" id="phone2"
+                                       typeahead-input-formatter="phoneCodeSplit($model)" ng-keypress="disable_specialChars($event)"
+                                       typeahead="state as state.code +' '+ state.country for state in data_obj | filter:$viewValue | orderBy:'code'" type-ahead-exact-match autocomplete="off" typeaheadscroll type-ahead-init-scroll
+                                       error-validate data-title="" maxlength="20" size="20" data-toggle="tooltip" validation-rule="mobile" ng-model="emailMessage['phone2']"
+                                       ng-disabled="(restrictionDis.indexOf('CELL_PHONE_TWO')!=-1)" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);removeErrorFromInput('phone2');" ng-blur="checkNotifyEnable();checkDuplicate(emailMessage['phone1'],emailMessage['phone2'],'phone2');" ng-change="checkNotifyEnable();" >
+                            </div>
+                        </div>
+						<div class="clearit"></div>
+					</div>
+
+                    <div class="email" componentid="EMAIL" ng-show="!(restriction.indexOf('REPLYEMAILADDRESS_SE')!=-1) || !(restriction.indexOf('REPLY_EMAIL')!=-1)">
+                        <div class="col-sm-6">
+                            <label for="replyEmail" class="colorBlack" localize>Reply Email</label>
+                            <div ng-class="{'input-group required':(Notify.notifyPreformattedMessage === '2'||Notify.notifyPreformattedMessage === '3'||Notify.notifyPreformattedMessage === '4'||Notify.notifyPreformattedMessage === '5'||Notify.notifyPreformattedMessage === '11'||Notify.notifyPreformattedMessage === '13') && !emailMessage['replyPhone'] || emailMessage['replyEmail']}">
+                                <span class="input-group-addon mandatory-bar" ng-if="(Notify.notifyPreformattedMessage === '2'||Notify.notifyPreformattedMessage === '3'||Notify.notifyPreformattedMessage === '4'||Notify.notifyPreformattedMessage === '5'||Notify.notifyPreformattedMessage === '11'||Notify.notifyPreformattedMessage === '13') && !emailMessage['replyPhone'] || emailMessage['replyEmail']"></span>
+                                <input autocomplete="off" typeaheadscroll type-ahead-init-scroll tooltip-on-blur class="form-control" type="text" id="replyEmail" maxlength="44" size="44" error-validate data-title="" data-toggle="tooltip" tooltip={{message[2]}} validation-rule="email-44" ng-model="emailMessage['replyEmail']" ng-blur="checkEmaillength('replyEmail',44,2);checkNotifyEnable();" ng-change="checkNotifyEnable();updateUserNameNotify($index,emailMessage['replyEmail'],'replyEmail');"
+                                       type-ahead-exact-match typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);appendUserEmailNotify($model,'replyEmail');removeErrorFromInput('replyEmail');" typeahead-select-on-blur="true" typeahead-select-on-exact="true" typeahead-editable="true" typeahead="state for state in domain | filter:$viewValue:emailDomains" ng-required="(Notify.notifyPreformattedMessage === '2'||Notify.notifyPreformattedMessage === '3'||Notify.notifyPreformattedMessage === '4'||Notify.notifyPreformattedMessage === '5'||Notify.notifyPreformattedMessage === '11'||Notify.notifyPreformattedMessage === '13') && !emailMessage['replyPhone'] || emailMessage['replyEmail']"
+                                       ng-disabled="(restrictionDis.indexOf('REPLYEMAILADDRESS_SE')!=-1) || (restrictionDis.indexOf('REPLYEMAILADDRESS_SE')!=-1)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div componentid="SMS" ng-show="!(restriction.indexOf('REPLYPHONENUMBER_CP')!=-1) || !(restriction.indexOf('REPLY_PHONE')!=-1)">
+                        <div class="col-sm-6">
+                            <label for="replyPhone" class="colorBlack" localize>Reply Phone</label>
+                            <div ng-class="{'input-group required':(Notify.notifyPreformattedMessage === '2'||Notify.notifyPreformattedMessage === '3'||Notify.notifyPreformattedMessage === '4'||Notify.notifyPreformattedMessage === '5'||Notify.notifyPreformattedMessage === '11'||Notify.notifyPreformattedMessage === '13') && !emailMessage['replyEmail'] || emailMessage['replyPhone'] }">
+                                <span ng-class="{'input-group-addon mandatory-bar':(Notify.notifyPreformattedMessage === '2'||Notify.notifyPreformattedMessage === '3'||Notify.notifyPreformattedMessage === '4'||Notify.notifyPreformattedMessage === '5'||Notify.notifyPreformattedMessage === '11'||Notify.notifyPreformattedMessage === '13') && !emailMessage['replyEmail'] || emailMessage['replyPhone']}"></span>
+                                <input tooltip-on-blur class="form-control" type="text" autocomplete="off" typeaheadscroll type-ahead-init-scroll typeahead-input-formatter="phoneCodeSplit($model)" ng-keypress="disable_specialChars($event)"
+                                       typeahead="state as state.code +' '+ state.country for state in data_obj | filter:$viewValue | orderBy:'code'" type-ahead-exact-match id="replyPhone" maxlength="20" size="20" error-validate data-title="" data-toggle="tooltip" validation-rule="mobile" ng-model="emailMessage['replyPhone']"
+                                       ng-required="(Notify.notifyPreformattedMessage === '2'||Notify.notifyPreformattedMessage === '3'||Notify.notifyPreformattedMessage === '4'||Notify.notifyPreformattedMessage === '5'||Notify.notifyPreformattedMessage === '11'||Notify.notifyPreformattedMessage === '13') && !emailMessage['replyEmail'] || emailMessage['replyPhone']"
+                                       ng-disabled="(restrictionDis.indexOf('REPLYPHONENUMBER_CP')!=-1) || (restrictionDis.indexOf('REPLY_PHONE')!=-1)" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);removeErrorFromInput('replyPhone');" ng-blur="checkNotifyEnable();" ng-change="checkNotifyEnable();">
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-sm-12" ng-show="!(restriction.indexOf('PREFORMATTEDMESSAGE')!=-1)">
+						<label for="Preformatted" class="colorBlack" localize >Preformatted Message</label>
+						<div class="dropdown mandatory">
+							<span></span>
+							<!-- <ac-select class="form-control" ac-settings="{'initialText': 'Select Preformatted Message','minWidth': '365px', 'labelWidth': '180px'}" ac-change="prefillSelectedValue();" ac-model="Notify.notifyPreformattedMessage"  id="rangeType" ac-options="ele for ele in pfmessages" ac-key='ele' ng-disabled="(restrictionDis.indexOf('PREFORMATTEDMESSAGE')!=-1)"></ac-select> -->
+							<button prevent-closing-dropdown class="btn btn-default PreformattedMessage"
+							type="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="true"
+							ng-disabled="(restrictionDis.indexOf('PREFORMATTEDMESSAGE')!=-1) || (dropdownDisabledFromConfiguration)"
+							ng-readonly="isNotifyFieldsReadonly"
+							id="PreformattedMessage">
+								<span ng-model="Notify.notifyPreformattedMessage"
+								ng-required="true"
+								ng-if="Notify.notifyPreformattedMessage"><p style="overflow: hidden;text-overflow:ellipsis;">{{Notify.preformatType}}</p></span>
+								<span localize ng-model="Notify.notifyPreformattedMessage"
+								ng-required="true" ng-if="!Notify.notifyPreformattedMessage">Select Preformatted Message</span>
+								<i class="fa fa-chevron-down pull-right"></i>
+							</button>
+
+							<ul class="dropdown-menu" style="z-index:3;">
+							<li class="dropdown-header" ng-class="{'selected': !Notify.notifyPreformattedMessage}" ng-click="Notify.notifyPreformattedMessage='';Notify.preformatType='';prefillSelectedValue();checkNotifyEnable();"><a href="">Select Preformatted Message</a></li>
+
+							<li ng-class="{'selected': Notify.notifyPreformattedMessage == key}" ng-repeat="(key,preformatedmessages) in pfmessages" ng-click="Notify.notifyPreformattedMessage=key;Notify.preformatType=(($index+1)+'. ')+preformatedmessages;prefillSelectedValue();checkNotifyEnable();"><a href=""><span style="white-space: pre-line !important;">{{($index+1)+'. '}}{{preformatedmessages}}</span></a></li>
+
+						</ul>
+						</div>
+					</div>
+
+					<div class="col-sm-12">
+						<label for="additionalMessage" class="colorBlack" localize>Message</label>
+						<div class="input-group required">
+							<span class="input-group-addon mandatory-bar"></span>
+						<textarea style="resize: none" tooltip-on-blur rows="5" required class="form-control" id="emailmessageArea"
+            error-validate data-toggle="tooltip" ng-model="emailMessage['message']" ng-change="changeValidationRule(emailMessage['notificationType']);checkForFreeform();checkNotifyEnable();" ng-readonly="(isNotifyFieldsReadonly || ((!isFreeFormMsgHighlight) && isPreformattedMsgHighlight))" ng-blur="changeValidationRule(emailMessage['notificationType']);checkNotifyEnable();" ng-disabled="messageAreaDisabledFromConfiguration"></textarea>
+					</div>
+				</div>
+
+		    		<div class="clearfix"></div>
+
+		      	</div>
+
+		      	<div class="modal-footer">
+					<div class="col-sm-4 col-sm-offset-4">
+		      			<button href="" localize class="btn btn-primary btn-block submit  forEnterButtonModal" data-toggle="modal"  ng-click="checkNotifyEnable('FromSendNotify');" ng-disabled="isNotifyMessage">Send</button>
+		      		</div>
+
+		      		<div class="col-sm-4">
+		      			<a href="" tab-btn-focus class="pull-right margin-top-5 blue" data-dismiss="modal" aria-label="Close"  ng-click="cancelNotify()" id="notifycancelBtn"><i class="fa fa-times-circle"></i><span localize>Cancel</span></a>
+		      		</div>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>

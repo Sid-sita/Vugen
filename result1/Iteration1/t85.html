@@ -1,0 +1,1243 @@
+<div class="summary tab-toggle" data-ng-show="showTemp4">
+	<input type="button" id="deliveryHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1039, null, null, null );" class="hide"/>
+	<input type="button" id="wTRHelpClose" value="Close contextual help" onclick="FMCCloseHelp ();"  class="hide"/>
+<input type="button" id="wTRHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1000, null, null, null );" class="hide"/>
+
+<!-- error message div -->
+<!-- <div class="col-sm-12 margin-top-20" data-ng-show="RushBag.RushBagError">
+ <div class="alert alert-danger alert-dismissible fade in" role="alert" id="rushError">
+	 <button type="button" class="close" ng-click="RushBag.RushBagError=false" aria-label="Close">
+		 <span aria-hidden="true">×</span>
+	 </button>
+		 {{RushBag.RushBagError}}
+ </div>
+</div> -->
+
+	<div class="body">
+
+			<p class="margin-left-15 margin-top-30 summarySection summarySectionborder" style="font-weight: 700;" localize>Summary</p>
+		<div class="panel panel-default panel-summary">
+		<div class="col-sm-12 gray_hdr margin-top--10">
+			<p class="tab-section-header first summarySection" ng-if="
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].RushBagTag||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].RushBagTag||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].RushBagTag||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].OriginalBagTag||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].OriginalBagTag||
+	   	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].OriginalBagTag||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.ColorCode||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.ColorCode||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.ColorCode||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.TypeCode||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.TypeCode||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.TypeCode||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.Descriptor||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.Descriptor||
+			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.Descriptor||
+			WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+		WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9]" >
+			<i class="fa fa-suitcase"></i>
+				<span localize>Bag</span>
+				<a href="" ng-click="exclamationVariable.value1 ? setTab(1,true,true) : ''"><i class="fa BagMandatoryRushBag fa-lg status indicator1"></i></a>
+			</p>
+		</div>
+		<div class="clearit"></div>
+
+
+
+
+
+				<div class="default">
+				<div class="col-sm-4 col-md-3" ng-if="printRushTagsYes||generateTagNumbers.numberOfTags">
+					<span ng-if="printRushTagsYes||generateTagNumbers.numberOfTags"><strong class="blue " localize>Print rush tags</strong></span>
+					<a class="edit-link link" href="" ng-if="printRushTagsYes||generateTagNumbers.numberOfTags" ng-click="setTab(1,'avoidAuto');getFocus(1,3,'','numberOfTags')" >
+						<i class="fa fa-pencil"></i></a><div class="clearfix"></div>
+					<label><span class="noOfTags">Number of Tags:</span> {{generateTagNumbers.numberOfTags}}</label>
+				</div>
+					<div  class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+					WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9]">
+						<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9]"><strong class="blue " localize>Family Name</strong></span>
+						<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+						WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9]" ng-click="setTab(1,'avoidAuto');getFocus(1,2)">
+
+							<i class="fa fa-pencil"></i>
+						</a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]">
+						<span>1. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0].toUpperCase()}}</li>
+
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]">
+						<span>2. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1].toUpperCase()}}</li>
+
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]">
+						<span>3. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2].toUpperCase()}}</li>
+
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]">
+						<span>4. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3].toUpperCase()}}</li>
+
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]">
+						<span>5. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4].toUpperCase()}}</li>
+
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]">
+						<span>6. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5].toUpperCase()}}</li>
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]">
+						<span>7. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6].toUpperCase()}}</li>
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]">
+					<span>8. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7].toUpperCase()}}</li>
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]">
+						<span>9. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8].toUpperCase()}}</li>
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9]">
+						<span>10. </span>{{WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9].toUpperCase()}}</li>
+
+
+					</ul>
+
+</div>
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.Descriptor">
+					<span ><strong class="blue" localize>Bag 1</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,1)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].RushBagTag" ><span localize>Rush Tag Number</span>: </label> {{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].RushBagTag.toUpperCase()}}</li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> {{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[0].OriginalBagTag.toUpperCase()}}</li>
+
+					<li>	<label ng-if="selectColor[0]" ><span localize>Color</span>:  </label> <span>{{selectColor[0]}}</span></li>
+
+					<li>	<label ng-if="selectType[0]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[0]}}</span></li>
+
+
+
+					</ul>
+				</div>
+
+
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.Descriptor">
+					<span ><strong class="blue" localize>Bag 2</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,2)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].RushBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[1].OriginalBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="selectColor[1]" ><span localize>Color</span>:  </label> <span>{{selectColor[1]}}</span></li>
+
+					<li>	<label ng-if="selectType[1]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[1]}}</span></li>
+
+
+
+					</ul>
+				</div>
+
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.Descriptor">
+					<span ><strong class="blue" localize>Bag 3</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,3)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].RushBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].OriginalBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="selectColor[2]" ><span localize>Color</span>:  </label> <span>{{selectColor[2]}}</span></li>
+
+					<li>	<label ng-if="selectType[2]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[2]}}</span></li>
+
+
+
+					</ul>
+				</div>
+				<div class="clearfix" ng-if="(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[2].ColorTypeDesc.Descriptor) && (WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9]) "> </div>
+
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.Descriptor">
+					<span ><strong class="blue" localize>Bag 4</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,4)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].RushBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].OriginalBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="selectColor[3]" ><span localize>Color</span>:  </label> <span>{{selectColor[3]}}</span></li>
+
+					<li>	<label ng-if="selectType[3]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[3]}}</span></li>
+
+
+
+					</ul>
+				</div>
+				<div class="clearfix" ng-if="(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[3].ColorTypeDesc.Descriptor) && !(WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9]) "> </div>
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].ColorTypeDesc.Descriptor">
+					<span><strong class="blue" localize>Bag 5</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,5)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].RushBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[4].OriginalBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="selectColor[4]" ><span localize>Color</span>:  </label> <span>{{selectColor[4]}}</span></li>
+
+					<li>	<label ng-if="selectType[4]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[4]}}</span></li>
+
+
+
+					</ul>
+				</div>
+
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].ColorTypeDesc.Descriptor">
+					<span ><strong class="blue" localize>Bag 6</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,6)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].RushBagTag"><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].RushBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].OriginalBagTag"><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[5].OriginalBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="selectColor[5]" ><span localize>Color</span>:  </label> <span>{{selectColor[5]}}</span></li>
+
+					<li>	<label ng-if="selectType[5]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[5]}}</span></li>
+
+
+
+					</ul>
+				</div>
+
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.Descriptor">
+					<span ><strong class="blue" localize>Bag 7</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,6)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].RushBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].OriginalBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="selectColor[6]" ><span localize>Color</span>:  </label> <span>{{selectColor[6]}}</span></li>
+
+					<li>	<label ng-if="selectType[6]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[6]}}</span></li>
+
+
+					</ul>
+				</div>
+				<div class="clearfix" ng-if="(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[6].ColorTypeDesc.Descriptor) && (WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+				WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9])"></div>
+
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.Descriptor">
+					<span ><strong class="blue" localize>Bag 8</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,8)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].RushBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].OriginalBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="selectColor[7]" ><span localize>Color</span>:  </label> <span>{{selectColor[7]}}</span></li>
+
+					<li>	<label ng-if="selectType[7]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[7]}}</span></li>
+
+
+
+					</ul>
+				</div>
+<div class="clearfix" ng-if="(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].RushBagTag||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].OriginalBagTag||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.ColorCode||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.TypeCode||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[7].ColorTypeDesc.Descriptor) && !(WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9])"></div>
+				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].RushBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].OriginalBagTag||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].ColorTypeDesc.ColorCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].ColorTypeDesc.TypeCode||
+				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].ColorTypeDesc.Descriptor">
+					<span ><strong class="blue" localize>Bag 9</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].RushBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].OriginalBagTag||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].ColorTypeDesc.ColorCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].ColorTypeDesc.TypeCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,9)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ul class="list-unstyled">
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].RushBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[8].OriginalBagTag.toUpperCase()}}</span></li>
+
+					<li>	<label ng-if="selectColor[8]" ><span localize>Color</span>:  </label> <span>{{selectColor[8]}}</span></li>
+
+					<li>	<label ng-if="selectType[8]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[8]}}</span></li>
+
+
+					</ul>
+				</div>
+
+
+
+
+								<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].RushBagTag||
+								WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].OriginalBagTag||
+								WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].ColorTypeDesc.ColorCode||
+								WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].ColorTypeDesc.TypeCode||
+								WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].ColorTypeDesc.Descriptor">
+									<span ><strong class="blue" localize>Bag 10</strong></span>
+									<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].RushBagTag||
+									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].OriginalBagTag||
+									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].ColorTypeDesc.ColorCode||
+									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].ColorTypeDesc.TypeCode||
+									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,10)">
+
+										<i class="fa fa-pencil"></i>
+									</a>
+
+									<ul class="list-unstyled">
+									<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].RushBagTag.toUpperCase()}}</span></li>
+
+									<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].OriginalBagTag.toUpperCase()}}</span></li>
+
+									<li>	<label ng-if="selectColor[9]" ><span localize>Color</span>:  </label> <span>{{selectColor[9]}}</span></li>
+
+									<li>	<label ng-if="selectType[9]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[9]}}</span></li>
+
+
+
+									</ul>
+								</div>
+
+												<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].RushBagTag||
+												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].OriginalBagTag||
+												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.ColorCode||
+												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.TypeCode||
+												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.Descriptor">
+													<span ><strong class="blue" localize>Bag 11</strong></span>
+													<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].RushBagTag||
+													WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].OriginalBagTag||
+													WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.ColorCode||
+													WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.TypeCode||
+													WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,11)">
+
+														<i class="fa fa-pencil"></i>
+													</a>
+
+													<ul class="list-unstyled">
+													<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].RushBagTag" ><span localize>Rush Tag Number</span>: </label> {{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].RushBagTag.toUpperCase()}}</span></li>
+
+													<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].OriginalBagTag.toUpperCase()}}</span></li>
+
+													<li>	<label ng-if="selectColor[10]" ><span localize>Color</span>:  </label> <span>{{selectColor[10]}}</span></li>
+
+													<li>	<label ng-if="selectType[10]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[10]}}</span></li>
+
+
+													</ul>
+												</div>
+												<div class="clearfix" ng-if="(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].RushBagTag||
+												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].OriginalBagTag||
+												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.ColorCode||
+												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.TypeCode||
+												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[10].ColorTypeDesc.Descriptor)&&(WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+												WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9])"></div>
+
+																<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].RushBagTag||
+																WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].OriginalBagTag||
+																WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.ColorCode||
+																WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.TypeCode||
+																WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.Descriptor">
+																	<span ><strong class="blue" localize>Bag 12</strong></span>
+																	<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].RushBagTag||
+																	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].OriginalBagTag||
+																	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.ColorCode||
+																	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.TypeCode||
+																	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,12)">
+
+																		<i class="fa fa-pencil"></i>
+																	</a>
+
+																	<ul class="list-unstyled">
+																	<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].RushBagTag.toUpperCase()}}</span></li>
+
+																	<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].OriginalBagTag.toUpperCase()}}</span></li>
+
+																	<li>	<label ng-if="selectColor[11]" ><span localize>Color</span>:  </label> <span>{{selectColor[11]}}</span></li>
+
+																	<li>	<label ng-if="selectType[11]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[11]}}</span></li>
+
+
+																	</ul>
+																</div>
+<div class="clearfix" ng-if="(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].RushBagTag||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].OriginalBagTag||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.ColorCode||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.TypeCode||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[11].ColorTypeDesc.Descriptor) && !(WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9])"></div>
+																				<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].RushBagTag||
+																				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].OriginalBagTag||
+																				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].ColorTypeDesc.ColorCode||
+																				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].ColorTypeDesc.TypeCode||
+																				WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].ColorTypeDesc.Descriptor">
+																					<span ><strong class="blue" localize>Bag 13</strong></span>
+																					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].RushBagTag||
+																					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].OriginalBagTag||
+																					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].ColorTypeDesc.ColorCode||
+																					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].ColorTypeDesc.TypeCode||
+																					WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,13)">
+
+																						<i class="fa fa-pencil"></i>
+																					</a>
+
+																					<ul class="list-unstyled">
+																					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].RushBagTag.toUpperCase()}}</span></li>
+
+																					<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[12].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[9].OriginalBagTag.toUpperCase()}}</span></li>
+
+																					<li>	<label ng-if="selectColor[12]"><span localize>Color</span>:  </label> <span>{{selectColor[12]}}</span></li>
+
+																					<li>	<label ng-if="selectType[12]"><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[12]}}</span></li>
+
+
+																					</ul>
+																				</div>
+
+																								<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].RushBagTag||
+																								WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].OriginalBagTag||
+																								WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].ColorTypeDesc.ColorCode||
+																								WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].ColorTypeDesc.TypeCode||
+																								WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].ColorTypeDesc.Descriptor">
+																									<span ><strong class="blue" localize>Bag 14</strong></span>
+																									<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].RushBagTag||
+																									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].OriginalBagTag||
+																									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].ColorTypeDesc.ColorCode||
+																									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].ColorTypeDesc.TypeCode||
+																									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,14)">
+
+																										<i class="fa fa-pencil"></i>
+																									</a>
+
+																									<ul class="list-unstyled">
+																									<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].RushBagTag.toUpperCase()}}</span></li>
+
+																									<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[13].OriginalBagTag.toUpperCase()}}</span></li>
+
+																									<li>	<label ng-if="selectColor[13]" ><span localize>Color</span>:  </label> <span>{{selectColor[13]}}</span></li>
+
+																									<li>	<label ng-if="selectType[13]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[13]}}</span></li>
+
+
+																									</ul>
+																								</div>
+
+																												<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].RushBagTag||
+																												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].OriginalBagTag||
+																												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.ColorCode||
+																												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.TypeCode||
+																												WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.Descriptor">
+																													<span ><strong class="blue" localize>Bag 15</strong></span>
+																													<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].RushBagTag||
+																													WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].OriginalBagTag||
+																													WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.ColorCode||
+																													WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.TypeCode||
+																													WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,15)">
+
+																														<i class="fa fa-pencil"></i>
+																													</a>
+
+																													<ul class="list-unstyled">
+																													<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].RushBagTag.toUpperCase()}}</span></li>
+
+																													<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].OriginalBagTag.toUpperCase()}}</span></li>
+
+																													<li>	<label ng-if="selectColor[14]" ><span localize>Color</span>:  </label> <span>{{selectColor[14]}}</span></li>
+
+																													<li>	<label ng-if="selectType[14]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[14]}}</span></li>
+
+
+
+																													</ul>
+																										</div>
+																										<div class="clearfix" ng-if="(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].RushBagTag||
+																										WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].OriginalBagTag||
+																										WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.ColorCode||
+																										WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.TypeCode||
+																										WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[14].ColorTypeDesc.Descriptor)&&(WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+																										WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9])"></div>
+
+																														<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].RushBagTag||
+																														WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].OriginalBagTag||
+																														WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.ColorCode||
+																														WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.TypeCode||
+																														WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.Descriptor">
+																															<span ><strong class="blue" localize>Bag 16</strong></span>
+																															<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].RushBagTag||
+																															WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].OriginalBagTag||
+																															WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.ColorCode||
+																															WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.TypeCode||
+																															WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,16)">
+
+																																<i class="fa fa-pencil"></i>
+																															</a>
+
+																															<ul class="list-unstyled">
+																															<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].RushBagTag.toUpperCase()}}</span></li>
+
+																															<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].OriginalBagTag.toUpperCase()}}</span></li>
+
+																															<li>	<label ng-if="selectColor[15]" ><span localize>Color</span>:  </label> <span>{{selectColor[15]}}</span></li>
+
+																															<li>	<label ng-if="selectType[15]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[15]}}</span></li>
+
+
+
+																															</ul>
+																														</div>
+<div class="clearfix" ng-if="(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].RushBagTag||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].OriginalBagTag||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.ColorCode||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.TypeCode||
+WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[15].ColorTypeDesc.Descriptor) && !(WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[0]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[1]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[2]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[3]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[4]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[5]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[6]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[7]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[8]||
+WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[9])"></div>
+																																		<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].RushBagTag||
+																																		WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].OriginalBagTag||
+																																		WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].ColorTypeDesc.ColorCode||
+																																		WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].ColorTypeDesc.TypeCode||
+																																		WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].ColorTypeDesc.Descriptor">
+																																			<span ><strong class="blue" localize>Bag 17</strong></span>
+																																			<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].RushBagTag||
+																																			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].OriginalBagTag||
+																																			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].ColorTypeDesc.ColorCode||
+																																			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].ColorTypeDesc.TypeCode||
+																																			WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,17)">
+
+																																				<i class="fa fa-pencil"></i>
+																																			</a>
+
+																																			<ul class="list-unstyled">
+																																			<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].RushBagTag.toUpperCase()}}</span></li>
+
+																																			<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[16].OriginalBagTag.toUpperCase()}}</span></li>
+
+																																			<li>	<label ng-if="selectColor[16]" ><span localize>Color</span>:  </label> <span>{{selectColor[16]}}</span></li>
+
+																																			<li>	<label ng-if="selectType[16]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[16]}}</span></li>
+
+
+
+																																			</ul>
+
+
+																																</div>
+
+
+																																<div class="col-sm-4 col-md-3" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].RushBagTag||
+																																WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].OriginalBagTag||
+																																WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].ColorTypeDesc.ColorCode||
+																																WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].ColorTypeDesc.TypeCode||
+																																WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].ColorTypeDesc.Descriptor">
+																																	<span ><strong class="blue" localize>Bag 18</strong></span>
+																																	<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].RushBagTag||
+																																	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].OriginalBagTag||
+																																	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].ColorTypeDesc.ColorCode||
+																																	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].ColorTypeDesc.TypeCode||
+																																	WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].ColorTypeDesc.Descriptor" ng-click="setTab(1,'avoidAuto');getFocus(1,1,18)">
+
+																																		<i class="fa fa-pencil"></i>
+																																	</a>
+
+																																	<ul class="list-unstyled">
+																																	<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].RushBagTag" ><span localize>Rush Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].RushBagTag.toUpperCase()}}</span></li>
+
+																																	<li>	<label ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].OriginalBagTag" ><span localize>Original Tag Number</span>: </label> <span class="initCap">{{WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[17].OriginalBagTag.toUpperCase()}}</span></li>
+
+																																	<li>	<label ng-if="selectColor[17]" ><span localize>Color</span>:</label> <span>{{selectColor[17]}}</span></li>
+
+																																	<li>	<label ng-if="selectType[17]" ><span localize>Type</span>:  </label> <span class="initTypeCap">{{selectType[17]}}</span></li>
+
+
+
+																																	</ul>
+																																</div>
+																										</div>
+
+
+		<div class="clearfix"></div>
+				<div class="col-sm-12 gray_hdr">
+					<p class="tab-section-header summarySection" ng-if="RushBag.airlineFlight[0]||
+					select0||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode || WTR_RushBagsCreateRQ.ExpediteDestination||splittedAirline[0]||
+					WTR_RushBagsCreateRQ.RushBagGroup.OriginalFlights.FlightDateOrARNK[0].FlightDate.Date" >
+						<i class="fa fa-plane"></i>
+						<span localize>Flight</span>
+						<a href="" ng-click="exclamationVariable.value2 ? setTab(2,true,true) : '' "><i class="fa FlightMandatoryRushBag fa-lg status indicator2"></i></a>
+					</p>
+				</div>
+				<div class="default">
+				<div class="col-sm-4 col-md-3 margin-top-15">
+					<span ng-if="RushBag.airlineFlight[0]||
+					select0"><strong class="blue" localize>Rush Routing</strong></span>
+					<a class="edit-link link" href="" ng-if="RushBag.airlineFlight[0]||
+					select0" ng-click="setTab(2,'avoidAuto');getFocus(2,1)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ol>
+							<li ng-if="RushBag.airlineFlight[0]||
+							select0">
+								<span ng-if="RushBag.airlineFlight[0]">{{splittedAirline[0]}} {{splittedFlightNum[0]}}</span>/{{select0}}
+						 </li>
+						 <li  ng-if="rushARNKIndex == 1">
+	 					<span localize>GROUND TRANSFER</span></li>
+
+						 <li ng-if="RushBag.airlineFlight[1]||
+	 					select1">
+						 <span ng-if="RushBag.airlineFlight[1]">{{splittedAirline[1]}} {{splittedFlightNum[1]}}</span>/{{select1}}
+						</li>
+						<li  ng-if="rushARNKIndex == 2">
+	 					<span localize>GROUND TRANSFER</span></li>
+
+						<li ng-if="RushBag.airlineFlight[2]||
+						select2">
+							<span ng-if="RushBag.airlineFlight[2]">{{splittedAirline[2]}} {{splittedFlightNum[2]}}</span>/{{select2}}
+					 </li>
+					 <li  ng-if="rushARNKIndex == 3">
+	 					<span localize>GROUND TRANSFER</span></li>
+
+					 <li ng-if="(RushBag.airlineFlight[3]||
+ 					select3) && !rushARNKIndex">
+						 <span ng-if="RushBag.airlineFlight[3]">{{splittedAirline[3]}} {{splittedFlightNum[3]}}</span>/{{select3}}
+					</li>
+				</ol>
+				</div>
+
+				<div class="col-sm-4 col-md-3 margin-top-15" >
+					<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode || WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].StationCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].AirlineCode ||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].StationCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].AirlineCode ||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].StationCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].AirlineCode ||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].StationCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].AirlineCode"><strong class="blue" localize>Additional Destination Address</strong></span>
+					<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode||
+					WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode" ng-click="setTab(2,'avoidAuto');getFocus(2,2)"><i class="fa fa-pencil"></i></a>
+					<ol>
+
+
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode||
+						WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode">
+							<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode.code}}</span>
+							<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].StationCode}}</span> <span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode.code}}</span>
+						<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[0].AirlineCode}}</span></li>
+
+
+
+								<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].StationCode||
+								WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].AirlineCode">
+									<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].StationCode.code}}</span>
+									<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].StationCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].StationCode}}</span> <span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].AirlineCode.code}}</span>
+								<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].AirlineCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[1].AirlineCode}}</span></li>
+
+									<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].StationCode||
+									WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].AirlineCode">
+										<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].StationCode.code}}</span>
+										<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].StationCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].StationCode}}</span> <span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].AirlineCode.code}}</span>
+									<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].AirlineCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[2].AirlineCode}}</span></li>
+
+										<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].StationCode||
+										WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].AirlineCode">
+											<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].StationCode.code}}</span>
+											<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].StationCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].StationCode}}</span> <span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].AirlineCode.code}}</span>
+										<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].AirlineCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[3].AirlineCode}}</span></li>
+
+														<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].StationCode||
+														WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].AirlineCode">
+															<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].StationCode.code}}</span>
+															<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].StationCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].StationCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].StationCode}}</span> <span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].AirlineCode.code}}</span>
+														<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].AirlineCode && !WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].AirlineCode.code">{{WTR_RushBagsCreateRQ.RushBagGroup.RushDestinations.Destination[4].AirlineCode}}</span></li>
+					</ol>
+
+				</div>
+				<div class="col-sm-4 col-md-3 margin-top-15">
+					<span ng-if="RushBag.airlineFlightOriginal[0]||
+					WTR_RushBagsCreateRQ.RushBagGroup.OriginalFlights.FlightDateOrARNK[0].FlightDate.Date"><strong class="blue" localize>Original Routing</strong></span>
+					<a class="edit-link link" href="" ng-if="RushBag.airlineFlightOriginal[0]||
+					WTR_RushBagsCreateRQ.RushBagGroup.OriginalFlights.FlightDateOrARNK[0].FlightDate.Date" ng-click="setTab(2,'avoidAuto');getFocus(2,3)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ol>
+							<li ng-if="RushBag.airlineFlightOriginal[0]||
+							WTR_RushBagsCreateRQ.RushBagGroup.OriginalFlights.FlightDateOrARNK[0].FlightDate.Date">
+								<span>{{splittedAirlineOriginal[0]}} {{splittedFlightNumOriginal[0]}}</span>/{{selectOriginal0}}
+						 </li>
+						 <li ng-if="originalARNKIndex == 1">
+	 					<span localize>GROUND TRANSFER</span></li>
+
+						 <li ng-if="RushBag.airlineFlightOriginal[1]||
+	 					WTR_RushBagsCreateRQ.RushBagGroup.OriginalFlights.FlightDateOrARNK[1].FlightDate.Date">
+							 <span ng-if="RushBag.airlineFlightOriginal[1]">{{splittedAirlineOriginal[1]}} {{splittedFlightNumOriginal[1]}}</span>/{{selectOriginal1}}
+						</li>
+						<li  ng-if="originalARNKIndex == 2">
+	 					<span localize>GROUND TRANSFER</span></li>
+
+						<li ng-if="RushBag.airlineFlightOriginal[2]||
+						WTR_RushBagsCreateRQ.RushBagGroup.OriginalFlights.FlightDateOrARNK[2].FlightDate.Date">
+							<span ng-if="RushBag.airlineFlightOriginal[2]">{{splittedAirlineOriginal[2]}} {{splittedFlightNumOriginal[2]}}</span>/{{selectOriginal2}}
+					 </li>
+					 <li  ng-if="originalARNKIndex == 3">
+	 					<span localize>GROUND TRANSFER</span></li>
+
+					 <li ng-if="RushBag.airlineFlightOriginal[3]||
+ 					WTR_RushBagsCreateRQ.RushBagGroup.OriginalFlights.FlightDateOrARNK[3].FlightDate.Date">
+						 <span ng-if="RushBag.airlineFlightOriginal[3]">{{splittedAirlineOriginal[3]}} {{splittedFlightNumOriginal[3]}}</span>/{{selectOriginal3}}
+					</li>
+				</ol>
+				</div>
+
+				<div class="col-sm-4 col-md-3 margin-top-15">
+					<span ng-if="WTR_RushBagsCreateRQ.ExpediteDestination"><strong class="blue" localize>Expedite Destination</strong></span>
+					<a class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.ExpediteDestination" ng-click="setTab(2,'avoidAuto');getFocus(2,4)">
+
+						<i class="fa fa-pencil"></i>
+					</a>
+
+					<ol>
+							<li ng-if="WTR_RushBagsCreateRQ.ExpediteDestination">
+								<span ng-if="WTR_RushBagsCreateRQ.ExpediteDestination.code">{{WTR_RushBagsCreateRQ.ExpediteDestination.code}}</span><span ng-if="!WTR_RushBagsCreateRQ.ExpediteDestination.code">{{WTR_RushBagsCreateRQ.ExpediteDestination.toUpperCase()}}</span>
+						 </li>
+				</ol>
+				</div>
+
+</div>
+				<div class="col-sm-12 gray_hdr">
+					<p class="tab-section-header summarySection" ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd||
+					  WTR_RushBagsCreateRQ.LossComments||
+						WTR_RushBagsCreateRQ.LossReasonCode||
+						WTR_RushBagsCreateRQ.FaultStationCode||
+						WTR_RushBagsCreateRQ.FaultAirline ||
+						WTR_RushBagsCreateRQ.FaultTerminal||
+						WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[0]||
+						WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[1]|| WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[2] ||
+						WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference||
+						WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType||
+						WTR_RushBagsCreateRQ.RushBagGroup.NumberOfBags||
+						WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[0]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[1]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[2]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[3]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[4]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[5]||
+						WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[6]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[7]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[8]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[9]" >
+						<i class="fa fa-ellipsis-h gray"></i>
+						<span localize>More</span>
+						<a href="" ng-click="exclamationVariable.value3 ? setTab(3,true,true) : '' "><i class="fa fa-check-circle AdditionalMandatoryRushBag fa-lg status indicator3"></i></a>
+					</p>
+				</div>
+				<div class="default">
+					<div class="clearfix"></div>
+
+
+					<div class="default border" id="rushBagOption" ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd">
+			<div class="col-sm-12">
+				<h6 class="margin-bottom-0 blue" localize>Rush Bag Option <a href=""  class="bluemargin-left-5"  ng-click="setTab(3,'avoidAuto');getFocus(3,1)"><i class="fa fa-pencil fa-lg"></i></a></h6>
+				<ul class="list-unstyled">
+					<li><label><span>Handled Airline Copy</span>:</label> <span class="non-capitalize" ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd == 'NO'" localize>Don't Send</span><span class="non-capitalize" ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd == 'FULL'" localize>Send Full Text</span><span class="non-capitalize" ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd == 'YES'" localize>Send Standard Text</span><span class="non-capitalize" ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd == 'REPEAT'" localize>Repeat</span></li>
+
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="default border" ng-if="
+		WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[0]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[1]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[2]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[3]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[4]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[5]||
+		WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[6]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[7]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[8]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[9]">
+<div   id="rushTeletypeAddress" class="col-sm-12" ng-if="
+WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[0]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[1]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[2]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[3]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[4]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[5]||
+WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[6]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[7]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[8]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[9]">
+	<span ng-if="
+	WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[0]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[1]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[2]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[3]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[4]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[5]||
+	WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[6]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[7]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[8]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[9]"><strong class="blue" localize>Teletype Address</strong></span>
+	<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[0]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[1]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[2]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[3]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[4]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[5]||
+	WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[6]||  WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[7]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[8]|| WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[9]" ng-click="setTab(3,'avoidAuto');getFocus(3,5)">
+		<i class="fa fa-pencil"></i></a>
+	<ul class="list-unstyled">
+		<li ng-repeat="x in addAnotherTeletypes track by $index">
+			<label ng-if="WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[$index]">{{$index+1}}.</label> {{WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[$index]}}
+		</li>
+
+	</ul>
+</div>
+<div class="clearfix"></div>
+</div>
+
+		<div class="default border" id="faultInfo" ng-if="WTR_RushBagsCreateRQ.LossComments||
+		WTR_RushBagsCreateRQ.LossReasonCode||
+		WTR_RushBagsCreateRQ.FaultStationCode|| WTR_RushBagsCreateRQ.FaultAirline||
+		WTR_RushBagsCreateRQ.FaultTerminal">
+					<div class="col-sm-12">
+						<h6 class="margin-bottom-0 blue" localize>Fault Information <a href="" ng-click="setTab(3,'avoidAuto');getFocus(3,2)" class="bluemargin-left-5"><i class="fa fa-pencil fa-lg" ></i></a></h6>
+						<ul class="list-unstyled">
+							<li ng-if="WTR_RushBagsCreateRQ.LossComments"><label><span localize>Comments on Loss</span>:</label> {{WTR_RushBagsCreateRQ.LossComments.toUpperCase()}}</li>
+
+
+							<li ng-if="WTR_RushBagsCreateRQ.LossReasonCode.code"><label><span localize>Reason for Loss</span>:</label> {{WTR_RushBagsCreateRQ.LossReasonCode.code}}</li>
+							<li ng-if="WTR_RushBagsCreateRQ.LossReasonCode && !WTR_RushBagsCreateRQ.LossReasonCode.code "><label><span localize>Reason for Loss</span>:</label> {{WTR_RushBagsCreateRQ.LossReasonCode}} </li>
+
+
+
+
+							<li ng-if="WTR_RushBagsCreateRQ.FaultStationCode.code"><label><span localize>Fault Station</span>:</label> {{WTR_RushBagsCreateRQ.FaultStationCode.code}}</li>
+							<li ng-if="WTR_RushBagsCreateRQ.FaultStationCode && !WTR_RushBagsCreateRQ.FaultStationCode.code"><label localize>Fault Station</span>:</label> {{WTR_RushBagsCreateRQ.FaultStationCode.toUpperCase()}}</li>
+
+							<li ng-if="WTR_RushBagsCreateRQ.FaultAirline.code"><label><span localize>Fault Airline</span>:</label> {{WTR_RushBagsCreateRQ.FaultAirline.code}}</li>
+							<li ng-if="WTR_RushBagsCreateRQ.FaultAirline && !WTR_RushBagsCreateRQ.FaultAirline.code"><label localize>Fault Airline</span>:</label> {{WTR_RushBagsCreateRQ.FaultAirline.toUpperCase()}}</li>
+
+
+							<li ng-if="WTR_RushBagsCreateRQ.FaultTerminal.code"><label><span localize>Fault Terminal</span>:</label>{{WTR_RushBagsCreateRQ.FaultTerminal.code}}</li>
+							<li ng-if="WTR_RushBagsCreateRQ.FaultTerminal && !WTR_RushBagsCreateRQ.FaultTerminal.code"><label><span localize>Fault Terminal</span>:</label> {{WTR_RushBagsCreateRQ.FaultTerminal.toUpperCase()}}</li>
+
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+
+				<div class="default border" id="suppInfo" ng-if="WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[0]||
+				WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[1]||WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[2]">
+			<div class="col-sm-12">
+				<h6 class="margin-bottom-0 blue" localize>Supplementary Information <a href="" ng-click="setTab(3,'avoidAuto');getFocus(3,3)" class="bluemargin-left-5"><i class="fa fa-pencil fa-lg" ></i></a></h6>
+				<ol>
+					<li ng-if="WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[0]">{{ WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[0]}}</li>
+
+					<li ng-if="WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[1]">{{  WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[1]}}</li>
+
+						<li ng-if="WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[2]">{{  WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[2]}}</li>
+				</ol>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="default border" id="relatedFile" ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType||
+		WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference">
+			<div class="col-sm-12">
+				<h6 class="margin-bottom-0 blue" localize>Related File <a href="" ng-click="setTab(3,'avoidAuto');getFocus(3,4)" class="bluemargin-left-5"><i class="fa fa-pencil fa-lg" ></i></a></h6>
+				<ol>
+					<li><span ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType === 'DELAYED'" class="non-capitalize">Delayed Bag</span><span ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType === 'DAMAGED'" class="non-capitalize">Damaged Bag</span><span ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType === 'ON-HAND'" class="non-capitalize">On-Hand Bag</span><span ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType === 'RUSH'" class="non-capitalize">Rush Bag</span> &nbsp;{{WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference}}</li>
+				</ol>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+<!--
+				<div class="col-sm-4 col-md-3 margin-top-15">
+					<span ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd"><strong class="blue">Handled Airline Copy</strong></span>
+					<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd" ng-click="setTab(3,'avoidAuto');getFocus(3,1)"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd"> {{WTR_RushBagsCreateRQ.HandledAirlineCopyInd}}</li>
+					</ul>
+
+					<span ng-if="WTR_RushBagsCreateRQ.LossComments"><strong class="blue">Loss Comments</strong></span>
+					<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.LossComments" ng-click="setTab(3,'avoidAuto');getFocus(3,2)"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.LossComments"> {{WTR_RushBagsCreateRQ.LossComments}}</li>
+					</ul>
+
+					<span ng-if="	WTR_RushBagsCreateRQ.LossReasonCode"><strong class="blue">Reason For Loss</strong></span>
+					<a  class="edit-link link" href="" ng-if="	WTR_RushBagsCreateRQ.LossReasonCode" ng-click="setTab(3,'avoidAuto')"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.LossReasonCode.code"> {{WTR_RushBagsCreateRQ.LossReasonCode.code}}</li>
+						<li ng-if="!WTR_RushBagsCreateRQ.LossReasonCode.code"> {{WTR_RushBagsCreateRQ.LossReasonCode}}</li>
+					</ul>
+
+					<span ng-if="WTR_RushBagsCreateRQ.FaultStationCode"><strong class="blue">Fault Station</strong></span>
+					<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.FaultStationCode" ng-click="setTab(3,'avoidAuto')"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.FaultStationCode.code"> {{WTR_RushBagsCreateRQ.FaultStationCode.code}}</li>
+						<li ng-if="WTR_RushBagsCreateRQ.FaultStationCode"> {{WTR_RushBagsCreateRQ.FaultStationCode.toUpperCase()}}</li>
+					</ul>
+
+					<span ng-if="WTR_RushBagsCreateRQ.FaultTerminal"><strong class="blue">Fault Terminal</strong></span>
+					<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.FaultTerminal" ng-click="setTab(3,'avoidAuto')"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.FaultTerminal.code"> {{WTR_RushBagsCreateRQ.FaultTerminal.code}}</li>
+						<li ng-if="WTR_RushBagsCreateRQ.FaultTerminal"> {{WTR_RushBagsCreateRQ.FaultTerminal.toUpperCase()}}</li>
+					</ul>
+
+					<span ng-if="WTR_RushBagsCreateRQ.RushBagGroup.NumberOfBags"><strong class="blue">Forwarded Bag</strong></span>
+					<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.RushBagGroup.NumberOfBags" ng-click="setTab(3,'avoidAuto')"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.RushBagGroup.NumberOfBags"> {{WTR_RushBagsCreateRQ.RushBagGroup.NumberOfBags}}</li>
+					</ul>
+
+
+
+					<span ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType"><strong class="blue">Record Type</strong></span>
+					<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType" ng-click="setTab(3,'avoidAuto')"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType"> {{WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType}}</li>
+					</ul>
+
+					<span ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference"><strong class="blue">File Reference</strong></span>
+					<a  class="edit-link link" href="" ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference" ng-click="setTab(3,'avoidAuto')"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference"> {{WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference}}</li>
+					</ul>
+				</div> -->
+
+
+
+
+
+
+
+
+</div>
+				<!-- <div class="col-sm-12 gray_hdr">
+					<p class="tab-section-header summarySection" ng-if="claim.commentsOnLoss|| claim.customsInformation||claim.furtherInformation||claim.supplementalInformation||claim.supplementalInformation||claim.missingBags||claim.maleToiletKits|| claim.femaleToiletKits||claim.reasonforloss|| claim.partnercode||claim.faultstation||claim.faultterminal||claim.declare_claim0|| claim.declare_cur0||claim.excess_claim0||claim.excess_cur0||claims.settleamt0||claims.settlecurr0||claims.settleremarks0|| claims.settleamt1|| claims.settlecurr1|| claims.settleremarks1|| claims.settleamt2 ||claims.settlecurr2|| claims.settleremarks2|| claims.settleamt3|| claims.settlecurr3|| claims.settleremarks3||claims.settletype4|| claims.settleamt4|| claims.settlecurr4|| claims.settleremarks4||claims.file_type0|| claims.station_file0|| claims.airline_file0|| claims.seqNumber0||claims.file_type1|| claims.station_file1|| claims.airline_file1|| claims.seqNumber1||claims.file_type2|| claims.station_file2|| claims.airline_file2|| claims.seqNumber2||claims.file_type3|| claims.station_file3|| claims.airline_file3|| claims.seqNumber3||claims.file_type4|| claims.station_file4|| claims.airline_file4|| claims.seqNumber4||claims.questionnaireSent|| claims.headquarters|| claims.claimsFormDate|| claims.claimsDeptNotDate || claims.passportNumber">
+						<i class="fa fa-tag"></i>
+						{{claims[0].Claim}}
+						<i class="fa fg fa-lg status"></i>
+					</p>
+				</div> -->
+				<!-- <div class="default">
+				<div class="col-sm-4 col-md-3">
+					<span ng-if="claim.commentsOnLoss|| claim.customsInformation||claim.furtherInformation||claim.supplementalInformation||claim.supplementalInformation||claim.missingBags "><strong class="blue">{{claims[0].comments}}</strong></span>
+					<a  class="edit-link link" href="" ng-if="claim.commentsOnLoss|| claim.customsInformation||claim.furtherInformation||claim.supplementalInformation||claim.supplementalInformation||claim.missingBags " ng-click="setTab(5)"><i class="fa fa-pencil" ></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claim.commentsOnLoss"><label>{{claims[0].commentsOnLoss}}: </label> {{claim.commentsOnLoss}}</li>
+						<li ng-if="claim.customsInformation"><label>{{claims[0].customsInformation}}: </label> {{claim.customsInformation}}</li>
+						<li ng-if="claim.furtherInformation"><label>{{claims[0].furtherInformation}}: </label> {{claim.furtherInformation}}</li>
+						<li ng-if="claim.supplementalInformation"><label>{{claims[0].supplementalInformation}}: </label> {{claim.supplementalInformation}}</li>
+						<li ng-if="claim.missingBags"><label>{{claims[0].missingbag}}: </label> {{claim.missingBags}}</li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<span ng-if="claim.maleToiletKits|| claim.femaleToiletKits"><strong class="blue">{{claims[0].aminity}}</strong></span>
+					<a  class="edit-link link" href="" ng-if="claim.maleToiletKits|| claim.femaleToiletKits" ng-click="setTab(5)"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claim.maleToiletKits"><label>{{claims[0].maleToiletKits}}: </label> {{claim.maleToiletKits}}</li>
+						<li ng-if="claim.femaleToiletKits"><label>{{claims[0].femaleToiletKits}}: </label> {{claim.femaleToiletKits}}</li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<span ng-if="claim.reasonforloss|| claim.partnercode||claim.faultstation||claim.faultterminal"><strong class="blue">{{claims[0].liabilityInformation}}</strong></span>
+					<a  class="edit-link link" href="" ng-if="claim.reasonforloss|| claim.partnercode||claim.faultstation||claim.faultterminal" ng-click="setTab(5)"> <i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claim.reasonforloss"><label>{{claims[0].bagforinsurance}}: </label> {{insuranceSelected}}</li>
+						<li ng-if="claim.reasonforloss"><label>{{claims[0].liabilityTag}}: </label> {{liabilitySelected}}</li>
+						<li ng-if="claim.reasonforloss"><label>{{claims[0].reasonforloss}}: </label> {{claim.reasonforloss.code}}</li>
+						<li ng-if="claim.partnercode"><label>{{claims[0].partnercode}}: </label> {{claim.partnercode}}</li>
+						<li ng-if="claim.faultstation"><label>{{claims[0].faultstation}}: </label> {{claim.faultstation}}</li>
+						<li ng-if="claim.faultterminal"><label>{{claims[0].faultterminal}}: </label> {{claim.faultterminal}}</li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<span ng-if="claim.declare_claim0|| claim.declare_cur0||claim.excess_claim0||claim.excess_cur0"><strong class="blue">{{claims[0].claimAmounts}}</strong></span>
+					<a  class="edit-link link" href="" ng-if="claim.declare_claim0|| claim.declare_cur0||claim.excess_claim0||claim.excess_cur0" ng-click="setTab(5)"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claim.declare_claim0"><label>{{claims[0].declaredByPassenger}}: </label> {{claim.declare_claim0}}</li>
+						<li ng-if="claim.declare_cur0"><label>{{claims[0].claimCur}}: </label> {{claim.declare_cur0.code}}</li>
+						<li ng-if="claim.excess_claim0"><label>{{claims[0].settlementCost}}: </label> {{claim.excess_claim0}}</li>
+						<li ng-if="claim.excess_cur0"><label>{{claims[0].excessCur}}: </label> {{claim.excess_cur0.code}}</li>
+					</ul>
+				</div>
+<div class="clearit"></div>
+				<div class="col-sm-4 col-md-3">
+					<span ng-if=" claims.settleamt0||claims.settlecurr0||claims.settleremarks0|| claims.settleamt1|| claims.settlecurr1|| claims.settleremarks1|| claims.settleamt2 ||claims.settlecurr2|| claims.settleremarks2|| claims.settleamt3|| claims.settlecurr3|| claims.settleremarks3||claims.settletype4|| claims.settleamt4|| claims.settlecurr4|| claims.settleremarks4"><strong class="blue">{{claims[0].settlecost}}</strong></span>
+					<a  class="edit-link link" href="" ng-if=" claims.settleamt0||claims.settlecurr0||claims.settleremarks0|| claims.settleamt1|| claims.settlecurr1|| claims.settleremarks1|| claims.settleamt2 ||claims.settlecurr2|| claims.settleremarks2|| claims.settleamt3|| claims.settlecurr3|| claims.settleremarks3||claims.settletype4|| claims.settleamt4|| claims.settlecurr4|| claims.settleremarks4" ng-click="setTab(5)"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claims.settletype0|| claims.settleamt0||claims.settlecurr0||claims.settleremarks0"><label>Advance: </label> {{claims.settleamt0}} {{claims.settlecurr0.code}} {{claims.settleremarks0}}</li>
+						<li ng-if="claims.settletype1|| claims.settleamt1|| claims.settlecurr1|| claims.settleremarks1"><label>Delivery: </label>  {{claims.settleamt1}} {{claims.settlecurr1.code}} {{claims.settleremarks1}}</li>
+						<li ng-if="claims.settletype2|| claims.settleamt2 ||claims.settlecurr2|| claims.settleremarks2"><label>Insurance: </label>  {{claims.settleamt2}} {{claims.settlecurr2.code}} {{claims.settleremarks2}}</li>
+						<li ng-if="claims.settletype3|| claims.settleamt3|| claims.settlecurr3|| claims.settleremarks3"><label>Final: </label>  {{claims.settleamt3}} {{claims.settlecurr3.code}} {{claims.settleremarks3}}</li>
+						<li ng-if="claims.settletype4|| claims.settleamt4|| claims.settlecurr4|| claims.settleremarks4"><label>Others: </label>  {{claims.settleamt4}} {{claims.settlecurr4.code}} {{claims.settleremarks4}}</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-4 col-md-3">
+					<span ng-if="claims.file_type0|| claims.station_file0|| claims.airline_file0|| claims.seqNumber0||claims.file_type1|| claims.station_file1|| claims.airline_file1|| claims.seqNumber1||claims.file_type2|| claims.station_file2|| claims.airline_file2|| claims.seqNumber2||claims.file_type3|| claims.station_file3|| claims.airline_file3|| claims.seqNumber3||claims.file_type4|| claims.station_file4|| claims.airline_file4|| claims.seqNumber4"><strong class="blue">{{claims[0].relatedFiles}}</strong></span>
+					<a  class="edit-link link" href="" ng-if="claims.file_type0|| claims.station_file0|| claims.airline_file0|| claims.seqNumber0||claims.file_type1|| claims.station_file1|| claims.airline_file1|| claims.seqNumber1||claims.file_type2|| claims.station_file2|| claims.airline_file2|| claims.seqNumber2||claims.file_type3|| claims.station_file3|| claims.airline_file3|| claims.seqNumber3||claims.file_type4|| claims.station_file4|| claims.airline_file4|| claims.seqNumber4" ng-click="setTab(5)"> <i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claims.file_type0|| claims.station_file0|| claims.airline_file0|| claims.seqNumber0">
+							<label>File Type: </label> {{claims.file_type0}}<br/>
+							<label>Station: </label> {{claims.station_file0}}<br/>
+							<label>Airline: </label>  {{claims.airline_file0.code}}<br/>
+							<label>Sequence Number: </label>  {{claims.seqNumber0}}
+						</li>
+						<li ng-if="claims.file_type1|| claims.station_file1|| claims.airline_file1|| claims.seqNumber1">
+							<label>File Type: </label> {{claims.file_type1}}<br/>
+							<label>Station: </label> {{claims.station_file1}}<br/>
+							<label>Airline: </label>  {{claims.airline_file1.code}}<br/>
+							<label>Sequence Number: </label>  {{claims.seqNumber1}}
+						</li>
+						<li ng-if="claims.file_type2|| claims.station_file2|| claims.airline_file2|| claims.seqNumber2">
+							<label>File Type: </label> {{claims.file_type2}}<br/>
+							<label>Station: </label> {{claims.station_file2}}<br/>
+							<label>Airline: </label>  {{claims.airline_file2.code}}<br/>
+							<label>Sequence Number: </label>  {{claims.seqNumber2}}
+						</li>
+						<li ng-if="claims.file_type3|| claims.station_file3|| claims.airline_file3|| claims.seqNumber3">
+							<label>File Type: </label> {{claims.file_type3}}<br/>
+							<label>Station: </label> {{claims.station_file3}}<br/>
+							<label>Airline: </label>  {{claims.airline_file3.code}}<br/>
+							<label>Sequence Number: </label>  {{claims.seqNumber3}}
+						</li>
+						<li ng-if="claims.file_type4|| claims.station_file4|| claims.airline_file4|| claims.seqNumber4">
+							<label>File Type: </label> {{claims.file_type4}}<br/>
+							<label>Station: </label> {{claims.station_file4}}<br/>
+							<label>Airline: </label>  {{claims.airline_file4.code}}<br/>
+							<label>Sequence Number: </label>  {{claims.seqNumber4}}
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="col-sm-4 col-md-3">
+					<span ng-if="claims.questionnaireSent|| claims.headquarters|| claims.claimsFormDate|| claims.claimsDeptNotDate"><strong class="blue">{{claims[0].dates}}</strong></span>
+					<a  class="edit-link link" href="" ng-if="claims.questionnaireSent|| claims.headquarters|| claims.claimsFormDate|| claims.claimsDeptNotDate" ng-click="setTab(5)"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claims.questionnaireSent|| claims.headquarters|| claims.claimsFormDate|| claims.claimsDeptNotDate">
+							<label>{{claims[0].questionnaireSent}}: </label> {{questDate}}<br/>
+							<label>{{claims[0].dateReceivedAtLZ}}: </label> {{hdqDate}}<br/>
+							<label>{{claims[0].claimsFormReceived}}: </label>  {{formDate}}<br/>
+							<label>{{claims[0].claimsDepartmentNotified}}: </label>  {{DeptDate}}
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<span ng-if="claims.tracingFinalDate"><strong class="blue">Tracing Finalized</strong></span>
+					<a  class="edit-link link" href="" ng-if="claims.tracingFinalDate" ng-click="setTab(5)"><i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claims.tracingFinalDate">
+							<label>Date: </label> {{traceFinalDate}}<br/>
+							<label>Paper Claim: </label> {{paperClaimYes}}
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<span ng-if="claims.passportNumber"><strong class="blue">Personal Information</strong></span>
+					<a  class="edit-link link" href="" ng-if="claims.passportNumber" ng-click="setTab(5)">Personal Information <i class="fa fa-pencil"></i></a>
+					<ul class="list-unstyled">
+						<li ng-if="claims.passportNumber">
+							<label>Passport Details: </label> {{claims.passportNumber}}
+						</li>
+
+					</ul>
+				</div>
+			</div> -->
+				</div>
+
+			<div class="clearfix"></div>
+
+	<div class="form-actions" style="padding-top:25px;padding-bottom: 25px;">
+		<div class="col-sm-4 margin-top--5">
+			<a  href="" ng-class="{'active-tab':isSet(3)}" ng-click="setTab(3,'avoidAuto')" class="pull-left link-primary previous blue"> <i class="fa fa-chevron-left fa-lg"></i> <span localize>Previous</span></a>
+		</div>
+		<div class="col-sm-4">
+			<button href="" class="btn btn-primary btn-block btn-createRush" ng-click="generateRushTagNumbers()">
+				 <i class="fa fa-plus fa-lg"></i> <span localize>Create</span>
+			</button>
+		</div>
+		<div class="col-sm-4"></div>
+		<div class="clearfix"></div>
+	</div>
+	</div>
+</div>

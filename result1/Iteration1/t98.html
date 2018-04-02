@@ -1,0 +1,160 @@
+<div class="modal fade" id="sendPIR" tabindex="-1" role="dialog" ng-init="CustomerDependencies();setFocusModal();focusCustomize();">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="margin-top:80px;">
+          <div class="modal-header">
+              <a href="" data-dismiss="modal" class="pull-right" aria-label="Close" ng-click="closefunc()" shift-tab-focus><i class="close fa fa-times"></i></a>
+              <h4 class="modal-title" localize>Send Property Irregularity Report</h4>
+          </div>
+          <div class="col-sm-12 alert alert-danger alert-dismissible fade in" style="width:80%;float:none;margin: 0 auto;text-align:center;" ng-show="pirErrormsg" role="alert">
+            <button type="button" class="close"  ng-click="pirErrormsg=false" aria-label="Close"><span aria-hidden="true">×</span></button>
+            {{pirErrormsg}}
+          </div>
+          <div class="modal-body">
+
+  <!-- My code begins-->
+  <div ng-if="bag=='DAMAGED' && loggedair=='LH'">
+        <div ng-if="!pastDateMode">
+          <div class="col-sm-6 margin-bottom-15">     
+            <div class="btn-group selection full-width lhLanguage" role="group">
+                <!-- <button type="button" class="btn btn-default">Unknown</button> -->
+                <button type="button" class="btn btn-default" id="customized" ng-click="toggleMenu(true);" ng-class="{'active':showCustomized}">Customized</button>
+                <button type="button" class="btn btn-default" id="standard" ng-click="toggleMenu(false);" ng-class="{'active':!showCustomized}">Standard</button>
+            </div>
+            </div>
+        </div>
+  </div>
+  <div class="clearfix"></div>
+    <!--My code ends-->
+
+
+          <div class="col-sm-6">
+            <label for="email" localize>Email Address</label>
+            <div ng-class="{'input-group required': sendPirModels.sendPirEmail || (!sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)}">
+            <span ng-class="{'input-group-addon mandatory-bar': sendPirModels.sendPirEmail || (!sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)}"></span>
+            <input class="form-control EA" id="sendPirEmail" ng-model="sendPirModels.sendPirEmail" type="email"	data-title="" data-toggle="tooltip" autocomplete="off" typeaheadscroll type-ahead-init-scroll  typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);appendUserEmailSendPir($model,'sendPirEmail','sendPirModels.sendPirEmail');handleSmartSearchErrorBorder('sendPirEmail')" typeahead-select-on-blur = "true" typeahead-select-on-exact= "true" typeahead-editable = "false" typeahead="state for state in emailDomain | filter:$viewValue:emailDomains" validation-rule="email-58" error-validate maxlength="58" size="58" ng-blur="sendPirEmailBlur();errorValidations('sendPirEmail')"
+             ng-required="sendPirModels.sendPirEmail || (!sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)" ng-change="updateUserName($index,sendPirModels.sendPirEmail);">
+          </div>
+          </div>
+<!--
+          <div class="col-sm-6" ng-if="!(restriction.indexOf('PRIMARYLANGUAGE_LA')!=-1)">
+            <label for="language" localize>Report Language</label>
+           <div class="dropdown">
+
+             <span></span>
+             <button prevent-closing-dropdown class="btn btn-default HC text-left" ng-focus="isFocus1" ng-focus-lost="loseFocus()" autofocus="true"
+             type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+             id="drpPirLanguage" fieldType="optional" autofocus="true"
+             ng-disabled="(restrictionDis.indexOf('PRIMARYLANGUAGE_LA')!=-1)">
+               <span ng-model="sendPirModels.selectedItem"
+               ng-if="sendPirModels.selectedItem">{{sendPirModels.language}}</span>
+               <span localize ng-model="sendPirModels.selectedItem"
+               ng-if="!sendPirModels.selectedItem">Select Preferred Language</span>
+               <i class="fa fa-chevron-down pull-right"></i>
+             </button>
+
+             <ul class="dropdown-menu z-index-5">
+             <li class="dropdown-header" ng-class="{'selected': !sendPirModels.selectedItem}" ng-click="sendPirModels.selectedItem='';sendPirModels.language='';"><a href="">Select Preferred Language</a></li>
+             <li ng-class="{'selected': selectedItem.code == sendPirModels.selectedItem}"
+             ng-repeat="selectedItem in PIRlanguage" ng-click="sendPirModels.selectedItem=selectedItem.code;sendPirModels.language=(($index+1)+'. ')+selectedItem.name;"><a href="">{{(($index+1)+'. ')}}{{selectedItem.name}}</a></li>
+             </ul>
+
+
+              <!-- <select aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle HC text-left"  data-toggle="dropdown"  id="drpPirLanguage" type="button" ng-model="sendPirModels.selectedItem"
+              ng-disabled="(restrictionDis.indexOf('PRIMARYLANGUAGE_LA')!=-1)"
+               ng-options="selectedItem.code as selectedItem.code+' '+selectedItem.name for selectedItem in PIRlanguage">
+                <i class="fa fa-chevron-down form-control pull-right"></i>
+                <option value='' selected="selected" localize>Select Preferred Language</option>
+              </select> -->
+            <!--</div>
+          </div>-->
+          <div class="col-sm-6" ng-if="showCustomized && bag=='DAMAGED' && loggedair=='LH'">
+            <label for="language" localize>Report Language</label>
+              <div class="position-static input-group required reasonForLossList">
+              <span class=" input-group-addon mandatory-bar"></span>
+              <input ng-model="sendPirModels.selectItem" class="form-control" type="text" id="drpPirLanguage"  validation-rule="language" typeahead-focus  error-validate data-toggle="tooltip" typeahead-watch-changes data-title="" typeahead-on-select ="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead)" ng-focus="isFocus1" ng-blur="loseFocus()" typeahead="msz.code as msz.code + ' - ' + msz.name for msz in PiRlanguage  | filter:$viewValue:FilterOnFocus | orderBy:'code'" ng-required="showCustomized"  typeaheadscroll type-ahead-init-scroll maxlength="25" ng-keypress="detectBackSpace($event);">
+            </div>
+          </div>
+          <div class="col-sm-6" ng-if="(bag== 'DELAYED' || (!showCustomized && bag=='DAMAGED')) || (bag=='DAMAGED' && loggedair !=='LH')">
+            <label for="language" localize>Report Language</label>
+              <div class="position-static input-group required reasonForLossList">
+              <span class=" input-group-addon mandatory-bar"></span>
+              <input ng-model="sendPirModels.selectedItem" typeahead-watch-changes class="form-control" type="text" id="drpPirLanguageSend"  validation-rule="language"  error-validate data-toggle="tooltip" data-title=""  ng-focus="isFocus1" ng-blur="loseFocus()" typeahead="state.code as state.code + ' - ' + state.name for state in PIRlanguage | filter:$viewValue:FilterOnFocus |orderBy:'code'" required typeaheadscroll  maxlength="25" typeahead-on-select ="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead)" typeahead-focus>
+            </div>
+          </div>
+          <div class="clearit"></div>
+
+          <div class="col-sm-6" ng-if="!(restriction.indexOf('MOBLIEPHONENUMBER')!=-1) && showPhone">
+            <label for="phone" localize>Cell/Mobile Phone Number</label>
+            <div ng-class="{'input-group required': (!sendPirModels.sendPirEmail && sendPirModels.sendPirPhone) || (!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)}">
+              <span ng-class="{'input-group-addon mandatory-bar': (!sendPirModels.sendPirEmail && sendPirModels.sendPirPhone) || (!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)}"></span>
+              <input autocomplete="off" typeaheadscroll type-ahead-init-scroll class="form-control typeahead cell_id CP" data-title="" data-toggle="tooltip"
+              error-validate id="phone" maxlength="20" ng-model="sendPirModels.sendPirPhone"
+              size="20" type="text" ng-keypress="disable_specialChars($event)" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);handleSmartSearchErrorBorder('phone')"
+              typeahead="state.code as state.code +' '+ state.country for state in phonesDomain | orderBy:'code' | filter:$viewValue | orderBy:'code'"
+              validation-rule="mobile" ng-blur="errorValidations('phone')" ng-required="(!sendPirModels.sendPirEmail && sendPirModels.sendPirPhone) || (!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)"
+              ng-disabled="(restrictionDis.indexOf('MOBLIEPHONENUMBER')!=-1)">
+            </div>
+          </div>
+
+          <div class="col-sm-6" ng-if="(bag== 'DELAYED' || (!showCustomized && bag=='DAMAGED')) || (bag=='DAMAGED' && loggedair !=='LH')">
+            <label for="teletype" localize>Teletype Address</label>
+              <div ng-class="{'input-group required': (!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && sendPirModels.sendPirTeletypAddress) || (!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)}">
+              <span ng-class="{'input-group-addon mandatory-bar': (!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && sendPirModels.sendPirTeletypAddress) || (!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)}"></span>
+              <input ng-model="sendPirModels.sendPirTeletypAddress" class="form-control" type="text" id="teletypes" maxlength="7" validation-rule="teletypes7"  error-validate data-toggle="tooltip" data-title="" ng-blur="errorValidations('teletypes')" ng-required="(!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && sendPirModels.sendPirTeletypAddress) || (!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)">
+            </div>
+          </div>
+          <div class="clearit"></div>
+
+          <div class="col-sm-12" ng-if="!(restriction.indexOf('ADDITIONALMESSAGE')!=-1) && (bag== 'DELAYED' || (!showCustomized && bag=='DAMAGED')) || (bag=='DAMAGED' && loggedair !=='LH')">
+            <label for="additionalMessage" localize>Additional Message</label>
+            <div>
+              <span></span>
+            <textarea ng-blur="errorValidations('additionalMessage')" id="additionalMessage" ng-model="sendPirModels.sendPirAdditionalMessage" maxlength="174"  rows="5" class="form-control"  validation-rule="freeForm1-174"  error-validate="" data-toggle="tooltip" data-title="" ng-disabled="(restrictionDis.indexOf('ADDITIONALMESSAGE')!=-1)"></textarea>
+          </div>
+          </div>
+
+          <div class="col-sm-6" ng-if="!(restriction.indexOf('ADDITIONALINFORMATION_TI')!=-1) && (bag== 'DELAYED' || (!showCustomized && bag=='DAMAGED')) || (bag=='DAMAGED' && loggedair !=='LH')">
+            <label for="language" localize>Additional Information</label>
+            <div class="dropdown">
+              <span></span>
+              <button prevent-closing-dropdown class="btn btn-default HC text-left" ng-focus="isFocus1" ng-focus-lost="loseFocus()" autofocus="true"
+              type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+              id="language" fieldType="optional" autofocus="true"
+              ng-disabled="(restrictionDis.indexOf('ADDITIONALINFORMATION_TI')!=-1)">
+                <span ng-model="sendPirModels.information"
+                ng-if="sendPirModels.information">{{sendPirModels.info}}</span>
+                <span localize ng-model="sendPirModels.information"
+                ng-if="!sendPirModels.information">Select</span>
+                <i class="fa fa-chevron-down pull-right"></i>
+              </button>
+
+              <ul class="dropdown-menu z-index-5">
+              <li class="dropdown-header" ng-class="{'selected': !sendPirModels.information}" ng-click="sendPirModels.information='';sendPirModels.info='';"><a href="">Select</a></li>
+              <li ng-class="{'selected': Infos == sendPirModels.information}"
+              ng-repeat="Infos in CustomerInfo" ng-click="sendPirModels.information=Infos;sendPirModels.info=(($index+1)+'. ')+Infos;"><a href="">{{(($index+1)+'. ')}}{{Infos}}</a></li>
+              </ul>
+
+
+              <!-- <select aria-expanded="true" class="btn form-control btn-default dropdown-toggle HC text-left" id="language" ng-model="sendPirModels.information" ng-init="sendPirModels.information = options[0]" ng-disabled="(restrictionDis.indexOf('ADDITIONALINFORMATION_TI')!=-1)">
+               <i class="fa fa-chevron-down pull-right"></i>
+                <option value='' selected="selected" localize>Select</option>
+                <option ng-repeat="Infos in CustomerInfo" ng-click="sendPirModels.information=Infos" value="{{Infos}}">{{($index+1)}} {{Infos}}</option>
+              </select> -->
+            </div>
+          </div>
+            <div class="clearfix"></div>
+
+            </div>
+
+            <div class="modal-footer">
+              <div class="col-sm-4 col-sm-offset-4">
+                <button type="button" class="btn btn-primary btn-block submit forEnterButtonModal" localize data-toggle="modal" ng-click="sendPir()" id="sendPirDetails" ng-disabled="(!sendPirModels.sendPirEmail && !sendPirModels.sendPirPhone && !sendPirModels.sendPirTeletypAddress)|| isSPIRDisable">Send</button>
+              </div>
+
+              <div class="col-sm-4">
+                <a href="#" class="pull-right margin-top-5 blue" id="closeSendPirModal" data-dismiss="modal" aria-label="Close" ng-click="closefunc()" tab-btn-focus><i class="fa fa-times-circle" ></i> <span localize>Cancel</span></a>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>

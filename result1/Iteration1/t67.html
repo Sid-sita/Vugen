@@ -1,0 +1,166 @@
+<div class="modal fade" id="sendFile">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header customModalHeader" style="background-color: #eee !important;">
+          <span class="resetPwd-pop" ng-if="(epicName === 'ONHANDBAG' || epicName==='DAMAGEDBAG') && hidepasswordLabel && !(restriction.indexOf('PASSWORD')!=-1) && !(restrictionDis.indexOf('PASSWORD')!=-1)" ng-click="clickPasswordLabelSendFile()">
+            <span class="fa-stack fa-lg blue">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-key fa-stack-1x fa-inverse fa-rotate-180"></i>
+            </span>
+            <a href="" shift-tab-focus class="blue makeBold">Password</a>
+          </span>
+          <h4 class="modal-title pull-left customModalTitle col-lg-8 col-sm-8" style="color: #000 !important" localize>Send File</h4>
+          <a href="" class="pull-right" data-dismiss="modal" aria-label="Close" ng-click="clearModels()"><i class="close fa fa-times"></i></a>
+        </div>
+
+          <div class="modal-body sendfile_modal_scroll" ng-keydown="preventPopupSendFile($event)">
+            <alert ng-if="sendFilePasswordError" type="danger" id="GridErrorSendFile" close="GridWarningCloseMsgSendFile('GridErrorSendFile')">{{sendFilePasswordError}}</alert>
+					  <div class="setPwd-text-reasign margin-left-15" style="display: block;" ng-show="passwordLabel === true">
+						  <p>Provide password if action is protected</p>
+						<div class="col-sm-3 margin-left--15">
+							<div>
+                <span></span>
+								  <input type="password" class="form-control" maxlength="4" ng-model="setPasswordModel" tooltip-trigger='focus' error-validate validation-rule="alphaNum4"  id="setPasswordSendFile" ng-blur="checkSendEnable();" autocomplete="new-password">
+							  </div>
+						  </div>
+						  <div class="clearfix"></div>
+					  </div>
+            <div class="col-sm-10">
+              <label for="selectStation" localize>From Teletype Address</label></div>
+              <div class="col-sm-4">
+              <div class="input-group required">
+                <span class="input-group-addon mandatory-bar"></span>
+                <input class="form-control" maxlength="7" validation-rule="teletypes7" error-validate="" data-toggle="tooltip" tooltip="{{fromteletypeTooltip}}"
+                ng-model="fromteletype" ng-blur="teletypeFromCheck();checkSendEnable();" value="" type="text" id="fromteletype" required="">
+              </div>
+            </div>
+
+        <div class="clearfix"></div>
+        <h5 localize>To Destination Addresses</h5>
+
+        <div class="col-sm-12">
+          <label for="selectStation" localize>Email Address</label>
+          <div class="input-group required">
+            <span class="input-group-addon mandatory-bar"></span>
+            <input autocomplete="off" typeaheadscroll type-ahead-init-scroll class="form-control" value=""  data-toggle="tooltip" ng-model ="toemail"  ng-change="checkSendEnable();updateUserName($index,toemail);" ng-blur="checkSendEnable();" type="text" id="email" error-validate=""  typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);appendUserEmailSendFile($model,'email');handleSmartSearchErrorBorder('email');" typeahead-select-on-blur="true" typeahead-select-on-exact="true" typeahead-editable="true" typeahead="state for state in domain | filter:$viewValue:emailDomains" validation-rule="email-58">
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- <div class="col-sm-4"> -->
+          <!-- <div class="input-group required">
+            <span class="input-group-addon mandatory-bar"></span>
+            <input class="form-control" value="" ng-model="toteletype" type="text" id="selectStation" required="">
+          </div> -->
+
+
+            <!-- <div class="clearfix"></div> -->
+            <h5 class="font-weight-normal" localize>Teletype Address</h5>
+            <div ng-repeat="item in teletypeObj" class="extra_telAddress">
+              <!-- <label for="selectStation" ng-if="($index) == 0">Teletype Address</label> -->
+              <div class="col-sm-4">
+
+                <div ng-class="{'input-group required':($index) == 0}">
+                  <span ng-class="{'input-group-addon mandatory-bar':($index) == 0}"></span>
+                  <input style="text-transform:uppercase;" validation-rule="teletypes7" tooltip="{{sendFileMsg['modalErrorMessage'+$index]}}" data-toggle="tooltip" class="form-control" value="" id="teletype{{$index}}"
+                  ng-model="sendfile['teletype'+$index]" ng-class="{'bdr_radius_left':sendfile['teletype'+$index]}"  ng-blur="teletypeCheck($index);checkSendEnable($index);" error-validate="" maxlength="7"  data-title="" fieldType="mandatory" ng-required="($index) == 0">
+                </div>
+              </div>
+              <div class="col-sm-2" ng-if="($index) >0"    >
+              <div class="remove removeFields" id="remove_usercomment"  ng-click="removeTeletype($index,teletypeObj.length)">
+                <a href=""><i class="icon-text fa fa-lg fa-minus-circle"></i></a>
+                <span localize>Remove</span>
+              </div>
+            </div>
+          <div class="col-sm-6" ng-if="teletypeObj.length == 1">
+            <div class="add-another margin-top-8" ng-click="addTeletype()">
+            <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg margin-top-5" ng-class="{'add-another hide':teletypeObj.length===10}"></i></a>
+            <span ng-class="{'add-another hide':teletypeObj.length===10}" localize>Add another teletype address</span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-sm-6" ng-if="teletypeObj.length > 1">
+          <div class="add-another margin-top-8" ng-click="addTeletype()">
+          <a href="" class="pull-left"><i class=" margin-top-5 fa fa-plus-circle fa-lg" ng-class="{'add-another hide':teletypeObj.length===10}"></i></a>
+          <span ng-class="{'add-another hide':teletypeObj.length===10}" localize>Add another teletype address</span>
+          </div>
+        </div>
+        <!-- </div> -->
+
+        <div class="clearfix"></div>
+
+        <div class="col-sm-5 margin-top-50 margin-bottom-15" ng-show="!(restriction.indexOf('SENDFULLTEXT')!=-1)">
+          <label localize>Send Full Text?</label>
+          <div class="btn-group selection send-full-text" role="group">
+              <button type="button"  ng-disabled="(restrictionDis.indexOf('SENDFULLTEXT')!=-1)" ng-click="fullText(true, 'fulltextyes');"  id="fulltextyes"class="fulltext btn btn-default" localize>Yes</button>
+              <button type="button"  ng-disabled="(restrictionDis.indexOf('SENDFULLTEXT')!=-1)" ng-click="fullText(false, 'fulltextno');" id="fulltextno" class="fulltext btn btn-default active" localize>No</button>
+          </div>
+        </div>
+
+        <div class="col-sm-7" ng-if="!(restriction.indexOf('FILEAREA_FA')!=-1)">
+          <label for="fileArea" ng-if="!(restriction.indexOf('FILEAREA_FA')!=-1)"><span localize>File Areas to be sent</span> <br>(<span localize>Select all or up to 5 categories</span>)</label>
+          <div class="dropdown" ng-if="!(restriction.indexOf('FILEAREA_FA')!=-1)">
+
+                <button prevent-closing-dropdown class="btn btn-default dropdown-toggle" type="button" id="fileAreaSelect"
+                data-toggle="dropdown"><span localize>File Areas to be sent</span>
+                <span class="caret pull-right margin-top-6" ng-disabled="(restrictionDis.indexOf('FILEAREA_FA')!=-1)"></span></button>
+                <ul class="dropdown-menu" style="height: 250px;overflow-y: auto;">
+                  <li class="dropdown-header" localize>Select</li>
+                  <li class="filearea"  value={{AreaObj.code}}  ng-click="addTick($index);" id={{$index}}  ng-repeat="AreaObj in fileAreaObj" ng-class="{'disableli':disableOption{{$index}},'li_border':($index==1 || $index==13 )}">
+                    <a href="" ng-class="{'disableli':disableOption{{$index}} }" ng-if="$index==0 ||$index==1 || $index==13 "><span>{{AreaObj.indexValue}}.&nbsp;{{AreaObj.value}}</span></a>
+                    <a href="" ng-class="{'disableli':disableOption{{$index}} }" ng-if="$index!==0 && $index!==1 && $index!==13"><span>&nbsp;&nbsp;&nbsp;{{AreaObj.indexValue}}.&nbsp;{{AreaObj.value}}</span></a>
+                    <i class="pull-right fa fa-check black" style="margin-top:-18px" ng-show="!disableOption{{$index}} && tick{{$index}}"></i>
+                  </li>
+                  <li class="grey greyText" ng-show="disabledOn5Arr && disabledOn5Arr.length" localize>Limit Reached (5 items max)</li>
+              </ul>
+              <span class="limitReached" style="display:none;">"<span localize>Maximum of 5 File Area can be selected</span>!!"</span>
+
+
+          </div>
+        </div>
+
+        <div class="col-sm-12" ng-show="!(restriction.indexOf('ADDITIONALINFORMATION_TI')!=-1)">
+          <label for="additionalInfo" localize>Additional Information</label>
+          <!-- <input type="text" class="form-control" ng-modal ="additional"id="additionalInfo"> -->
+          <div ng-repeat="item in additionalObj" class="addition_info">
+            <div class="sendFileForDelayed"><span></span>
+
+            <input style="text-transform:uppercase;float:left;"  class="form-control" value="" id="additional{{$index}}"
+      ng-model="sendfile['additional'+$index]" ng-blur="checkSendEnable($index);" validation-rule="freeForm1-58" error-validate data-toggle="tooltip"
+        maxlength="58"  data-title="" fieldType="optional"  ng-disabled="(restrictionDis.indexOf('ADDITIONALINFORMATION_TI')!=-1)" >
+      </div>
+        <div class="col-sm-12 ng-scope" id="remove_usercomment" ng-if="($index) >0">
+          <div  class="remove removeFields" ng-click="removeAdditional($index,additionalObj.length)" >
+            <a href=""><i class="icon-text fa fa-lg fa-minus-circle"></i></a>
+            <span class="blue-link" localize>Remove</span>
+          </div>
+        </div>
+        </div>
+
+        </div>
+
+        <div class="col-sm-8 margin-top--20" ng-class="{'add-another hidden':additionalObj.length===3}" ng-show="!(restriction.indexOf('ADDITIONALINFORMATION_TI')!=-1)">
+          <div class="add-another" ng-click="addAdditional()">
+            <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg"></i></a>
+              <span style="margin-top: -4px;"localize>Add another additional information</span>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+
+
+        <div class="clearfix"></div>
+
+          </div>
+          <div class="modal-footer">
+            <div class="col-sm-4 col-sm-offset-4">
+              <button type="button" ng-click = "createSendDelayFileReq()"class="btn btn-primary btn-block forEnterButtonModal" ng-disabled="disableSendDelayed" localize>Send File</button>
+            </div>
+            <div class="col-sm-4">
+              <a href="#" tab-btn-focus class="pull-right margin-top-5 blue" id="cancelSendModal" ng-click="clearModels()" data-dismiss="modal"><i class="fa fa-times-circle"></i> <span localize>Cancel</span></a>
+            </div>
+          </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

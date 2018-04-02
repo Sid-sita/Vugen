@@ -1,0 +1,213 @@
+{
+"outputTypeOptions" : [{ "itemVal": "Default", "code": "DEFAULT" },
+                       { "itemVal": "Summary", "code": "SUMMARY" },
+                       { "itemVal": "Comparison", "code": "COMPARISION" },
+                       { "itemVal": "Comparison Summary", "code": "COMPARISIONSUM" },
+                       { "itemVal": "Monthly Averages", "code": "MONTHLYAVERAGES" },
+                       { "itemVal": "Monthly Averages Summary", "code": "MONTHLYAVERAGESSUM" }],
+
+ "mdpOutputTypeOptions" : [{ "itemVal": "Default", "code": "DEFAULT" },
+                        { "itemVal": "Summary", "code": "SUMMARY" }],
+
+"wfaOutputTypeOptions" : [{ "itemVal": "Default", "code": "DEFAULT" },
+                          { "itemVal": "Summary", "code": "SUMMARY" },
+                          { "itemVal": "Total Activity Counts", "code": "TOTALACTIVITYCOUNTS" },
+                          { "itemVal": "Total Activity Counts Summary", "code": "TOTALACTIVITYCOUNTSSUMMARY" }],
+
+"reportingLocType" : [{"itemVal": "Station/Airline", "code": "SA"},
+                      {"itemVal": "All Stations", "code": "AS"},
+                      { "itemVal": "Region", "code": "RG" }],
+
+"wfaReportingLocType" : [{"itemVal": "Station", "code": "SA"},
+                      {"itemVal": "All Stations", "code": "AS"}],
+
+"wfaReportingLocTypeFiltered" : [{"itemVal": "All Stations", "code": "AS"}],
+
+"reportingLocTypeFilterdValue" : [
+                      {"itemVal": "All Stations", "code": "AS"},
+                      { "itemVal": "Region", "code": "RG" }],
+
+"mdpreportingLocType" : [{"itemVal": "Station", "code": "SA"},
+                      {"itemVal": "All Stations", "code": "AS"},
+                      { "itemVal": "Region", "code": "RG" }],
+
+"fileTypeValue" : [{ "itemVal": "Delayed Bag", "code": "DELAYED" },
+                   {"itemVal": "Damaged Bag", "code": "DAMAGED"}],
+
+"reportFormat" : [{"itemVal": "Text", "code": "TEXT", "disabled":false},
+                  {"itemVal": "PDF", "code": "PDF", "disabled":false},
+                  {"itemVal": "CSV", "code": "CSV", "disabled":false}],
+
+"inboxAddressAreaTypeOptions" : [{ "code": "AP", "name": "Additional prompts" },
+                                 { "code": "HQ", "name": "Management Items" },
+                                 { "code": "IN", "name": "Insurance Items" },
+                                 { "code": "XX", "name": "User Defined Items" }],
+
+"mrcAdditionalFilterVal" : [{"itemVal": "Reason for Loss", "code": "RL"},
+                            {"itemVal": "Fault Terminal", "code": "FT"},
+                            { "itemVal": "City Pairs", "code": "CP" }],
+
+"mrcAdditionalFilterValOnConditionOne" : [{"itemVal": "Reason for Loss", "code": "RL"},
+                                          {"itemVal": "City Pairs", "code": "CP" }],
+
+"mrcAdditionalFilterValOnConditionThree" : [{"itemVal": "Reason for Loss", "code": "RL"}],
+
+"MXRAdditionalFilter" : [{"itemVal": "Partner Code", "code": "Partner"},
+                          {"itemVal": "Reason for Loss", "code": "LossReason"},
+                          {"itemVal": "Searchable Airline", "code": "SearchAirline"},
+                          {"itemVal": "Total Number of Worst Flights", "code": "TotalNumberOfWorstFlights"}],
+
+"MXRAdditionalFilterForAllFlag" : [{"itemVal": "Partner Code", "code": "Partner"},
+                          {"itemVal": "Reason for Loss", "code": "LossReason"},
+                          {"itemVal": "Searchable Airline", "code": "SearchAirline"}],
+
+"fileStatus" : [{ "itemVal": "All files", "code": "ACTIVE" },
+                { "itemVal": "Closed files", "code": "CLOSED" }],
+
+"MSFreportingLocType" : [{"itemVal": "Station/Airline", "code": "SA"},
+                        {"itemVal": "All Stations", "code": "AS"},
+                        {"itemVal": "Include All Handled Airlines", "code": "AHA"},
+                        { "itemVal": "Region", "code": "RG" }],
+
+  "fileTypesMIP" : [{ "itemVal": "Delayed Bag", "code": "DELAYED" },
+                    {"itemVal": "Damaged Bag", "code": "DAMAGED"},
+                   {"itemVal": "On-Hand Bag", "code": "ONHAND"}],
+
+"mrpOutputTypeOptions" : [{ "itemVal": "Default", "code": "DEFAULT" },
+                            { "itemVal": "Summary", "code": "SUMMARY" }],
+
+"mrpReportingLocType" : [{"itemVal": "Station/Airline", "code": "SA"},
+                            {"itemVal": "All Stations", "code": "AS"},
+                            { "itemVal": "Region", "code": "RG" }],
+
+"mrpReportingLocTypeFilterdValue" : [{"itemVal": "All Stations", "code": "AS"},
+                          { "itemVal": "Region", "code": "RG" }],
+
+"mrpFileTypeValue" : [{ "itemVal": "Delayed Bag", "code": "DELAYED" },
+                      {"itemVal": "Damaged Bag", "code": "DAMAGED"}],
+
+"mrpAdditionalFilterVal" : [{"itemVal": "Fault Terminal", "code": "FT"},
+                            { "itemVal": "City Pairs", "code": "CP" }],
+"mrpAdditionalFilterValAllowed" : [{ "itemVal": "City Pairs", "code": "CP" }],
+
+
+"mavOutputTypeOptions" : [{ "itemVal": "Default", "code": "DEFAULT" },
+						{ "itemVal": "Summary", "code": "SUMMARY" },
+						{ "itemVal": "Monthly Averages", "code": "MONTHLYAVERAGES" },
+                       { "itemVal": "Monthly Averages Summary", "code": "MONTHLYAVERAGESSUM" }],
+
+
+"commonFileTypes" : [{ "itemVal": "Delayed Bag", "code": "DELAYED" },
+                    {"itemVal": "Damaged Bag", "code": "DAMAGED"},
+                   {"itemVal": "On-Hand Bag", "code": "ONHAND"}],
+
+
+ "MSLfileTypes" : [{ "itemVal": "Delayed Bag", "code": "DELAYED" },
+                     {"itemVal": "Damaged Bag", "code": "DAMAGED"},
+                     {"itemVal": "Forward Bag ", "code": "FORWARD"},
+                    {"itemVal": "On-Hand Bag", "code": "ON-HAND"}],
+
+
+"borderClearanceElements" : [{"itemVal":"All Border Clearance Elements", "code": "ALL", "isCheck":false,"isHide":false},
+                             {"itemVal":"Customs Information ", "code": "CI", "isCheck":false,"isHide":false},
+                             {"itemVal":"Permanent Address", "code": "PA", "isCheck":false,"isHide":false},
+                             {"itemVal":"Cell Phone", "code": "CP", "isCheck":false,"isHide":false},
+                             {"itemVal":"Home/Business Phone ", "code": "HP", "isCheck":false,"isHide":false},
+                             {"itemVal":"Temporary Address", "code": "TA", "isCheck":false,"isHide":false},
+                             {"itemVal":"Combination Lock", "code": "CL", "isCheck":false,"isHide":false},
+                             {"itemVal":"Keys Collected", "code": "KC", "isCheck":false,"isHide":false},
+                             {"itemVal":"Passport Number", "code": "PN", "isCheck":false,"isHide":false}
+                           ],
+
+"MBCreportingLocTypeList" : [{"itemVal": "Station/Airline", "code": "SA"},
+                         {"itemVal": "All Handled Airlines", "code": "AHASA"}],
+
+"MCLreportingLocType" : [{"itemVal": "Station/Airline", "code": "SA"},
+                          {"itemVal": "All Stations", "code": "AS"}],
+
+  "MIRReportingLocation"  : [{ "itemVal": "Station/Airline", "code": "SA" },
+                                  { "itemVal": "All Handled Airlines", "code": "AHAA" },
+                                  { "itemVal": "All Stations", "code": "AS" },
+                                  { "itemVal": "Region", "code": "RG" },
+                                  { "itemVal": "All Handled Airlines/Stations", "code": "AHAS" },
+                                { "itemVal": "All Handled Airlines/Region", "code": "AHAR" }],
+  "MIRReportingLocationForSummary"  : [  { "itemVal": "All Stations", "code": "AS" },
+                                          { "itemVal": "Region", "code": "RG" },
+                                          { "itemVal": "All Handled Airlines", "code": "AHAA" },
+                                          { "itemVal": "All Handled Airlines/Stations", "code": "AHAS" },
+                                          { "itemVal": "All Handled Airlines/Region", "code": "AHAR" }],
+  "MIROutputTypeOptionsCreationSource": [{ "itemVal": "Summary", "code": "SUMMARY" }],
+
+  "mssReportingLocType" : [{"itemVal": "Station/Airline", "code": "SA"},
+                              {"itemVal": "All Stations", "code": "AS"},
+                              { "itemVal": "Region", "code": "RG" }],
+
+  "mssReportingLocTypeFilterdValue" : [{"itemVal": "All Stations", "code": "AS"},
+                            { "itemVal": "Region", "code": "RG" }],
+
+      "MAVReportingLocType" : [{"itemVal": "Station/Airline", "code": "SA"},
+                                  {"itemVal": "All Stations", "code": "AS"},
+                                  { "itemVal": "Region", "code": "RG" }],
+
+      "MAVReportingLocTypeFilterdValue" : [{"itemVal": "All Stations", "code": "AS"},
+                                            { "itemVal": "Region", "code": "RG" }],
+  "MAVlosscodeDefault" : [
+            {"code":"80", "name": "DAMAGE"},
+            {"code":"90", "name": "PILFERAGE"}
+        ],
+
+    "MIPAdditionalFilter" : [{"itemVal":"Reason for Loss","code":"RL"},
+                             {"itemVal":"Partner Code","code":"PC"},
+                             {"itemVal":"Passenger Figures","code":"PF"},
+                             {"itemVal":"Fault Terminal","code":"FT"},
+                             {"itemVal":"City Pairs","code":"CP"}],
+
+     "MSFAdditionalFilter" : [{"itemVal":"City Pairs","code":"CP"},
+                              {"itemVal":"Fault Terminal","code":"FT"},
+                              {"itemVal":"Partner Code","code":"PC"},
+                              {"itemVal":"Reason for Loss","code":"RL"},
+                              {"itemVal":"Searchable Airline","code":"SA"}
+                              ],
+
+      "MSLAdditionalFilter" : [{"itemVal":"Fault Station","code":"FS"},
+                               {"itemVal":"Fault Terminal","code":"FT"},
+                               {"itemVal":"Partner Code","code":"PC"},
+                               {"itemVal":"Reason for Loss","code":"RL"}
+                               ],
+
+      "MIPAdditionalFilterForOutputType" : [{"itemVal":"Reason for Loss","code":"RL"},
+                                            {"itemVal":"Passenger Figures","code":"PF"}],
+
+      "MIPAdditionalFilterForASRG" : [{"itemVal":"Reason for Loss","code":"RL"},
+                                       {"itemVal":"Partner Code","code":"PC"},
+                                       {"itemVal":"Passenger Figures","code":"PF"},
+                                       {"itemVal":"City Pairs","code":"CP"}],
+      "MIPReportFormat":[{"itemVal": "Text", "code": "TEXT", "disabled":false}],
+
+      "MSFOutputParameter":[{"itemVal":"Color/Type","code":"ct"},
+                            {"itemVal":"Tag Number","code":"tg"}],
+
+      "MSLOutputParameter":[{"itemVal":"Color/Type","code":"ct"}
+                          ],
+      "EMIReportingLocationType": [{"itemVal": "Station/Airline", "code": "SA"},
+                                  {"itemVal": "All Stations", "code": "AS"},
+                                  { "itemVal": "All Handled Airlines", "code": "AHAA" },
+                                  { "itemVal": "Region", "code": "RG" }],
+      "EMIReportingLocationTypeFilterValue": [{"itemVal": "All Stations", "code": "AS"},
+                                              { "itemVal": "Region", "code": "RG" }],
+
+
+      "LZoptions":[{ "itemVal": "Date Range", "code": "DR", "showList":true },
+                   { "itemVal": "Any Date on File", "code": "NA", "showList":true }],
+
+     "MSPCloseType": [{"code":"WITHIN", "name":"Within"},
+                                  {"code":"AFTER", "name":"After"},
+                                  {"code":"BETWEEN", "name":"Between"}],
+
+      "FRRfileStatus":[{ "itemVal": "All files", "code": "A"},
+                           { "itemVal": "Closed files", "code": "C"},
+                           { "itemVal": "Tracing extended files", "code": "D"},
+                           { "itemVal": "Tracing suspended files", "code": "S"},
+                           { "itemVal": "Non tracing files", "code": "N"}],
+      "WEMReportFormat":[{"itemVal": "Text", "code": "TEXT", "disabled":false}]
+}

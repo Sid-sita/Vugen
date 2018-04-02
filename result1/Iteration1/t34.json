@@ -1,0 +1,137 @@
+{
+  "PIRlanguage": [{
+    "name": "Afrikaans",
+    "code": "AF"
+  }, {
+    "name": "Arabic",
+    "code": "AR"
+  }, {
+    "name": "Croatian",
+    "code": "CR"
+  }, {
+    "name": "Czech",
+    "code": "CZ"
+  }, {
+    "name": "Danish",
+    "code": "DA"
+  }, {
+    "name": "Dutch",
+    "code": "DU"
+  }, {
+    "name": "English",
+    "code": "EN"
+  }, {
+    "name": "Finnish",
+    "code": "FI"
+  }, {
+    "name": "French",
+    "code": "FR"
+  }, {
+    "name": "German",
+    "code": "GE"
+  }, {
+    "name": "Greek",
+    "code": "GR"
+  }, {
+    "name": "Hungarian",
+    "code": "HU"
+  }, {
+    "name": "Italian",
+    "code": "IT"
+  }, {
+    "name": "Malaysian",
+    "code": "MA"
+  }, {
+    "name": "Norwegian",
+    "code": "NO"
+  }, {
+    "name": "Polish ",
+    "code": "PL"
+  }, {
+    "name": "Portuguese",
+    "code": "PO"
+  }, {
+    "name": "Russian",
+    "code": "RU"
+  }, {
+    "name": "Serbian",
+    "code": "SE"
+  }, {
+    "name": "Slovene",
+    "code": "SL"
+  }, {
+    "name": "Spanish",
+    "code": "SP"
+  }, {
+    "name": "Swedish",
+    "code": "SW"
+  }, {
+    "name": "Turkish",
+    "code": "TU"
+  }, {
+    "name": "Vietnamese",
+    "code": "VN"
+  }],
+  "reportLabel": {
+    "AF" : "verslag taal",
+    "AR" : "taqrir alllugha",
+    "CR" : "Izvješće Jezik",
+    "CZ" : "Report Language",
+    "DA" : "Rapporter Sprog",
+    "DU" : "verslag Taal",
+    "EN" : "Report Language",
+    "FI" : "raportti Kielivalinnat",
+    "FR" : "langage de rapports",
+    "GE" : "Report Language",
+    "GR" : "ékthesi Glóssa",
+    "HU" : "jelentés Nyelv",
+    "IT" : "Lingua rapporto",
+    "MA" : "laporan Bahasa",
+    "NO" : "rapport Språk",
+    "PL" : "Raport Język",
+    "PO" : "relatório Idioma",
+    "RU" : "YAzyk otcheta",
+    "SE" : "Izveštaj jezik",
+    "SL" : "Report Language",
+    "SP" : "Informe idioma",
+    "SW" : "Rapportera Språk",
+    "TU" : "Rapor Dili",
+    "VN" : "Báo cáo Ngôn ngữ"
+  },
+  "PrintPIRLabel": {
+    "AF" : "Druk Irregularity Report",
+    "AR" : "tabaeat taqrir almukhalafa",
+    "CR" : "Ispis nepravilnosti izvješće",
+    "CZ" : "Tisk Irregularity Report",
+    "DA" : "Udskriv Irregularity Report",
+    "DU" : "Print Irregularity Report",
+    "EN" : "Print Irregularity Report",
+    "FI" : "Tulosta Väärinkäytös Raportti",
+    "FR" : "Imprimer Rapport Irrégularité",
+    "GE" : "Drucken Irregularity Report",
+    "GR" : "Ektypóste ékthesi parátypis",
+    "HU" : "Nyomtassa Szabálytalanság jelentése",
+    "IT" : "Stampa Irregularity Report",
+    "MA" : "Cetak Laporan Kehilangan",
+    "NO" : "Skriv ut PIR-rapport",
+    "PL" : "Drukuj nieprawidłowości raport",
+    "PO" : "Imprimir Relatório de Irregularidade",
+    "RU" : "Raspechatat' o neispravnostyakh",
+    "SE" : "Print nepravilnosti Report",
+    "SL" : "Natisni nepravilnost poročilo",
+    "SP" : "Imprimir Irregularidad",
+    "SW" : "Print Irregularity Report",
+    "TU" : "Düzensizlik Raporu yazdırın",
+    "VN" : "In Bất thường Báo cáo"
+  },
+  "pirCustomizedLang": [
+    {
+      "name": "English",
+      "code": "EN"
+    },
+    {
+      "name": "German",
+      "code": "GE"
+    }
+  ]
+}

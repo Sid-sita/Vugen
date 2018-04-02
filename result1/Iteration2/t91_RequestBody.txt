@@ -1,0 +1,2 @@
+"{"WTR_RLCConfigReadRQ":{"POS":{"Source":[{"AirlineVendorID":"LH"}]},"RLCConfig":{"LossReason":"
+"10,"Reports":"true","AirlineCode":"QC"},"AgentID":"WTDADMIN","Version":"1.0"}}"

@@ -1,0 +1,168 @@
+{
+  "System" :
+    {
+      "Reports" :
+        {
+          "FlightDate" :
+            {
+              "Common" : {
+                  "filetypes" :         [
+                                           { "itemVal":"1. Delayed Bag", "code":"DELAYED" },
+                                           { "itemVal":"2. Damaged Bag", "code":"DAMAGED" },
+                                           { "itemVal":"3. Forward Bag", "code":"FORWARD" }
+                                        ],
+                  "OutputTypeOptions" : [
+                                           { "itemVal": "1. Station/Airline", "code": "SA" },
+                                           { "itemVal": "2. All Stations", "code": "AS" }
+                                        ],
+                  "OutputTypeOptions1" : [
+                                           { "itemVal": "1. All Stations", "code": "AS" }
+                                        ],
+                  "Summary" :           [
+                                          { "itemVal": "1. Default", "code": "DF", "disable":false },
+                                          { "itemVal": "2. Summary", "code": "SU", "disable":false }
+                                       ],
+                 "FileStatus" :       [
+                                          { "itemVal": "1. All non retired files", "code": "NR", "disable":true },
+                                          { "itemVal": "2. Non tracing files", "code": "NT", "disable":true },
+                                          { "itemVal": "3. Closed files", "code": "CL", "disable":false }
+                                      ],
+                  "FileStatus1" :       [
+                                           { "itemVal": "1. All non retired files", "code": "NR", "disable":true },
+                                           { "itemVal": "2. Non tracing files", "code": "NT", "disable":true }
+                                       ],
+                  "AdditionalFilter" :[
+                                          { "itemVal": "1. City Pairs", "code": "CP", "disable":false },
+                                          { "itemVal": "2. Fault Terminal", "code": "FT", "disable":false },
+                                          { "itemVal": "3. Partner Code", "code": "PC", "disable":false },
+                                          { "itemVal": "4. Reason for Loss", "code": "RL", "disable":false }
+                                     ],
+                  "Format" :         [
+                                         { "itemVal": "1. Text", "code": "TXT", "disable":false },
+                                         { "itemVal": "2. PDF", "code": "PDF", "disable":true },
+                                         { "itemVal": "3. CSV", "code": "CSV", "disable":true }
+                                     ],
+                   "Area" :         [
+                                          { "itemVal": "1. Additional Prompts", "code": "AP", "disable":false },
+                                          { "itemVal": "2. Headquarters", "code": "HQ", "disable":true },
+                                          { "itemVal": "3. Insurance", "code": "IS", "disable":true },
+                                          { "itemVal": "4. User defined items", "code": "XX", "disable":true }
+                                      ],
+                    "Area1" :         [
+                                           { "itemVal": "1. Additional Prompts", "code": "AP", "disable":false }
+                                       ]
+                },
+              "Message" :
+                {
+                   "Success" : [
+                     {
+                     "Msg1" : "Success - Report successfully sent."
+                     }
+                   ],
+                   "Error" : [
+                     {
+                     "Msg1" : "An unexpected exception has been encountered. Please contact SITA Administrator."
+                   },
+                   {
+                     "Msg2" : "Enter a valid station/airline combination  for Inbox address"
+                   },
+                   {
+                     "Msg3" : "User token expired"
+                   }
+                   ],
+                   "warning" : [
+                     {
+                     "Msg1" : "Inputs selection is not a valid combination. Change selection."
+                     }
+                   ]
+                },
+              "Lables" :
+                 {
+                  "TELETYPE_ADDRESS" : "Teletype Address",
+                  "ADD_TELETYPE_ADDRESS" : "Add another teletype address",
+                  "ADD_INBOX_ADDRESS" : "Add another inbox address",
+                  "REMOVE_INBOX_ADDRESS" : "Remove",
+                  "REMOVE_TELETYPE_ADDRESS" : "Remove",
+                  "REPORT_BUTTON":"Generate Report",
+                  "INBOX_ADDRESS":"Inbox Address",
+                  "STATION":"Station",
+                  "AIRLINE":"Airline",
+                  "AREA":"Area"
+
+                }
+            },
+            "Pilfered" :
+              {
+                "Common" : {
+                    "OutputTypeOptions" : [
+                                             { "itemVal": "1. Station/Airline", "code": "SA" },
+                                             { "itemVal": "2. All Stations", "code": "AS" },
+                                             { "itemVal": "2. All Handled Airlines", "code": "AH" }
+                                          ],
+                    "OutputTypeOptions1" : [
+                                             { "itemVal": "1. All Stations", "code": "AS" }
+                                          ],
+                    "Summary" :           [
+                                            { "itemVal": "1. Default", "code": "DF", "disable":false },
+                                            { "itemVal": "2. Summary", "code": "SU", "disable":false }
+                                         ],
+                   "FileStatus" :       [
+                                            { "itemVal": "1. All non retired files", "code": "NR", "disable":false },
+                                            { "itemVal": "2. Closed only files", "code": "CL", "disable":false }
+                                        ],
+                    "Format" :         [
+                                           { "itemVal": "1. Text", "code": "TXT", "disable":false },
+                                           { "itemVal": "2. PDF", "code": "PDF", "disable":true },
+                                           { "itemVal": "3. CSV", "code": "CSV", "disable":true }
+                                       ],
+                     "Area" :         [
+                                            { "itemVal": "1. Additional Prompts", "code": "AP", "disable":false },
+                                            { "itemVal": "2. Headquarters", "code": "HQ", "disable":true },
+                                            { "itemVal": "3. Insurance", "code": "IS", "disable":true },
+                                            { "itemVal": "4. User defined items", "code": "XX", "disable":true }
+                                        ],
+                      "Area1" :         [
+                                             { "itemVal": "1. Additional Prompts", "code": "AP", "disable":false }
+                                         ]
+                  },
+                "Message" :
+                  {
+                     "Success" : [
+                       {
+                       "Msg1" : "Success - Report successfully sent."
+                       }
+                     ],
+                     "Error" : [
+                       {
+                       "Msg1" : "An unexpected exception has been encountered. Please contact SITA Administrator."
+                       },
+                       {
+                         "Msg2" : "Enter a valid station/airline combination  for Inbox address"
+                       },
+                       {
+                         "Msg3" : "User token expired"
+                       }
+                     ],
+                     "warning" : [
+                       {
+                       "Msg1" : "Inputs selection is not a valid combination. Change selection."
+                       }
+                     ]
+                  },
+                "Lables" :
+                   {
+                    "TELETYPE_ADDRESS" : "Teletype Address",
+                    "ADD_TELETYPE_ADDRESS" : "Add another teletype address",
+                    "ADD_INBOX_ADDRESS" : "Add another inbox address",
+                    "REMOVE_INBOX_ADDRESS" : "Remove",
+                    "REMOVE_TELETYPE_ADDRESS" : "Remove",
+                    "REPORT_BUTTON":"Generate Report",
+                    "INBOX_ADDRESS":"Inbox Address",
+                    "STATION":"Station",
+                    "AIRLINE":"Airline",
+                    "AREA":"Area"
+                  }
+              }
+        }
+    }
+}

@@ -1,0 +1,205 @@
+<div data-ng-show="showTemp1" ng-init="bag_typeimage();createAnotherPrefillData();" class="rushCheck1">
+    <input type="button" id="passengerHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1034, null, null, null );" class="hide" />
+    <input type="button" id="passengerHelpClose" value="Close contextual help" onclick="FMCCloseHelp ();" class="hide" />
+
+    <!-- error message div -->
+    <!-- <div class="col-sm-12 margin-top-20" data-ng-show="RushBag.RushBagError">
+ <div class="alert alert-danger alert-dismissible fade in" role="alert" id="rushError">
+	 <button type="button" class="close" ng-click="RushBag.RushBagError=false" aria-label="Close">
+		 <span aria-hidden="true">×</span>
+	 </button>
+		 {{RushBag.RushBagError}}
+ </div>
+</div> -->
+<div class="default">
+    <div ng-if="!(restriction.indexOf('PRINT_RUSHTAG_TOGGLEBUTTON')!=-1)">
+    <div class="generateRushtagNumbers pull-left width-20 padding-top-24" ng-if="showHidePrintRushStatus && printRushTagAllowed">
+        <label for="selection">Print rush tags?&nbsp;</label>
+        <div class="btn-group selection generateRushTagBags" role="group">
+            <button type="button" ng-disabled="((restrictionDis.indexOf('PRINT_RUSHTAG_TOGGLEBUTTON')!=-1))" id="printRushTagsYes" ng-click="emptyRushTagFields('yes','printRushTagsYes')"
+                class="btn btn-default yes" ng-class="{'active':selectPrintRushBag}">Yes</button>
+            <button type="button" ng-disabled="((restrictionDis.indexOf('PRINT_RUSHTAG_TOGGLEBUTTON')!=-1))" id="printRushTagsNo" ng-click="emptyRushTagFields('no','printRushTagsNo');"
+                class="btn btn-default no" ng-class="{'active':!selectPrintRushBag}">No</button>
+        </div>
+    </div>
+    <div class="numberofTags width-9" ng-if="selectPrintRushBag && printRushTagAllowed">
+        <label for="originalTag">Number of Tags</label>
+        <div class="input-group required">
+            <span class="input-group-addon mandatory-bar"></span>
+            <input class="form-control noOfTagsSize" type="text" id="numberOfTags" required="" maxlength="2" validation-rule="numberOfRushBags" data-toggle="tooltip"
+                error-validate data-original-title="" ng-model="generateTagNumbers.numberOfTags" ng-blur="addOriginalTagNumberForPrintStatus()">
+        </div>
+    </div>
+</div>
+
+    <div class="clearfix"></div>
+    <div class="default padding-bottom-15" ng-class="{'padding-top-8':showHidePrintRushStatus==false,'':showHidePrintRushStatus==true}">
+        <div class="col-sm-12">
+            <label for="selection" localize>Include Color/Type for some bags?</label>
+            <div class="btn-group selection bag-desc-toggle" role="group" ng-init="showInput=false">
+                <button type="button" class="btn btn-default yes" id="yesButton" ng-click="showInput=true" ng-class="{'active':showInput==true,'':showInput==false}" localize>Yes</button>
+                <button type="button" class="btn btn-default" ng-click="showInput=false;emptyColorAndTypeCode(addAnotherBags.length)" ng-class="{'active':showInput==false,'':showInput==true}" localize>No</button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+    <h5 ng-if="!(restriction.indexOf('FAMILYNAME')!=-1)" localize>Family Name</h5>
+
+    <div class="default" ng-if="!(restriction.indexOf('FAMILYNAME')!=-1)">
+        <div class="col-sm-12 padding-left-none" ng-repeat="item in addAnotherNames">
+            <div class="col-sm-6">
+                <div ng-if="!(restriction.indexOf('FAMILYNAME')!=-1)">
+                    <span></span>
+                    <input autofocus="true" class="form-control" ng-class="{'NM': $index == 0}" type="text" id="manName{{$index}}" data-original-title="" maxlength="16" size="16" data-toggle="tooltip" field-rule="alpha2-16" ng-focus="isFocus2" ng-focus-lost="loseFocus()"
+                        ng-blur="passengerNameCheck(WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[$index],$index)" ng-model="WTR_RushBagsCreateRQ.RushBagGroup.Names.Name[$index]" key-listener ng-disabled="(restrictionDis.indexOf('FAMILYNAME')!=-1)">
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 margin-top-10" ng-if="addAnotherNames.length==1">
+                <div class="add-another margin-0" ng-click="addAnotherName()">
+                    <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg"></i></a>
+                    <span class="margin-top--2" localize>Add another family name</span>
+                </div>
+            </div>
+            <div class="col-sm-3" ng-if="($index) >0">
+                <div class="remove" ng-click="removeName($index, addAnotherNames.length)">
+                    <a href=""><i class="fa fa-lg fa-minus-circle"></a></i><span localize>Remove</span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="col-sm-4 margin-bottom-10" ng-if="addAnotherNames.length >1" ng-class="{'add-another hide':addAnotherNames.length===10}">
+            <div class="add-another margin-0" ng-click="addAnotherName()">
+                <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg"></i></a>
+                <span class="margin-top--2" localize>Add another family name</span>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="">
+
+        <div class="bag_parent_div" ng-repeat="item in addAnotherBags">
+            <div class="col-sm-12 padding-left-none">
+                <h5>Bag {{$index+1}} <span ng-if="$index===17" localize>(Maximum reached)</span>
+                    <span class="remove margin-left-15"  id="removeRow{{$index}}" ng-click="removeBag($index,addAnotherBags.length)" ng-if="($index)>0 && !selectPrintRushBag">
+								<a href=""><i class="fa fa-lg fa-minus-circle" ></i></a><span localize>Remove</span></span>
+                </h5>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="default col-sm-12 padding-left-0">
+                <div class="col-sm-3" ng-if="!selectPrintRushBag">
+                    <label for="rushTag" localize>Rush Tag Number</label>
+                    <div class="rushTag" ng-class="{'input-group required':(((ids.indexOf('XT')!=-1) ||
+								(!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag||
+								!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag))&&  $index==0)||(((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode) && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag) && $index!=0),'has-error input-group required emptyborder':(bagError.rushTag[$index])}">
+                        <span ng-class="{'input-group-addon mandatory-bar':(((ids.indexOf('XT')!=-1) ||
+									(!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag ||
+									!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag))&&  $index==0)||(((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode) && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag) && $index!=0),'input-group-addon mandatory-bar optional':(bagError.rushTag[$index] && $index>0)}"></span>
+                        <input ng-keypress="entertimeout($event,'WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag','rushTag','originalTag',$index)" class="form-control" ng-class="{'XT': $index == 0}" type="text" id="rushTag{{$index}}" ng-model="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag"
+                            maxlength="13" ng-focus="isFocus1;" ng-focus-lost="loseFocus()" ng-blur="exclamationSign(1);InitailizeRushTagCollection($index,'rushTag',WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag);calculateNoOfBags();detectRushTagRange(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag,$index, addAnotherBags.length,$event,'rushTag');validateRushTag(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag,'rushTag',$index,'rushnumerror','rushTagNum');convertObjToArrayAndDupCheck('rushTag','rushnumerror','rush');moveToNextInput(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode,showInput,$index,$event,'fromBlur')"
+                            ng-required="(((ids.indexOf('XT')!=-1) ||(!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag||
+									WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag &&
+									 WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag))&&  $index==0)||(((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode) && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag) && $index!=0)"
+                            tooltip="{{bags['rushnumerror'+$index]}}" tooltip-validate tooltip-trigger="focus" ng-keydown="moveToNextInput(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode,showInput,$index,$event)">
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <label for="originalTag" localize>Original Tag Number</label>
+                    <div class= "rushTag" ng-class="{'input-group required':(($index==0&&((ids.indexOf('TN')!=-1) ||!(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag)||(!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag)))||(((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode) && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag) && $index!=0)) && !selectPrintRushBag,'has-error input-group required emptyborder':(bagError.originalTag[$index])}">
+                        <span ng-class="{'input-group-addon mandatory-bar':(($index==0&&((ids.indexOf('TN')!=-1) ||!(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag)||!(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag)))||(((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode) && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag) && $index!=0)) && !selectPrintRushBag,'input-group-addon mandatory-bar optional':(bagError.originalTag[$index] && $index>0)}"></span>
+                        <input ng-keypress="entertimeout($event,'WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag','originalTag','rushTag',$index,showInput)" ng-keyup="moveFocustoNxtField($event,$index)" class="form-control" ng-class="{'TN': $index == 0}" type="text"
+                            id="originalTag{{$index}}" ng-model="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag" maxlength="13" ng-required="((((ids.indexOf('TN')!=-1) ||
+								!(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag)||
+								(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag && WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag))&&  $index==0)||(((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode) && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag && !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag) && $index!=0)) && (!selectPrintRushBag)"
+                            ng-blur="InitailizeRushTagCollection($index,'originalTag',WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag);calculateNoOfBags();
+								detectRushTagRange(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag,$index, addAnotherBags.length,$event,'originalTag');validateRushTag(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag,'originalTag',$index,'tagnumerror','tagNo');convertObjToArrayAndDupCheck('originalTag','tagnumerror','original');exclamationSign(1);moveToNextInput(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode,showInput,$index,$event,'fromBlur');checkError(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag,$index);"
+                            tooltip="{{bags['tagnumerror'+$index]}}" tooltip-validate tooltip-trigger="focus" data-title="" data-original-title="" ng-keydown="moveToNextInput(WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].RushBagTag,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].OriginalBagTag,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode,WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode,showInput,$index,$event)">
+                    </div>
+                </div>
+
+                <div ng-if="showInput?true:false">
+                    <div class="col-sm-4 col-md-3  bagpopup_div" ng-if="!(restriction.indexOf('BAGCOLOR_CT')!=-1)">
+                        <label for="rush" localize>Color</label>
+                        <div ng-class="{'input-group required': (((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.Descriptor)&& !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode)||((ids.indexOf('CT')!=-1)&&$index==0))}">
+                            <span ng-class="{'input-group-addon mandatory-bar': (((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.Descriptor)&& !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode)||((ids.indexOf('CT')!=-1)&&$index==0))}">
+							</span>
+                            <input class="form-control" ng-class="{'CT': $index == 0}" ng-keyup="blurColorField(parent_index,$index,$event);" tooltip="{{bags['selectBagColor_err_'+$index]}}" data-title="" data-toggle="tooltip" id="colorSelect{{$index}}" maxlength="2" name="selectBagColor"
+                                ng-model="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode" ng-blur="retrivingColor();calculateNoOfBags();" ng-required=" (((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode||WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.Descriptor)&& !WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode)||
+								((ids.indexOf('CT')!=-1)&&$index==0))" ng-class="{'removeLeftBorderRadius':WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode || WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode}"
+                                fieldType="optional" size="58" type="text" ng-keypress="disable_specialChars($event)" ng-disabled="((restrictionDis.indexOf('BAGCOLOR_CT')!=-1))" error-validate validation-rule="bagColor">
+                        </div>
+
+                        <div class="bagcolor bagpopup">
+                            <div class="close_bag_type">X</div>
+                            <div ng-repeat="bagcolorimages in bag_color_images" bag-color-click class="colorleft">
+                                <a href="">
+                                    <div class="colorcode" id="color{{$index+1}}">{{bagcolorimages.imageCode}}</div>
+                                </a>
+                                <div class="spritecolorimages {{bagcolorimages.imageCode}}"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-md-3 bagpopup_div" ng-if="!(restriction.indexOf('BAGTYPE_CT')!=-1)">
+                        <label for="rush" localize>Type</label>
+                        <div ng-class="{'input-group required':((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode || WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.Descriptor)&& (!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode)||((ids.indexOf('CT')!=-1)&&$index==0))}">
+                            <span ng-class="{'input-group-addon mandatory-bar':((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode || WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.Descriptor)&& (!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode)||((ids.indexOf('CT')!=-1)&&$index==0))}"></span>
+                            <input aria-describedby="basic-addon2" autocomplete="off" ng-keyup="blurTypeField(parent_index,$index,$event);" class="form-control test " ng-class="{'CT': $index == 0}" tooltip="{{bags['selectBag_err_']}}" ng-required="((WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.ColorCode || WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.Descriptor)&& (!WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode)||
+								((ids.indexOf('CT')!=-1)&&$index==0))" data-title="" data-toggle="tooltip" id="bagTypeSel{{$index}}" name="selectBag" ng-model="WTR_RushBagsCreateRQ.RushBagGroup.RushBags.RushBag[$index].ColorTypeDesc.TypeCode" type="text" maxlength="2" ng-keypress="disable_specialChars($event)"
+                                ng-blur="retrivingType();calculateNoOfBags();" ng-disabled="((restrictionDis.indexOf('BAGTYPE_CT')!=-1))" error-validate validation-rule="bagType">
+                        </div>
+                        <div ng-show="showselecterrror" role="alert">
+                            <span class="colorRed">
+								<span ng-show="bagForm.selectBag.$error.required"></span>
+                            </span>
+                        </div>
+                        <div class="bagimages bagpopup">
+                            <div class="close_bag_type">X</div>
+                            <image-tile-list bagtypeimg="bag_type_images" class="col-sm-12" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2" ng-if="((addAnotherBags.length == 1)&& !showInput )&&(!(restriction.indexOf('RUSHTAGNUMBER_XT')!=-1)||
+						!(restriction.indexOf('BAGTAGNUMBER_TN')!=-1)||
+						!(restriction.indexOf('BAGCOLOR_CT')!=-1)||
+						!(restriction.indexOf('BAGTYPE_CT')!=-1)||
+						!(restriction.indexOf('BAGDESCRIPTION_CT')!=-1))">
+                    <div class="add-another hide" id="addAnotherRush{{$index}}" ng-click="addAnotherBag();" ng-class="{'add-another disabled hide':addAnotherBags.length===18}">
+                        <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg"></i></a>
+                        <span localize>Add another bag</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 margin-bottom-10" ng-if="(($index == (addAnotherBags.length - 1) && showInput)|| ($index>0 && $index == (addAnotherBags.length - 1)))&&(!(restriction.indexOf('RUSHTAGNUMBER_XT')!=-1)||
+						!(restriction.indexOf('BAGTAGNUMBER_TN')!=-1)||
+						!(restriction.indexOf('BAGCOLOR_CT')!=-1)||
+						!(restriction.indexOf('BAGTYPE_CT')!=-1)||
+						!(restriction.indexOf('BAGDESCRIPTION_CT')!=-1))">
+                    <div class="add-another margin-0 hide" id="addAnotherRush{{$index}}" ng-click="addAnotherBag();" ng-class="{'add-another disabled hide':addAnotherBags.length===18}">
+                        <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg"></i></a>
+                        <span localize>Add another bag</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+    <section class="form-actions" style="padding-top: 25px;padding-bottom:25px">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <button href="" class="btn btn-primary btn-block btn-createRush" id="rushBagSubmit" ng-disabled="(exclamationVariable.value1 || exclamationVariable.value2 || exclamationVariable.value3 || !headerModelsFilled)" ng-click="generateRushTagNumbers()">
+					 <i class="fa fa-plus fa-lg"></i> <span localize>Create</span>
+				</button>
+        </div>
+        <div class="col-sm-4 margin-top--5">
+            <a href="" ng-class="{'active-tab':isSet(2)}" ng-click="setTab(2)" class="pull-right blue link-primary next"><span localize>Next</span> <i class="fa fa-chevron-right fa-lg"></i></a>
+        </div>
+        <div class="clearfix"></div>
+    </section>
+
+    <div class="clearfix"></div>
+</div>

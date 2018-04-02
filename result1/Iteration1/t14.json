@@ -1,0 +1,17 @@
+{
+  "airMandatoryData":[
+    {"AB" : "BagAddress","YB":"BagAddress.City","BS":"BagAddress.State","BZ":"BagAddress.PostalCode",
+      "BN":"BagAddress.Country","BW":"BaggageWeight","CG":"ContentsGender","DA":"DeliveryAddress",
+      "YD":"DeliveryAddress.City","SD":"DeliveryAddress.State","ZD":"DeliveryAddress.PostalCode",
+      "ND":"DeliveryAddress.Country","DW":"DeliveryWeight","LD":"LocalDlvInfo",
+    "DS":"DeliveryService","BP":"BagPhones","CT":"ColorTypeDesc","TN":"BagTag","BI":"BrandInfo","DR":"BagReceivedDate","DR":"BagReceived","DD":"DeliveredTime","CL":"LockCode","ID":"UniqueID","SL":"StorageLocation"
+    ,"CC":"BagContents","CN":"ContentsDesc","BD":"BagDetails","Remarks":"RK","BL":"BagLastSeen","BR":"BaggageItinerary","BR":"BaggageItinerary.FlightDateOrARNK","BX":"ExcessBaggage","DB":"BagTagDestinations",
+    "KK":"KeysCollected","NW":"MissingWeight","MW":"MatchWindow","NM":"Names","IT":"Initials","PT":"Title","PA":"PermanentAddress","YP":"PermanentAddress.City","ST":"PermanentAddress.State",
+    "ZP":"PermanentAddress.PostalCode","CO":"PermanentAddress.Country","TA":"TempAddress","YT":"Address.City","TS":"Address.State","TZ":"Address.PostalCode","TC":"Address.Country","DV":"ValidityDate","PN":"PermPhones","CP":"CellPhones","TP":"TempPhones","EA":"Emails",
+    "FX":"Faxes","FL":"FrequentFlyerID","LA":"Language","TK":"TicketNumber","PR":"PNR","NP":"NoOfPassengers","AM":"AutoMsgOption","PP":"PassportInfo","FD":"Itinerary","RT":"AdditionalRoutes",
+    "PB":"PooledTktNumber","PF":"FareBasis","DL":"DesignatedLocator","FF":"MiscInfo","FI":"FurtherInfo","SI":"SupplimentalInfo","CI":"CustomsInfo","DY":"DeliveryInfo","MG":"MessageInfo","MR":"MatchInfo","UC":"UserComments",
+    "CA":"ClaimAmout","CR":"CostRemarks","CS":"PassengerPayments","DC":"ClaimDate","DN":"DateNotified",
+    "DQ":"QuestionnaireDate","FS":"FaultStationCode","FT":"FaultTerminal","IN":"Insurance","LT":"LiabilityTag",
+    "MB":"MissingBags","PC":"PartnerCode","RC":"LossComments","RL":"LossReasonCode","KT":"ToiletKits","XV":"ExcessValue","TF":"TracingFinalized","HC":"HandledAirlineCopyInd","LZ":"LZControlDate","XR":"CrossReferenceRecords"}
+  ]
+}

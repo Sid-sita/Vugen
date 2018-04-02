@@ -1,0 +1,95 @@
+<div class="modal fade in" id="dashboard" tabindex="-1" ng-init="getReadResponse()"role="dialog">
+	<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<a href="" id="cancelDashBoard"class="pull-right" data-dismiss="modal" aria-label="Close"ng-click="dashBoardCtrl.dashBoardEntity.clearDashBoard()"><i class="close fa fa-times"  ></i></a>
+							<h4 class="modal-title">Application Dashboard for {{dashBoardCtrl.dashBoardEntity.LogedInAirline}}</h4>
+							<span class="modal-small-title">Last Refresh: {{dashBoardCtrl.dashBoardEntity.LastRefreshTimeGMTHeader}}</span>
+							<div class="clearfix"></div>
+					</div>
+
+					<div class="modal-body dashBoard-lr">
+						<h5>External Interfaces Status</h5>
+						<div class="col-sm-12 margin-top-15" ng-hide="dashBoardCtrl.dashBoardEntity.bagJourneyChecked">
+							<label for="" class="col-sm-3">BagJourney</label>
+							<div class="btn-group selection up-down col-sm-4" role="group">
+								<button type="button" ng-class="{'active': dashBoardCtrl.dashBoardEntity.BagJourney.IsUp}"class="btn btn-default up"disabled>Up</button>
+								<button type="button" ng-class="{'inactive': !dashBoardCtrl.dashBoardEntity.BagJourney.IsUp}"class="btn btn-default down" disabled>Down</button>
+						</div>
+            	<span	ng-hide="!dashBoardCtrl.dashBoardEntity.BagJourney.IsProcessing" class="dashboard-spin-loader"><i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i></span>
+            <span ng-if="dashBoardCtrl.dashBoardEntity.BagJourney.lastDownTime && !dashBoardCtrl.dashBoardEntity.BagJourney.IsProcessing"> {{dashBoardCtrl.dashBoardEntity.BagJourney.lastDownTime}}</span>
+
+					</div>
+
+					<div class="col-sm-12 margin-top-15"  ng-hide="dashBoardCtrl.dashBoardEntity.flightScheduleChecked">
+						<label for="" class="col-sm-3">Flight&nbsp;Schedule</label>
+							<div class="btn-group selection up-down col-sm-4" role="group">
+								<button type="button" ng-class="{'active': dashBoardCtrl.dashBoardEntity.FlightSchedule.IsUp}"class="btn btn-default up" disabled>Up</button>
+								<button type="button" ng-class="{'inactive': !dashBoardCtrl.dashBoardEntity.FlightSchedule.IsUp}"class="btn btn-default down" disabled>Down</button>
+						</div>
+            	<span ng-hide="!dashBoardCtrl.dashBoardEntity.FlightSchedule.IsProcessing" class="dashboard-spin-loader"><i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i></span>
+            <span ng-if="dashBoardCtrl.dashBoardEntity.FlightSchedule.lastDownTime && !dashBoardCtrl.dashBoardEntity.FlightSchedule.IsProcessing"> {{dashBoardCtrl.dashBoardEntity.FlightSchedule.lastDownTime}}</span>
+					</div>
+
+					<div class="col-sm-12 margin-top-15" ng-hide="dashBoardCtrl.dashBoardEntity.LogedInAirline !='LH'">
+						<label for="" class="col-sm-3">DESMON</label>
+							<div class="btn-group selection up-down col-sm-4" role="group">
+								<button type="button" ng-class="{'active': dashBoardCtrl.dashBoardEntity.Desmon.IsUp}"class="btn btn-default up" disabled>Up</button>
+								<button type="button" ng-class="{'inactive': !dashBoardCtrl.dashBoardEntity.Desmon.IsUp}" class="btn btn-default down" disabled>Down</button>
+						</div>
+            	<span ng-hide="!dashBoardCtrl.dashBoardEntity.Desmon.IsProcessing" class="dashboard-spin-loader"><i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i></span>
+            <span ng-if="dashBoardCtrl.dashBoardEntity.Desmon.lastDownTime && !dashBoardCtrl.dashBoardEntity.Desmon.IsProcessing"> {{dashBoardCtrl.dashBoardEntity.Desmon.lastDownTime}}</span>
+					</div>
+
+					<div class="col-sm-12 margin-top-15" ng-hide="dashBoardCtrl.dashBoardEntity.LogedInAirline !='LH'">
+						<label for="" class="col-sm-3">ZAMBAS</label>
+							<div class="btn-group selection up-down col-sm-4" role="group">
+								<button type="button" ng-class="{'active': dashBoardCtrl.dashBoardEntity.Zambas.IsUp}" class="btn btn-default up" disabled>Up</button>
+								<button type="button" ng-class="{'inactive': !dashBoardCtrl.dashBoardEntity.Zambas.IsUp}" class="btn btn-default down" disabled>Down</button>
+						</div>
+            	<span ng-hide="!dashBoardCtrl.dashBoardEntity.Zambas.IsProcessing" class="dashboard-spin-loader"><i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i></span>
+						<span ng-if="dashBoardCtrl.dashBoardEntity.Zambas.lastDownTime && !dashBoardCtrl.dashBoardEntity.Zambas.IsProcessing"> {{dashBoardCtrl.dashBoardEntity.Zambas.lastDownTime}}</span>
+					</div>
+
+					<div class="col-sm-12 margin-top-15">
+						<p><strong>Count of Logged in Users:</strong>
+							<span>{{dashBoardCtrl.dashBoardEntity.noOfLoggedInUser}}</span></p>
+
+						<div class="col-sm-8 width-230 padding-0 margin-top-8">
+							<p><strong>Count of Failed Logins for past</strong></p>
+						</div>
+
+						<div class="col-sm-1 width-80 padding-0">
+							<div ng-class="dashBoardCtrl.dashBoardEntity.HoursOfPastFailedLogin.GetParentDivCss()">
+								<span
+                ng-class="dashBoardCtrl.dashBoardEntity.HoursOfPastFailedLogin.GetParentSpanCss()"
+    						ng-if="dashBoardCtrl.dashBoardEntity.HoursOfPastFailedLogin.IsMandatory ||
+                 dashBoardCtrl.dashBoardEntity.HoursOfPastFailedLogin.IsError"></span>
+								<input class="form-control" tooltip="{{dashBoardCtrl.dashBoardEntity.HoursOfPastFailedLogin.ToolTipErrorMessage}}"
+                 ng-blur="dashBoardCtrl.dashBoardEntity.HoursOfPastFailedLogin.HandleErrorAndTooltip();"
+								 ng-model="dashBoardCtrl.dashBoardEntity.HoursOfPastFailedLogin.DisplayValue"
+                 type="text" maxlength="2" tooltip-validate tooltip-trigger="focus" id="txtCountOfFailedLoginForPastHours">
+							</div>
+						</div>
+
+						<div class="col-sm-3 margin-top-8">
+							<p><strong>hours:</strong> {{dashBoardCtrl.dashBoardEntity.HoursOfPastFailedUser}}</p>
+						</div>
+
+						<div class="clearfix"></div>
+						<p><strong>Last date and time Offline Mode was used for past 30 days:{{dashBoardCtrl.dashBoardMessage.ErrorMessage}}</strong></p>
+						<p>{{dashBoardCtrl.dashBoardEntity.lasTimeOfflineDetails}}</p>
+		<alert ng-if="dashBoardCtrl.dashBoardMessage.ErrorMessage" type="danger" id="DashBoardError"						 close="dashBoardCtrl.CloseMessageAlert('ERROR')">{{dashBoardCtrl.dashBoardMessage.ErrorMessage}}</alert>
+					</div>
+
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="modal-footer">
+				<div class="col-sm-4 col-sm-offset-4">
+							<button type="button" class="btn btn-primary btn-block forEnterButtonModal" ng-if="dashBoardCtrl.dashBoardEntity.isRefreshButton" ng-disabled="!dashBoardCtrl.dashBoardEntity.IsEnableRefreshDashboard()" ng-click="dashBoardCtrl.getMontiorStatus(true)" >Refresh</button>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>

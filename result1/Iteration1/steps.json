@@ -1,0 +1,128 @@
+[
+    {
+        "stepId": "STEP78",
+        "stepName": "Custom Request: roles",
+        "infFile": "t79.inf",
+        "time": 1522217023338
+    },
+    {
+        "stepId": "STEP79",
+        "stepName": "Custom Request: validate_2",
+        "infFile": "t80.inf",
+        "time": 1522217023602
+    },
+    {
+        "stepId": "STEP80",
+        "stepName": "Url: RushBagIndex.html",
+        "infFile": "t81.inf",
+        "time": 1522217023841
+    },
+    {
+        "stepId": "STEP81",
+        "stepName": "Url: bag.html",
+        "infFile": "t82.inf",
+        "time": 1522217024077
+    },
+    {
+        "stepId": "STEP82",
+        "stepName": "Url: more.html",
+        "infFile": "t83.inf",
+        "time": 1522217024332
+    },
+    {
+        "stepId": "STEP83",
+        "stepName": "Url: flight.html",
+        "infFile": "t84.inf",
+        "time": 1522217024556
+    },
+    {
+        "stepId": "STEP84",
+        "stepName": "Url: summary.html",
+        "infFile": "t85.inf",
+        "time": 1522217024807
+    },
+    {
+        "stepId": "STEP85",
+        "stepName": "Url: commonHeaderComponent.html",
+        "infFile": "t86.inf",
+        "time": 1522217025086
+    },
+    {
+        "stepId": "STEP86",
+        "stepName": "Url: bagType.json",
+        "infFile": "t87.inf",
+        "time": 1522217025307
+    },
+    {
+        "stepId": "STEP87",
+        "stepName": "Url: onClickTemp.html",
+        "infFile": "t88.inf",
+        "time": 1522217025521
+    },
+    {
+        "stepId": "STEP88",
+        "stepName": "Url: afterError.html",
+        "infFile": "t89.inf",
+        "time": 1522217025772
+    },
+    {
+        "stepId": "STEP89",
+        "stepName": "Custom Request: LH",
+        "infFile": "t90.inf",
+        "time": 1522217026015
+    },
+    {
+        "stepId": "STEP90",
+        "stepName": "Custom Request: rlcreadall",
+        "infFile": "t91.inf",
+        "time": 1522217026248
+    },
+    {
+        "stepId": "STEP91",
+        "stepName": "Custom Request: LH_2",
+        "infFile": "t92.inf",
+        "time": 1522217026555
+    },
+    {
+        "stepId": "STEP92",
+        "stepName": "Custom Request: read_3",
+        "infFile": "t93.inf",
+        "time": 1522217027150
+    },
+    {
+        "stepId": "STEP93",
+        "stepName": "Custom Request: createread",
+        "infFile": "t95.inf",
+        "time": 1522217027796
+    },
+    {
+        "stepId": "STEP94",
+        "stepName": "Custom Request: validate_3",
+        "infFile": "t96.inf",
+        "time": 1522217028038
+    },
+    {
+        "stepId": "STEP95",
+        "stepName": "Url: rushBagFileDetails.html",
+        "infFile": "t97.inf",
+        "time": 1522217028263
+    },
+    {
+        "stepId": "STEP96",
+        "stepName": "Url: SendPirModal.html",
+        "infFile": "t98.inf",
+        "time": 1522217028504
+    },
+    {
+        "stepId": "STEP97",
+        "stepName": "Url: copyMessageTemplate.html",
+        "infFile": "t99.inf",
+        "time": 1522217028727
+    },
+    {
+        "stepId": "STEP98",
+        "stepName": "Custom Request: validate_4",
+        "infFile": "t100.inf",
+        "time": 1522217029219
+    }
+]

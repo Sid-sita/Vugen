@@ -1,0 +1,66 @@
+{
+  "handled" : [{
+    "code" : "NO",
+    "item" : "Don't Send"
+  },
+  {
+    "code" : "YES",
+    "item" : "Send Standard Text"
+  },
+  {
+    "code" : "FULL",
+    "item" : "Send Full Text"
+  }],
+  "handledUpdate" : [
+    {
+      "code" : "NO",
+      "item" : "Don't Send"
+    },
+    {
+      "code" : "YES",
+      "item" : "Send Standard Text"
+    },
+    {
+      "code" : "FULL",
+      "item" : "Send Full Text"
+    },
+    {
+      "code" : "REPEAT",
+      "item" : "Repeat"
+    }
+  ],
+  "delieverymsgarea" :  [
+    {
+        "code": "AP",
+        "item": "Additional Prompts"
+    },
+    {
+        "code": "HQ",
+        "item": "Management Messages"
+    },
+    {
+        "code": "IN",
+        "item": "Insurance Messages"
+    },
+    {
+        "code": "XX",
+        "item": "User Defined Items"
+    },
+    {
+        "code": "SP",
+        "item": "System Prompts"
+    }
+
+],"delieverymsgareaOtherOption" :  [
+  {
+      "code": "AP",
+      "item": "Additional Prompts"
+  },
+
+  {
+      "code": "LM",
+      "item": "Local Manager"
+  }
+],
+"handledAirlineCopyAirlines":["LH","LX","OS","SN","EW"]
+}

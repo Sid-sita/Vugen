@@ -1,0 +1,4 @@
+{
+"desmonlogOut":"https://desmon.dlh.de/DesmonPortal/logout.jsp?DESMON_DEF_ENV=LH-TEST&DESMON_ENV_LIST=LH-TEST&DESMON_RESULT_PAGE=https%3A%2F%2F{_self}%2Fdesktop%2Flhwtweb.html",
+"samlLogOut":"https://baggage.sita.aero/acwtweb.html"
+}

@@ -1,0 +1,63 @@
+{
+"type" : [
+  {"code": "FW", "name": "Forward Messages"},
+  {"code": "AA", "name": "Action Messages"},
+  {"code": "WM", "name": "System Matches"},
+  {"code": "EM", "name": "Extended Matches"},
+  {"code": "CM", "name": "Claims Matches"},
+  {"code": "SP", "name": "System Prompts"},
+  {"code": "AP", "name": "Additional Prompts"},
+  {"code": "EC", "name": "Email Correspondence"},
+  {"code": "BC", "name": "Claims Messages"},
+  {"code": "PR", "name": "Purged/Retired Items"},
+  {"code": "LM", "name": "Local Manager"}
+
+],
+
+"headQuarterType" : [
+  {"code": "FW", "name": "Forward Messages"},
+  {"code": "AA", "name": "Action Messages"},
+  {"code": "WM", "name": "System Matches"},
+  {"code": "EM", "name": "Extended Matches"},
+  {"code": "CM", "name": "Claims Matches"},
+  {"code": "SP", "name": "System Prompts"},
+  {"code": "AP", "name": "Additional Prompts"},
+  {"code": "EC", "name": "Email Correspondence"},
+  {"code": "BC", "name": "Claims Messages"},
+  {"code": "PR", "name": "Purged/Retired Items"},
+  {"code": "IN", "name": "Insurance Items"},
+  {"code": "HQ", "name": "Management Items"},
+  {"code": "XX", "name": "User Defined Items"}
+],
+
+"copyAreaType" : [
+  {"code": "AP", "name": "Additional Prompts"},
+  {"code": "AA", "name": "Action Messages"},
+  {"code": "FW", "name": "Forward Messages"},
+  {"code": "LM", "name": "Local Manager"}
+],
+
+"copyHeadAreaType" :[
+  {"code": "AP", "name": "Additional Prompts"},
+  {"code": "FW", "name": "Forward Messages"},
+  {"code": "XX", "name": "User Defined Items"},
+  {"code": "HQ", "name":"Management Items"},
+  {"code": "IN", "name":"Insurance"}
+],
+
+"emailCorrespondence": [
+  {"code": "EC", "name": "Email Correspondence"}
+],
+
+"noOfDays" : [
+  {"code" : "1", "name" : "Day 1"},
+  {"code" : "2", "name" : "Day 2"},
+  {"code" : "3", "name" : "Day 3"},
+  {"code" : "4", "name" : "Day 4"},
+  {"code" : "5", "name" : "Day 5"},
+  {"code" : "6", "name" : "Day 6"},
+  {"code" : "7", "name" : "Day 7"}
+]
+
+
+}

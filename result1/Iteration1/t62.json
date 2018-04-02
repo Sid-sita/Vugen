@@ -1,0 +1,1241 @@
+{
+	"resourceThr": [
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+1",
+			"comments": "delayed Bag",
+			"id": "gridSection1",
+			"Id": null,
+			"tab": 1,
+			"commentss": "passenger tab",
+			"resChild": [
+				{
+					"shortkey": "alt+f9",
+					"id": "delayedHelpOpen",
+					"num": 1
+				}
+			]
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "",
+			"comments": "Damaged Bag",
+			"id": "gridSection2",
+			"resChild": [
+				{
+					"shortkey": "alt+f9",
+					"id": "damagedHelpOpen",
+					"num": 2
+				}
+			]
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+2",
+			"id": "gridSection3",
+			"comments": "Rush Bag",
+			"Id": null,
+			"tab": 2,
+			"commentss": "bags tab",
+			"resChild": [
+				{
+					"shortkey": "alt+f9",
+					"id": "rushHelpOpen",
+					"num": 3
+				}
+			]
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "",
+			"id": "gridSection4",
+			"comments": "OnHand Bag",
+			"resChild": [
+				{
+					"shortkey": "alt+f9",
+					"id": "onHandHelpOpen",
+					"num": 4
+				}
+			]
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "",
+			"id": "gridSection5",
+			"comments": "Quick OnHand Bag",
+			"resChild": [
+				{
+					"shortkey": "alt+f9",
+					"id": "quickOnHandHelpOpen",
+					"num": 5
+				}
+			]
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+3",
+			"id": "gridSection6",
+			"comments": "Station Inbox",
+			"Id": null,
+			"tab": 3,
+			"commentss": "flights tab"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "",
+			"id": "gridSection7",
+			"comments": "Station Inbox"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+4",
+			"id": "gridSection8",
+			"comments": "Lost And found",
+			"Id": null,
+			"tab": 4,
+			"commentss": "delivery tab"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "",
+			"id": "gridSection9",
+			"comments": "Lost And found"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "",
+			"id": "gridSection10",
+			"comments": "Lost And found"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "",
+			"id": "gridSection11",
+			"comments": "Station Inbox"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "",
+			"id": "gridSection17",
+			"comments": "Station",
+			"resChild": [
+				{
+					"shortkey": "alt+f9",
+					"id": "stationManagementHelpOpen",
+					"num": 16
+				}
+			]
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "down",
+			"comments": "Focus On Sub Menu Elements",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "up",
+			"comments": "Focus On Sub Menu Elements",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "left",
+			"comments": "left",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "right",
+			"id": "",
+			"comments": "right"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "space",
+			"id": "",
+			"comments": "space"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "end",
+			"id": "",
+			"comments": "end"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "home",
+			"id": "",
+			"comments": "home"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "ctrl+u",
+			"id": "",
+			"comments": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "shift+u",
+			"id": "",
+			"comments": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "enter",
+			"id": "",
+			"comments": "enter"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+shift+a",
+			"id": "selectAllCheckBoxId",
+			"comments": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+shift+b",
+			"id": "selectAllCheckBoxId",
+			"comments": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+f9",
+			"comments": "quick on hand bag help close",
+			"id": "delBagIdentPassHelpOpen",
+			"tab": "none"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+f9",
+			"id": "damBagIdentPassHelpOpen",
+			"tab": "damnone"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+f9",
+			"id": "onHandIdentifyPassengerHelpOpen",
+			"tab": "onHandone"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "tab",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "shift+tab",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+f7",
+			"data": [
+				{
+					"screenid": "landing_",
+					"id": "",
+					"comments": "Expand All Tabs"
+				},
+				{
+					"ScreenName": "passenger.html",
+					"ScreenId": 1,
+					"additionals": [
+						{
+							"id": "additionalPass",
+							"comments": "ExtendedArea in all pages"
+						}
+					]
+				},
+				{
+					"ScreenName": "bags.html",
+					"ScreenId": 2,
+					"additionals": [
+						{
+							"id": "bagdetails0"
+						},
+						{
+							"id": "bagdetails1"
+						}
+					]
+				},
+				{
+					"ScreenName": "flights.html",
+					"ScreenId": 3,
+					"additionals": [
+						{
+							"id": "additionalsflight"
+						}
+					]
+				},
+				{
+					"ScreenName": "delivery.html",
+					"ScreenId": 4,
+					"additionals": [
+						{
+							"id": "addDelivery"
+						}
+					]
+				},
+				{
+					"ScreenName": "claim.html",
+					"ScreenId": 5,
+					"additionals": [
+						{
+							"id": "addClaim"
+						}
+					]
+				}
+			]
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+f9",
+			"data1": [
+				{
+					"screenid": "landing_",
+					"id": "delayedCreateHelpOpen",
+					"number": 1,
+					"open": "gridDelayedCreate"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "delayed",
+					"id": "delayedManageHelpOpen",
+					"number": 3,
+					"open": "gridDelayedManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "delayed",
+					"id": "delayedSearchHelpOpen",
+					"number": 4,
+					"open": "gridDelayedSearch"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "trace",
+					"id": "delayedTraceHelpOpen",
+					"number": 5,
+					"open": "gridDelTrace"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "damaged bag create help open",
+					"id": "damagedCreateHelpOpen",
+					"number": 1,
+					"open": "gridDamagedCreate"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "damaged",
+					"id": "damagedManageHelpOpen",
+					"number": 3,
+					"open": "gridDamagedManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "damaged bag help",
+					"id": "damagedSearchHelpOpen",
+					"number": 4,
+					"open": "gridDamagedSearch"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "rush bag create help open",
+					"id": "rushCreateHelpOpen",
+					"number": 1,
+					"open": "gridRushCreate"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "rush",
+					"id": "rushManageHelpOpen",
+					"number": 2,
+					"open": "gridRushManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "rush",
+					"id": "rushSearchHelpOpen",
+					"number": 3,
+					"open": "gridRushSearch"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "rush",
+					"id": "rushTraceHelpOpen",
+					"number": 4,
+					"open": "gridRushTrace"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "on hand bag help open",
+					"id": "onHandCreateHelpOpen",
+					"number": 1,
+					"open": "gridOnHandCreate"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "onhand",
+					"id": "onHandManageHelpOpen",
+					"number": 2,
+					"open": "gridOnHandManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "onhand",
+					"id": "onHandSearchHelpOpen",
+					"number": 3,
+					"open": "gridOnHandSearch"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "onhand",
+					"id": "onHandTraceHelpOpen",
+					"number": 4,
+					"open": "gridOnHandTrace"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "quick on hand bag help open",
+					"id": "quickOnHandCreateHelpOpen",
+					"number": 1,
+					"open": "gridQuickOnHand"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "stationInboxManage",
+					"id": "stationInboxManageHelpOpen",
+					"number": 1,
+					"open": "gridStationInboxManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "stationInboxSearch",
+					"id": "stationInboxSearchHelpOpen",
+					"number": 2,
+					"open": "gridStationInboxSearch"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "delayed bag help open",
+					"id": "stationNewMessageHelpOpen",
+					"number": 3,
+					"open": "stationModal"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "headQuaretersInboxManage",
+					"id": "headQuaretersInboxManageHelpOpen",
+					"number": 1,
+					"open": "gridHeadQuartersInboxManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "headQuaretersInboxSearch",
+					"id": "headQuaretersInboxSearchHelpOpen",
+					"number": 2,
+					"open": "gridHaedQuartersInbox"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "delayed bag help open",
+					"id": "headQuartersNewMessageHelpOpen",
+					"number": 3,
+					"open": "hdqModal"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "",
+					"id": "lostFoundPropCreateHelpOpen",
+					"number": 1,
+					"open": "gridLostFoundCreate"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "lfpsearch",
+					"id": "lostFoundPropSearchHelpOpen",
+					"number": 2,
+					"open": "gridLostFoundSearch"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "pastFileHelpOpen",
+					"number": 1,
+					"open": "gridPastDateFile"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "sendTeleTypeMessHelpOpen",
+					"number": 1,
+					"open": "gridSendTeleTypeMess"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "ConvertCurrencyHelpOpen",
+					"number": 1,
+					"open": "currencyModal"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "ReceivedHeadQHelpOpen",
+					"number": 1,
+					"open": "gridReceivedHeadQ"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "CustomDateEntryHelpOpen",
+					"number": 1,
+					"open": "gridCustomDateEntry"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "ClaimsEntryHelpOpen",
+					"number": 1,
+					"open": "gridClaimsEntry"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "MemebershipListHelpOpen",
+					"number": 1,
+					"open": "gridMemebershipList"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "ContentsDictionaryHelpOpen",
+					"number": 1,
+					"open": "gridContentsDictionary"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "DeliveryCostHelpOpen",
+					"number": 1,
+					"open": "gridDeliveryCost"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "PassengersBoardedHelpOpen",
+					"number": 1,
+					"open": "gridPassengersBoarded"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "GeographicAreasHelpOpen",
+					"number": 1,
+					"open": "gridGeographicAreas"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "claimsFileReferenceReportHelpOpen",
+					"id": "claimsFileReferenceReportHelpOpen",
+					"number": 1,
+					"open": "gridclaimsFileReferenceReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "stationListReportHelpOpen",
+					"number": 2,
+					"open": "gridStationListReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "stationPerformanceReportHelpOpen",
+					"number": 3,
+					"open": "gridStationPerformanceReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "faultStationReportHelpOpen",
+					"number": 1,
+					"open": "gridFaultStationReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "mishandledConnectionReportHelpOpen",
+					"number": 2,
+					"open": "gridMishandledConnectionReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "flightDateReportHelpOpen",
+					"number": 1,
+					"open": "gridFlightDateReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "actStatusHelpOpen",
+					"number": 1,
+					"open": "gridActiveStatus"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "damagedPilferedHelpOpen",
+					"number": 1,
+					"open": "gridDamagedPilfered"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "stationBasicOptionsHelpOpen",
+					"number": 1,
+					"open": "gridStationBasicOptions"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "stationAdvanceOptionsHelpOpen",
+					"number": 2,
+					"open": "gridAdvancedOptions"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "basicPropertyIrregularityReportHelpOpen",
+					"number": 3,
+					"open": "gridBasicPropertyIrregularityReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "handledPropertyIrregularityReportHelpOpen",
+					"number": 4,
+					"open": "gridHandledAirlinePropertyIrregularityReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "scheduledPropertyIrregularityReportHelpOpen",
+					"number": 5,
+					"open": "gridScheduledPropertyIrregularityReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "shortMessageHelpOpen",
+					"number": 6,
+					"open": "gridShortMessage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "codeShareHelpOpen",
+					"number": 7,
+					"open": "gridCodeShare"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "cloneStationHelpOpen",
+					"number": 8,
+					"open": "gridCloneStation"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "handlingAgreementsHelpOpen",
+					"number": 9,
+					"open": "gridHandlingAgreements"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "deliveryCompanyHelpOpen",
+					"number": 10,
+					"open": "gridDeliveryCompany"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "configStationCustomPagesHelpOpen",
+					"number": 11,
+					"open": "gridStationCustompages"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "codeShareAgreeHelpOpen",
+					"number": 1,
+					"open": "gridCodeShareAgree"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "callCenterHelpOpen",
+					"number": 2,
+					"open": "gridCallCenter"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "reasonForLossHelpOpen",
+					"number": 3,
+					"open": "gridReasonForLoss"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "regionsHelpOpen",
+					"number": 4,
+					"open": "gridRegions"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "stationListDisplayHelpOpen",
+					"number": 5,
+					"open": "gridStationListDisplay"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "electronicMessagesHelpOpen",
+					"number": 6,
+					"open": "gridElectronicMessages"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "configAirlineCustomPagesHelpOpen",
+					"number": 7,
+					"open": "gridCustomPages"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "configAirlineHandlerListDisplayHelpOpen",
+					"number": 10,
+					"open": "gridHandlerListDisplay"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "baggageDeliveryHelpOpen",
+					"number": 2,
+					"open": "gridBaggageDelivery"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "typeOfDamageHelpOpen",
+					"number": 3,
+					"open": "gridTypeOfDamage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "paymentCostHelpOpen",
+					"number": 1,
+					"open": "paymentcost"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "tracingCostHelpOpen",
+					"number": 3,
+					"open": "gridTracingCost"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "managementInputsHelpOpen",
+					"number": 2,
+					"open": "gridManagementInputs"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "electronicInputsHelpOpen",
+					"number": 3,
+					"open": "gridElectronicInputs"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "",
+					"id": "performanceByFileHelpOpen",
+					"number": 3,
+					"open": "gridPerformanceByFileReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "",
+					"id": "percentageOfMishandlingsHelpOpen",
+					"number": 4,
+					"open": "gridPercentageOfMishandlingsReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "",
+					"id": "performanceByBagHelpOpen",
+					"number": 5,
+					"open": "gridPerformanceByBagReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "Basicoptions",
+					"id": "",
+					"number": 11,
+					"open": "gridStationCustompages"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "borderClearanceReportHelpOpen",
+					"number": 4,
+					"open": "gridBorderClearanceReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "managementDatesLandHelpOpen",
+					"number": 4,
+					"open": "ManagementDatesLand"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "callCenterInputsHelpOpen",
+					"number": 5,
+					"open": "gridCallCenterInputs"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "tracingInputHelpOpen",
+					"number": 6,
+					"open": "gridTracingInput"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "faultStationCostHelpOpen",
+					"number": 6,
+					"open": "faultStationCostReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "averageCostPerformanceHelpOpen",
+					"number": 3,
+					"open": "gridAverageCostPerformance"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "monthlyInterlineProrationHelpOpen",
+					"number": 4,
+					"open": "gridMonthlyInterlineProration"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "managementCostHelpOpen",
+					"number": 5,
+					"open": "gridManagementCost"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "activityFlightReportHelpOpen",
+					"number": 2,
+					"open": "gridActivityFlightReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "faultFlightReportHelpOpen",
+					"number": 3,
+					"open": "gridFaultFlightReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "pastfilesearch",
+					"id": "worstFlightReportHelpOpen",
+					"number": 4,
+					"open": "gridWorstFlightReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "onhand",
+					"id": "onHandDisposeBagsHelpOpen",
+					"number": 5,
+					"open": "gridDisposeOnHand"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "handoverFiles",
+					"id": "delayedHandoverFilesHelpOpen",
+					"number": 8,
+					"open": "gridHandover"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "MultiStation",
+					"id": "airlineMultiStationHelpOpen",
+					"number": 5,
+					"open": "gridmultiStns"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "handoverFiles",
+					"id": "MasterRecordDisplayHelpOpen",
+					"number": 5,
+					"open": "gridMasterRecordDisplay"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "currencyAndPerformance",
+					"id": "currencyPerfDisplayHelpOpen",
+					"number": 5,
+					"open": "gridCurrency"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "emailorhardcopy",
+					"id": "emailforHardCopyHelpOpen",
+					"number": 12,
+					"open": "gridStationManageEmails"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "flightScheduleSettings",
+					"id": "flightScheduleSettingsHelpOpen",
+					"number": 13,
+					"open": "gridStationflightSchedule"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "delayedOfflineSearchManage",
+					"id": "commonOfflineSearchFilesHelpOpen",
+					"number": 6,
+					"open": "gridDelayedSearchAndManageOffline"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "damagedOfflineSearchManage",
+					"id": "commonOfflineSearchFilesHelpOpen",
+					"number": 4,
+					"open": "gridDamagedOfflineSearchManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "forwardOfflineSearchManage",
+					"id": "commonOfflineSearchFilesHelpOpen",
+					"number": 5,
+					"open": "gridForwardOfflineSearchManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "onhandOfflineSearchManage",
+					"id": "commonOfflineSearchFilesHelpOpen",
+					"number": 5,
+					"open": "gridOnHandOfflineSearchManage"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "lostAndFoundOfflineSearchManage",
+					"id": "lostAndFoundOfflineSearchFilesHelpOpen",
+					"number": 3,
+					"open": "gridLostFoundSearchOffline"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "closeAndDeleteQuickOnhand",
+					"id": "closeAndDeleteQuickOnhandHelpOpen",
+					"number": 2,
+					"open": "gridCloseAndDeleteQuickOnhand"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "customerSettings",
+					"id": "customerSettingsHelpOpen",
+					"number": 12,
+					"open": "customerSettingLink"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "scheduledDeliveryCompany",
+					"id": "scheduledDeliveryCompanyHelpOpen",
+					"number": 11,
+					"open": "gridScheduledDeliveryCompany"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "forwardDelayedBag",
+					"id": "forwardDelayedBagHelpOpen",
+					"number": 11,
+					"open": ""
+				},
+				{
+					"screenid": "landing_",
+					"comments": "forwardOnHandBag",
+					"id": "forwardOnHandBagHelpOpen",
+					"number": 11,
+					"open": ""
+				},
+				{
+					"screenid": "landing_",
+					"comments": "forwardOnHandToHDQ",
+					"id": "forwardOnHandToHDQHelpOpen",
+					"number": 11,
+					"open": ""
+				},
+				{
+					"screenid": "landing_",
+					"comments": "forwardQuickOnHand",
+					"id": "forwardQuickOnHandHelpOpen",
+					"number": 11,
+					"open": ""
+				},
+				{
+					"screenid": "landing_",
+					"comments": "updateAndCloseFiles",
+					"id": "updateAndCloseFilesHelpOpen",
+					"number": 7,
+					"open": "updateAndCloseFile"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "faultAirlineLogReport",
+					"id": "faultAirlineLogReportHelpOpen",
+					"number": 7,
+					"open": "faultAirlineLogReport"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "damaged bag quick create help open",
+					"id": "damagedQuickCreateHelpOpen",
+					"number": 2,
+					"open": "gridDamagedQuickCreate"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "delayed bag quick create help open",
+					"id": "delayedQuickCreateHelpOpen",
+					"number": 2,
+					"open": "gridDelayedQuickCreate"
+				},
+				{
+					"screenid": "landing_",
+					"comments": "damaged bag update and close file help open",
+					"id": "damageUpdateAndCloseFilesHelpOpen",
+					"number": 6,
+					"open": "DamagedUpdateAndCloseFile"
+				}, {
+					"screenid": "landing_",
+					"comments": "custom pages file help open",
+					"id": "MiscCustomPagesHelpOpen",
+					"number": 8,
+					"open": "gridSitaCustomPage"
+				}, {
+					"screenid": "",
+					"comments": "Delivery Order help open",
+					"id": "DeliveryOrderHelpOpen",
+					"number": 1					
+				}
+			],
+			"data2": [
+				{
+					"ScreenName": "passenger.html",
+					"ScreenId": 1,
+					"additionals": [
+						{
+							"id": "passengerHelpOpen"
+						}
+					]
+				},
+				{
+					"ScreenName": "bags.html",
+					"ScreenId": 2,
+					"additionals": [
+						{
+							"id": "bagHelpOpen"
+						}
+					]
+				},
+				{
+					"ScreenName": "flights.html",
+					"ScreenId": 3,
+					"additionals": [
+						{
+							"id": "flightsHelpOpen"
+						}
+					]
+				},
+				{
+					"ScreenName": "delivery.html",
+					"ScreenId": 4,
+					"additionals": [
+						{
+							"id": "deliveryHelpOpen"
+						}
+					]
+				},
+				{
+					"ScreenName": "claim.html",
+					"ScreenId": 5,
+					"additionals": [
+						{
+							"id": "claimHelpOpen"
+						}
+					]
+				},
+				{
+					"ScreenName": "additional.html",
+					"ScreenId": 6,
+					"additionals": [
+						{
+							"id": "additionalHelpOpen"
+						}
+					]
+				},
+				{
+					"ScreenName": "summary.html",
+					"ScreenId": 7,
+					"additionals": [
+						{
+							"id": "summaryHelpOpen"
+						}
+					]
+				}
+			]
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+f10"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+5",
+			"id": "gridSection12",
+			"Id": null,
+			"tab": 5,
+			"commentss": "claims tab"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+6",
+			"id": "gridSection14",
+			"Id": null,
+			"tab": 6,
+			"commentss": "more tab"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+7",
+			"id": "gridSection16",
+			"Id": null,
+			"tab": 7,
+			"commentss": "summary tab"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+8",
+			"id": "gridSection18",
+			"tab": 100,
+			"commentss": "summary tab"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+9",
+			"id": "gridSection20",
+			"tab": 100,
+			"commentss": "summary tab"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+n",
+			"id": "profileConfig"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "ctrl+0",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+f8",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "shift+up",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "shift+down",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "ctrl+up",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "ctrl+down",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+v",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+g",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+backspace",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+w",
+			"id": "trainingId"
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+f5",
+			"id": ""
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "alt+0",
+			"tab": 0
+		},
+		{
+			"screenid": "landing_",
+			"shortkey": "ctrl+shift+c",
+			"id":""
+		},{
+			"screenid": "landing_",
+			"shortkey": "ctrl+alt+p",
+			"id": ""
+		},{
+			"screenid": "landing_",
+			"shortkey": "alt+u",
+			"id": ""			
+		}
+	]
+}

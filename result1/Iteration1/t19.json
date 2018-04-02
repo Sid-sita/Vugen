@@ -1,0 +1,420 @@
+{
+  "bagTypeDesc": [
+    {
+      "indexes": "01",
+      "comments": "Un Zippered Bag Horizontal Design Hard Shell",
+      "commentsgrid": "Horizontal Design Hard Shell"
+    },
+    {
+      "indexes": "02",
+      "comments": "Un Zippered Bag Upright Design",
+      "commentsgrid": "Upright Design"
+    },
+    {
+      "indexes": "03",
+      "comments": "Un Zippered Bag Horizontal Design suitcase Non-expandable",
+      "commentsgrid": "Horizontal Design suitcase Non-expandable"
+    },
+    {
+      "indexes": "05",
+      "comments": "Un Zippered Bag Horizontal Design suitcase Expandable",
+      "commentsgrid": "Horizontal Design suitcase Expandable"
+    },
+    {
+      "indexes": "06",
+      "comments": "Un Zippered Bag Briefcase",
+      "commentsgrid": "Briefcase"
+    },
+    {
+      "indexes": "07",
+      "comments": "Un Zippered Bag Document Case",
+      "commentsgrid": "Document Case"
+    },
+    {
+      "indexes": "08",
+      "comments": "Un Zippered Bag Military Style Bag",
+      "commentsgrid": "Military Style Bag"
+    },
+    {
+      "indexes": "09",
+      "comments": "Un Zippered Bag Plastic Laundry Bag",
+      "commentsgrid": "Plastic Laundry Bag"
+    },
+    {
+      "indexes": "10",
+      "comments": "Un Zippered Bag Box",
+      "commentsgrid": "Box"
+    },
+    {
+      "indexes": "12",
+      "comments": "Un Zippered Bag Storage Container",
+      "commentsgrid": "Storage Container"
+    },
+    {
+      "indexes": "20",
+      "comments": "Zippered Bag Garment Bag/Suit Carrier",
+      "commentsgrid": "Garment Bag/Suit Carrier"
+    },
+    {
+      "indexes": "22",
+      "comments": "Zippered Bag Upright Design, soft material",
+      "commentsgrid": "Upright Design, soft material"
+    },
+    {
+      "indexes": "22D",
+      "comments": "Zippered Bag Upright Design, combined hard and soft material",
+      "commentsgrid": "Upright Design, combined hard and soft material"
+    },
+    {
+      "indexes": "22R",
+      "comments": "Zippered Bag Upright Design, hard material",
+      "commentsgrid": "Upright Design, hard material"
+    },
+    {
+      "indexes": "23",
+      "comments": "Zippered Bag Horizontal Design suitcase",
+      "commentsgrid": "Horizontal Design suitcase"
+    },
+    {
+      "indexes": "25",
+      "comments": "Zippered Bag Duffel/Sport Bag",
+      "commentsgrid": "Duffel/Sport Bag"
+    },
+    {
+      "indexes": "26",
+      "comments": "Zippered Bag Lap Top/Overnight bag",
+      "commentsgrid": "Lap Top/Overnight bag"
+    },
+    {
+      "indexes": "27",
+      "comments": "Zippered Bag Expandable upright",
+      "commentsgrid": "Expandable upright"
+    },
+    {
+      "indexes": "28",
+      "comments": "Zippered Bag Matted woven bag",
+      "commentsgrid": "Matted woven bag"
+    },
+    {
+      "indexes": "29",
+      "comments": "Zippered Bag Backpack/Rucksack",
+      "commentsgrid": "Backpack/Rucksack"
+    },
+    {
+      "indexes": "50",
+      "comments": "Hat Box",
+      "commentsgrid": "Hat Box"
+    },
+    {
+      "indexes": "51",
+      "comments": "Courier Bag/Box/Package",
+      "commentsgrid": "Courier Bag/Box/Package"
+    },
+    {
+      "indexes": "52",
+      "comments": "Trunk/Sample/Display case(Describe Item)",
+      "commentsgrid": "Trunk/Sample/Display case(Describe Item)"
+    },
+    {
+      "indexes": "53",
+      "comments": "Art/Display Portfolio",
+      "commentsgrid": "Art/Display Portfolio"
+    },
+    {
+      "indexes": "54",
+      "comments": "Tube - without sporting equipment",
+      "commentsgrid": "Tube - without sporting equipment"
+    },
+    {
+      "indexes": "55",
+      "comments": "Duty free articles(Describe Item)",
+      "commentsgrid": "Duty free articles(Describe Item)"
+    },
+    {
+      "indexes": "56",
+      "comments": "cosmetic/Beauty case",
+      "commentsgrid": "cosmetic/Beauty case"
+    },
+    {
+      "indexes": "57",
+      "comments": "Kennel/Pet container",
+      "commentsgrid": "Kennel/Pet container"
+    },
+    {
+      "indexes": "58",
+      "comments": "Ice/Chest Cooler",
+      "commentsgrid": "Ice/Chest Cooler"
+    },
+    {
+      "indexes": "59",
+      "comments": "Tool/Tackle box",
+      "commentsgrid": "Tool/Tackle box"
+    },
+    {
+      "indexes": "60",
+      "comments": "Fishing Rods",
+      "commentsgrid": "Fishing Rods"
+    },
+    {
+      "indexes": "61",
+      "comments": "Firearm(s)",
+      "commentsgrid": "Firearm(s)"
+    },
+    {
+      "indexes": "62",
+      "comments": "Golf bag and/or Clubs(Describe Item)",
+      "commentsgrid": "Golf bag and/or Clubs(Describe Item)"
+    },
+    {
+      "indexes": "63",
+      "comments": "Bicycle and/or accessories(Describe Item)",
+      "commentsgrid": "Bicycle and/or accessories(Describe Item)"
+    },
+    {
+      "indexes": "64",
+      "comments": "Sleeping bag/Bed roll/tent(Describe Item)",
+      "commentsgrid": "Sleeping bag/Bed roll/tent(Describe Item)"
+    },
+    {
+      "indexes": "65",
+      "comments": "surf Equipment(Describe Item)",
+      "commentsgrid": "surf Equipment(Describe Item)"
+    },
+    {
+      "indexes": "66",
+      "comments": "Skis/Ski Poles",
+      "commentsgrid": "Skis/Ski Poles"
+    },
+    {
+      "indexes": "67",
+      "comments": "Snow Board and Other Sleddig Devices(Describe Item)",
+      "commentsgrid": "Snow Board and Other Sleddig Devices(Describe Item)"
+    },
+    {
+      "indexes": "68",
+      "comments": "Ski Boots/Boot Bag",
+      "commentsgrid": "Ski Boots/Boot Bag"
+    },
+    {
+      "indexes": "69",
+      "comments": "Sporting Equipment - Not shown elsewhere(Describe Item)",
+      "commentsgrid": "Sporting Equipment - Not shown elsewhere(Describe Item)"
+    },
+    {
+      "indexes": "71",
+      "comments": "Child/Infant Car Seat",
+      "commentsgrid": "Child/Infant Car Seat"
+    },
+    {
+      "indexes": "72",
+      "comments": "Child/Infant Equipment not listed elsewhere(Describe Item)",
+      "commentsgrid": "Child/Infant Equipment not listed elsewhere(Describe Item)"
+    },
+    {
+      "indexes": "73",
+      "comments": "Full Size Baby Carriage",
+      "commentsgrid": "Full Size Baby Carriage"
+    },
+    {
+      "indexes": "74",
+      "comments": "Umbrella Stroller",
+      "commentsgrid": "Umbrella Stroller"
+    },
+    {
+      "indexes": "75",
+      "comments": "Wheeled Sporting Items(Describe Item)",
+      "commentsgrid": "Wheeled Sporting Items(Describe Item)"
+    },
+    {
+      "indexes": "81",
+      "comments": "Audio/Video/Visual/Photo equipment(Describe Item)",
+      "commentsgrid": "Audio/Video/Visual/Photo equipment(Describe Item)"
+    },
+    {
+      "indexes": "82",
+      "comments": "Computer/Communication equipment(Describe Item)",
+      "commentsgrid": "Computer/Communication equipment(Describe Item)"
+    },
+    {
+      "indexes": "83",
+      "comments": "Electrical Appliances(Describe Item)",
+      "commentsgrid": "Electrical Appliances(Describe Item)"
+    },
+    {
+      "indexes": "85",
+      "comments": "All Music Instruments(Describe Item)",
+      "commentsgrid": "All Music Instruments(Describe Item)"
+    },
+    {
+      "indexes": "89",
+      "comments": "Folding Chair",
+      "commentsgrid": "Folding Chair"
+    },
+    {
+      "indexes": "90",
+      "comments": "Baggage trolley",
+      "commentsgrid": "Baggage trolley"
+    },
+    {
+      "indexes": "92",
+      "comments": "Security Removed Items(Describe Item)",
+      "commentsgrid": "Security Removed Items(Describe Item)"
+    },
+    {
+      "indexes": "93",
+      "comments": "Shopping Bag(all materials)",
+      "commentsgrid": "Shopping Bag(all materials)"
+    },
+    {
+      "indexes": "94",
+      "comments": "Wheel Chair, powered or manual and accessories",
+      "commentsgrid": "Wheel Chair, powered or manual and accessories"
+    },
+    {
+      "indexes": "95",
+      "comments": "Orthopaedic Devices",
+      "commentsgrid": "Orthopaedic Devices"
+    },
+    {
+      "indexes": "96",
+      "comments": "Bedding bag",
+      "commentsgrid": "Bedding bag"
+    },
+    {
+      "indexes": "97",
+      "comments": "Dive Bag/Equipment",
+      "commentsgrid": "Dive Bag/Equipment"
+    },
+    {
+      "indexes": "98",
+      "comments": "Umbrella(all types)",
+      "commentsgrid": "Umbrella(all types)"
+    },
+    {
+      "indexes": "99",
+      "comments": "Article Not shown(Describe Item)",
+      "commentsgrid": "Article Not shown(Describe Item)"
+    }
+  ],
+  "codeKeys": {
+    "01" : "Un Zippered Bag Horizontal Design Hard Shell",
+    "02" : "Un Zippered Bag Upright Design",
+    "03" : "Un Zippered Bag Horizontal Design suitcase Non-expandable",
+    "05" : "Un Zippered Bag Horizontal Design suitcase Expandable",
+    "06" : "Un Zippered Bag Briefcase",
+    "07" : "Un Zippered Bag Document Case",
+    "08" : "Un Zippered Bag Military Style Bag",
+    "09" : "Un Zippered Bag Plastic Laundry Bag",
+    "10" : "Un Zippered Bag Box",
+    "12" : "Un Zippered Bag Storage Container",
+    "20" : "Zippered Bag Garment Bag/Suit Carrier",
+    "22" : "Zippered Bag Upright Design, soft material",
+    "22D" : "Zippered Bag Upright Design, combined hard and soft material",
+    "22R" : "Zippered Bag Upright Design, hard material",
+    "23" : "Zippered Bag Horizontal Design suitcase",
+    "25" : "Zippered Bag Duffel/Sport Bag",
+    "26" : "Zippered Bag Lap Top/Overnight bag",
+    "27" : "Zippered Bag Expandable upright",
+    "28" : "Zippered Bag Matted woven bag",
+    "29" : "Zippered Bag Backpack/Rucksack",
+    "50" : "Hat Box",
+    "51" : "Courier Bag/Box/Package",
+    "52" : "Trunk/Sample/Display case(Describe Item)",
+    "53" : "Art/Display Portfolio",
+    "54" : "Tube - without sporting equipment",
+    "55" : "Duty free articles(Describe Item)",
+    "56" : "cosmetic/Beauty case",
+    "57" : "Kennel/Pet container",
+    "58" : "Ice/Chest Cooler",
+    "59" : "Tool/Tackle box",
+    "60" : "Fishing Rods",
+    "61" : "Firearm(s)",
+    "62" : "Golf bag and/or Clubs(Describe Item)",
+    "63" : "Bicycle and/or accessories(Describe Item)",
+    "64" : "Sleeping bag/Bed roll/tent(Describe Item)",
+    "65" : "surf Equipment(Describe Item)",
+    "66" : "Skis/Ski Poles",
+    "67" : "Snow Board and Other Sleddig Devices(Describe Item)",
+    "68" : "Ski Boots/Boot Bag",
+    "69" : "Sporting Equipment - Not shown elsewhere(Describe Item)",
+    "71" : "Child/Infant Car Seat",
+    "73" : "Full Size Baby Carriage",
+    "74" : "Umbrella Stroller",
+    "75" : "Wheeled Sporting Items(Describe Item)",
+    "81" : "Audio/Video/Visual/Photo equipment(Describe Item)",
+    "82" : "Computer/Communication equipment(Describe Item)",
+    "83" : "Electrical Appliances(Describe Item)",
+    "85" : "All Music Instruments(Describe Item)",
+    "89" : "Folding Chair",
+    "90" : "Baggage trolley",
+    "92" : "Security Removed Items(Describe Item)",
+    "93" : "Shopping Bag(all materials)",
+    "94" : "Wheel Chair, powered or manual and accessories",
+    "95" : "Orthopaedic Devices",
+    "96" : "Bedding bag",
+    "97" : "Dive Bag/Equipment",
+    "98" : "Umbrella(all types)",
+    "99" : "Article Not shown(Describe Item)"
+  },
+  "codeKeysgrid": {
+    "01" : "Horizontal Design Hard Shell",
+    "02" : "Upright Design",
+    "03" : "Horizontal Design suitcase Non-expandable",
+    "05" : "Horizontal Design suitcase Expandable",
+    "06" : "Briefcase",
+    "07" : "Document Case",
+    "08" : "Military Style Bag",
+    "09" : "Plastic Laundry Bag",
+    "10" : "Box",
+    "12" : "Storage Container",
+    "20" : "Garment Bag/Suit Carrier",
+    "22" : "Upright Design, soft material",
+    "22D" : "Upright Design, combined hard and soft material",
+    "22R" : "Upright Design, hard material",
+    "23" : "Horizontal Design suitcase",
+    "25" : "Duffel/Sport Bag",
+    "26" : "Lap Top/Overnight bag",
+    "27" : "Expandable upright",
+    "28" : "Matted woven bag",
+    "29" : "Backpack/Rucksack",
+    "50" : "Hat Box",
+    "51" : "Courier Bag/Box/Package",
+    "52" : "Trunk/Sample/Display case(Describe Item)",
+    "53" : "Art/Display Portfolio",
+    "54" : "Tube - without sporting equipment",
+    "55" : "Duty free articles(Describe Item)",
+    "56" : "cosmetic/Beauty case",
+    "57" : "Kennel/Pet container",
+    "58" : "Ice/Chest Cooler",
+    "59" : "Tool/Tackle box",
+    "60" : "Fishing Rods",
+    "61" : "Firearm(s)",
+    "62" : "Golf bag and/or Clubs(Describe Item)",
+    "63" : "Bicycle and/or accessories(Describe Item)",
+    "64" : "Sleeping bag/Bed roll/tent(Describe Item)",
+    "65" : "surf Equipment(Describe Item)",
+    "66" : "Skis/Ski Poles",
+    "67" : "Snow Board and Other Sleddig Devices(Describe Item)",
+    "68" : "Ski Boots/Boot Bag",
+    "69" : "Sporting Equipment - Not shown elsewhere(Describe Item)",
+    "71" : "Child/Infant Car Seat",
+    "72" : "Child/Infant Equipment not listed elsewhere(Describe Item)",
+    "73" : "Full Size Baby Carriage",
+    "74" : "Umbrella Stroller",
+    "75" : "Wheeled Sporting Items(Describe Item)",
+    "81" : "Audio/Video/Visual/Photo equipment(Describe Item)",
+    "82" : "Computer/Communication equipment(Describe Item)",
+    "83" : "Electrical Appliances(Describe Item)",
+    "85" : "All Music Instruments(Describe Item)",
+    "89" : "Folding Chair",
+    "90" : "Baggage trolley",
+    "92" : "Security Removed Items(Describe Item)",
+    "93" : "Shopping Bag(all materials)",
+    "94" : "Wheel Chair, powered or manual and accessories",
+    "95" : "Orthopaedic Devices",
+    "96" : "Bedding bag",
+    "97" : "Dive Bag/Equipment",
+    "98" : "Umbrella(all types)",
+    "99" : "Article Not shown(Describe Item)"
+  }
+}

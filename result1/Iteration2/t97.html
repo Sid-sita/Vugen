@@ -1,0 +1,569 @@
+
+<header >
+  <div class="header-bar" ng-init="rushBagSummary();applyRoles();">
+      <span class="menu-container" >
+      <a href="" ng-if="!hideFiledetailsBack" ng-click="goBack()" class="back-arrow"><i class="fa fa-lg fa-arrow-left"></i></a>
+
+      <!-- below is home button icon -->
+      <a id="viewlandingPages" href="#/landingPage/grid" class="home" ui-sref="landing.grid" ng-click="GoHome();refreshLanding()">
+        <i class="fa fa-home fa-lg"></i>
+      </a>
+
+    </span>
+
+    <span ng-if="(timeHour!='undefined')&&!(rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber.toString().length>6)" class="current-page">Forward Bag at {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.StationCode}} for {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.AirlineCode}} {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber}} ({{rushCreatDate[0]}}{{rushCreatDate[1]}}{{rushCreatDate[2]}}{{rushCreatDate[3]}}{{rushCreatDate[4]}}) [Open] </span>
+
+      <span ng-if="timeHour=='undefined' && !(referencenumonly.toString().length>6)" class="current-page">Forward Bag at {{stationdam}} for {{airlinedam}} {{referencenumonly}} ({{rushCreatDate[0]}}{{rushCreatDate[1]}}{{rushCreatDate[2]}}{{rushCreatDate[3]}}{{rushCreatDate[4]}}) [Open]</span>
+
+
+      <span ng-if="(timeHour!='undefined')&&(rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber.toString().length>6)" class="current-page" >Forward Bag  at {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.StationCode}} for {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.AirlineCode}} {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber}} ({{rushCreatDate[0]}}{{rushCreatDate[1]}}{{rushCreatDate[2]}}{{rushCreatDate[3]}}{{rushCreatDate[4]}}) [Open] </span>
+
+      <span ng-if="timeHour=='undefined' && (referencenumonly.toString().length>6)" class="current-page" >Forward Bag at {{stationdam}} for {{airlinedam}}  {{referencenumonly}} ({{rushCreatDate[0]}}{{rushCreatDate[1]}}{{rushCreatDate[2]}}{{rushCreatDate[3]}}{{rushCreatDate[4]}}) [Open]</span>
+
+	<div class="print_parent" ng-if="restrictionMenu.indexOf('PRINT_FILE')!=-1">
+
+
+   <!--<span class="pull-right blue-link" style="padding-top:7px; margin-right:25px;" ng-if="!showIncute">
+      <div class="btn-group open">
+         <a href="" class="forwardPrintIconMargin fwdPrintIconBorder focusHoverOnPrintIcon" ng-click="PrintWithPopup('contentPanelBody')" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="blue-link"><i class="fa fa-lg fa-print blue printIconLarge"></i>&nbsp;</a>-->
+           <!-- <ol class="dropdown-menu ng-scope" style="left: -225px;width: inherit;list-style-position: inside;list-style-type: decimal; " ng-if="!pastDateMode">
+           <li><a href="">1. Print File</a></li>
+           </ol> -->
+      <!--</div>
+   </span>-->
+   <span class="pull-right blue" style="padding-top:5px; margin-right:20px;" ng-if="!showIncute">
+
+      <div class="btn-group">
+         <button prevent-closing-dropdown class="forwardPrintIconMargin focusHoverOnPrintIcon configurationPrintIcon" ng-blur="removeThreeDotFocus();" style="background-color: transparent;border: none;padding: 0px;" href=""  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;<i class="fa fa-lg fa-print blue printIconLarge"></i>&nbsp;<i class="fa fa-ellipsis-v fa-lg blue printThreeDot printThreeDotAlign"></i></button>
+         <ol class="dropdown-menu" role="menu"  aria-labelledby="single-button" style="left: -292px;width: inherit;list-style-position: inside;list-style-type: decimal;font-weight: 100;">
+           <li role="menuitem" ng-click="PrintWithPopup('contentPanelBody');"><a href="" ><span localize>Print File</span></a></li>
+				</ol>
+         </div>
+    </span>
+
+   <span class="pull-right blue-link" style="padding-top:7px; margin-right:15px;" ng-if="showIncute">
+			 <!--<div ng-if="!showHidePrintRushStatus" class="btn-group open blue-link" data-toggle="dropdown" aria-expanded="true" >        -->
+				  <!-- <button prevent-closing-dropdown class="pull-right forwardPrintIconBorder" style="background-color: transparent;border: none;padding: 0px;" ng-click="PrintWithPopup('contentPanelBody');" id="printFile" href=""><div class="table-dropdown-link"><i class="fa fa-lg fa-print dropdown-toggle printIconLarge"></i> <i class="fa fa-ellipsis-v fa-lg blue printThreeDot printThreeDotAlign"></i></div></button>     -->
+				  <!--<button prevent-closing-dropdown class="forwardPrintIconMargin focusHoverOnPrintIcon" style="background-color: transparent;border: none;padding: 0px;" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-click="PrintWithPopup('contentPanelBody');" id="printFile"><i class="fa fa-lg fa-print blue dropdown-toggle printIconLarge"></i><i class="fa fa-lg fa-ellipsis-v blue dropdown-toggle"style="padding-left: 5px;width: inherit;list-style-position: inside;list-style-type: decimal; "></i></button>-->
+			  <!--</div>-->
+
+
+			<div class="btn-group">
+				<button prevent-closing-dropdown class="forwardPrintIconMargin focusHoverOnPrintIcon" style="background-color: transparent;border: none;padding: 0px;" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-lg fa-print blue dropdown-toggle printIconLarge"></i><i class="fa fa-lg fa-ellipsis-v blue dropdown-toggle"style="padding-left: 5px;width: inherit;list-style-position: inside;list-style-type: decimal; "></i></button>
+				<ol class="dropdown-menu" role="menu"  aria-labelledby="single-button" style="left: -292px;width: inherit;list-style-position: inside;list-style-type: decimal;font-weight: 100;">
+					<li role="menuitem" ng-click="openBtpModal();"  ng-if="restrictionMenu.indexOf('FORWARDBAG_PRINTBTP')!=-1 && showHidePrintRushStatus && printRushTagAllowed"><a href="" ><span localize>Print Rush Tags</span></a></li>
+					<li role="menuitem" ng-click="PrintWithPopup('contentPanelBody');"><a href="" ><span localize>Print File</span></a></li>
+				</ol>
+			</div>
+
+	</span>
+
+<!-- Commenting completion time as part of LH feedback but js code is present -->
+<span ng-if="timeHour!='undefined' && isCompletionTimeNeeded" class="current-page pull-right"><strong >Completed in</strong><span ng-if="timeHour !== '00' && isCompletionTimeNeeded"> {{timeHour}}h</span><span ng-if="timeMin !== '00' && isCompletionTimeNeeded"> {{timeMin}}min</span><span ng-if="timeSec && isCompletionTimeNeeded"> {{timeSec}}s</span>   </span>
+  </div>
+</header>
+<off-line classnameoffline="offlineManage" show-offline="showOffline" is-back-to-online="isBackToOnline"></off-line>
+<div class="offlineDivSpace" ng-if="showOffline"></div>
+<training-mode></training-mode>
+<div ng-if="globalLandingVars.statusTrainingMode" style="height:32px"></div>
+<div class="headerOnlySpacer ng-scope"></div>
+<div class="main-content summaryLiPadding">
+
+<send-pir-temp></send-pir-temp>
+<newmessage-temp></newmessage-temp>
+<copy-message-directive></copy-message-directive>
+<!--<printrush-temp></printrush-temp>-->
+<!-- <div class="main-content summaryLiPadding padding-bottom-0" ng-repeat= "info in DamagedRes"  > -->
+  <div ng-class="{'file-details-header':!showOffline && !globalLandingVars.statusTrainingMode,'offlinePadding':showOffline || globalLandingVars.statusTrainingMode}">
+  <div class="file-details-header title-border" ng-class="{ 'margin-top-33':globalLandingVars.statusTrainingMode || showOffline }">
+  <h5 id="fileDetails" class="pull-left fileDet"><strong localize>File Details</strong></h5>
+  <div  ng-if="(!RedirectingFromOffineSearchAndManage && !searchBackActive && !routeToTrace && !(timeHour=='undefined')) || (restrictionMenu.indexOf('NEWMESSAGE')!=-1)" class="table-dropdown margin-left-15 nonActiveButtons margin-top-8 floatLeftinSummary" >
+    <!-- ng-if="!searchBackActive && !routeToTrace && !(timeHour=='undefined')" -->
+      <div class="">
+      <div data-toggle="dropdown" aria-expanded="true" >
+        <span dropdown-toggle="" class="forward">
+          <button prevent-closing-dropdown style="background-color: transparent;border: none;padding: 0px;"id="manageFileDetailsBlueDotOnRush" href=""><div class="table-dropdown-link"><i class="fa fa-ellipsis-v fa-lg blue"></i></div></button>
+        </span>
+      </div>
+      <ol class="dropdown-menu" role="menu"  aria-labelledby="single-button" style="top:auto;bottom:auto;z-index:9;width: inherit;list-style-position: inside;list-style-type: decimal;font-weight: 100">
+        <li role="menuitem" ng-click="createAnother()" ng-if="!searchBackActive && !routeToTrace && !(timeHour=='undefined')"><a href="" ><span localize>Create Another</span></a></li>
+        <li role="menuitem" ng-click="createAnotherForSame()"  ng-if="!searchBackActive && !routeToTrace && !(timeHour=='undefined')"><a href="" ><span localize>Create Another for same Flight</span></a></li>
+        <!-- <li role="menuitem" ng-hide="true" ng-click="rushPrintBTP()"><a href="" ><span localize>Print Rushbag BTP</span></a></li> -->
+        <li ng-if="restrictionMenu.indexOf('NEWMESSAGE')!=-1" id="forwardNewMessage" data-toggle="{{(showOffline) ? '' : 'modal'}}" data-target="" ng-click="(showOffline) ? ShowWarning() : readForwardNewMsg('RUSH',rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.StationCode,rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.AirlineCode,rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber)"><a href="" class="outline-focus">New Message</a></li>
+        <li role="menuitem" ng-if= "restrictionMenu.indexOf('FORWARDBAG_COPYMESSAGE')!=-1" data-toggle="{{(showOffline) ? '' : 'modal'}}" ng-click="(showOffline) ? ShowWarning() : clearCopyMessageModal();hideShow();" data-target="#CopyMessageFwd">
+          <a href=""><span localize>Copy Message</span></a>
+        </li>
+
+      </ol>
+
+      </div>
+      </div>
+
+
+  <ul class="list-unstyled list-inline text-center margin-left-15 margin-top-10">
+    <li class="table-dropdown" ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushBags.RushBag[0]">
+                    <div class="dropup">
+                        <div data-toggle="dropdown" aria-expanded="true">
+                            <span dropdown-toggle="" style="z-index:0;padding-left: 12px">
+                             <!-- <span style="color: #378FBD;"></span> -->
+                            <a href=""><strong localize class="blue">Bag</strong></a>
+                            </span>
+                        </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="single-button" style="top:auto;bottom:auto;z-index:9;">
+                          
+                          <li  ng-repeat="rushBag in rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushBags.RushBag track by $index" ng-if="rushBag"><a href=""  ng-click="forSectionLinkScroll('rushBag')"><span localize>Bag {{$index+1}}</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="table-dropdown" ng-if="bagArray.length!= 1 || tracingStation.length || rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushFlights.FlightDateOrARNK || rushInfo.WTR_RushBagRecReadRS.RushBagGroup.OriginalFlights.FlightDateOrARNK || rushInfo.WTR_RushBagRecReadRS.ExpediteDestination">
+                    <div class="dropup">
+                        <div data-toggle="dropdown" aria-expanded="true">
+                            <span dropdown-toggle="" style="z-index:0;padding-left: 12px">
+                                 <!-- <span style="color: #378FBD;"></span> -->
+                            <a href=""><strong localize class="blue">Flight</strong></a>
+                            </span>
+                        </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="single-button" style="top:auto;bottom:auto;z-index:9;">
+                            <li ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushFlights.FlightDateOrARNK"><a href="" localize ng-click="forSectionLinkScroll('rushRouting')">Rush Routing</a></li>
+                            <li ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.OriginalFlights.FlightDateOrARNK"><a href="" localize ng-click="forSectionLinkScroll('originalRouting')">Original Routing</a></li>
+                            <li><a href="" localize ng-click="forSectionLinkScroll('addDestAddress')">Additional Destination Address</a></li>
+                            <li ng-if="rushInfo.WTR_RushBagRecReadRS.ExpediteDestination"><a href="" localize ng-click="forSectionLinkScroll('expediteDestination')">Expedite Destination</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="table-dropdown" ng-if="rushHandledAirline || rushInfo.WTR_RushBagRecReadRS.TeletypeAddresses.TeletypeAddress || rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal || rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine || rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord">
+                        <div class="dropup">
+                            <div data-toggle="dropdown" aria-expanded="true">
+                              <span dropdown-toggle="" style="z-index:0;padding-left: 12px">
+									                  <!-- <span style="color: #378FBD;"></span> -->
+                                  <a href=""><strong class="blue" localize>More</strong></a>
+                              </span>
+                        </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button" style="top:auto;bottom:auto;z-index:9;">
+                <li ng-if="rushHandledAirline">
+                  <a href="" ng-click="forSectionLinkScroll('delayedOptions')" localize>Rush Bag Option</a></li>
+                <li ng-if="rushInfo.WTR_RushBagRecReadRS.TeletypeAddresses.TeletypeAddress"><a href="" ng-click="forSectionLinkScroll('teletypeDetail')" localize>Teletype Address</a></li>
+                <li ng-if="rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal"><a href="" ng-click="forSectionLinkScroll('faultInfo')" localize>Fault Information</a></li>
+                <li ng-if="rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine"><a href="" ng-click="forSectionLinkScroll('suppInfo')" localize>Supplementary Information</a></li>
+                <li ng-if="rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord"><a href="" ng-click="forSectionLinkScroll('relatedFile')" localize>Related File</a></li>
+              </ul>
+              </div>
+              </li>
+
+    <!--<li class="table-dropdown"><a href="#/landingPage/RushSummary#bag" id="manageFileDetailsBlueDotOnRush"><strong class="blue" localize>Bag</strong></a></li>-->
+    <!--<li class="table-dropdown"><a href="#/landingPage/RushSummary#flight" ><strong class="blue" localize>Flight</strong></a></li>-->
+    <!--<li class="table-dropdown" ng-if= "rushHandledAirline|| rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal||
+    rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord||
+    rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine">
+        <a href="#/landingPage/RushSummary#more"><strong class="blue" localize>More</strong></a></li>-->
+  </ul>
+  </div>
+  </div>
+  <div class="clearfix"></div>
+  <div id="contentPanel" class="margin-top-3">
+    <div class="default"></div>
+  <div id="contentPanelBody" ng-class="{'margin-top--22':showOffline || globalLandingVars.statusTrainingMode}">
+  <div id="rushFileDetails" class="default" ng-class="{'margin-top-22':showOffline || globalLandingVars.statusTrainingMode}">
+    <div>
+      <div class="NONPRINTABLECONTENT">
+      <alert ng-if="rushBagSuccess" type="success" id="rushBagSuccess"
+       dismiss-on-timeout="{{successMsgTimeOutTime}}" close="closeAlertBox('rushBagSuccess')">{{rushBagSuccess}}</alert>
+       <alert style="z-index:1060;position:fixed;margin-top:-39px;" ng-if="rushBagWarning" type="warning" id="rushBagWarning" close="closeAlertBox('rushBagWarning')">{{rushBagWarning}}</alert>
+       <alert ng-if="successMsg" style="z-index:1060;position:fixed;margin-top:-39px;" type="success" dismiss-on-timeout="{{successMsgTimeOutTime}}" close="copyMessageCloseModal('Success')">{{successMsg}}</alert>
+
+      <alert ng-if="RushBag.WarningResponse" type="warning" id="WarningResponse" close="closeAlertBox()">{{RushBag.WarningResponse}}</alert>
+
+      <alert ng-if="RushBagWarningResponse" type="warning" id="RushWarningResponse" close="closeAlertBox()">{{RushBagWarningResponse}}</alert>
+
+      <alert ng-if="successResponsess" type="success" id="successResponsess" dismiss-on-timeout="{{successMsgTimeOutTime}}" close="closeAlertBox('successResponsess')">{{successResponsess}}</alert>
+
+      <alert ng-if="errorResponsess" type="danger" id="errorResponsess" style="position: fixed;z-index:99999;" close="closeAlertBox('errorResponsess')">{{errorResponsess}}</alert>
+      <div class="alert alert-danger alert-dismissible fade in" style="z-index:99999;position: fixed;" role="alert" ng-if="DamagedSummaryDangerMsg">
+        <button type="button" class="close" data-dismiss="alert" ng-click="DamagedSummaryDangerMsg=false" aria-label="Close"><span aria-hidden="true">×</span></button>{{DamagedSummaryDangerMsg}}
+      </div>
+
+      <alert type="danger" style="z-index:99999;position: fixed;" ng-if="status.RushError" close="status.RushError=''">{{status.RushError}}
+      </alert>
+    </div>
+    <div id="rushFileDetails1" class="ignoreAlert default">
+    <div class="col-sm-5">
+
+      <ul class="list-unstyled">
+        <li ng-if="!RushBag.FileInfo"> <strong localize>File Reference Number</strong>: {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.StationCode}}{{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.AirlineCode}}{{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber}}</li>
+
+        <li ng-if="!RushBag.FileInfo && rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.OfflineRefNumber && rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.OfflineRefNumber.length>=9 && (rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber !== rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.OfflineRefNumber)"> <strong localize>Offline File Reference Number</strong>: {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.OfflineRefNumber}}</li>
+      <!-- <li ng-if="(timeHour=='undefined')&&!(referencenumonly.toString().length>6) && !offlineRush"> <strong>File Reference Number</strong>: {{referencenumdam}}</li> -->
+
+      <li ng-if="RushBag.FileInfo"> <strong localize>Offline File Reference Number</strong>: {{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber}}</li>
+
+      <!-- <li ng-if="(timeHour=='undefined')&&(referencenumonly.toString().length>6) && !offlineRush"> <strong>Offline File Reference Number</strong>: {{referencenumonly}}</li> -->
+
+        <!-- <li ng-if="offlineRush"><strong>File Reference Number</strong>: <span>{{referencenumdam}}</span> <span ng-if="(rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.StationCode && rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.AirlineCode && rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber) && !referencenumdam ">{{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.StationCode}}{{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.AirlineCode}}{{rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber}}</span> </li> -->
+        <!-- <li ng-if="offlineRush"><strong>Offline File Reference Number</strong>: {{offlineRush}}</li> -->
+
+          <li>
+            <strong localize>File Type</strong >: <span localize>Forward Bag</span></li>
+            <li><strong localize>Number of bags</strong>: {{bagLen}}</li>
+          <li>
+            <strong localize>Creation Date</strong>: {{rushCreatDate}}GMT</li>
+            <li ng-if="(['RUSH', 'RUSH-ONHAND', 'RUSH-LZ', 'RUSH-DELAYED'].indexOf(rushInfo.WTR_RushBagRecReadRS.BagType) != -1) && (rushInfo.WTR_RushBagRecReadRS.DiaryInfo.AgentID)">
+             <strong localize>Created By</strong>:<span> {{rushInfo.WTR_RushBagRecReadRS.DiaryInfo.AgentID}}</span></li>
+            <li ng-if="info.WTR_RushBagRecReadRS.DiaryInfo.ControllingStation"><strong localize>Controlling Station</strong>: {{info.WTR_RushBagRecReadRS.DiaryInfo.ControllingStation}}</li>
+          <li ng-if="info.WTR_RushBagRecReadRS.DiaryInfo.TracingDate"><strong localize>Tracing Date</strong>: {{TracingDate}}</li>
+          <!-- #2484 swd Defect : File status is always open for forward bag. So, no need to show in screen thats why commenting this section -->
+          <!-- <li class="fileStatusAll" style="visibility: hidden">
+            <strong localize>File Status</strong>: Open
+          </li> -->
+        </ul>
+    </div>
+    <div class="col-sm-4">
+			<span ng-if="rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord"><strong>Related File</strong></span>
+        <ul class="list-unstyled">
+          <li ng-repeat="related in rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord track by $index" ng-if="related">
+            <span class="hide nonprintable">{{$index+1}}. </span><span ng-if="related.RecordType === 'DELAYED'">Delayed</span><span ng-if="related.RecordType === 'DAMAGED'">Damaged</span><span ng-if="related.RecordType === 'ON-HAND'">On-Hand</span><span ng-if="related.RecordType === 'RUSH'">Rush</span> Bag<a href=""class="blue chckFocus" style="cursor: pointer" id="relatedFileOfRushBag" ng-click="showFileDetailsPageWithNextFileReference(related.RecordReference.StationCode,related.RecordReference.AirlineCode,related.RecordReference.ReferenceNumber,related.RecordType,'relatedFileOfRushBag')"> {{related.RecordReference.StationCode}}{{related.RecordReference.AirlineCode}}{{related.RecordReference.ReferenceNumber+"\n"}}</a>
+            </li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+  </div>
+</div>
+    <div class="clearfix"></div>
+  </div>
+
+  <p id="bag" href="#top" class="ignoreAlert margin-left-15 margin-top-15 summarySection" ><i class="fa fa-suitcase"></i> <span localize>Bag</span> </p>
+    <div class="ignoreAlert default">
+      <!-- <h6> tag adds a new line break in print window, so replacing it with Strong class (fontsize : 14px) -->
+      <div class="col-sm-4 col-md-3" ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.Names.Name">
+				<strong class="blue increasePrintFont margin-bottom-none " localize>Family Name</strong>
+        <ul class="list-unstyled">
+          <li ng-repeat="nam in rushInfo.WTR_RushBagRecReadRS.RushBagGroup.Names.Name track by $index" ng-if="nam">
+            <span>{{$index+1}}. </span><span ng-if="nam">{{nam.toUpperCase()}}</span>
+          </li>
+          <li ng-hide="true"><br/></li>
+				</ul>
+			</div>
+      <div class="col-sm-4 col-md-3" ng-repeat="rushBag in rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushBags.RushBag track by $index">
+        <span  id="rushBag" ng-if="rushBag"><strong class="blue margin-bottom-0 increasePrintFont" >Bag {{$index+1}}</strong></span>
+          <ul class="list-unstyled">
+              <li ng-if="rushBag.RushBagTag.TagSequence">
+                <strong ><span localize>Rush Tag Number</span>: </strong><span><span ng-if="rushBag.RushBagTag.AirlineCode">{{rushBag.RushBagTag.AirlineCode}}</span><span ng-if="!rushBag.RushBagTag.AirlineCode">{{convertedAirlineRush[$index]}}</span>{{rushBag.RushBagTag.TagSequence}}
+                </span>
+               </li>
+
+               <li ng-if="rushBag.RushBagTag.LicenseNumber">
+                 <strong ><span localize>Rush License Plate</span>: </strong><span>{{rushBag.RushBagTag.LicenseNumber.TagType}}{{rushBag.RushBagTag.LicenseNumber.IssuerCode}}{{rushBag.RushBagTag.TagSequence}}
+                 </span>
+                </li>
+
+               <li ng-if="rushBag.OriginalBagTag.TagSequence">
+                 <strong ><span localize>Original Tag Number</span>: </strong><span ng-if="rushBag.OriginalBagTag.AirlineCode">{{rushBag.OriginalBagTag.AirlineCode}}</span><span ng-if="!rushBag.OriginalBagTag.AirlineCode">{{convertedAirline[$index]}}</span>{{rushBag.OriginalBagTag.TagSequence}}
+                </li>
+
+                <li ng-if="rushBag.OriginalBagTag.LicenseNumber" class="reducedWidthOrg">
+                  <strong ><span localize>Original License Plate:</span> </strong><span>{{rushBag.OriginalBagTag.LicenseNumber.TagType}}{{rushBag.OriginalBagTag.LicenseNumber.IssuerCode}}{{rushBag.OriginalBagTag.TagSequence}}
+                  </span>
+                 </li>
+
+          <li ng-if="rushNewColor[$index]"><strong><span localize>Color</span>: </strong> {{rushNewColor[$index]}}</li>
+
+          <li ng-if="rushBag.ColorTypeDesc.TypeCode">
+<strong><span localize>Type</span>: </strong>{{updatedTypes[$index]}}-<span class="initTypeCap">{{rushSortedTypeBag[$index]}}</span></li>
+            <li ng-hide="true"><br/></li>
+         <!-- <li ng-if="rushBag.ColorTypeDesc.Descriptor"><strong>Descriptive Elements:</strong></li>
+           <ul class="list-unstyled">
+             <li>
+               <span ng-if="rushBag.ColorTypeDesc.Descriptor.MtrlElement">
+                 {{rushBag.ColorTypeDesc.Descriptor.MtrlElement}} - </span>
+               <span ng-if="!rushBag.ColorTypeDesc.Descriptor.MtrlElement">
+                   {{rushBag.ColorTypeDesc.Descriptor.OtherElement[0]}}</span>
+                   {{rushBagDescriptor[3*($index)]}}
+                 </li>
+           <li>
+             <span ng-if="rushBag.ColorTypeDesc.Descriptor.MtrlElement">
+               {{rushBag.ColorTypeDesc.Descriptor.OtherElement[0]}} - </span>
+               <span ng-if="!rushBag.ColorTypeDesc.Descriptor.MtrlElement">
+                 {{rushBag.ColorTypeDesc.Descriptor.OtherElement[1]}}</span> {{rushBagDescriptor[(3*($index))+1]}}</li>
+           <li>
+             <span ng-if="rushBag.ColorTypeDesc.Descriptor.MtrlElement">
+               {{rushBag.ColorTypeDesc.Descriptor.OtherElement[1]}} - </span>
+             <span ng-if="!rushBag.ColorTypeDesc.Descriptor.MtrlElement">
+               {{rushBag.ColorTypeDesc.Descriptor.OtherElement[2]}}</span> {{rushBagDescriptor[(3*($index))+2]}}</li>
+           </ul> -->
+       </ul>
+       </div>
+      <div class="clearfix"></div>
+    </div>
+
+<!-- <p id="bag" class="margin-left-15 margin-top-15 summarySection" ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.Names.Name"><i class="fa fa-user"></i> Passenger </p> -->
+<!-- <div class="default">
+    <div class="col-sm-12 col-md-12" ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.Names.Name">
+      <span ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.Names.Name[0]"><strong class="blue">Family Name</strong><a class="blue margin-left-5" href=""><i class="fa fa-pencil"></i></a></span>
+
+      <ol>
+          <li ng-repeat="nam in rushInfo.WTR_RushBagRecReadRS.RushBagGroup.Names.Name track by $index" ng-if="nam">
+            <span ng-if="nam">{{nam.toUpperCase()}}</span>
+          </li>
+      </ol>
+
+    </div>
+    <div class="clearfix"></div>
+    </div> -->
+
+
+
+
+  <p id="flight" href="#top" class="ignoreAlert margin-left-15 margin-top-15 summarySection" ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushFlights.FlightDateOrARNK || rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushDestinations.Destination ||rushInfo.WTR_RushBagRecReadRS.RushBagGroup.OriginalFlights.FlightDateOrARNK ||rushInfo.WTR_RushBagRecReadRS.ExpediteDestination" ><i class="fa fa-plane"></i> <span localize>Flight</span> </p>
+  <div class="ignoreAlert default">
+    <div  class="col-sm-4 col-md-3" ng-if="originAirlineVal||originStationVal">
+      <span ><strong class="blue" localize>Origin Address</strong></span>
+      <div>
+        <span ng-if="originStationVal" ng-bind="originStationVal | uppercase"></span> <span ng-if="originAirlineVal" ng-bind="originAirlineVal | uppercase"></span></div>
+    </div>
+
+    <div class="col-sm-4 col-md-3" id="rushRouting">
+      <span ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushFlights.FlightDateOrARNK"><strong class="blue increasePrintFont margin-bottom-0" localize>Rush Routing</strong></span>
+      <ol>
+          <li ng-repeat= "flight in rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushFlights.FlightDateOrARNK track by $index" ng-if="flight">
+          <span class="hide nonprintable">{{$index+1}}. </span><span ng-if="flight.FlightDate">{{rushRouteAirline[$index]}} {{rushRouteFlightNo[$index]}}/{{rushRouteDate[$index]}}</span><span ng-if="flight.ARNK">{{rushRoutingARNK}}</span>
+        </li>
+        </ol>
+    </div>
+
+    <div class="col-sm-4 col-md-3" id="addDestAddress">
+      <span ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushDestinations.Destination"><strong class="blue increasePrintFont margin-bottom-0" localize>Additional Destination Address</strong></span>
+        <ol>
+          <li ng-repeat= "flight in rushInfo.WTR_RushBagRecReadRS.RushBagGroup.RushDestinations.Destination track by $index" ng-if="flight">
+          <span class="hide nonprintable">{{$index+1}}. </span><span>{{destinationAddrStation[$index]}} {{destinationAddrAirline[$index]}}</span>
+          </li>
+        </ol>
+    </div>
+
+    <div class="col-sm-4 col-md-3" id="originalRouting">
+      <span ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.OriginalFlights.FlightDateOrARNK"><strong class="blue increasePrintFont margin-bottom-0" localize>Original Routing</strong></span>
+        <ol>
+          <li ng-repeat= "flight in rushInfo.WTR_RushBagRecReadRS.RushBagGroup.OriginalFlights.FlightDateOrARNK track by $index" ng-if="flight">
+          <span class="hide nonprintable">{{$index+1}}. </span><span ng-if="flight.FlightDate">{{originalRouteAirline[$index]}} {{originalRouteFlightNo[$index]}}/{{originalRouteDate[$index]}}</span><span ng-if="flight.ARNK">{{rushOriginalRoutingARNK}}</span>
+        </li>
+        </ol>
+    </div>
+
+    <div class="col-sm-4 col-md-3" id="expediteDestination">
+      <span ng-if="rushInfo.WTR_RushBagRecReadRS.ExpediteDestination"><strong class="blue increasePrintFont margin-bottom-0" localize>Expedite Destination</strong></span>
+        <ol>
+          <li ng-if="rushInfo.WTR_RushBagRecReadRS.ExpediteDestination">
+            {{rushInfo.WTR_RushBagRecReadRS.ExpediteDestination}}
+          </li>
+        </ol>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+
+<p id="more" href="#top" class="ignoreAlert pull-left margin-left-15 margin-top-15 summarySection"  ng-if= "rushHandledAirline||
+rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal||rushInfo.WTR_RushBagRecReadRS.FaultAirline||
+rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord||
+rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine" >
+<i class="fa fa-ellipsis-h gray"></i><span localize style="margin-left:5px">More</span></p>
+<ul class="text-center list-unstyled list-inline margin-top-15 hide_more_options" ng-if= "rushHandledAirline||
+rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal||rushInfo.WTR_RushBagRecReadRS.FaultAirline||
+rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord||
+rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine">
+
+			<li ng-if="rushHandledAirline"><a href="#/landingPage/RushSummary#delayedOptions" class="blue" ><span class="hide nonprintable">NONPRINTABLECONTENT</span><span localize>Rush Bag Option</span></a></li>
+			<li ng-if="rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal||rushInfo.WTR_RushBagRecReadRS.FaultAirline"><a href="#/landingPage/RushSummary#faultInfo" class="blue" ><span class="hide nonprintable">NONPRINTABLECONTENT</span><span localize>Fault Information</span></a></li>
+
+			<li ng-if="rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine"><a href="#/landingPage/RushSummary#suppInfo" class="blue" ><span class="hide nonprintable">NONPRINTABLECONTENT</span><span localize>Supplementary Information</span></a></li>
+
+			<li ng-if="rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord"><a href="#/landingPage/RushSummary#relatedFile" class="blue" ><span class="hide nonprintable">NONPRINTABLECONTENT</span><span localize>Related File</span></a></li>
+</ul>
+
+
+  <div class="clearfix"></div>
+  <div class="ignoreAlert default border" id="delayedOptions" ng-if="rushHandledAirline">
+			<div class="col-sm-12">
+				<strong class="blue increasePrintFont margin-bottom-0" localize>Rush Bag Option</strong>
+				 <ul class="list-unstyled">
+					<li><strong ><span localize>Handled Airline Copy</span>:</strong> {{rushHandledAirline}}</li>
+
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+    <div class="ignoreAlert default border" id="teletypeDetail" ng-if="rushInfo.WTR_RushBagRecReadRS.TeletypeAddresses.TeletypeAddress">
+        <div class="col-sm-12">
+          <strong class="blue increasePrintFont margin-bottom-0" localize>Teletype Address</strong>
+          <ol>
+              <li ng-repeat="Einfo in rushInfo.WTR_RushBagRecReadRS.TeletypeAddresses.TeletypeAddress track by $index" ng-if="Einfo"><span class="hide nonprintable">{{$index+1}}. </span><span>{{Einfo.toUpperCase()+"\n"}}</span></li>
+          </ol>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+    <div class="ignoreAlert default border" id="faultInfo" ng-if="rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal||rushInfo.WTR_RushBagRecReadRS.FaultAirline">
+    			<div class="col-sm-12">
+    				<strong class="blue increasePrintFont margin-bottom-0" localize>Fault Information</strong>
+    				<ul class="list-unstyled">
+
+    					<li ng-if="rushInfo.WTR_RushBagRecReadRS.LossComments"><strong ><span localize>Comments on Loss</span>:</strong> {{(rushInfo.WTR_RushBagRecReadRS.LossComments).toUpperCase()}} </li>
+
+    					<li ng-if="rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode"><strong ><span localize>Reason for Loss</span>:</strong> {{rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode}} </li>
+
+						<li ng-if="rushInfo.WTR_RushBagRecReadRS.FaultStationCode"><strong ><span localize>Fault Station</span>:</strong> {{rushInfo.WTR_RushBagRecReadRS.FaultStationCode}}</li>
+
+            <li ng-if="rushInfo.WTR_RushBagRecReadRS.FaultAirline"><strong ><span localize>Fault Airline</span>:</strong> {{rushInfo.WTR_RushBagRecReadRS.FaultAirline}}</li>
+
+    					<li ng-if="rushInfo.WTR_RushBagRecReadRS.FaultTerminal"><strong ><span localize>Fault Terminal</span>:</strong> {{rushInfo.WTR_RushBagRecReadRS.FaultTerminal}}</li>
+
+
+    				</ul>
+    			</div>
+    			<div class="clearfix"></div>
+    		</div>
+
+      <div class="ignoreAlert default border" id="suppInfo" ng-if="rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine">
+      <div class="col-sm-12">
+        <strong class="blue increasePrintFont margin-bottom-0" localize>Supplementary Information</strong>
+        <ol>
+            <li ng-repeat="Einfo in rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine track by $index" ng-if="Einfo"><span class="hide nonprintable">{{$index+1}}. </span><span>{{Einfo.value.toUpperCase()+"\n"}}</span></li>
+        </ol>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+
+    <div class="ignoreAlert default col-sm-12" id="relatedFile">
+			<span ng-if="rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord"><strong>Related File</strong></span>
+        <ul class="list-unstyled">
+          <li ng-repeat="related in rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord track by $index" ng-if="related">
+            <span class="nonprintable">{{$index+1}}. </span><span ng-if="related.RecordType === 'DELAYED'">Delayed</span><span ng-if="related.RecordType === 'DAMAGED'">Damaged</span><span ng-if="related.RecordType === 'ON-HAND'">On-Hand</span><span ng-if="related.RecordType === 'RUSH'">Rush</span> Bag <a href=""class="blue chckFocus" style="cursor: pointer" id="relatedFileOfRushBag2" ng-click="showFileDetailsPageWithNextFileReference(related.RecordReference.StationCode,related.RecordReference.AirlineCode,related.RecordReference.ReferenceNumber,related.RecordType,'relatedFileOfRushBag2')">{{related.RecordReference.StationCode}}{{related.RecordReference.AirlineCode}}{{related.RecordReference.ReferenceNumber+"\n"}}</a>
+            </li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+
+  <!-- <div  id="delayedOptions" ng-if="rushHandledAirline">
+    <div class="col-sm-7 col-md-5" ng-if="rushHandledAirline">
+      <span ng-if="rushHandledAirline"><strong class="blue">Rush Bag Option</strong><a class="blue margin-left-5" href=""></a></span>
+      <div ng-if="rushHandledAirline"><span>Handled Airline Copy:</span> {{rushHandledAirline}}</div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-7 col-md-5" ng-if="rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal">
+				<span ng-if="rushInfo.WTR_RushBagRecReadRS.LossComments||rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode||rushInfo.WTR_RushBagRecReadRS.FaultStationCode||rushInfo.WTR_RushBagRecReadRS.FaultTerminal"><strong class="blue">Fault Information</strong><a class="blue margin-left-5" href=""><i class="fa fa-pencil"></i></a></span>
+        <ul class="list-unstyled">
+        <li ng-if="rushInfo.WTR_RushBagRecReadRS.LossComments">
+          <strong>Comments on Loss:</strong>
+          {{(rushInfo.WTR_RushBagRecReadRS.LossComments).toUpperCase()}}
+        </li>
+            <li ng-if="rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode">
+              <strong>Reason for Loss:</strong>
+              {{rushInfo.WTR_RushBagRecReadRS.ReasonForLossCode}}
+            </li>
+            <li ng-if="rushInfo.WTR_RushBagRecReadRS.FaultStationCode">
+              <strong>Fault Station:</strong>
+              {{rushInfo.WTR_RushBagRecReadRS.FaultStationCode}}
+            </li>
+              <li ng-if="rushInfo.WTR_RushBagRecReadRS.FaultTerminal">
+                <strong>Fault Terminal:</strong>
+                {{rushInfo.WTR_RushBagRecReadRS.FaultTerminal}}
+              </li>
+              <li ng-if="rushInfo.WTR_RushBagRecReadRS.RushBagGroup.NumberOfBags">
+                <strong>Forwaded Bags:</strong>
+                {{rushInfo.WTR_RushBagRecReadRS.RushBagGroup.NumberOfBags}}
+              </li>
+      </ul>
+      </div> -->
+
+    <!-- <div ng-if="rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine">
+      <div class="col-sm-7 col-md-5" ng-if="rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine">
+        <span ng-if="rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine"><strong class="blue">Supplementary Information</strong><a class="blue margin-left-5" href=""><i class="fa fa-pencil"></i></a></span>
+        <ul class="list-unstyled">
+
+          <ol>
+          <li ng-repeat="Einfo in rushInfo.WTR_RushBagRecReadRS.SupplimentalInfo.TextLine track by $index" ng-if="Einfo"><span>{{Einfo.value.toUpperCase()}}</span></li>
+        </ol>
+        </ul>
+      </div>
+    </div> -->
+    <!-- <div class="col-sm-7 col-md-5" ng-if="rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords">
+      <span ng-if="rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords"><strong class="blue">Related File</strong><a class="blue margin-left-5" href=""><i class="fa fa-pencil"></i></a></span>
+
+          <ol>
+            <li ng-repeat="related in rushInfo.WTR_RushBagRecReadRS.DiaryInfo.CrossReferenceRecords.CrossReferenceRecord track by $index" ng-if="related">{{related.RecordType}} {{related.RecordReference.StationCode}}{{related.RecordReference.AirlineCode}}{{related.RecordReference.ReferenceNumber}}</li>
+        </ol>
+
+    </div> -->
+    <div class="clearfix"></div>
+
+
+  <section class="form-actions">
+
+
+
+
+    <div class="col-sm-4 col-sm-offset-4 hide_createAnother">
+    <div class="text-center-block" ng-if="!RedirectingFromOffineSearchAndManage">
+        <h5 class="margin-top-0 margin-bottom-0">
+    <a href="" ng-click="createAnother()" ng-if="!searchBackActive && !routeToTrace && !(timeHour=='undefined')" class="blue-link" ><span class="hide nonprintable">NONPRINTABLECONTENT</span><i class="fa fa-plus" style="margin-right:4px;"></i><span localize>Create Another</span></a>
+    <div  class="table-dropdown nonActiveButtons padding-0" style="display: inline-block;" ng-if="(!searchBackActive && !routeToTrace && !(timeHour=='undefined'))">
+        <div class="">
+        <div data-toggle="dropdown" aria-expanded="true">
+          <span dropdown-toggle="" id="manageFileDetailsBlueDot">
+          <button prevent-closing-dropdown style="background-color: transparent;border: none;padding: 0px;" href=""><div class="table-dropdown-link"><i class="fa fa-ellipsis-v fa-lg blue"></i></div></button>
+          </span>
+        </div>
+        <ol class="dropdown-menu" role="menu"  aria-labelledby="single-button" style="top:auto;bottom:100%;z-index:9;width: inherit;list-style-position: inside;list-style-type: decimal;font-weight: 100">
+          <li role="menuitem" ng-click="createAnother()" ng-if="!searchBackActive && !routeToTrace"><span class="hide nonprintable">NONPRINTABLECONTENT</span><a href="" ><span localize>Create Another</span></a></li>
+          <li role="menuitem" ng-click="createAnotherForSame()"  ng-if="!searchBackActive && !routeToTrace"><span class="hide nonprintable">NONPRINTABLECONTENT</span><a href="" ><span localize>Create Another for same Flight</span></a></li>
+          <li ng-if="restrictionMenu.indexOf('NEWMESSAGE')!=-1" id="forwardNewMessage" data-toggle="{{(showOffline) ? '' : 'modal'}}" data-target="" ng-click="(showOffline) ? ShowWarning() : readForwardNewMsg('RUSH',rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.StationCode,rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.AirlineCode,rushFileInfo.WTR_BagsCreateRS.RecordID.RecordReference.ReferenceNumber)"><span class="hide nonprintable">NONPRINTABLECONTENT</span><a href="" class="outline-focus">New Message</a></li>
+          <li role="menuitem" ng-if= "restrictionMenu.indexOf('FORWARDBAG_COPYMESSAGE')!=-1" data-toggle="{{(showOffline) ? '' : 'modal'}}" ng-click="(showOffline) ? ShowWarning() : clearCopyMessageModal();hideShow();" data-target="#CopyMessageFwd">
+            <a href=""><span localize>Copy Message</span></a>
+          </li>
+        </ol>
+        </div>
+        </div>
+  </h5>
+  </div>
+  </div>
+  <div class="col-sm-4" ng-if="restrictionMenu.indexOf('PRINT_FILE')!=-1">
+    <div class="print_parent">
+
+     <span class="current-page pull-right blue" style="padding-bottom:5px; margin-right:20px;" ng-if="!showIncute">
+      <div class="btn-group dropup">
+         <button prevent-closing-dropdown class="forwardPrintIconMargin focusHoverOnPrintIcon" style="background-color: transparent;border: none;padding: 0px;" href=""  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;<i class="fa fa-lg fa-print blue printIconLarge"></i>&nbsp;<i class="fa fa-ellipsis-v fa-lg blue printThreeDot printThreeDotAlign"></i></button>
+         <ol class="dropdown-menu" role="menu"  aria-labelledby="single-button" style="left: -292px;width: inherit;list-style-position: inside;list-style-type: decimal;font-weight: 100;">
+           <li role="menuitem" ng-click="PrintWithPopup('contentPanelBody');"><a href="" ><span localize>Print File</span></a></li>
+				</ol>
+        <!--- <ol class="dropdown-menu" style="left: -225px;">
+
+            <li ng-click="PrintWithPopup('contentPanelBody')"><span class="hide nonprintable">NONPRINTABLECONTENT</span><a href="">1. <span localize>Print File</span></a></li>
+
+         </ol>-->
+      </div>
+    </span>
+
+
+    <span class="pull-right blue-link" style=" padding-top:7px; margin-right:15px;" ng-if="showIncute">
+       <!--<div ng-if="!showHidePrintRushStatus" class="btn-group open blue-link" data-toggle="dropdown" aria-expanded="true" >
+				  <button prevent-closing-dropdown class="focusHoverOnPrintIcon" style="background-color: transparent;border: none;padding: 0px;" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-click="PrintWithPopup('contentPanelBody');" id="printFile"><i class="fa fa-lg fa-print blue dropdown-toggle printIconLarge"></i><i class="fa fa-lg fa-ellipsis-v blue dropdown-toggle"style="padding-left: 5px;width: inherit;list-style-position: inside;list-style-type: decimal; "></i></button>
+			  </div>-->
+       <div class="btn-group dropup">
+				<button prevent-closing-dropdown class="forwardPrintIconMargin fwdPrintIconBorder focusHoverOnPrintIcon" style="background-color: transparent;border: none;padding: 0px;" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-lg fa-print blue dropdown-toggle printIconLarge"></i><i class="fa fa-lg fa-ellipsis-v blue dropdown-toggle"style="padding-left: 5px;width: inherit;list-style-position: inside;list-style-type: decimal; "></i></button>
+				<ol class="dropdown-menu" role="menu"  aria-labelledby="single-button" style="left: -292px;width: inherit;list-style-position: inside;list-style-type: decimal;font-weight: 100;">
+					<li role="menuitem" ng-click="openBtpModal();"  ng-if="restrictionMenu.indexOf('FORWARDBAG_PRINTBTP')!=-1 && showHidePrintRushStatus && printRushTagAllowed"><a href="" ><span localize>Print Rush Tags</span></a></li>
+					<li role="menuitem" ng-click="PrintWithPopup('contentPanelBody');"><a href="" ><span localize>Print File</span></a></li>
+				</ol>
+			</div>
+    </span>
+
+    </div>
+</div>
+		<div class="clearfix"></div>
+  </section>
+</div>
+</div>
+<!-- content -->
+</div>

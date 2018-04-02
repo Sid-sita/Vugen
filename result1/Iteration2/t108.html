@@ -1,0 +1,133 @@
+<div class="main-content loginClass" id="main-cont" screen-id = "Login_" ng-keyup="openHelpFiles($event);">
+  <input type="button" id="loginHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1013, null, null, null );"
+    class="hide" />
+  <input type="button" id="wTRHelpClose" value="Close contextual help" onclick="FMCCloseHelp ();" class="hide" />
+  <input type="button" id="wTRHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1000, null, null, null );"
+    class="hide" />
+<div class="login_header">
+<div ng-include="'app/shared/header/header.html'"></div>
+
+  <!-- header -->
+  <div class="col-xs-12 bottom-border"></div>
+  <!-- orange line -->
+</div>
+  <div class="col-xs-12 main-content body_content" ng-init="mainInit();">
+    <aside class="col-sm-2 col-md-2 col-lg-4">&nbsp;</aside>
+
+    <article class="col-sm-8 col-md-6 col-lg-4">
+      <h4 style="margin-top: 20px;"><!--{{language[0].signAccount}}--></h4>
+
+      <div class="panel panel-default" ng-init="newfnlog()">
+        <div class="panel-body" ng-keydown="preventDropdown($event)">
+          <alert ng-if="loginSuccess" type="success" id="loginSuccess" dismiss-on-timeout="{{successMsgTimeOutTime}}" close="closeAlert('loginSuccess')">{{loginSuccess}}</alert>
+            <div class="alert alert-warning alert-dismissible fade in ng-binding ng-hide" role="alert" style="float:none;text-align:center;margin:0 auto;position: relative;" ng-show="warningFlag">
+            <span class="cross_btn" ng-click="warningFlag=false;gridWarningmessages=''">&times;</span>
+            {{gridWarningmessages}}
+            </div>
+            <div class="alert alert-danger alert-dismissible fade in" role="alert" data-ng-show="disperror2" style="margin-left: 0px;top: 8px;">
+      					{{loginError2}}
+    				</div>
+            <div class="alert alert-danger alert-dismissible fade in" id="errorNew" role="alert" data-ng-show="disperror1" style="margin-left: 0px;top: 8px;z-index: inherit;">
+              <span class="cross_btn" ng-click="closeErrorNew()">&times;</span>
+                {{loginError1}}
+            </div>
+
+          <form class="login" ng-keypress="enterFunc($event)">
+            <!-- <div style="color:tomato" id="errorNew">&nbsp;{{loginError1}}</div> -->
+            <label localize>Login ID</label>
+            <div class="input-group required">
+              <span class="input-group-addon mandatory-bar" id="basic-addon1"></span>
+              <input autocomplete="off" aria-describedby="basic-addon1" class="form-control" id="userID" ng-model="ema" ng-blur="validateUserId()"
+              validation-rule="userId" error-validate data-toggle="tooltip" data-title="" maxlength="15" required type="text" autofocus="true" set-focus-user>
+            </div>
+            <label localize>Password</label>
+            <div class="input-group required">
+              <span class="input-group-addon mandatory-bar" id="basic-addon2"></span>
+              <input autocomplete="off" aria-describedby="basic-addon2" class="form-control" id="password" ng-model="pass" required type="password" ng-keypress="checkCapsLock($event)"> <!-- placeholder="{{language[0].placeholderPassword}}" -->
+            </div>
+
+            <div class="divider"></div>
+            <div class="custom-accordion form-more-info" ng-class="{'open' : advanceToggle}">
+
+            							<span class="accordion-link margin-top-15" ng-click="advanceToggle = !advanceToggle" accesskey="a">
+            								<a href="" class="pull-left" id="advSet"><i class="fa fa-lg margin-left-0 fa-chevron-circle-right" ng-class="{'fa-chevron-circle-down' : advanceToggle}"></i></a>
+            								<span localize>Advanced Settings</span>
+            								<div class="clearfix"></div>
+            							</span>
+
+            							<div class="accordion-body">
+            								<label for="mode" localize>Mode</label>
+            								<div class="input-group dropdown required mandatory">
+            			        				<span class="input-group-addon mandatory-bar"></span>
+            							  		<button class="btn btn-default dropdown-toggle login_first_drop" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="mode" prevent-closing-dropdown><span id="loginChev" localize>Active</span><i class="fa fa-chevron-down pull-right"></i></button>
+
+                                <ul class="dropdown-menu">
+            										<li class="dropdown-header"><a style="padding:0px!important" href="" ng-click="displaylistContent('Active','login_first_drop','A')" localize>Select Mode</a></li>
+            							    		<li>
+            										  <a style="padding:0px!important" href="" ng-click="displaylistContent('Active','login_first_drop','A')" localize>Active</a>
+            										</li>
+            										<li>
+            										  <a style="padding:0px!important" href="" ng-click="displaylistContent('Training','login_first_drop','T')" localize>Training</a>
+            										</li>
+            									</ul>
+            								</div>
+
+
+
+                            <label localize>Language</label>
+                            <div class="input-group dropdown required mandatory">
+                                  <span class="input-group-addon mandatory-bar"></span>
+                                <button prevent-closing-dropdown class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="language">
+                                  <span class="selection" ng-model = "languag">{{languag}} </span> <i class="fa fa-chevron-down pull-right"></i>
+                                </button>
+
+                                <ul class="dropdown-menu">
+                                <li class="dropdown-header"><a href="" ng-click="displaylistContent('Select Language','login_second_drop')" localize>Select Language</a></li>
+                                <li ng-repeat="country in countries">
+                                      <a href="" ng-click="setAction(country)">{{country.name}}</a>
+                                    </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+            <div class="divider"></div>
+            <div class="row">
+              <div class="col-md-12">
+            <div class="panel panel-default" data-ng-show="showCaptcha">
+              <div style="text-align:center">
+                  <img ng-src="data:image/JPEG;base64,{{res}}" height="100px" width="200px" style="margin:5px"><br><br>
+            </div>
+            <label localize>Enter the text above</label>
+            <div class="input-group required">
+              <span class="input-group-addon mandatory-bar" id="dateAddon2"></span>
+              <input class="form-control" id="value" ng-model="ran" key-listener type="text" required> <!-- placeholder={{language[0].enterTheCaptcha}} -->
+              <a href="" class="right-icon alignCaptcha" ng-click="captchaGeneration()"><i class="fa fa-refresh"></i></a>
+            </div>
+
+                  </div>
+
+                </div></div>
+            <div class="col-sm-4 col-sm-offset-4">
+              <button class="btn btn-primary btn-block btn-login enabled" ng-disabled="loginButtonDisable()" ng-click="clickLogin()" type="button" localize>Login</button>
+            </div>
+
+          </form>
+
+
+        <div class="clearfix"></div>
+      </div>
+</div><div class="col-sm-12" style="text-align:center;">
+<!-- <a href="" id="needHelpOpen"  oncontextmenu="return false;" onmousedown="FMCOpenHelp (1000, null, null, null );">Need help?</a> -->
+<!-- <input type="button" class ="submitLink" id="needHelpOpen"  oncontextmenu="return false;" ng-click ="helpOnenter()" value ="Need help?" localize >
+<input type="button" id="needHelpClose" value="Close contextual help" onclick="FMCCloseHelp ();"  class="hide"/>
+</div> -->
+<div>
+ <!-- <shortcut-helplog></shortcut-helplog> -->
+</div>
+    </article>
+<!-- login -->
+
+    <aside class="col-md-3 col-lg-4"></aside>
+
+<!-- content -->
+</div>

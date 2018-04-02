@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Date: Wed, 28 Mar 2018 06:03:07 GMT
+Server: Apache/2.4.29 (Unix) OpenSSL/1.0.1e-fips
+X-Frame-Options: SAMEORIGIN
+X-OneAgent-JS-Injection: true
+Vary: Accept-Encoding
+Content-Encoding: gzip
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+saml_key: TEST
+Set-Cookie: dtCookie=3$B1631916814DA0B40F5613968B4B61FD|World+Tracer+Desktop|1; domain=.worldtracer.aero; path=/
+Access-Control-Allow-Methods: GET,POST
+Access-Control-Allow-Headers: Content-type,Accept,User-Token
+Cache-Control: no-cache, no-store
+Access-Control-Allow-Origin: *
+Keep-Alive: timeout=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: application/json; charset=iso-8859-1
+

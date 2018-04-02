@@ -1,0 +1,45 @@
+{
+  "colors" : [
+    {"name": "WT | White", "flag": "assets/img/colorImages/WT.jpg"},
+    {"name": "BK | Black", "flag": "assets/img/colorImages/BK.jpg"},
+    {"name": "GY | Gray", "flag": "assets/img/colorImages/GY.jpg"},
+    {"name": "BU | Blue", "flag": "assets/img/colorImages/BU.jpg"},
+    {"name": "RD | Red", "flag": "assets/img/colorImages/RD.jpg"},
+    {"name": "YW | Yellow", "flag": "assets/img/colorImages/YW.jpg"},
+    {"name": "BE | Beige", "flag": "assets/img/colorImages/BE.jpg"},
+    {"name": "BN | Brown", "flag": "assets/img/colorImages/BN.jpg"},
+    {"name": "GN | Green", "flag": "assets/img/colorImages/GN.jpg"},
+    {"name": "MC | MultiColored", "flag": "assets/img/colorImages/MC.jpg"},
+    {"name": "PU | Purple", "flag": "assets/img/colorImages/PU.jpg"},
+    {"name": "PR | Patterned", "flag": "assets/img/colorImages/PR.jpg"}
+  ],
+  "codeKeys": {
+    "WT" : "White",
+    "BK" : "Black",
+    "GY" : "Gray",
+    "BU" : "Blue",
+    "RD" : "Red",
+    "YW" : "Yellow",
+    "BE" : "Beige",
+    "BN" : "Brown",
+    "GN" : "Green",
+    "MC" : "MultiColored",
+    "PU" : "Purple",
+    "PR" : "Patterned"
+  },
+  "colorKey":[
+    {"name":"WT","Color" : "White"},
+    {"name":"BK","Color" : "Black"},
+    {"name":"GY","Color" : "Gray"},
+    {"name":"BU","Color" : "Blue"},
+    {"name":"RD","Color" : "Red"},
+    {"name":"YW","Color" : "Yellow"},
+    {"name":"BE","Color" : "Beige"},
+    {"name":"BN","Color" : "Brown"},
+    {"name":"GN","Color" : "Green"},
+    {"name":"MC","Color" : "MultiColored"},
+    {"name":"PU","Color" : "Purple"},
+    {"name":"PR","Color" : "Patterned"}
+  ]
+
+}

@@ -1,0 +1,24 @@
+<div class="modal fade" id="afterError">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <i class="close fa fa-times" data-dismiss="modal" aria-label="Close"></i>
+            <h4 class="modal-title">Error for {{MultipleOperations.errorRefNumber}}</h4>
+
+        </div>
+
+          <div class="modal-footer">
+            <div class="col-sm-12" style="text-align: left;padding-bottom: 2%;">
+              {{MultipleOperations.ErrorMessageForMultiple}}
+            </div>
+            <div class="clearit"></div>
+            <div class="col-sm-4">
+              <a href="#" data-dismiss="modal" type="button" class="btn btn-primary btn-block" localize>Back to File</a>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-primary btn-block modalDismisClass" data-dismiss="modal" ng-click="multipleOperationFromManage(multiselectIndex+1)" localize>Proceed with Next File</button>
+            </div>
+          </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

@@ -1,0 +1,177 @@
+<div class="modal fade" id="rematchFile">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	    		<div class="modal-header">
+			        <a href="" class="pull-right" data-dismiss="modal" aria-label="Close" shift-tab-focus><i class="close fa fa-times" ></i></a>
+			        <h4 class="modal-title"><span localize>Rematch File</span> - {{referenceNum}}</h4>
+			    </div>
+
+					<div class="alert alert-danger alert-dismissible fade in" style="margin-left: 10px;
+    margin-right: 10px;width: auto;" role="alert" data-ng-show="errorForRematch">
+						<button type="button" class="close" ng-click="errorForRematch=false" aria-label="Close"><span aria-hidden="true">×</span></button>
+							{{errorForRematch}}
+					</div>
+
+      		<div class="modal-body">
+        		<h5 ng-if="!(restriction.indexOf('REPORTINGSTATION')!=-1)||!(restriction.indexOf('REPORTINGAIRLINE')!=-1)" localize>Reporting</h5>
+        		<div class="col-sm-3" ng-if="!(restriction.indexOf('REPORTINGSTATION')!=-1)">
+						<label for="station" localize>Station</label>
+						<div class="custom-input-group" ng-class="{'input-group required':(remModels.rematchAirline && !remModels.rematchStation)}">
+
+							<span ng-class="{'input-group-addon mandatory-bar': (remModels.rematchAirline && !remModels.rematchStation)}"></span>
+							<input autocomplete="off" typeaheadscroll type-ahead-exact-match class="form-control"  ng-model="remModels.rematchStation" type="text" id="remstation" typeahead="state.code as state.code for state in stationCode | filter:$viewValue:rematchTypeaheadFilter | limitTo:20 | orderBy:'code'" ng-blur="airlineService()" maxlength="3" size="3" data-title="" data-toggle="tooltip" error-validate validation-rule="alpha3s" ng-disabled="(restrictionDis.indexOf('REPORTINGSTATION')!=-1)" tooltip="{{remModels.rematchStationTooltip}}" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);">
+						</div>
+					</div>
+
+					<div class="col-sm-3" ng-if="!(restriction.indexOf('REPORTINGAIRLINE')!=-1)">
+						<label for="airline" localize>Airline</label>
+						<div class="custom-input-group">
+							<span></span>
+							<input autocomplete="off" typeaheadscroll class="form-control" ng-model="remModels.rematchAirline" type="text" id="remairline" typeahead="state.code as state.code + ' - ' + state.name for state in airline_code | filter:$viewValue:rematchTypeaheadFilter | limitTo:20 | orderBy:'code'" maxlength="3" size="3" data-title="" data-toggle="tooltip" error-validate validation-rule="airline-char"
+							ng-disabled="(restrictionDis.indexOf('REPORTINGAIRLINE')!=-1)" tooltip="{{remModels.rematchAirlineTooltip}}" ng-blur="validateAirlineInTrainigMode()" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+
+					<h5 ng-if="!(restriction.indexOf('MATCHWINDOWDAYS_MW')!=-1) || !(restriction.indexOf('MATCHWINDOWSDAY_FROM_TO')!=-1)" localize>Matching Period</h5>
+					<div class="col-sm-6" ng-if="!(restriction.indexOf('MATCHWINDOWDAYS_MW')!=-1)">
+						<div class="btn-group selection" role="group" id="dayType">
+							<button type="button" class="btn btn-default select-days" ng-class="{'active':remModels.DaysBtn}" ng-click="remModels.DaysBtn=true;remModels.DaysRangeBtn=false" ng-disabled="(restrictionDis.indexOf('ADDITIONALINFORMATION_TI')!=-1)&&(rolePrivilageDis)" localize>Days</button>
+							<button type="button" class="btn btn-default select-range" ng-class="{'active':remModels.DaysRangeBtn}" ng-click="remModels.DaysRangeBtn=true;remModels.DaysBtn=false" localize>Day Range</button>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+
+					<div class="days" ng-if="remModels.DaysBtn && !(restriction.indexOf('MATCHWINDOWDAYS_MW')!=-1)">
+						<div class="col-sm-6">
+							<div>
+								<span></span>
+								<input type="text" id="daysNumId" class="form-control margin-top-15" ng-model="remModels.daysNum" maxlength="2" size="2" data-title="" data-toggle="tooltip" error-validate validation-rule="lessthan100" ng-disabled="(restrictionDis.indexOf('MATCHWINDOWDAYS_MW')!=-1)">
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+
+					<div class="margin-top-10" ng-if="remModels.DaysRangeBtn && !(restriction.indexOf('MATCHWINDOWSDAY_FROM_TO')!=-1)">
+						<div class="col-sm-3">
+							<label for="from" localize>From</label>
+							<div ng-class="{'input-group required emptyborder': remModels.toDateModel, 'custom-input-group': !remModels.toDateModel, 'err12':remModels.fromlast99 && remModels.toDateModel}">
+								<span ng-class="{'input-group-addon mandatory-bar': remModels.toDateModel}"></span>
+								<input class="form-control" id="dayFrom" type="text" ng-model="remModels.fromDateModel" ng-class="{'err12':remModels.fromlast99 && !remModels.toDateModel}"
+								ng-blur="last99Fun('fromDateModel','fromlast99','fromtooltipMsg')"
+								tooltip={{remModels.fromtooltipMsg}} data-title="" data-toggle="tooltip"
+								datepicker-options="dateOptions" datepicker-popup="ddMMM"
+								is-open="remModels.fromDateOpen" show-button-bar="false" maxlength="5" size="5"
+								show-weeks="false" error-validate validation-rule="date" ng-required="remModels.toDateModel" ng-keyup="manualDateRematchFrom(remModels.fromDateModel);" ng-disabled="(restrictionDis.indexOf('MATCHWINDOWSDAY_FROM_TO')!=-1)">
+								<i class="fa fa-lg fa-calendar right-icon" ng-click="(restrictionDis.indexOf('MATCHWINDOWSDAY_FROM_TO')!=-1) ? '' : openDate($event,'fromDateOpen','fromDateModel','dayFrom')"></i>
+							</div>
+						</div>
+
+						<div class="col-sm-3" ng-if="!(restriction.indexOf('MATCHWINDOWSDAY_FROM_TO')!=-1)">
+							<label for="to" localize>To</label>
+							<div class="custom-input-group">
+								<span></span>
+								<input class="form-control" ng-class="{'err12':remModels.tolast99}" id="dayTo" type="text" ng-model="remModels.toDateModel"
+								ng-blur="last99Fun('toDateModel','tolast99','totooltipMsg')"
+								data-title="" data-toggle="tooltip" tooltip={{remModels.totooltipMsg}}
+								datepicker-options="dateOptions" datepicker-popup="ddMMM"
+								is-open="remModels.toDateOpen" show-button-bar="false" maxlength="5" size="5"
+								show-weeks="false" error-validate validation-rule="date" ng-keyup="manualDateRematchTo(remModels.fromDateModel);" ng-disabled="(restrictionDis.indexOf('MATCHWINDOWSDAY_FROM_TO')!=-1)">
+								<i class="fa fa-lg fa-calendar right-icon" ng-click="(restrictionDis.indexOf('MATCHWINDOWSDAY_FROM_TO')!=-1) ? '' : openDate($event,'toDateOpen','toDateModel','dayTo')"></i>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+					<h5 ng-if="!(restriction.indexOf('SCORE_FROM_TO')!=-1)" localize>Score Range</h5>
+					<div class="col-sm-3" ng-if="!(restriction.indexOf('SCORE_FROM_TO')!=-1)">
+						<label for="from" localize>From</label>
+						<div class="emptyborder" ng-class="{'input-group required':remModels.scoreToModel && !remModels.scoreFromModel}">
+							<span ng-class="{'input-group-addon mandatory-bar':remModels.scoreToModel && !remModels.scoreFromModel}"></span>
+							<input class="form-control" ng-class="{'err12': remModels.scoreFromTool}" id="scoreFrom" type="text" ng-change="scoreFieldBlur()" ng-required="remModels.scoreToModel && !remModels.scoreFromModel" ng-model="remModels.scoreFromModel" data-title="" data-toggle="tooltip" validation-rule="range40-100" maxlength="3" error-validate  ng-disabled="(restrictionDis.indexOf('SCORE_FROM_TO')!=-1)" >
+						</div>
+					</div>
+
+					<div class="col-sm-3" ng-if="!(restriction.indexOf('SCORE_FROM_TO')!=-1)">
+						<label for="to" localize>To</label>
+						<div class="emptyborder" ng-class="{'input-group required':!remModels.scoreToModel && remModels.scoreFromModel}">
+							<span ng-class="{'input-group-addon mandatory-bar':!remModels.scoreToModel && remModels.scoreFromModel}"></span>
+							<input class="form-control" ng-class="{'err12': remModels.scoreToTool}" id="scoreTo" type="text" ng-change="scoreFieldBlur()" ng-required="!remModels.scoreToModel && remModels.scoreFromModel" ng-model="remModels.scoreToModel" data-title="" data-toggle="tooltip" validation-rule="range40-100" maxlength="3" error-validate ng-disabled="(restrictionDis.indexOf('SCORE_FROM_TO')!=-1)">
+						</div>
+					</div>
+
+					<div class="col-sm-6 margin-top-20" ng-if="!(restriction.indexOf('ALLMATCHES')!=-1)">
+						<span localize>All matches?</span>
+						<div class="btn-group selection" role="group" ng-init="remModels.allMatchYesNo=true">
+							<button type="button" class="btn btn-default" ng-click="remModels.allMatchYesNo=true" ng-class="{'active':remModels.allMatchYesNo}" ng-disabled="(restrictionDis.indexOf('ADDITIONALINFORMATION_TI')!=-1)&&(rolePrivilageDis)" localize>Yes</button>
+							<button type="button" class="btn btn-default" ng-click="remModels.allMatchYesNo=false" ng-class="{'active':!remModels.allMatchYesNo}"
+							ng-disabled="(restrictionDis.indexOf('ADDITIONALINFORMATION_TI')!=-1)&&(rolePrivilageDis)" localize>No</button>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+
+					<div class="divider margin-top-15"></div>
+
+					<div class="col-sm-12 margin-top-10" ng-if="!(restriction.indexOf('CLEARALLATTRIBUTES')!=-1)">
+						<span localize>Clear all attributes?</span>
+						<div class="btn-group selection" role="group" ng-init="remModels.clearAllYesNo=false">
+							<button type="button" class="btn btn-default" ng-click="clearAllOrNot(true)" ng-class="{'active':remModels.clearAllYesNo}" ng-disabled="(restrictionDis.indexOf('CLEARALLATTRIBUTES')!=-1)" localize>Yes</button>
+							<button type="button" class="btn btn-default" ng-click="clearAllOrNot(false)" ng-class="{'active':!remModels.clearAllYesNo}"
+							ng-disabled="(restrictionDis.indexOf('CLEARALLATTRIBUTES')!=-1)" localize>No</button>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+
+					<table class="table action-files-search rematch-table margin-top-10">
+						<thead>
+							<tr>
+								<th width='7%'></th>
+								<th width='23%' localize>Color/Type</th>
+								<th width='40%' localize>Descriptive Element(s)</th>
+								<th width='30%' localize>Contents</th>
+							</tr>
+						</thead>
+
+						<tbody ng-repeat='bag in bagModifiedData' ng-init="remModels[contentsToggle+'$index']=false">
+							<tr>
+								<td width='7%'>{{$index+1}}</td>
+								<td width='23%'>
+									<input type="checkbox" ng-model="ctdCheck['box'+$index]" ng-click="checkClicked('ctdCheck',$index)" class="fa fa-lg custom-checkbox  color-type-select" ng-disabled="(restrictionDis.indexOf('BAGCOLOR_TYPE')!=-1)"></input> {{bag.ColorTypeDesc.ColorCode}}{{colorArray[$index]}}, {{bag.ColorTypeDesc.TypeCode}}{{typeArray[$index]}}
+								</td>
+								<td width='40%'>{{bag.ColorTypeDesc.Descriptor.MtrlElement}} <span ng-if="bag.ColorTypeDesc.Descriptor.OtherElement[0]">/</span> {{bag.ColorTypeDesc.Descriptor.OtherElement[0]}} <span ng-if="bag.ColorTypeDesc.Descriptor.OtherElement[1]">/</span> {{bag.ColorTypeDesc.Descriptor.OtherElement[1]}}</td>
+								<td width='30%'>
+									<input type="checkbox" ng-model="contCheck['box'+$index]" ng-click="checkClicked('contCheck',$index)" class="fa fa-lg custom-checkbox content-select" ng-disabled="(restrictionDis.indexOf('BAGCONTENT_CC')!=-1)"></input>
+									<a href="" class="table-expand blue" ng-click="remModels[contentsToggle+'$index']=!remModels[contentsToggle+'$index']">
+										<i class="fa fa-lg fa-chevron-circle-right" ng-show="!remModels[contentsToggle+'$index']"></i>
+										<i class="fa fa-lg fa-chevron-circle-down" ng-show="remModels[contentsToggle+'$index']"></i>
+										Contents ({{bag.BagContents.Content.length}})
+									</a>
+								</td>
+							</tr>
+							<tr class=""style="background-color: #d5d5c9;" ng-if="remModels[contentsToggle+'$index']">
+								<td colspan="4">
+									<strong><span localize>General Contents</span>: </strong><br>
+									<strong><span localize>Bag Contents</span>:</strong>
+									<ol class="margin-top-10">
+										<li ng-repeat="content in bag.BagContents.Content">{{content.Category}}</li>
+									</ol>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="clearfix"></div>
+	      		</div>
+
+	      		<div class="modal-footer">
+	      			<div class="col-sm-4 col-sm-offset-4">
+	      				<button type="button" class="btn btn-primary btn-block forEnterButtonModal" id="rematchButton" ng-click="rematchClicked()" disabled='true' localize>Rematch</button>
+	      			</div>
+	        		<div class="col-sm-4">
+	      				<a href="#" tab-btn-focus class="pull-right margin-top-5 blue" id="cancelRematch" data-dismiss="modal"><i class="fa fa-times-circle"></i> <span localize>Cancel</span></a>
+	      			</div>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->

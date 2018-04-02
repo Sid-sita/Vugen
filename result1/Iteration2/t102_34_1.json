@@ -1,0 +1,20 @@
+{
+  "typeAddress" : [
+                      {"code":"TPA","itemVal":"To permanent address"},
+                      {"code":"TTA","itemVal":"To temporary address"},
+                      {"code":"TDA","itemVal":"To delivery address"},
+                      {"code":"TBF","itemVal":"To be forwarded"},
+                      {"code":"TBC","itemVal":"To be collected"},
+                      {"code":"TBA","itemVal":"To be advised"},
+                      {"code":"TVA","itemVal":"To variable addresses"},
+                      {"code":"TAB","itemVal":"To address on bag"},
+                      {"code":"MBC","itemVal":"Must be collected"}
+                  ],
+
+  "DeliveryAddress" : [
+                      {"code":"TPA","itemVal":"Permanent"},
+                      {"code":"TTA","itemVal":"Temporary"},
+                      {"code":"TDA","itemVal":"Delivery"},
+                      {"code":"TAB","itemVal":"On Bag"}
+                  ]
+}

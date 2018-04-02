@@ -1,0 +1,919 @@
+<div class="modal fade in" id="changeRoles" tabindex="-1" role="dialog" ng-init="setFocusModal();deleteDataServiceObj();">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+		    	<div class="modal-header">
+			        <a class="pull-right" href="" data-dismiss="modal" aria-label="Close" shift-tab-focus><i class="close fa fa-times"></i></a>
+			        <h4 class="modal-title"><span localize>Change Default Settings</span></h4>
+			    </div>
+					<input type="button" id="wTRHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1000, null, null, null );" class="hide"/>
+					<input type="button" id="wTRHelpClose" value="Close contextual help" onclick="FMCCloseHelp();"  class="hide"/>
+		    	<div class="modal-body">
+
+		    		<div class="col-sm-12">
+			    		<h5 class="margin-left-0" ng-if="grid.roleList.length"><span localize>User Roles</span></h5>
+							<div class="col-sm-12">
+	              <span ng-repeat="item in grid.roleList">
+	                <span class="label label-default wtr-label">{{item}}</span>&nbsp;&nbsp;
+	              </span>
+							</div>
+							<div class="col-sm-12">&nbsp;</div>
+			    		<!-- <ul class="list-unstyled">
+			    			<li>WorldTracer Admin</li>
+			    			<li>BICF Admin</li>
+			    			<li>WorldTracer User</li>
+			    		</ul> -->
+
+			    		<h5 class="margin-left-0"><span localize>Default Settings</span></h5>
+			    		<div class="col-sm-4 padding-left-0">
+		    				<label for=""> <span localize>Airline</span></label>
+								<div class="position-static">
+									<span></span>
+		    				<input type="text" class="form-control" ng-model="grid.globalAirline" id="globalAirline" typeahead="state.code as state.code +' - '+ state.name for state in airlinesInfo | filter:$viewValue:airlinesTypeaheadFilter | orderBy:'code'" maxlength="3" size="3" data-title="" data-toggle="tooltip" ng-blur="checkValidAirlineCodeDefault(grid.globalAirline,'globalAirline')" autocomplete="off" typeaheadscroll type-ahead-init-scroll>
+							</div>
+			    		</div>
+
+		    			<div class="col-sm-4">
+		    				<label for=""><span localize>Active Station</span></label>
+								<div class="position-static">
+									<span></span>
+		    				<input type="text" class="form-control" ng-model="grid.globalActiveSta" id="globalActiveSta" maxlength="3" size="3"  typeahead="state.code as state.code +' - '+ state.name for state in airportsInfoNew | filter:$viewValue:airlinesTypeaheadFilter | orderBy:'code' | limitTo:20"autocomplete="off" typeaheadscroll type-ahead-init-scroll type-ahead-exact-match ng-blur="checkValidStationCodeDefault(grid.globalActiveSta,'globalActiveSta')"
+								typeahead-input-formatter="stationCodeSplit($model)" data-title="" data-toggle="tooltip">
+							</div>
+		    			</div>
+
+		    			<div class="col-sm-4 padding-right-0">
+		    				<label for=""><span localize>Training Station</span></label>
+								<div>
+									<span></span>
+		    				<input autocomplete="off" typeaheadscroll type-ahead-init-scroll type-ahead-exact-match type="text" class="form-control" ng-model="grid.globalTrainingSta" ng-blur="checkValidTrainingCode(grid.globalTrainingSta,'globalTrainingSta')" id="globalTrainingSta" maxlength="3" size="3" typeahead="state for state in trainingStations | filter:$viewValue | limitTo:20" data-title="" data-toggle="tooltip">
+		    			</div>
+						</div>
+
+			    	</div>
+
+		    		<div class="clearfix"></div>
+
+		      	</div>
+
+		      	<div class="modal-footer">
+							<div class="col-sm-6 col-sm-offset-3">
+		      			<button type="button" class="btn btn-primary btn-block submit" data-toggle="modal" ng-click="saveDefault()" ng-disabled="disabledDefaultButton"><span localize>Save Default Settings</span></button>
+		      		</div>
+
+		      		<div class="col-sm-3">
+		      			<a href="#" class="pull-right margin-top-5 blue" data-dismiss="modal" id="cancelSettingsModal" aria-label="Close" tab-btn-focus><i class="fa fa-times-circle"></i> <span localize>Cancel</span></a>
+		      		</div>
+		      	</div>
+	    	</div>
+	  	</div>
+</div>
+
+<div class="modal fade in" id="changeSessionSettings" tabindex="-1" role="dialog">
+	  	<div class="modal-dialog modal-lg" role="document">
+	    	<div class="modal-content">
+		    	<div class="modal-header">
+							<a shift-tab-focus class="pull-right" href="" data-dismiss="modal" aria-label="Close">
+			        <i class="close fa fa-times"></i>
+						</a>
+			        <h4 class="modal-title">Change Session Settings</h4>
+			    </div>
+
+		    	<div class="modal-body">
+		    		<div class="col-sm-12">
+	    				<span>Include agent ID for all reports where it is optional?</span>
+	    				<div class="btn-group selection" role="group" id="scheduleMessage">
+						  	<button type="button" ng-click="includeAgentIdForReports($event);" class="btn btn-default includeAgentID" id="includeAgentIDY">Yes</button>
+						  	<button type="button" ng-click="includeAgentIdForReports($event);" class="btn btn-default includeAgentID" id="includeAgentIDN">No</button>
+						</div>
+	        		</div>
+
+	        		<div class="col-sm-6 margin-top-15">
+	        			<input type="text" class="form-control" ng-model="loggedInUser" disabled="">
+	        		</div>
+
+		    		<div class="clearfix"></div>
+
+		      	</div>
+
+		      	<div class="modal-footer">
+					<div class="col-sm-4 col-sm-offset-4">
+		      			<button type="button" class="btn btn-primary btn-block submit" data-toggle="modal" data-dismiss="modal" ng-click="saveSessionSettings();">Save Session Settings</button>
+		      		</div>
+
+		      		<div class="col-sm-4">
+		      			<a href="" tab-btn-focus class="pull-right margin-top-5 blue" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle"></i> Cancel</a>
+		      		</div>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+
+<!--Logout popup -->
+
+<div class="modal fade in" id="confirmLogout" tabindex="-1" role="dialog" ng-init="setFocusModal()">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+					<a href=""  data-dismiss="modal" aria-label="Close" class="pull-right" shift-tab-focus><i class="close fa fa-times"></i></a>
+					<h4 class="modal-title"><span localize>Confirm Logout</span></h4>
+			</div>
+			<div class="modal-body">
+				<span localize>Are you sure you want to logout ?</span>
+				</div>
+
+				<div class="modal-footer">
+							 <div class="col-sm-4 col-sm-offset-4">
+						<button type="button" class="btn btn-primary btn-block submit" ng-click="signoutt()" data-toggle="modal" data-dismiss="modal" id="signOut"><span localize>Log out</span></button>
+					</div>
+
+					<div class="col-sm-4">
+						<a href="" class="pull-right margin-top-5 blue" data-dismiss="modal" aria-label="Close" tab-btn-focus><i class="fa fa-times-circle"></i> <span localize>Cancel</span></a>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<convert-currency-temp></convert-currency-temp>
+<dash-board-temp></dash-board-temp>
+<emailmessage-temp></emailmessage-temp>
+<senddelay-file></senddelay-file>
+<reassign-temp></reassign-temp>
+<rematch-temp></rematch-temp>
+<reactivate-file></reactivate-file>
+<reopen-file></reopen-file>
+<div ng-include="'app/components/reports/configStation/cloneStation/Templates/cloneStation.html'"></div>
+
+
+<div class="main-content land" id="gridScreenId" screen-id="landing_">
+  <div ng-init="applyRoles();gridFun()">
+		<off-line classnameoffline="offline" show-offline="showOffline" is-back-to-online="isBackToOnline"></off-line>
+		<!-- <div class="landing-banner training" ng-if="isTrainingMode">
+		  <p class="margin-0">TRAINING MODE</p>
+	  </div> -->
+	<div class="landing-banner training" style="top:83px" ng-if="(globalLandingVars.statusTrainingMode || isTrainingMode)"><p class="margin-0">TRAINING MODE</p></div>
+		<header class="whiteHeader">
+	      <img src="assets/img/SITA_logo.png" alt="SITA WorldTracer Logo" class="logo">
+	      <div class="user-support">
+						<span> {{userIdRight | uppercase}}  </span>
+						<div class="btn-group margin-right-4" tooltip="Profile Configuration" focusAttr="Profile Configuration" title="Profile Configuration">
+							<button prevent-closing-dropdown type="button" class="btn btn-primary" style="border-bottom-right-radius: 4px;border-top-right-radius: 4px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="profileConfig">
+								<i class="fa fa-lg fa-user"></i>
+							</button>
+							<ul class="dropdown-menu right-align">
+								<li data-toggle="modal" data-target="#changeSessionSettings" ng-click="changeSessionSettings()"  id="sessionSettingsLi"><a href="" localize>Change Session Settings</a></li>
+								<li ng-click="resetFun()" id="userInfo" ng-if="grid.airLineLoggedInFrom!=='LH'"><a href="" localize>Change Password</a></li>
+								<li data-toggle="modal" data-target="#changeRoles" ng-if="grid.airLineLoggedInFrom!=='LH'" ng-click="changeDefaultPopup()"><a href="" localize>Change Default Settings</a></li>
+							</ul>
+						</div>
+						<div class="btn-group training-icon margin-right-4" tooltip="Settings" focusAttr="Settings" title="Settings">
+							<button prevent-closing-dropdown type="button" class="btn btn-primary" style="border-bottom-right-radius: 4px;border-top-right-radius: 4px;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="trainingId">
+								<i class="fa fa-lg fa-cogs"></i>
+							</button>
+							<ul class="dropdown-menu right-align">
+								<li ng-if ="(!globalLandingVars.statusTrainingMode)" ng-click="activateTrainingMode()"><a href="" id="enterTraining" localize>Enter Training Mode</a></li>
+								<li ng-click="showOffline ? ShowWarning(0) : dashBoardCtrl.dashboardController(true)" ng-if="(restrictionLanding.indexOf('APPLICATIONDASHBOARD_MENU')!=-1)"><a href=""  id="dashBoard" data-toggle="{{showOffline ? '' : 'modal'}}"  data-target="{{dashBoardCtrl.dashBoardEntity.IsDashBoardTarget ? '' : '#dashboard'}}"  localize>Application Dashboard</a></li>
+							</ul>
+							<input type="button" id="trainingModeHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1144, null, null, null );" class="hide"/>
+						</div>
+						<button focusAttr="{{tooltipValueForRefresh}}"  title="{{tooltipValueForRefresh}}" href="#" tooltip="{{tooltipValueForRefresh}}" class="btn btn-primary margin-right-4" id="refreshLanding" ng-click="manualRefresh()">
+							<i class="fa fa-lg fa-refresh">
+								<i ng-if="IsrRefreshEnable" class="refreshLockIcon">/</i>
+							</i>
+						</button>
+					  <button focusAttr="Help" title="Help" href="" prevent-closing-dropdown type="button" onclick="FMCOpenHelp (1000, null, null, null );" class="btn btn-primary margin-right-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tooltip="Help" id="helpQuestion"><i class="fa fa-lg fa-question"></i></button>
+						<button focusAttr="Logout" title="Logout" href="" class="btn btn-primary" tooltip="Logout" data-toggle="modal" data-target="#confirmLogout"><i id="signOutt" class="fa fa-lg fa-sign-out" ></i></button>
+	      </div>
+
+	      <div class="clearfix"></div>
+	    </header>
+
+<div class="main-content gridHeightSet">
+	<alert ng-if="errorTeletype" type="danger" id="errorTeletype" close="TelePopupClose('errorTeletype')">{{errorTeletype}}</alert>
+	<alert ng-if="successTeletype" type="success" id="successTeletype" dismiss-on-timeout="{{successMsgTimeOutTime}}" close="TelePopupClose('successTeletype')">{{successTeletype}}</alert>
+	<alert ng-if="GridWarning" type="warning" id="GridWarning" style="padding-top: 22px !important;position:fixed" close="GridWarningClose1('GridWarning')">{{GridWarning}}</alert>
+	<alert ng-if="GridSuccess" type="success" id="GridSuccess" style="padding-top: 10px !important;position:fixed" dismiss-on-timeout="{{successMsgTimeOutTime}}" close="GridWarningClose1('GridSuccess')">{{GridSuccess}}</alert>
+	<alert ng-if="GridError" type="danger" id="GridError" style="padding-top: 10px !important;position:fixed;z-index:99999" close="GridWarningClose1('GridError')">{{GridError}}</alert>
+	<alert ng-if="GridMsgs.GridError" type="danger" id="GridError" style="position:fixed" close="GridWarningClose1('GridError')">{{GridMsgs.GridError}}</alert>
+	<alert ng-if="GridError1" type="danger" id="GridError1" style="padding-top: 10px !important;position:fixed;margin-top:-30px" close="GridWarningClose1('GridError1')">{{GridError1}}</alert>
+	<alert ng-if="roleError" type="danger" id="roleError"  close="GridWarningClose1('roleError')">{{roleError}}</alert>
+  <div class="col-sm-12 no-padding">
+      <div class="col-sm-4 no-padding" ng-if="grid.defaultSta || grid.defaultAir">
+
+			<p class="margin-left-15" ng-if="grid.defaultSta || grid.defaultAir">Your default <span ng-if="grid.defaultSta">Station </span><span ng-if="grid.defaultSta && grid.defaultAir">and </span><span ng-if="grid.defaultAir">Airline </span><span ng-if="grid.defaultSta && grid.defaultAir">are </span><span ng-if="(!grid.defaultSta && grid.defaultAir)||(grid.defaultSta && !grid.defaultAir)">is </span>{{grid.defaultSta}} {{grid.defaultAir}}</p>
+	    <h4 class="landing-category" localize>Manage Files</h4>
+	  </div>
+		<div class="col-sm-4 no-padding" style="margin-top:-15px" ng-if="!grid.defaultSta && !grid.defaultAir && showOffline">
+		<h4 class="landing-category" ng-if="!grid.defaultSta && !grid.defaultAir" localize>Manage Files</h4>
+	</div>
+	<div class="col-sm-4 no-padding" style="margin-top:-15px" ng-if="!grid.defaultSta && !grid.defaultAir && (globalLandingVars.statusTrainingMode)">
+	<h4 class="landing-category" ng-if="!grid.defaultSta && !grid.defaultAir" localize>Manage Files</h4>
+</div>
+	<div class="col-sm-4 no-padding" style="margin-top:-30px" ng-if="!grid.defaultSta && !grid.defaultAir && (!globalLandingVars.statusTrainingMode) && !showOffline">
+	<h4 class="landing-category" ng-if="!grid.defaultSta && !grid.defaultAir" localize>Manage Files</h4>
+</div>
+  <div>
+        <div class="alert alert-success alert-dismissible fade display-alert in col-sm-3 col-md-3 autoHide" role="alert" style="margin: 15px auto; width: 100%; z-index: 999999;text-align: center;position:fixed" ng-show="successFlag">
+        <button type="button" class="close"  ng-click="successFlag=false" aria-label="Close"><span aria-hidden="true">×</span></button>
+        {{successmsg}}
+        </div>
+        <div class="alert alert-danger alert-dismissible fade in display-alert col-sm-3 col-md-3 "  style="float: right; margin: 15px auto; width: 100%; z-index: 999999;text-align: center;" ng-show="errorFlag" role="alert">
+        <button type="button" class="close"  ng-click="errorFlag=false" aria-label="Close"><span aria-hidden="true">×</span></button>
+              {{errormsg}}
+        </div>
+  </div>
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-12 default padding-left-0 padding-right-0 forTabShiftTab1">
+      <div class="col-sm-4 col-md-3" ng-if="(restrictionLanding.indexOf('DELAYED_BAG_CREATE_MENU')!=-1)||
+			(restrictionLanding.indexOf('DELAYED_BAG_MANAGE_MENU')!=-1)||
+			(restrictionLanding.indexOf('DELAYED_BAG_SEARCH_MENU')!=-1)||
+			(restrictionLanding.indexOf('DELAYED_BAG_TRACE_MENU')!=-1)||
+			(restrictionLanding.indexOf('DAMAGE_BAG_CREATE_MENU')!=-1)||
+			(restrictionLanding.indexOf('DAMAGE_BAG_MANAGE_MENU')!=-1)||
+			(restrictionLanding.indexOf('DAMAGE_BAG_SEARCH_MENU')!=-1)||
+			(restrictionLanding.indexOf('DAM_SEARCHANDMANAGEOFFLINEMENU')!=-1)||
+			(restrictionLanding.indexOf('DEL_SERACHANDMANAGEOFFLINEMENU')!=-1)">
+        <h5 class="landing-subcategory" localize>Passenger Processing</h5>
+
+        <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('DELAYED_BAG_CREATE_MENU')!=-1)||(restrictionLanding.indexOf('DELAYED_BAG_MANAGE_MENU')!=-1)||(restrictionLanding.indexOf('DELAYED_BAG_SEARCH_MENU')!=-1)||(restrictionLanding.indexOf('DELAYED_BAG_TRACE_MENU')!=-1)||(restrictionLanding.indexOf('DEL_SERACHANDMANAGEOFFLINEMENU')!=-1)">
+          <span class="accordion-link accordion-link-grid" id="gridSection1" ng-click="toggleButton($event);commonVariable('Delayed');clickDelayed()"><span localize>Delayed Bag</span>
+            <i class="fa fa-chevron-right fa-lg"></i></span>
+
+            <div class="accordion-body">
+              <ul class="list-unstyled">
+                <li ng-if="(restrictionLanding.indexOf('DELAYED_BAG_CREATE_MENU')!=-1)" component-id="CREATE SUBMENU"><a href="" id="gridDelayedCreate" ng-click="newFun('DelayedLookup')" class="1 accordion-link-grid pt-l-12" localize>Create</a></li>
+								<li ng-if="(restrictionLanding.indexOf('QUICK_CREATE_DELAYED_MENU')!=-1)"><a href="" id="gridDelayedQuickCreate" ng-click="quickCreate('quickLookup')" class="1 accordion-link-grid pt-l-12" localize>Quick Create</a></li>
+                <li ng-if="(restrictionLanding.indexOf('DELAYED_BAG_MANAGE_MENU')!=-1)" component-id="MANAGE SUBMENU"><a href="" id="gridDelayedManage" class="2 accordion-link-grid pt-l-12" ng-click="ClearRoot();ManageDelayedBag('DELAYED','DelayedManage')" localize>Manage</a></li>
+                <li ng-if="(restrictionLanding.indexOf('DELAYED_BAG_SEARCH_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : GoForSearch(1, 'SearchDelayed')" id="gridDelayedSearch" class="3 accordion-link-grid pt-l-12" localize>Search</a></li>
+								<li ng-if="(restrictionLanding.indexOf('DELAYED_BAG_TRACE_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : traceFile('DELAYED','TraceDelayed')" id="gridDelTrace" class="4 accordion-link-grid pt-l-12" localize>Trace</a></li>
+								<li ng-if="(restrictionLanding.indexOf('DEL_SERACHANDMANAGEOFFLINEMENU')!=-1 && !isTrainingMode)"><a href="" ng-click="(isTrainingMode) ? ShowWarning(0) : SearchAndManageOffline('DELAYED','SearchAndManageOfflineDelayed')" id="gridDelayedSearchAndManageOffline" class="5 accordion-link-grid pt-l-12" localize>Search & Manage Offline</a></li>
+								<li ng-if="isDelayedSwitchEnable && (restrictionLanding.indexOf('UPDATE_AND_CLOSE_FILES')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : updateAndCloseFiles('UpdateAndCloseDelayed')" id="updateAndCloseFile" class="6 accordion-link-grid pt-l-12" localize>Update & Close Files</a></li>
+								<li ng-if="(restrictionLanding.indexOf('HANDOVER_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : DelayedHandoverBag('HandOverDelayed')" id="gridHandover" class="6 accordion-link-grid pt-l-12" localize>Handover Files</a></li>
+              </ul>
+							<input type="button" id="delayedHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1004, null, null, null );" class="hide"/>
+							<input type="button" id="delayedCreateHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1028, null, null, null );" class="hide"/>
+							<input type="button" id="delayedQuickCreateHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1180, null, null, null );" class="hide" />
+							<input type="button" id="delayedManageHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1031, null, null, null );" class="hide"/>
+							<input type="button" id="delayedSearchHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1032, null, null, null );" class="hide"/>
+							<input type="button" id="delayedTraceHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1055, null, null, null );" class="hide"/>
+							<input type="button" id="delayedHandoverFilesHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1149, null, null, null );" class="hide"/>
+							<input type="button" id="commonOfflineSearchFilesHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1128, null, null, null );" class="hide"/>
+							<input type="button" id="updateAndCloseFilesHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1175, null, null, null );" class="hide"/>
+						</div>
+          </section>
+          <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('DAMAGE_BAG_CREATE_MENU')!=-1)||
+					(restrictionLanding.indexOf('DAMAGE_BAG_MANAGE_MENU')!=-1)||
+					(restrictionLanding.indexOf('DAMAGE_BAG_SEARCH_MENU')!=-1)||
+					(restrictionLanding.indexOf('DAM_SEARCHANDMANAGEOFFLINEMENU')!=-1)">
+            <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);commonVariable('Damage');clickDelayed()"  id="gridSection2"><span localize>Damaged Bag</span>
+              <i class="fa fa-chevron-right fa-lg"></i></span>
+
+              <div class="accordion-body">
+                <ul class="list-unstyled">
+                  <li ng-if="(restrictionLanding.indexOf('DAMAGE_BAG_CREATE_MENU')!=-1)"><a href="" ng-click="createDamageClicked('CreateDamage')" id="gridDamagedCreate" class="1 accordion-link-grid pt-l-12" localize>Create</a></li>
+									<li ng-if="(restrictionLanding.indexOf('QUICK_CREATE_DAMAGED_MENU')!=-1)"><a href="" ng-click="quickCreateDamage('damageQuickLookup')" id="gridDamagedQuickCreate" class="1 accordion-link-grid pt-l-12" localize>Quick Create</a></li>
+                  <li ng-if="(restrictionLanding.indexOf('DAMAGE_BAG_MANAGE_MENU')!=-1)"><a href="" ng-click="ManageDelayedBag('DAMAGED','ManageDamage')" id="gridDamagedManage" class="2 accordion-link-grid pt-l-12" localize>Manage</a></li>
+                  <li ng-if="(restrictionLanding.indexOf('DAMAGE_BAG_SEARCH_MENU')!=-1)"><a href=""  id="gridDamagedSearch" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : GoForSearch(3,'SearchDamage')" localize>Search</a></li>
+									<li ng-if="(restrictionLanding.indexOf('DAM_SEARCHANDMANAGEOFFLINEMENU')!=-1 && !isTrainingMode)"><a href=""  id="gridDamagedOfflineSearchManage" class="4 accordion-link-grid pt-l-12" ng-click="(isTrainingMode) ? ShowWarning(0) : damageBagOfflineSearchManage('SearchAndManageOfflineDamage')" localize>Search & Manage Offline</a></li>
+									<li ng-if="restrictionLanding.indexOf('DAMAGEDBAG_UPDATE_AND_CLOSE_FILES_MENU')!=-1"><a href="" ng-click="showOffline ? ShowWarning(0) : damageUpdateAndCloseFiles('UpdateAndCloseDamaged')" id="DamagedUpdateAndCloseFile" class="6 accordion-link-grid pt-l-12" localize>Update & Close Files</a></li>
+                </ul>
+								<input type="button" id="damagedHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1023, null, null, null );" class="hide"/>
+								<input type="button" id="damagedCreateHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1015, null, null, null );" class="hide"/>
+								<input type="button" id="damagedQuickCreateHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1177, null, null, null );" class="hide" />
+								<input type="button" id="damagedManageHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1026, null, null, null );" class="hide"/>
+								<input type="button" id="damagedSearchHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1027, null, null, null );" class="hide"/>
+								<input type="button" id="commonOfflineSearchFilesHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1128, null, null, null );" class="hide"/>
+								<input type="button" id="damageUpdateAndCloseFilesHelpOpen" value="Damaged bag contextual help" onclick="FMCOpenHelp (1182, null, null, null );" class="hide"/>
+							</div>
+            </section>
+          </div>
+
+          <div class="col-sm-4 col-md-3" ng-if="(restrictionLanding.indexOf('FORWARD_BAG_CREATE_MENU')!=-1)||
+					(restrictionLanding.indexOf('FORWARD_BAG_MANAGE_MENU')!=-1)||
+					(restrictionLanding.indexOf('FORWARD_BAG_SEARCH_MENU')!=-1)||
+					(restrictionLanding.indexOf('FORWARD_BAG_TRACE_MENU')!=-1)||
+					(restrictionLanding.indexOf('ONHAND_BAG_CREATE_MENU')!=-1)||
+					(restrictionLanding.indexOf('ONHAND_BAG_MANAGE_MENU')!=-1)||
+					(restrictionLanding.indexOf('ONHAND_BAG_SEARCH_MENU')!=-1)||
+					(restrictionLanding.indexOf('ONHAND_BAG_TRACE_MENU')!=-1)||
+					(restrictionLanding.indexOf('QUICK_ONHAND_BAG_TRACE_MENU')!=-1)||(restrictionLanding.indexOf('CLOSE_AND_DELETE_QOH_SUBMENU')!=-1)||
+					(restrictionLanding.indexOf('FWD_SEARCHANDMANAGEOFFLINEMENU')!=-1)||
+					(restrictionLanding.indexOf('OHD_SEARCHANDMANAGEOFFLINE_MENU')!=-1)">
+            <h5 class="landing-subcategory" localize>Bag Processing</h5>
+
+            <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('FORWARD_BAG_CREATE_MENU')!=-1)||
+						(restrictionLanding.indexOf('FORWARD_BAG_MANAGE_MENU')!=-1)||
+						(restrictionLanding.indexOf('FORWARD_BAG_SEARCH_MENU')!=-1)||
+						(restrictionLanding.indexOf('FORWARD_BAG_TRACE_MENU')!=-1)||
+						(restrictionLanding.indexOf('FWD_SEARCHANDMANAGEOFFLINEMENU')!=-1)">
+              <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);commonVariable('Rush');clickDelayed()" id="gridSection3"><span localize>Forward Bag</span><i class="fa fa-chevron-right fa-lg"></i></span>
+
+                <div class="accordion-body">
+                  <ul class="list-unstyled">
+                    <li ng-if="(restrictionLanding.indexOf('FORWARD_BAG_CREATE_MENU')!=-1)"><a href="" ng-click="LoadRushBagTemplates()" id="gridRushCreate" class="1 accordion-link-grid pt-l-12"><span localize>Create</span></a></li>
+                    <li ng-if="(restrictionLanding.indexOf('FORWARD_BAG_MANAGE_MENU')!=-1)"><a href="" ng-click="ManageDelayedBag('RUSH')" id="gridRushManage" class="2 accordion-link-grid pt-l-12"><span localize>Display</span></a></li>
+                    <li ng-if="(restrictionLanding.indexOf('FORWARD_BAG_SEARCH_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : GoForSearch(4)" id="gridRushSearch" class="3 accordion-link-grid pt-l-12"><span localize>Search</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('FORWARD_BAG_TRACE_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : traceFile('RUSH','TraceForward')" id="gridRushTrace" class="4 accordion-link-grid pt-l-12"><span localize>Trace</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('FWD_SEARCHANDMANAGEOFFLINEMENU')!=-1 && !isTrainingMode)"><a href="" ng-click="(isTrainingMode) ? ShowWarning(0) : forwardBagOfflineSearchManage()" id="gridForwardOfflineSearchManage" class="5 accordion-link-grid pt-l-12"><span localize>Search & Manage Offline</span></a></li>
+                  </ul>
+									<input type="button" id="rushHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1038, null, null, null );" class="hide"/>
+									<input type="button" id="rushCreateHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1038, null, null, null );" class="hide"/>
+									<input type="button" id="rushManageHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1143, null, null, null );" class="hide"/>
+									<input type="button" id="rushSearchHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1041, null, null, null );" class="hide"/>
+									<input type="button" id="rushTraceHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1115, null, null, null );" class="hide"/>
+									<input type="button" id="commonOfflineSearchFilesHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1128, null, null, null );" class="hide"/>
+								</div>
+              </section>
+
+
+              <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('ONHAND_BAG_CREATE_MENU')!=-1)||
+							(restrictionLanding.indexOf('ONHAND_BAG_MANAGE_MENU')!=-1)||
+							(restrictionLanding.indexOf('ONHAND_BAG_SEARCH_MENU')!=-1)||
+							(restrictionLanding.indexOf('ONHAND_BAG_TRACE_MENU')!=-1)||
+							(restrictionLanding.indexOf('OHD_SEARCHANDMANAGEOFFLINE_MENU')!=-1)||(restrictionLanding.indexOf('DISPOSE_BAGS_MENU')!=-1)">
+                <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);commonVariable('On-Hand');clickDelayed()" id="gridSection4"><span localize>On-Hand Bag</span>
+                  <i class="fa fa-chevron-right fa-lg"></i></span>
+
+                  <div class="accordion-body">
+                    <ul class="list-unstyled">
+                      <li ng-if="(restrictionLanding.indexOf('ONHAND_BAG_CREATE_MENU')!=-1)"><a href="" ng-click="OnhandCreateClick('CreateOnHand')" id="gridOnHandCreate" class="1 accordion-link-grid pt-l-12" localize>Create</a></li>
+                      <li ng-if="(restrictionLanding.indexOf('ONHAND_BAG_MANAGE_MENU')!=-1)"><a href="" ng-click="ManageDelayedBag('ON-HAND')" id="gridOnHandManage" class="2 accordion-link-grid pt-l-12" localize>Manage</a></li>
+                      <li ng-if="(restrictionLanding.indexOf('ONHAND_BAG_SEARCH_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : GoForSearch(2,'SearchOnhand')" id="gridOnHandSearch" class="3 accordion-link-grid pt-l-12" localize>Search</a></li>
+											<li ng-if="(restrictionLanding.indexOf('ONHAND_BAG_TRACE_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : traceFile('ON-HAND','TraceOnhand')" id="gridOnHandTrace" class="4 accordion-link-grid pt-l-12" localize>Trace</a></li>
+											<li ng-if="(restrictionLanding.indexOf('OHD_SEARCHANDMANAGEOFFLINE_MENU')!=-1 && !isTrainingMode)"><a href="" ng-click="(isTrainingMode) ? ShowWarning(0) : SearchAndManageOffline('ON-HAND')" id="gridOnHandOfflineSearchManage" class="5 accordion-link-grid pt-l-12" localize>Search & Manage Offline</a></li>
+                    	<li ng-if="(restrictionLanding.indexOf('DISPOSE_BAGS_MENU')!=-1)"><a href=""  ng-click="showOffline ? ShowWarning(0) : DisposeOnHand('ON-HAND')" id="gridDisposeOnHand" class="6 accordion-link-grid pt-l-12" localize>Dispose Bags</a></li>
+									</ul>
+										<input type="button" id="onHandHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1048, null, null, null );" class="hide"/>
+										<input type="button" id="onHandCreateHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1048, null, null, null );" class="hide"/>
+										<input type="button" id="onHandManageHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1043, null, null, null );" class="hide"/>
+										<input type="button" id="onHandSearchHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1051, null, null, null );" class="hide"/>
+										<input type="button" id="onHandTraceHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1126, null, null, null );" class="hide"/>
+										<input type="button" id="onHandDisposeBagsHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1150, null, null, null );" class="hide"/>
+										<input type="button" id="commonOfflineSearchFilesHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1128, null, null, null );" class="hide"/>
+									</div>
+                </section>
+                <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('QUICK_ONHAND_BAG_CREATE_MENU')!=-1) || (restrictionLanding.indexOf('CLOSE_AND_DELETE_QOH_SUBMENU')!=-1)">
+					             <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);commonVariable('Quick On-Hand');clickDelayed()" id="gridSection5"><span localize>Quick On-Hand Bag</span><i class="fa fa-chevron-right fa-lg"></i></span>
+
+					                  <div class="accordion-body">
+						                        <ul class="list-unstyled">
+							                           <li ng-if="(restrictionLanding.indexOf('QUICK_ONHAND_BAG_CREATE_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : createQuickOnhandBag()" id="gridQuickOnHand" class="1 accordion-link-grid pt-l-12"><span localize>Create</span></a></li>
+																				 <li ng-if="(restrictionLanding.indexOf('CLOSE_AND_DELETE_QOH_SUBMENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : closeAndDeleteQuickOnhand()" id="gridCloseAndDeleteQuickOnhand" class="2 accordion-link-grid pt-l-12"><span localize>Close & Delete</span></a></li>
+						                                 </ul>
+																						 <input type="button" id="quickOnHandHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1053, null, null, null );" class="hide"/>
+																						 <input type="button" id="quickOnHandCreateHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1053, null, null, null );" class="hide"/>
+																						 <input type="button" id="closeAndDeleteQuickOnhandHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1163, null, null, null );" class="hide"/>
+					                                       </div>
+				                                           </section>
+              </div>
+
+              <div class="col-sm-4 col-md-3" ng-if="(restrictionLanding.indexOf('STATION_INBOX_MANAGE_MENU')!=-1)||
+								(restrictionLanding.indexOf('STATION_INBOX_SEARCH_MENU')!=-1)||
+								(restrictionLanding.indexOf('STATION_INBOX_NEW_MESSAGE_MENU')!=-1)||
+								(restrictionLanding.indexOf('HDQ_INBOX_MANAGE_MENU')!=-1)||
+									(restrictionLanding.indexOf('HDQ_INBOX_SEARCH_MENU')!=-1)||
+									(restrictionLanding.indexOf('HDQ_INBOX_NEW_MESSAGE_MENU')!=-1)">
+                <h5 class="landing-subcategory" localize>Action Files</h5>
+
+                <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('STATION_INBOX_MANAGE_MENU')!=-1)||
+								(restrictionLanding.indexOf('STATION_INBOX_SEARCH_MENU')!=-1)||
+								(restrictionLanding.indexOf('STATION_INBOX_NEW_MESSAGE_MENU')!=-1)">
+                  <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);stationInboxClick();clickDelayed()" id="gridSection6"><span localize>Station Inbox</span>
+                    <i class="fa fa-chevron-right fa-lg"></i></span>
+
+                    <div class="accordion-body">
+                      <ul class="list-unstyled">
+                        <li ng-if="(restrictionLanding.indexOf('STATION_INBOX_MANAGE_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : GoAction(1)" id="gridStationInboxManage" class="1 accordion-link-grid pt-l-12" localize>Manage</a></li>
+                        <li ng-if="(restrictionLanding.indexOf('STATION_INBOX_SEARCH_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : GoAction(2)"  id="gridStationInboxSearch" class="2 accordion-link-grid pt-l-12" localize>Search</a></li>
+                        <li ng-if="(restrictionLanding.indexOf('STATION_INBOX_NEW_MESSAGE_MENU')!=-1)"><a href="" id="stationModal" data-toggle="{{showOffline ? '' : 'modal'}}"  ng-click="showOffline ? ShowWarning(0) : openNewMessage('staionInbox');refreshModal();" id="gridStaInNewMess" class="3 accordion-link-grid pt-l-12" localize>New Message</a></li>
+                      </ul>
+											<input type="button" id="stationNewMessageHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1065, null, null, null );" class="hide"/>
+											<input type="button" id="stationInboxManageHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1060, null, null, null );" class="hide"/>
+											<input type="button" id="stationInboxSearchHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1067, null, null, null );" class="hide"/>
+										</div>
+                  </section>
+                  <section class="custom-accordion landing-menu-item" ng-if="((restrictionLanding.indexOf('HDQ_INBOX_MANAGE_MENU')!=-1)||
+									(restrictionLanding.indexOf('HDQ_INBOX_SEARCH_MENU')!=-1)||
+									(restrictionLanding.indexOf('HDQ_INBOX_NEW_MESSAGE_MENU')!=-1)) && !isTrainingMode">
+                    <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);stationInboxClick();clickDelayed()" id="gridSection7"><span localize>Headquarters Inbox</span>
+                      <i class="fa fa-chevron-right fa-lg"></i></span>
+
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li ng-if="(restrictionLanding.indexOf('HDQ_INBOX_MANAGE_MENU')!=-1)"><a href=""  ng-click="showOffline ? ShowWarning(0) : GoAction(4)" id="gridHeadQuartersInboxManage" class="1 accordion-link-grid pt-l-12" localize>Manage</a></li>
+                          <li ng-if="(restrictionLanding.indexOf('HDQ_INBOX_SEARCH_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : GoAction(3)" id="gridHaedQuartersInbox" class="2 accordion-link-grid pt-l-12" localize>Search</a></li>
+                          <li ng-if="(restrictionLanding.indexOf('HDQ_INBOX_NEW_MESSAGE_MENU')!=-1)"><a href="" id="hdqModal" data-toggle="{{showOffline ? '' : 'modal'}}" class="3 accordion-link-grid pt-l-12"  ng-click="showOffline ? ShowWarning(0) : openNewMessage('headQuarterInbox')" id="gridHeadQuartersInboxNewMessage" localize>New Message</a></li>
+                        </ul>
+												<input type="button" id="headQuartersNewMessageHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1065, null, null, null );" class="hide"/>
+												<input type="button" id="headQuaretersInboxManageHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1052, null, null, null );" class="hide"/>
+					              <input type="button" id="headQuaretersInboxSearchHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1066, null, null, null );" class="hide"/>
+											</div>
+                    </section>
+                  </div>
+                   <!-- <div class="clearfix hidden-md hidden-lg"></div>  -->
+
+                  <div class="col-sm-4 col-md-3" ng-if="(restrictionLanding.indexOf('LOSTANDFOUND_CREATE_MENU')!=-1)||
+									(restrictionLanding.indexOf('LOSTANDFOUND_SEARCH_MENU')!=-1)||
+									(restrictionLanding.indexOf('LOSTANDFOUND_SEARCHANDMANAGEOFFLINEMENU')!=-1)||
+									(restrictionLanding.indexOf('PASTDATEFILE_SEARCH_MENU')!=-1)||
+									(restrictionLanding.indexOf('MISCELLANEOUS_SENDTELETYPEMESSAGE_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_CONVERTCURRENCY_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_RECEIVEDATHDQ_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_CUSTOMDATEENTRY_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_CLAIMSENTRY_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_MEMBERSHIPLIST_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_CONTENTSDICTIONARY_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_DELIVERYCOST_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_PASSENGERSBOARDED_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_GEOGRAPHICAREAS_MENU')!=-1)||
+										(restrictionLanding.indexOf('CLAIMS_CREATE_MENU')!=-1)||
+											(restrictionLanding.indexOf('CLAIMS_MANAGE_MENU')!=-1)||
+											(restrictionLanding.indexOf('CLAIMS_SEARCH_MENU')!=-1)">
+                    <h5 class="landing-subcategory"><span localize>Other</span></h5>
+
+										<section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('LOSTANDFOUND_CREATE_MENU')!=-1)||
+										(restrictionLanding.indexOf('LOSTANDFOUND_SEARCH_MENU')!=-1)||
+										(restrictionLanding.indexOf('LOSTANDFOUND_SEARCHANDMANAGEOFFLINEMENU')!=-1)">
+												<span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection8"><span localize>Lost &amp; Found Property</span>
+													<i class="fa fa-chevron-right fa-lg"></i></span>
+
+												<div class="accordion-body">
+														<ul class="list-unstyled">
+															<li ng-if="(restrictionLanding.indexOf('LOSTANDFOUND_CREATE_MENU')!=-1)"><a href="" ng-click="lostAndFoundCreate();" id="gridLostFoundCreate" class="1 accordion-link-grid pt-l-12" localize>Create</a></li>
+															<li ng-if="(restrictionLanding.indexOf('LOSTANDFOUND_SEARCH_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : lostAndFoundSearch('online')" id="gridLostFoundSearch" class="2 accordion-link-grid pt-l-12" localize>Search &amp; Manage</a></li>
+															<li ng-if="(restrictionLanding.indexOf('LOSTANDFOUND_SEARCHANDMANAGEOFFLINEMENU')!=-1 && !isTrainingMode)"><a href="" ng-click="(isTrainingMode) ? ShowWarning(0) : lostAndFoundSearch('offline')" id="gridLostFoundSearchOffline" class="3 accordion-link-grid pt-l-12" localize>Search &amp; Manage Offline</a></li>
+														</ul>
+														<input type="button" id="lostFoundPropCreateHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1056, null, null, null );" class="hide"/>
+														<input type="button" id="lostFoundPropSearchHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1062, null, null, null );" class="hide"/>
+														<input type="button" id="lostAndFoundOfflineSearchFilesHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1162, null, null, null );" class="hide"/>
+													</div>
+										 </section>
+
+                      <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('PASTDATEFILE_SEARCH_MENU')!=-1)  && !isTrainingMode">
+                        <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection9"><span localize>Past Date File</span><i class="fa fa-chevron-right fa-lg"></i></span>
+
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                              <li ng-if="(restrictionLanding.indexOf('PASTDATEFILE_SEARCH_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : goPastDateFileState()" id="gridPastDateFile" class="1 accordion-link-grid pt-l-12"><span localize>Search & Manage</span> </a></li>
+															<input type="button" id="pastFileHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1073, null, null, null );" class="hide"/>
+                            </ul>
+                          </div>
+                    </section>
+
+										<section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_SENDTELETYPEMESSAGE_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_RECEIVEDATHDQ_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_CUSTOMDATEENTRY_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_CLAIMSENTRY_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_MEMBERSHIPLIST_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_CONTENTSDICTIONARY_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_DELIVERYCOST_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_PASSENGERSBOARDED_MENU')!=-1)||
+										(restrictionLanding.indexOf('MISCELLANEOUS_GEOGRAPHICAREAS_MENU')!=-1)">
+											<span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection10"><span localize>Miscellaneous</span>
+												<i class="fa fa-chevron-right fa-lg"></i></span>
+
+												 <div class="accordion-body">
+													<ul class="list-unstyled">
+														<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_SENDTELETYPEMESSAGE_MENU')!=-1)" ng-click="showOffline ? ShowWarning(0) : ClearTeleObj();"><a href="" class="1 accordion-link-grid pt-l-12" data-target="#sendTeleAdd"  data-toggle="{{showOffline ? '' : 'modal'}}" id="gridSendTeleTypeMess" localize>Send Teletype Message</a></li>
+														<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_RECEIVEDATHDQ_MENU')!=-1)"><a href="" class="2 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : navigateToReceivedatHeadquarters();" id="gridReceivedHeadQ" localize>Received at Headquarters</a></li>
+														<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_CUSTOMDATEENTRY_MENU')!=-1)"><a href="" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) :navigateToCustomsDateEntry();" id="gridCustomDateEntry"localize>Customs Date Entry</a></li>
+														<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_CLAIMSENTRY_MENU')!=-1)"><a href="" class="4 accordion-link-grid pt-l-12"
+															ng-click="showOffline ? ShowWarning(0) : goClaimsEntryPage()" id="gridClaimsEntry" localize>Claims Entry</a></li>
+														<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_MEMBERSHIPLIST_MENU')!=-1)"><a href="" class="5 accordion-link-grid pt-l-12" id="gridMemebershipList" localize>Membership List (Coming soon...)</a></li>
+														<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_CONTENTSDICTIONARY_MENU')!=-1)"><a href="" class="6 accordion-link-grid pt-l-12" id="gridContentsDictionary" localize>Contents Dictionary (Coming soon...)</a></li>
+														<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_GEOGRAPHICAREAS_MENU')!=-1)"><a href="" class="7 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : geoAreaConfig();" id="gridGeographicAreas" localize>Geographic Areas</a></li>
+														<li ng-if="(restrictionLanding.indexOf('SITA_CUSTOM_PAGES_SCREEN')!=-1)"><a href="" class="8 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : SitaCustomPage();" id="gridSitaCustomPage" localize>SITA Custom Pages</a></li>
+														<input type="button" id="sendTeleTypeMessHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1125, null, null, null );" class="hide"/>
+														<input type="button" id="ConvertCurrencyHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1117, null, null, null );" class="hide"/>
+														<input type="button" id="ReceivedHeadQHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1124, null, null, null );" class="hide"/>
+														<input type="button" id="CustomDateEntryHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1118, null, null, null );" class="hide"/>
+														<input type="button" id="ClaimsEntryHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1116, null, null, null );" class="hide"/>
+														<input type="button" id="MemebershipListHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1121, null, null, null );" class="hide"/>
+														<input type="button" id="ContentsDictionaryHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1104, null, null, null );" class="hide"/>
+														<input type="button" id="GeographicAreasHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1120, null, null, null );" class="hide"/>
+														<input type="button" id="MiscCustomPagesHelpOpen" value="Miscellaneous custom pages contextual help" onclick="FMCOpenHelp (1178, null, null, null );" class="hide"/>
+													</ul>
+												</div>
+											</section>
+
+                      <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('CLAIMS_CREATE_MENU')!=-1)||
+											(restrictionLanding.indexOf('CLAIMS_MANAGE_MENU')!=-1)||
+											(restrictionLanding.indexOf('CLAIMS_SEARCH_MENU')!=-1)">
+                        <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection11"><span localize>Claims</span><i class="fa fa-chevron-right fa-lg"></i></span>
+
+                          <div class="accordion-body">
+                            <ul class="list-unstyled">
+                              <li ng-if="(restrictionLanding.indexOf('CLAIMS_CREATE_MENU')!=-1)"><a href="" class="1 accordion-link-grid pt-l-12" localize>Create (Coming soon...)</a></li>
+                              <li ng-if="(restrictionLanding.indexOf('CLAIMS_MANAGE_MENU')!=-1)"><a href="" class="2 accordion-link-grid pt-l-12" localize>Manage (Coming soon...)</a></li>
+                              <li ng-if="(restrictionLanding.indexOf('CLAIMS_SEARCH_MENU')!=-1)"><a href="" class="3 accordion-link-grid pt-l-12" localize>Search (Coming soon...)</a></li>
+                            </ul>
+                          </div>
+                        </section>
+
+
+
+                        </div>
+                      </div>
+                      <div class="clearfix hidden-sm"></div><!-- every 4th subcategory -->
+
+        <div class="col-sm-12 no-padding-left" ng-if="(restrictionLanding.indexOf('REPORTS_FILE_REFERENCE_LIST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_STATION_LIST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_STATION_PERFORMANCE_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_FAULT_STATION_LIST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_FLIGHT_DATE_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_ACTIVITY_STATUS_MENU')!=-1)||
+				(restrictionLanding.indexOf('MANAGEMENTINPUTS')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_PAYMENT_COST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_TRACING_COST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_DAMAGEDPILFERED_LIST_MENU')!=-1) || (restrictionLanding.indexOf('MANAGEMENTCOST')!=-1) ||
+				(restrictionLanding.indexOf('TRACINGINPUTS')!=-1) ||
+				restrictionLanding.indexOf('MONTHLYINTERLINEPRORATION')!=-1 ||
+				(restrictionLanding.indexOf('BORDERCLEARANCE')!=-1) ||
+				(restrictionLanding.indexOf('ACTIVITYSTATUSBYFLIGHTDATE')!=-1) ||
+				(restrictionLanding.indexOf('WORSTFLIGHT')!=-1) ||
+				(restrictionLanding.indexOf('FAULTFLIGHT')!=-1) ||
+				(restrictionLanding.indexOf('MANAGEMENTDATES')!=-1)||
+				(restrictionLanding.indexOf('FAULTSTATIONCOST')!=-1)||
+				(restrictionLanding.indexOf('AVERAGECOSTPERFORMANCE')!=-1)">
+          <h4 class="landing-category" localize>Reports and Statistics</h4>
+        </div>
+
+
+        <div class="col-sm-12 default padding-left-0 padding-right-0 forTabShiftTab2" ng-if="(restrictionLanding.indexOf('REPORTS_FILE_REFERENCE_LIST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_STATION_LIST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_STATION_PERFORMANCE_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_FAULT_STATION_LIST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_FLIGHT_DATE_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_ACTIVITY_STATUS_MENU')!=-1)||
+				(restrictionLanding.indexOf('MANAGEMENTINPUTS')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_PAYMENT_COST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_TRACING_COST_MENU')!=-1)||
+				(restrictionLanding.indexOf('REPORTS_DAMAGEDPILFERED_LIST_MENU')!=-1) ||
+				(restrictionLanding.indexOf('MANAGEMENTCOST')!=-1) ||
+				(restrictionLanding.indexOf('TRACINGINPUTS')!=-1) ||
+				(restrictionLanding.indexOf('MONTHLYINTERLINEPRORATION')!=-1) ||
+				(restrictionLanding.indexOf('BORDERCLEARANCE')!=-1) ||
+				(restrictionLanding.indexOf('ACTIVITYSTATUSBYFLIGHTDATE')!=-1) ||
+				(restrictionLanding.indexOf('WORSTFLIGHT')!=-1) ||
+				(restrictionLanding.indexOf('FAULTFLIGHT')!=-1) ||
+				(restrictionLanding.indexOf('MANAGEMENTDATES')!=-1)||
+				(restrictionLanding.indexOf('FAULTSTATIONCOST')!=-1)||
+				(restrictionLanding.indexOf('AVERAGECOSTPERFORMANCE')!=-1)">
+
+
+						<div class="col-sm-4 col-md-3" ng-if="(restrictionLanding.indexOf('REPORTS_FILE_REFERENCE_LIST_MENU')!=-1)||
+						(restrictionLanding.indexOf('REPORTS_STATION_LIST_MENU')!=-1)||
+						(restrictionLanding.indexOf('REPORTS_STATION_PERFORMANCE_MENU')!=-1) || (restrictionLanding.indexOf('REPORTS_ACTIVITY_STATUS_MENU')!=-1) || (restrictionLanding.indexOf('MANAGEMENTINPUTS')!=-1) || (restrictionLanding.indexOf('MANAGEMENTDATES')!=-1) || (restrictionLanding.indexOf('ELECTRONICMESSAGESINPUTS')!=-1) || (restrictionLanding.indexOf('CALLCENTER')!=-1) ||
+						(restrictionLanding.indexOf('REPORTS_STATION_PERFORMANCE_MENU')!=-1) || (restrictionLanding.indexOf('REPORTS_ACTIVITY_STATUS_MENU')!=-1) || (restrictionLanding.indexOf('MANAGEMENTDATES')!=-1) || (restrictionLanding.indexOf('ELECTRONICMESSAGESINPUTS')!=-1)||(restrictionLanding.indexOf('TRACINGINPUTS')!=-1) ||(restrictionLanding.indexOf('BORDERCLEARANCE')!=-1)">
+						<section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('REPORTS_FILE_REFERENCE_LIST_MENU')!=-1)||
+						(restrictionLanding.indexOf('REPORTS_STATION_LIST_MENU')!=-1)||
+						(restrictionLanding.indexOf('REPORTS_STATION_PERFORMANCE_MENU')!=-1) || (restrictionLanding.indexOf('CALLCENTER')!=-1) ||
+						(restrictionLanding.indexOf('REPORTS_STATION_PERFORMANCE_MENU')!=-1) ||(restrictionLanding.indexOf('BORDERCLEARANCE')!=-1)">
+							<span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection12"><span localize>Station</span>
+								<i class="fa fa-chevron-right fa-lg"></i></span>
+								<div class="accordion-body">
+									<ul>
+                    <!-- <li ng-if="(restrictionLanding.indexOf('REPORTS_FILE_REFERENCE_LIST_MENU')!=-1)"><a href="" id="gridclaimsFileReferenceReport" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(1)" localize>File Reference List</a></li> -->
+									  <li ng-if="(restrictionLanding.indexOf('REPORTS_FILE_REFERENCE_LIST_MENU')!=-1)"><a href="" id="gridclaimsFileReferenceReport" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(1)" localize>File Reference List</a></li>
+										<li ng-if="(restrictionLanding.indexOf('REPORTS_STATION_LIST_MENU')!=-1)"><a href="" class="2 accordion-link-grid pt-l-12" id="gridStationListReport" ng-click="showOffline ? ShowWarning(0) : goToReportReference(6)" localize>Station Log</a></li>
+										<!-- <li ng-if="(restrictionLanding.indexOf('REPORTS_STATION_PERFORMANCE_MENU')!=-1)"><a href="" id="gridStationPerformanceReport" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(3)" localize>Station Performance</a></li> -->
+										<li ng-if="(restrictionLanding.indexOf('REPORTS_STATION_PERFORMANCE_MENU')!=-1)"><a href="" id="gridStationPerformanceReport" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(58)" localize>Station Performance</a></li>
+										<li ng-if="(restrictionLanding.indexOf('BORDERCLEARANCE')!=-1)"><a href="" id="gridBorderClearanceReport" class="4 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(19)" localize>Border Clearance</a></li>
+
+										<input type="button" id="claimsFileReferenceReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1108, null, null, null );" class="hide"/>
+										<input type="button" id="stationListReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1087, null, null, null );" class="hide"/>
+										<input type="button" id="stationPerformanceReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1088, null, null, null );" class="hide"/>
+										<input type="button" id="borderClearanceReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1076, null, null, null );" class="hide"/>
+									</ul>
+								</div>
+							</section>
+
+							<section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('REPORTS_ACTIVITY_STATUS_MENU')!=-1) || (restrictionLanding.indexOf('MANAGEMENTINPUTS')!=-1) || (restrictionLanding.indexOf('MANAGEMENTDATES')!=-1) || (restrictionLanding.indexOf('ELECTRONICMESSAGESINPUTS')!=-1) || (restrictionLanding.indexOf('CALLCENTER')!=-1) || (restrictionLanding.indexOf('TRACINGINPUTS')!=-1)">
+							<!-- <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('REPORTS_ACTIVITY_STATUS_MENU')!=-1) || (restrictionLanding.indexOf('MANAGEMENTDATES')!=-1) || (restrictionLanding.indexOf('ELECTRONICMESSAGESINPUTS')!=-1)||(restrictionLanding.indexOf('TRACINGINPUTS')!=-1)"> -->
+								<span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection13"><span localize>Activity</span> <i class="fa fa-chevron-right fa-lg"></i></span>
+
+								<div class="accordion-body">
+									<ul class="list-unstyled">
+										<li ng-if="(restrictionLanding.indexOf('REPORTS_ACTIVITY_STATUS_MENU')!=-1)"><a href="" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(41)" id="gridActiveStatus" localize>Activity Status</a></li>
+										<li ng-if="(restrictionLanding.indexOf('MANAGEMENTINPUTS')!=-1)"><a href="" class="2 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(43)" id="gridManagementInputs" localize>Management Inputs</a></li>
+										<li ng-if="(restrictionLanding.indexOf('ELECTRONICMESSAGESINPUTS')!=-1)"><a href="" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(42)" id="gridElectronicInputs" localize>Electronic Message Inputs</a></li>
+										<li ng-if="(restrictionLanding.indexOf('MANAGEMENTDATES')!=-1)"><a href="" class="4 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(46)" id="ManagementDatesLand" localize>Management Dates</a></li>
+										<li ng-if="(restrictionLanding.indexOf('CALLCENTER')!=-1)"><a href="" class="5 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(44)" id="gridCallCenterInputs" localize>Call Center</a></li>
+										<li ng-if="(restrictionLanding.indexOf('TRACINGINPUTS')!=-1)"><a href="" class="6 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(45)" id="gridTracingInput" localize>Tracing Inputs</a></li>
+										<input type="button" id="actStatusHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1074, null, null, null );" class="hide"/>
+										<input type="button" id="managementInputsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1139, null, null, null );" class="hide"/>
+										<input type="button" id="electronicInputsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1135, null, null, null );" class="hide"/>
+										<input type="button" id="managementDatesLandHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1138, null, null, null );" class="hide"/>
+										<input type="button" id="callCenterInputsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1133, null, null, null );" class="hide"/>
+										<input type="button" id="tracingInputHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1142, null, null, null );" class="hide"/>
+									</ul>
+								</div>
+							</section>
+
+						</div>
+						<div class="col-sm-4 col-md-3" ng-if="(restrictionLanding.indexOf('REPORTS_FAULT_STATION_LIST_MENU')!=-1)||
+						(restrictionLanding.indexOf('MISHANDLEDCONNECTIONS')!=-1)||
+						(restrictionLanding.indexOf('PERFORMANCEBYFILE')!=-1)||
+						(restrictionLanding.indexOf('PERCENTAGEOFMISHANDLINGS')!=-1)||
+						(restrictionLanding.indexOf('PERFORMANCEBYBAG')!=-1) || (restrictionLanding.indexOf('REPORTS_PAYMENT_COST_MENU')!=-1) || (restrictionLanding.indexOf('PAYMENTCOST')!=-1) || (restrictionLanding.indexOf('MANAGEMENTCOST')!=-1)||
+						(restrictionLanding.indexOf('FAULTSTATIONCOST')!=-1)||
+						(restrictionLanding.indexOf('AVERAGECOSTPERFORMANCE')!=-1)||
+						(restrictionLanding.indexOf('REPORTS_FAULTAIRLINELOG')!=-1)">
+							<section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('REPORTS_FAULT_STATION_LIST_MENU')!=-1)||
+							(restrictionLanding.indexOf('MISHANDLEDCONNECTIONS')!=-1)||
+							(restrictionLanding.indexOf('PERFORMANCEBYFILE')!=-1)||
+							(restrictionLanding.indexOf('PERCENTAGEOFMISHANDLINGS')!=-1)||
+							(restrictionLanding.indexOf('PERFORMANCEBYBAG')!=-1)||
+							(restrictionLanding.indexOf('FAULTSTATIONCOST')!=-1)||
+							(restrictionLanding.indexOf('REPORTS_FAULTAIRLINELOG')!=-1)">
+								<span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection14"><span localize>Fault Station</span><i class="fa fa-chevron-right fa-lg"></i></span>
+									<div class="accordion-body">
+										<ul>
+											<li ng-if="(restrictionLanding.indexOf('REPORTS_FAULT_STATION_LIST_MENU')!=-1)"><a href="" id="gridFaultStationReport" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToFaultStationReport(1)" localize>Fault Station Log</a></li>
+
+											<li ng-if="(restrictionLanding.indexOf('MISHANDLEDCONNECTIONS')!=-1)"><a href="" id="gridMishandledConnectionReport" class="2 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToFaultStationReport(2)" localize>Mishandled Connection</a></li>
+
+											<li ng-if="(restrictionLanding.indexOf('PERFORMANCEBYFILE')!=-1)"><a href="" id="gridPerformanceByFileReport" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToFaultStationReport(3)" localize>Performance by File</a></li>
+
+											<li ng-if="(restrictionLanding.indexOf('PERCENTAGEOFMISHANDLINGS')!=-1)"><a href="" id="gridPercentageOfMishandlingsReport" class="4 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToFaultStationReport(4)" localize>Percentage of Mishandlings</a></li>
+
+											<li ng-if="(restrictionLanding.indexOf('PERFORMANCEBYBAG')!=-1)"><a href="" id="gridPerformanceByBagReport" class="5 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToFaultStationReport(5)" localize>Performance by Bag</a></li>
+
+											<li ng-if="(restrictionLanding.indexOf('FAULTSTATIONCOST')!=-1)"><a href="" id="faultStationCostReport" class="6 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToFaultStationReport(6)" localize>Fault Station Cost</a></li>
+
+											<li ng-if="(restrictionLanding.indexOf('REPORTS_FAULTAIRLINELOG')!=-1)"><a href="" id="faultAirlineLogReport" class="6 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToFaultStationReport(7)" localize>Fault Airline Log</a></li>
+
+											<input type="button" id="faultStationReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1081, null, null, null );" class="hide"/>
+											<input type="button" id="mishandledConnectionReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1082, null, null, null );" class="hide"/>
+											<input type="button" id="performanceByFileHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1136, null, null, null );" class="hide"/>
+											<input type="button" id="percentageOfMishandlingsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1083, null, null, null );" class="hide"/>
+											<input type="button" id="performanceByBagHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1084, null, null, null );" class="hide"/>
+											<input type="button" id="faultStationCostHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1080, null, null, null );" class="hide"/>
+											<input type="button" id="faultAirlineLogReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1181, null, null, null );" class="hide" />
+										</ul>
+									</div>
+								</section>
+								<section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_CONVERTCURRENCY_MENU')!=-1) || (restrictionLanding.indexOf('REPORTS_PAYMENT_COST_MENU')!=-1) || (restrictionLanding.indexOf('PAYMENTCOST')!=-1) || restrictionLanding.indexOf('MONTHLYINTERLINEPRORATION')!=-1 || (restrictionLanding.indexOf('MANAGEMENTCOST')!=-1) || restrictionLanding.indexOf('REPORTS_TRACING_COST_MENU')!=-1||
+								(restrictionLanding.indexOf('AVERAGECOSTPERFORMANCE')!=-1)">
+									<span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection15"><span localize>Cost</span><i class="fa fa-chevron-right fa-lg"></i></span>
+
+									<div class="accordion-body">
+										<ul class="list-unstyled">
+                      <li ng-if="(restrictionLanding.indexOf('CONVERT_CURRENCY_MENU')!=-1)" ><a href="" id="currencyModal" data-toggle="{{showOffline ? '' : 'modal'}}" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : convertCurrency.LoadController();convertPopUp('convertCurrencyPopUp');"  localize>Convert Currency</a></li>
+											<li ng-if="(restrictionLanding.indexOf('REPORTS_PAYMENT_COST_MENU')!=-1)"><a href="" class="2 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(51);" id="paymentcost"><span localize>Payment/Cost</span></a></li>
+											<li ng-if="(restrictionLanding.indexOf('REPORTS_TRACING_COST_MENU')!=-1)"><a href="" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(9)" id="gridTracingCost"><span localize>Tracing Cost</span></a></li>
+											<li ng-if="(restrictionLanding.indexOf('AVERAGECOSTPERFORMANCE')!=-1)"><a href="" class="4  accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : goToReportReference(52)" id="gridAverageCostPerformance"><span localize>Average Cost Performance</span></a></li>
+											<li><a href="" class="5 accordion-link-grid pt-l-12" ng-if="(restrictionLanding.indexOf('MONTHLYINTERLINEPRORATION')!=-1)" ng-click="showOffline ? ShowWarning(0) : goToReportReference(55)" id="gridMonthlyInterlineProration"><span localize>Monthly Interline Proration</span></a></li>
+											<li><a href="" class="6 accordion-link-grid pt-l-12" ng-if="(restrictionLanding.indexOf('MANAGEMENTCOST')!=-1)" ng-click="showOffline ? ShowWarning(0) : goToReportReference(53)" id="gridManagementCost"><span localize>Management Cost</span></a></li>
+											<input type="button" id="paymentCostHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1086, null, null, null );" class="hide"/>
+											<input type="button" id="tracingCostHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1089, null, null, null );" class="hide"/>
+											<input type="button" id="averageCostPerformanceHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1132, null, null, null );" class="hide"/>
+											<input type="button" id="monthlyInterlineProrationHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1140, null, null, null );" class="hide"/>
+											<input type="button" id="managementCostHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1137, null, null, null );" class="hide"/>
+										</ul>
+									</div>
+								</section>
+							</div>
+							<div class="col-sm-4 col-md-3" ng-if="(restrictionLanding.indexOf('FLIGHTDATE')!=-1) || (restrictionLanding.indexOf('REPORTS_DAMAGEDPILFERED_LIST_MENU')!=-1) || (restrictionLanding.indexOf('BAGGAGEDELIVERY')!=-1) || (restrictionLanding.indexOf('TYPEOFDAMAGE')!=-1) || (restrictionLanding.indexOf('ACTIVITYSTATUSBYFLIGHTDATE')!=-1) || (restrictionLanding.indexOf('WORSTFLIGHT')!=-1) || (restrictionLanding.indexOf('FAULTFLIGHT')!=-1)">
+              <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('FLIGHTDATE')!=-1) || (restrictionLanding.indexOf('ACTIVITYSTATUSBYFLIGHTDATE')!=-1) || (restrictionLanding.indexOf('WORSTFLIGHT')!=-1) || (restrictionLanding.indexOf('FAULTFLIGHT')!=-1)">
+                <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection16"><span localize>Flight</span>
+                  <i class="fa fa-chevron-right fa-lg"></i></span>
+                  <div class="accordion-body">
+                    <ul class="list-unstyled">
+                      <li ng-if="(restrictionLanding.indexOf('FLIGHTDATE')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : goToReportReference(2)" id="gridFlightDateReport" class="1 accordion-link-grid pt-l-12" localize>Flight/Date</a></li>
+											<li ng-if="(restrictionLanding.indexOf('ACTIVITYSTATUSBYFLIGHTDATE')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : goToReportReference(25)" id="gridActivityFlightReport" class="2 accordion-link-grid pt-l-12" localize>Activity Status by Flight/Date</a></li>
+
+											<li ng-if="(restrictionLanding.indexOf('FAULTFLIGHT')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : goToReportReference(10)" id="gridFaultFlightReport" class="3 accordion-link-grid pt-l-12" localize>Fault/Flight</a></li>
+												<li ng-if="(restrictionLanding.indexOf('WORSTFLIGHT')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : goToReportReference(11)" id="gridWorstFlightReport" class="4 accordion-link-grid pt-l-12" localize>Worst Flight</a></li>
+											<input type="button" id="flightDateReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1085, null, null, null );" class="hide"/>
+											<input type="button" id="activityFlightReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1131, null, null, null );" class="hide"/>
+											<input type="button" id="faultFlightReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1079, null, null, null );" class="hide"/>
+											<input type="button" id="worstFlightReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1091, null, null, null );" class="hide"/>
+										</ul>
+                  </div>
+                </section>
+								<section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('REPORTS_DAMAGEDPILFERED_LIST_MENU')!=-1) || (restrictionLanding.indexOf('BAGGAGEDELIVERY')!=-1) || (restrictionLanding.indexOf('TYPEOFDAMAGE')!=-1)">
+									<span class="accordion-link accordion-link-grid" id="gridSection17" ng-click="toggleButton($event);clickDelayed()"><span localize>Other</span> <i class="fa fa-chevron-right fa-lg"></i></span>
+
+									<div class="accordion-body">
+										<ul class="list-unstyled">
+											<li ng-if="(restrictionLanding.indexOf('REPORTS_DAMAGEDPILFERED_LIST_MENU')!=-1)"><a href="" class="1" ng-click="showOffline ? ShowWarning(0) : goToReportReference(5)" id="gridDamagedPilfered" localize>Damaged/Pilfered List</a></li>
+											<li ng-if="(restrictionLanding.indexOf('TYPEOFDAMAGE')!=-1)"><a href="" class="3" ng-click="showOffline ? ShowWarning(0) : goToReportReference(8)" id="gridTypeOfDamage"><span localize>Type of Damage</span></a></li>
+											<li ng-if="(restrictionLanding.indexOf('BAGGAGEDELIVERY')!=-1)"><a href="" class="2" ng-click="showOffline ? ShowWarning(0) : goToReportReference(7)" id="gridBaggageDelivery" localize>Baggage Delivery</a></li>
+
+											<input type="button" id="damagedPilferedHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1078, null, null, null );" class="hide"/>
+											<input type="button" id="baggageDeliveryHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1075, null, null, null );" class="hide"/>
+											<input type="button" id="typeOfDamageHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1090, null, null, null );" class="hide"/>
+										</ul>
+									</div>
+								</section>
+							</div>
+
+							<div class="col-sm-4 col-md-3" ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_DELIVERYCOST_MENU')!=-1)||
+							(restrictionLanding.indexOf('MISCELLANEOUS_PASSENGERSBOARDED_MENU')!=-1)">
+              <section class="custom-accordion landing-menu-item" ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_DELIVERYCOST_MENU')!=-1)||
+							(restrictionLanding.indexOf('MISCELLANEOUS_PASSENGERSBOARDED_MENU')!=-1)">
+                <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection18"><span localize>Statistics</span>
+                  <i class="fa fa-chevron-right fa-lg"></i></span>
+                  <div class="accordion-body">
+                    <ul class="list-unstyled">
+											<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_DELIVERYCOST_MENU')!=-1)"><a href="" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : navigateToDeliveryCostPage()" id="gridDeliveryCost" localize>Delivery Cost</a></li>
+											<li ng-if="(restrictionLanding.indexOf('MISCELLANEOUS_PASSENGERSBOARDED_MENU')!=-1)"><a href="" ng-click="showOffline ? ShowWarning(0) : PassengersBoarded()" class="2 accordion-link-grid pt-l-12" id="gridPassengersBoarded" localize>Passengers Boarded</a></li>
+											<input type="button" id="DeliveryCostHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1119, null, null, null );" class="hide"/>
+											<input type="button" id="PassengersBoardedHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1123, null, null, null );" class="hide"/>
+										</ul>
+                  </div>
+                </section>
+							</div>
+
+							<div class="col-sm-4 col-md-3" ng-if="false">
+              <section class="custom-accordion landing-menu-item" ng-if="false">
+                <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection19">Master Record Display
+                  <i class="fa fa-chevron-right fa-lg"></i></span>
+                  <div class="accordion-body">
+                    <ul class="list-unstyled">
+											<li><a href="" class="1 accordion-link-grid pt-l-12" ng-click="navigateToMasterRecordDisplay()" id="gridMasterRecordDisplay">Master Record Display (Coming soon...)</a></li>
+
+										</ul>
+                  </div>
+                </section>
+							</div>
+
+            </div>
+
+				  <div class="col-sm-12 no-padding-left" ng-if="(restrictionLanding.indexOf('CONFIG_STATION_BASICOPTIONS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_ADVANCEOPTIONS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_BASICPIR_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_HANDLEDAIRLINEPIR_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_SCHEDULEDPIR_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_SHORTMESSAGE_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_CODESHARE_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_CLONESTATION_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_HANDLINGAGREEMENTS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_CUSTOMPAGES_MENU')!=-1) ||
+					(restrictionLanding.indexOf('CONFIG_STATION_DELIVERYCOMPANY_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_CODESHAREAGREEMENTS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_CALL_CENTER__MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_REASON_FOR_LOSS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_REGIONS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_STATIONLISTDISPLAY_MENU')!=-1)||
+						(restrictionLanding.indexOf('HANDLERLISTDISPLAY_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_ELECTRONICMESSAGE_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_CUSTOMPAGES_MENU')!=-1) ||
+					(restrictionLanding.indexOf('CURRENCYPERFORMANCE_MENU')!=-1) || (restrictionLanding.indexOf('MULTISTATIONUPDATE_MENU')!=-1)">
+            <h4 class="landing-category" localize>Administration</h4>
+          </div>
+
+          <div class="col-sm-12 default padding-left-0 padding-right-0 forTabShiftTab3" ng-if=" ((restrictionLanding.indexOf('CONFIG_STATION_BASICOPTIONS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_ADVANCEOPTIONS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_BASICPIR_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_HANDLEDAIRLINEPIR_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_SCHEDULEDPIR_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_SHORTMESSAGE_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_CODESHARE_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_CLONESTATION_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_HANDLINGAGREEMENTS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_CUSTOMPAGES_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_STATION_DELIVERYCOMPANY_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_CODESHAREAGREEMENTS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_CALL_CENTER__MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_REASON_FOR_LOSS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_REGIONS_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_STATIONLISTDISPLAY_MENU')!=-1)||
+						(restrictionLanding.indexOf('HANDLERLISTDISPLAY_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_ELECTRONICMESSAGE_MENU')!=-1)||
+					(restrictionLanding.indexOf('CONFIG_AIRLINE_CUSTOMPAGES_MENU')!=-1)) ||
+					(restrictionLanding.indexOf('CURRENCYPERFORMANCE_MENU')!=-1) || (restrictionLanding.indexOf('MULTISTATIONUPDATE_MENU')!=-1)">
+            <div class="col-sm-4 col-md-3">
+              <section class="custom-accordion landing-menu-item"  ng-if="(restrictionLanding.indexOf('CONFIG_STATION_BASICOPTIONS_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_ADVANCEOPTIONS_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_BASICPIR_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_HANDLEDAIRLINEPIR_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_SCHEDULEDPIR_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_SHORTMESSAGE_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_CODESHARE_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_CLONESTATION_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_HANDLINGAGREEMENTS_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_CUSTOMPAGES_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_STATION_DELIVERYCOMPANY_MENU')!=-1)">
+                <span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection20"><span localize>Station</span>
+                  <i class="fa fa-chevron-right fa-lg"></i></span>
+
+                <div class="accordion-body">
+                  <ul class="list-unstyled">
+                    <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_BASICOPTIONS_MENU')!=-1) || (restrictionLanding.indexOf('CONFIG_STATION_ADVANCEOPTIONS_MENU')!=-1) || (restrictionLanding.indexOf('CONFIG_STATION_BASICPIR_MENU')!=-1) || (restrictionLanding.indexOf('CONFIG_STATION_HANDLEDAIRLINEPIR_MENU')!=-1) || (restrictionLanding.indexOf('CONFIG_STATION_SCHEDULEDPIR_MENU')!=-1) || (restrictionLanding.indexOf('CONFIG_STATION_SHORTMESSAGE_MENU')!=-1) || (restrictionLanding.indexOf('CONFIG_STATION_CODESHARE_MENU')!=-1) || (restrictionLanding.indexOf('CONFIG_STATION_CLONESTATION_MENU')!=-1)"><span localize>Management</span></span></li>
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_BASICOPTIONS_MENU')!=-1)"><a href="" id="gridStationBasicOptions" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : basicOptions()"><span localize>Basic Options</span></a></li>
+ 										  <!-- <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_BASICOPTIONS_MENU')!=-1)"><a href="" id="gridStationBasicOptions" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : basicOptions()"><span localize>Basic Options</span></a></li> -->
+ 										<li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_ADVANCEOPTIONS_MENU')!=-1)"><a href="" id="gridAdvancedOptions" class="2 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : basicAdvancedOptions()"><span localize>Advanced Options</span></a></li>
+ 											<!-- <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_ADVANCEOPTIONS_MENU')!=-1)"><a href="" id="gridAdvancedOptions" class="2 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : basicAdvancedOptions()"><span localize>Advanced Options </span></a></li> -->
+                    <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_BASICPIR_MENU')!=-1)"><a href="" id="gridBasicPropertyIrregularityReport" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : basicReport()"><span localize>Basic Property Irregularity Report</span></a></li>
+                    <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_HANDLEDAIRLINEPIR_MENU')!=-1)"><a href="" id="gridHandledAirlinePropertyIrregularityReport" class="4 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : hapiReport()"><span localize>Handled Airline Property Irregularity Report</span></a></li>
+                    <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_SCHEDULEDPIR_MENU')!=-1)"><a href="" id="gridScheduledPropertyIrregularityReport" class="5 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : scheduledReport()"><span localize>Scheduled Property Irregularity Report</span></a></li>
+                    <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_SHORTMESSAGE_MENU')!=-1)"><a href="" id="gridShortMessage" class="6 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : shortMessage()"><span localize>Short Message</span></a></li>
+                    <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_CODESHARE_MENU')!=-1)"><a href="" id="gridCodeShare" class="7 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : codeShare()"><span localize>Code Share</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_CLONESTATION_MENU')!=-1)" ng-controller="cloneStationController as cloneCtrl"><a href="" id="gridCloneStation" class="8 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : initializeCloneStationComponents();cloneCtrl.ClearPopUp();"><span localize>Clone Station</span></a></li>
+
+										<!-- <div ng-controller="cloneStationController as cloneCtrl"></div> -->
+									  <!-- <li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_HANDLINGAGREEMENTS_MENU')!=-1)"><a href="" class="9 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : handlingAgreements1()" id="gridHandlingAgreements"><span localize>Handling Agreements (Coming soon...)</span></a></li> -->
+
+							<li style="margin-left:-10px">
+								<ul>
+									<li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_HANDLINGAGREEMENTS_MENU')!=-1)"><a href="" class="9 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : handlingAgreements()" id="gridHandlingAgreements"><span localize>Handling Agreements</span></a></li>
+									<li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_DELIVERYCOMPANY_MENU')!=-1)"><a href="" class="10 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : deliveryCompany()" id="gridDeliveryCompany"><span localize>Delivery Company</span></a></li>
+                	<li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_DELIVERYCOMPANY_MENU')!=-1)"><a href="" class="10 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : scheduledDeliveryCompany()" id="gridScheduledDeliveryCompany"><span localize>Scheduled Delivery Company</span></a></li>
+									<li ng-if="(restrictionLanding.indexOf('CONFIG_STATION_CUSTOMPAGES_MENU')!=-1)"><a href="" class="11 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : custompages()" id="gridStationCustompages"><span localize>Custom Pages</span></a></li>
+
+									<li ng-if="(restrictionLanding.indexOf('CONFIGSTATIONEMAILHARDCOPY_MENU')!=-1)"><a href="" class="12 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : manageEmails()" id="gridStationManageEmails"><span localize>Email for Hard Copy and Reports</span></a></li>
+
+									<li ng-if="(restrictionLanding.indexOf('CONFIGFLIGHTSCHEDULESETTINGS_MENU')!=-1)"><a href="" class="13 accordion-link-grid pt-l-13" ng-click="showOffline ? ShowWarning(0) : flightSchedule()" id="gridStationflightSchedule"><span localize>Flight Schedule Settings</span></a></li>
+								</ul>
+							</li>
+
+
+											<input type="button" id="stationManagementHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1103, null, null, null );" class="hide"/>
+										<input type="button" id="shortMessageHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1100, null, null, null );" class="hide"/>
+										<input type="button" id="stationAdvanceOptionsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1101, null, null, null );" class="hide"/>
+										<input type="button" id="stationBasicOptionsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1102, null, null, null );" class="hide"/>
+										<input type="button" id="scheduledPropertyIrregularityReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1099, null, null, null );" class="hide"/>
+										<input type="button" id="handledPropertyIrregularityReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1097, null, null, null );" class="hide"/>
+										<input type="button" id="codeShareHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1094, null, null, null );" class="hide"/>
+										<input type="button" id="cloneStationHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1093, null, null, null );" class="hide"/>
+										<input type="button" id="basicPropertyIrregularityReportHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1092, null, null, null );" class="hide"/>
+										<input type="button" id="handlingAgreementsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1098, null, null, null );" class="hide"/>
+										<input type="button" id="deliveryCompanyHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1129, null, null, null );" class="hide"/>
+										<input type="button" id="configStationCustomPagesHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1154, null, null, null );" class="hide"/>
+										<input type="button" id="emailforHardCopyHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1164, null, null, null );" class="hide"/>
+										<input type="button" id="flightScheduleSettingsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1165, null, null, null );" class="hide"/>
+										<input type="button" id="scheduledDeliveryCompanyHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1167, null, null, null );" class="hide"/>
+
+									</ul>
+                </div>
+              </section>
+							<section class="custom-accordion landing-menu-item" ng-if="((restrictionLanding.indexOf('CONFIG_AIRLINE_CODESHAREAGREEMENTS_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_AIRLINE_CALL_CENTER__MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_AIRLINE_REASON_FOR_LOSS_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_AIRLINE_REGIONS_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_AIRLINE_STATIONLISTDISPLAY_MENU')!=-1)||
+							(restrictionLanding.indexOf('CONFIG_AIRLINE_ELECTRONICMESSAGE_MENU')!=-1)||
+							(restrictionLanding.indexOf('HANDLERLISTDISPLAY_MENU')!=-1)||
+							(restrictionLanding.indexOf('CURRENCYPERFORMANCE_MENU')!=-1) || (restrictionLanding.indexOf('MULTISTATIONUPDATE_MENU')!=-1) ||
+							(restrictionLanding.indexOf('CONFIG_AIRLINE_CUSTOMPAGES_MENU')!=-1)) && !isTrainingMode">
+								<span class="accordion-link accordion-link-grid" ng-click="toggleButton($event);clickDelayed()" id="gridSection21"><span localize>Airline/Handler</span><i class="fa fa-chevron-right fa-lg"></i></span>
+
+								<div class="accordion-body">
+									<ul class="list-unstyled">
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_AIRLINE_CODESHAREAGREEMENTS_MENU')!=-1)"><a href="" class="1 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : codeShareAirlineConfig()" id="gridCodeShareAgree"><span localize>Code Share Agreements</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_AIRLINE_CALL_CENTER__MENU')!=-1)"><a href="" class="2 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : callCenterAirlineConfig()" id="gridCallCenter"><span localize>Call Center/ Headquarters Agreements</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_AIRLINE_REASON_FOR_LOSS_MENU')!=-1)"><a href="" class="3 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : lossReasonAirlineConfig()" id="gridReasonForLoss"><span localize>Reason For Loss</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_AIRLINE_REGIONS_MENU')!=-1)"><a href="" class="4 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : regionsAirlineConfig()" id="gridRegions"><span localize>Regions</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_AIRLINE_STATIONLISTDISPLAY_MENU')!=-1)"><a href="" class="5 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : stationListAirlineConfig()" id="gridStationListDisplay"><span localize>Station List Display</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_AIRLINE_ELECTRONICMESSAGE_MENU')!=-1)"><a href="" class="6 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : electronicMessAirlineConfig()" id="gridElectronicMessages"><span localize>Electronic Messages</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('CONFIG_AIRLINE_CUSTOMPAGES_MENU')!=-1)"><a href="" class="7 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : customPagesAirlineConfig()" id="gridCustomPages"><span localize>Custom Pages</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('CURRENCYPERFORMANCE_MENU')!=-1)"><a href="" class="8 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : currencyPerformanceAirlineConfig()" id="gridCurrency"><span localize>Currency & Performance</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('MULTISTATIONUPDATE_MENU')!=-1)"><a href="" class="9 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : multiStationUpdateConfig()" id="gridmultiStns"><span localize>Multi-station Update</span></a></li>
+										<li ng-if="(restrictionLanding.indexOf('HANDLERLISTDISPLAY_MENU')!=-1)"><a href="" class="10 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : handlerListDisplayConfig()" id="gridHandlerListDisplay"><span localize>Handler List Display</span></a></li>
+										<li><a href=""  ng-if="(restrictionLanding.indexOf('CONFIGAIRLINEMASTERRECORDDISPLAY_MENU')!=-1)"class="11 accordion-link-grid pt-l-12" ng-click="showOffline ? ShowWarning(0) : navigateToMasterRecordDisplay()" id="gridMasterRecordDisplay" localize>Master Record Display</a></li>
+											<li><a href="" ng-if="(restrictionLanding.indexOf('CONFIGAIRLINECUSTOMERSETTINGS_MENU')!=-1)" class="12 accordion-link-grid pt-l-13" ng-click="showOffline ? ShowWarning(0) : navigateToCustomerSetting()" id="customerSettingLink" localize>Customer Settings</a></li>
+										<input type="button" id="codeShareAgreeHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1095, null, null, null );" class="hide"/>
+										<input type="button" id="callCenterHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1105, null, null, null );" class="hide"/>
+										<input type="button" id="reasonForLossHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1112, null, null, null );" class="hide"/>
+										<input type="button" id="regionsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1113, null, null, null );" class="hide"/>
+										<input type="button" id="stationListDisplayHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1114, null, null, null );" class="hide"/>
+										<input type="button" id="electronicMessagesHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1130, null, null, null );" class="hide"/>
+										<input type="button" id="configAirlineCustomPagesHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1151, null, null, null );" class="hide"/>
+										<input type="button" id="customPagesHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1128, null, null, null );" class="hide"/>
+										<input type="button" id="configAirlineHandlerListDisplayHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1152, null, null, null );" class="hide"/>
+										<input type="button" id="currencyPerfDisplayHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1157, null, null, null );" class="hide"/>
+										<input type="button" id="MasterRecordDisplayHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1159, null, null, null );" class="hide"/>
+										<input type="button" id="airlineMultiStationHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1160, null, null, null );" class="hide"/>
+										<input type="button" id="customerSettingsHelpOpen" value="Past File bag contextual help" onclick="FMCOpenHelp (1166, null, null, null );" class="hide"/>
+									</ul>
+								</div>
+							</section>
+            </div>
+						<div class="modal fade in" id="sendMessage" tabindex="-1" role="dialog">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+												<i class="close fa fa-times" data-dismiss="modal" aria-label="Close"></i>
+						<h4 id="responseMsgHeader" class="responseMsgHeader modal-title">{{responseHeaderMessage}}</h4>
+												<!-- <h4 class="modal-title">Success</h4> -->
+										</div>
+
+										<div class="modal-body text-center">
+										<!-- se -->
+											<div id="responseMsg" class="responseMsg">{{responseMessage}}</div>
+											</div>
+									</div>
+								</div>
+						</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- content -->
+
+  <!-- added common tempelate for new message -->
+  <newmessage-temp></newmessage-temp>
+	<send-teletype-message></send-teletype-message>

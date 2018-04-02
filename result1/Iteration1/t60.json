@@ -1,0 +1,19 @@
+
+
+{
+"BJYGBH002" : "No data found from external sources",
+"noPNRError":"No PNR found from Boarding pass",
+"bagTagExceedError" : "10-bag limit exceeded for  creating Delayed Bag file.",
+"bagTagExceedErrorDamaged" : "10-bag limit exceeded for  creating Damaged Bag file.",
+"bagTagExistsError" : "One or more Bag Tag Numbers already provided.",
+"invalidBagTag" : "Bag Tag Number is incorrect format. Must be 10 digits (or IATA airline code followed by 6 numeric digits) for up to ten bags. ",
+"invalidBagPnr": "PNR is incorrect format.PNR must be 5 or 6 letters or numbers.",
+"moreThan10BagsForPRNDelayed" : "More than 10 bags found. Please narrow your search criteria.",
+"moreThan10BagsForPRNDamaged":"More than 10 bags found for the PNR.",
+"pnrExists" : "PNR is already associated with at least one other bag.",
+"catchError" : "Unexpected error has been encountered Please contact sita administrator.",
+"issuerCodeError":"Invalid Issuer Code",
+"issuerCodeErrorMultipleBag":"Invalid Issuer Code for Bag Number",
+"selectTagError":"Select or provide at least one bag tag number to search WorldTracer"
+
+}

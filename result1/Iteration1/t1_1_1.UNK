@@ -1,0 +1,292 @@
+/*
+* Copyright (c) SITA 2016. Confidential. All rights reserved.
+*/
+
+(function () {
+var i18n = window.i18n = window.i18n || {};
+var MessageFormat = {locale: {}};
+
+MessageFormat.locale.en=function(n){return n===1?"one":"other"}
+
+var
+c=function(d){if(!d)throw new Error("MessageFormat: No data passed to function.")},
+n=function(d,k,o){if(isNaN(d[k]))throw new Error("MessageFormat: `"+k+"` isnt a number.");return d[k]-(o||0)},
+v=function(d,k){c(d);return d[k]},
+p=function(d,k,o,l,p){c(d);return d[k] in p?p[d[k]]:(k=MessageFormat.locale[l](d[k]-o),k in p?p[k]:p.other)},
+s=function(d,k,p){c(d);return d[k] in p?p[d[k]]:p.other};
+
+i18n["\x0d\x0a                              Select Time to Close\x0d\x0a                          "] = "Select Time to Close";
+
+i18n["\x0d\x0a                            Select Type\x0d\x0a                        "] = "Select Type";
+
+i18n["\x0d\x0a                        Date\x0d\x0a                    "] = "Date";
+
+i18n["\x0d\x0a                        Month\x0d\x0a                    "] = "Month";
+
+i18n["\x0d\x0a                        Select Format\x0d\x0a                    "] = "Select Format";
+
+i18n["\x0d\x0a                        Select Headquarters Control\x0d\x0a                    "] = "Select Headquarters Control";
+
+i18n["\x0d\x0a                        Select Status\x0d\x0a                    "] = "Select Status";
+
+i18n["\x0d\x0a                        Select Type\x0d\x0a                    "] = "Select Type";
+
+i18n["\x0d\x0a                    \x3ca href=\x22\x22\x3e\x3ci class=\x22fa fa-lg fa-minus-circle\x22\x3e\x3c/i\x3e\x3c/a\x3e Remove\x0d\x0a                "] = "\x3ca\x3e\x3ci class=\x22fa fa-lg fa-minus-circle\x22\x3e\x3c/i\x3e\x3c/a\x3e Remove";
+
+i18n["\x0d\x0a                    Date\x0d\x0a                "] = "Date";
+
+i18n[" Fault Station"] = "Fault Station";
+
+i18n["1st Flight \x26 Complete Route"] = "1st Flight \x26amp; Complete Route";
+
+i18n["\x3clabel\x3e\x3cstrong localize=\x22\x22\x3eReceived\x3c/strong\x3e\x3c/label\x3e"] = "\x3clabel\x3e\x3cstrong\x3eReceived\x3c/strong\x3e\x3c/label\x3e";
+
+i18n["\x3cspan class=\x22hide nonprintable\x22 localize=\x22\x22\x3eNONPRINTABLECONTENT\x3c/span\x3eFile"] = "\x3cspan class=\x22hide nonprintable\x22\x3eNONPRINTABLECONTENT\x3c/span\x3eFile";
+
+i18n["\x3cspan class=\x22hide nonprintable\x22 localize=\x22\x22\x3eNONPRINTABLECONTENT\x3c/span\x3eMatching"] = "\x3cspan class=\x22hide nonprintable\x22\x3eNONPRINTABLECONTENT\x3c/span\x3eMatching";
+
+i18n["\x3cspan class=\x22hide nonprintable\x22 localize=\x22\x22\x3eNONPRINTABLECONTENT\x3c/span\x3eNo"] = "\x3cspan class=\x22hide nonprintable\x22\x3eNONPRINTABLECONTENT\x3c/span\x3eNo";
+
+i18n["\x3cspan class=\x22hide nonprintable\x22 localize=\x22\x22\x3eNONPRINTABLECONTENT\x3c/span\x3eYes"] = "\x3cspan class=\x22hide nonprintable\x22\x3eNONPRINTABLECONTENT\x3c/span\x3eYes";
+
+i18n["Add User Comment\x0d\x0a    "] = "Add User Comment";
+
+i18n["Add another file reference "] = "Add another file reference";
+
+i18n["Address Line 1: "] = "Address Line 1:";
+
+i18n["Address Line 2: "] = "Address Line 2:";
+
+i18n["Address line 1: "] = "Address line 1:";
+
+i18n["Address line 2: "] = "Address line 2:";
+
+i18n["Amendable elements allowed: "] = "Amendable elements allowed:";
+
+i18n["Associated File "] = "Associated File";
+
+i18n["Automated Messages: "] = "Automated Messages:";
+
+i18n["Bag Details: "] = "Bag Details:";
+
+i18n["Bag Insurance: "] = "Bag Insurance:";
+
+i18n["Baggage Identifier: "] = "Baggage Identifier:";
+
+i18n["Brand Information: "] = "Brand Information:";
+
+i18n["Cell Phone: "] = "Cell Phone:";
+
+i18n["City: "] = "City:";
+
+i18n["Claim Amount : "] = "Claim Amount :";
+
+i18n["Color: "] = "Color:";
+
+i18n["Combination Lock: "] = "Combination Lock:";
+
+i18n["Comments on loss: "] = "Comments on loss:";
+
+i18n["Country Code: "] = "Country Code:";
+
+i18n["Currency \x26 Performance (Coming soon...)"] = "Currency \x26amp; Performance (Coming soon...)";
+
+i18n["Currency and Performance for {a}"] = function(d){return "Currency and Performance for "+v(d,"a")};
+
+i18n["Customs Date \x26 Time"] = "Customs Date \x26amp; Time";
+
+i18n["Customs Information: "] = "Customs Information:";
+
+i18n["Date Found: "] = "Date Found:";
+
+i18n["Date range should fall in {range} days"] = function(d){return "Date range should fall in "+v(d,"range")+" days"};
+
+i18n["Destination Address "] = "Destination Address";
+
+i18n["Detailed Description: "] = "Detailed Description:";
+
+i18n["Disposal Comments: "] = "Disposal Comments:";
+
+i18n["Disposal Date: "] = "Disposal Date:";
+
+i18n["Do you want to end the current process.\x3cbr\x3e Any unsaved data will be lost."] = "Do you want to end the current process.\x3cbr\x3eAny unsaved data will be lost.";
+
+i18n["Do you want to end the current process.\x3cbr\x3eAny unsaved data will be lost.\x0d\x0a\x09\x09\x09\x09\x09\x09\x09"] = "Do you want to end the current process.\x3cbr\x3eAny unsaved data will be lost.";
+
+i18n["Do you want to end the current process.\x3cbr\x3eAny unsaved data will be lost.\x0d\x0a            "] = "Do you want to end the current process.\x3cbr\x3eAny unsaved data will be lost.";
+
+i18n["Do you want to end the current process.\x3cspan\x3e\x3cbr\x3e\x0d\x0a                \x3cspan localize=\x22\x22\x3eAny unsaved data will be lost.\x3c/span\x3e\x0d\x0a            \x3c/span\x3e"] = "Do you want to end the current process.\x3cspan\x3e\x3cbr\x3e\x3cspan\x3eAny unsaved data will be lost.\x3c/span\x3e\x3c/span\x3e";
+
+i18n["Do you want to end the current process\x3cspan\x3e\x3cspan\x3e.\x3c/span\x3e\x3cbr\x3e\x0d\x0a                \x3cspan localize=\x22\x22\x3eAny unsaved data will be lost\x3c/span\x3e\x3cspan\x3e.\x3c/span\x3e\x0d\x0a            \x3c/span\x3e"] = "Do you want to end the current process\x3cspan\x3e\x3cspan\x3e.\x3c/span\x3e\x3cbr\x3e\x3cspan\x3eAny unsaved data will be lost\x3c/span\x3e\x3cspan\x3e.\x3c/span\x3e\x3c/span\x3e";
+
+i18n["Do you want to request bag(s)?\x0a      "] = "Do you want to request bag(s)?";
+
+i18n["Duplicate Airline not allowed - {errorAdd}"] = function(d){return "Duplicate Airline not allowed - "+v(d,"errorAdd")};
+
+i18n["Excess Amount : "] = "Excess Amount :";
+
+i18n["Expedite Destination "] = "Expedite Destination";
+
+i18n["Fault Information \x3ca href=\x22\x22 ng-click=\x22setTab(3,\x27avoidAuto\x27);getFocus(3,2)\x22 class=\x22 bluemargin-left-5\x22\x3e\x3ci class=\x22fa fa-pencil fa-lg\x22\x3e\x3c/i\x3e\x3c/a\x3e"] = "Fault Information \x3ca class=\x22bluemargin-left-5\x22\x3e\x3ci class=\x22fa fa-pencil fa-lg\x22\x3e\x3c/i\x3e\x3c/a\x3e";
+
+i18n["Fault Station: "] = "Fault Station:";
+
+i18n["Female Toilet Kits: "] = "Female Toilet Kits:";
+
+i18n["File Already closed: {refNoObj}"] = function(d){return "File Already closed: "+v(d,"refNoObj")};
+
+i18n["File Can\x27t be Reinstate: {refNoObj}"] = function(d){return "File Can't be Reinstate: "+v(d,"refNoObj")};
+
+i18n["File Can\x27t be Suspend: {refNoObj}"] = function(d){return "File Can't be Suspend: "+v(d,"refNoObj")};
+
+i18n["File reference {refNumber} does not exist."] = function(d){return "File reference "+v(d,"refNumber")+" does not exist."};
+
+i18n["File reference {sta} {air} {ref} already {upd}"] = function(d){return "File reference "+v(d,"sta")+" "+v(d,"air")+" "+v(d,"ref")+" already "+v(d,"upd")};
+
+i18n["File {CurrentValObj} Not Found"] = function(d){return "File "+v(d,"CurrentValObj")+" Not Found"};
+
+i18n["File {refNumberOverRideObj} Overridden successfully."] = function(d){return "File "+v(d,"refNumberOverRideObj")+" Overridden successfully."};
+
+i18n["File {refNumber} Updated Successfully"] = function(d){return "File "+v(d,"refNumber")+" Updated Successfully"};
+
+i18n["File {refNum} not found"] = function(d){return "File "+v(d,"refNum")+" not found"};
+
+i18n["Filter Properties "] = "Filter Properties";
+
+i18n["General Contents: "] = "General Contents:";
+
+i18n["Handled Airline Copy "] = "Handled Airline Copy";
+
+i18n["Last "] = "Last";
+
+i18n["Last logged on "] = "Last logged on";
+
+i18n["Liability Tag?: "] = "Liability Tag?:";
+
+i18n["Male Toilet Kits: "] = "Male Toilet Kits:";
+
+i18n["Maximum length in this field is {g}"] = function(d){return "Maximum length in this field is "+v(d,"g")};
+
+i18n["Maximum of three descriptors can be selected\x3cbr\x3ePlease click on the image to  select/unselect."] = "Maximum of three descriptors can be selected\x3cbr\x3ePlease click on the image to select/unselect.";
+
+i18n["Missing Bags: "] = "Missing Bags:";
+
+i18n["Month\x0d\x0a                  "] = "Month";
+
+i18n["No Tag for Bag {num}"] = function(d){return "No Tag for Bag "+v(d,"num")};
+
+i18n["Number of Passengers: "] = "Number of Passengers:";
+
+i18n["Number of Pieces \x26 Total Baggage Weight"] = "Number of Pieces \x26amp; Total Baggage Weight";
+
+i18n["Offline "] = "Offline";
+
+i18n["PNR Number: "] = "PNR Number:";
+
+i18n["Page {a} Successfully updated."] = function(d){return "Page "+v(d,"a")+" Successfully updated."};
+
+i18n["Partner Code: "] = "Partner Code:";
+
+i18n["Passenger Fare: "] = "Passenger Fare:";
+
+i18n["Please contact the airline about your baggage claim "] = "Please contact the airline about your baggage claim";
+
+i18n["Quick On-Hand Bag already exists for the following Tag Number(s) : {warning}"] = function(d){return "Quick On-Hand Bag already exists for the following Tag Number(s) : "+v(d,"warning")};
+
+i18n["Receive both SMS \x26 Email"] = "Receive both SMS \x26amp; Email";
+
+i18n["Reinstate "] = "Reinstate";
+
+i18n["Related File \x3ca href=\x22\x22 ng-click=\x22setTab(3,\x27avoidAuto\x27);getFocus(3,4)\x22 class=\x22 bluemargin-left-5\x22\x3e\x3ci class=\x22fa fa-pencil fa-lg\x22\x3e\x3c/i\x3e\x3c/a\x3e"] = "Related File \x3ca class=\x22bluemargin-left-5\x22\x3e\x3ci class=\x22fa fa-pencil fa-lg\x22\x3e\x3c/i\x3e\x3c/a\x3e";
+
+i18n["Remarks: "] = "Remarks:";
+
+i18n["Remove "] = "Remove";
+
+i18n["Rush Bag Option \x3ca href=\x22\x22 class=\x22 bluemargin-left-5\x22 ng-click=\x22setTab(3,\x27avoidAuto\x27);getFocus(3,1)\x22\x3e\x3ci class=\x22fa fa-pencil fa-lg\x22\x3e\x3c/i\x3e\x3c/a\x3e"] = "Rush Bag Option \x3ca class=\x22bluemargin-left-5\x22\x3e\x3ci class=\x22fa fa-pencil fa-lg\x22\x3e\x3c/i\x3e\x3c/a\x3e";
+
+i18n["SL- {storage}"] = function(d){return "SL- "+v(d,"storage")};
+
+i18n["Search \x26 Manage"] = "Search \x26amp; Manage";
+
+i18n["Select Format\x0d\x0a                  "] = "Select Format";
+
+i18n["Select Status\x0d\x0a\x0d\x0a                  "] = "Select Status";
+
+i18n["Select Type\x0d\x0a\x09\x09\x09\x09\x09\x09\x09\x09"] = "Select Type";
+
+i18n["Select Type\x0d\x0a\x0d\x0a\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09"] = "Select Type";
+
+i18n["Select Type\x0d\x0a\x0d\x0a                "] = "Select Type";
+
+i18n["Select Type "] = "Select Type";
+
+i18n["State "] = "State";
+
+i18n["State: "] = "State:";
+
+i18n["Station and/or airline invalid : {refNumber}"] = function(d){return "Station and/or airline invalid : "+v(d,"refNumber")};
+
+i18n["Station/Airline {air}/{sta} is Inactive."] = function(d){return "Station/Airline "+v(d,"air")+"/"+v(d,"sta")+" is Inactive."};
+
+i18n["Storage Location: "] = "Storage Location:";
+
+i18n["Success - Bag successfully requested for {ref}"] = function(d){return "Success - Bag successfully requested for "+v(d,"ref")};
+
+i18n["Success - Damaged bag file {station}{airline}{reference}  is reassigned to {reassignRef}"] = function(d){return "Success - Damaged bag file "+v(d,"station")+v(d,"airline")+v(d,"reference")+" is reassigned to "+v(d,"reassignRef")};
+
+i18n["Success - Damaged bag file {station}{airline}{reference} is closed"] = function(d){return "Success - Damaged bag file "+v(d,"station")+v(d,"airline")+v(d,"reference")+" is closed"};
+
+i18n["Success - On-Hand bag file {sta}{air}{ref} is reassigned to {refNo}"] = function(d){return "Success - On-Hand bag file "+v(d,"sta")+v(d,"air")+v(d,"ref")+" is reassigned to "+v(d,"refNo")};
+
+i18n["Success - On-hand bag file {stationCodeObj}{airlineCodeObj}{refNumberObj}  closed"] = function(d){return "Success - On-hand bag file "+v(d,"stationCodeObj")+v(d,"airlineCodeObj")+v(d,"refNumberObj")+" closed"};
+
+i18n["Success - On-hand file {stationCodeObj}{airlineCodeObj}{refNumberObj} reinstated."] = function(d){return "Success - On-hand file "+v(d,"stationCodeObj")+v(d,"airlineCodeObj")+v(d,"refNumberObj")+" reinstated."};
+
+i18n["Success - On-hand file {stationCodeObj}{airlineCodeObj}{refNumberObj} suspended."] = function(d){return "Success - On-hand file "+v(d,"stationCodeObj")+v(d,"airlineCodeObj")+v(d,"refNumberObj")+" suspended."};
+
+i18n["Success - On-hand bag file {sta}{air}{ref} closed."] = function(d){return "Success - On-hand bag file "+v(d,"sta")+v(d,"air")+v(d,"ref")+" closed."};
+
+i18n["Success - On-hand file {sta}{air}{ref} reinstated."] = function(d){return "Success - On-hand file "+v(d,"sta")+v(d,"air")+v(d,"ref")+" reinstated."};
+
+i18n["Success - On-hand file {sta}{air}{ref} suspended."] = function(d){return "Success - On-hand file "+v(d,"sta")+v(d,"air")+v(d,"ref")+" suspended."};
+
+i18n["Success - Quick On-Hand Bag created for the following Tag Number(s): {success}"] = function(d){return "Success - Quick On-Hand Bag created for the following Tag Number(s): "+v(d,"success")};
+
+i18n["Success - Quick On-Hand Bag created for the following Tag Number(s): {text}"] = function(d){return "Success - Quick On-Hand Bag created for the following Tag Number(s): "+v(d,"text")};
+
+i18n["Success- file {reference} reactivated successfully"] = function(d){return "Success- file "+v(d,"reference")+" reactivated successfully"};
+
+i18n["Supplementary Information \x3ca href=\x22\x22 ng-click=\x22setTab(3,\x27avoidAuto\x27);getFocus(3,3)\x22 class=\x22 bluemargin-left-5\x22\x3e\x3ci class=\x22fa fa-pencil fa-lg\x22\x3e\x3c/i\x3e\x3c/a\x3e"] = "Supplementary Information \x3ca class=\x22bluemargin-left-5\x22\x3e\x3ci class=\x22fa fa-pencil fa-lg\x22\x3e\x3c/i\x3e\x3c/a\x3e";
+
+i18n["Supplementary Information: "] = "Supplementary Information:";
+
+i18n["Tag Number: "] = "Tag Number:";
+
+i18n["Temporary Phone "] = "Temporary Phone";
+
+i18n["This file cannot be updated as one of the mandatory elements ({TostringFormatObj}) is disabled. You can still close this file without updating."] = function(d){return "This file cannot be updated as one of the mandatory elements ("+v(d,"TostringFormatObj")+") is disabled. You can still close this file without updating."};
+
+i18n["Ticket Number: "] = "Ticket Number:";
+
+i18n["Total Delivery weight "] = "Total Delivery weight";
+
+i18n["Type: "] = "Type:";
+
+i18n["Update \x26 Suspend"] = "Update \x26amp; Suspend";
+
+i18n["Valid Until: "] = "Valid Until:";
+
+i18n["You are not allowed to Erase messages of Airline {sear}"] = function(d){return "You are not allowed to Erase messages of Airline "+v(d,"sear")};
+
+i18n["Zip Code: "] = "Zip Code:";
+
+i18n["Zipcode: "] = "Zipcode:";
+
+i18n["all messages go to "] = "all messages go to";
+
+i18n["date should fall in last {range} days"] = function(d){return "date should fall in last "+v(d,"range")+" days"};
+
+i18n["managed since logged in "] = "managed since logged in";
+
+}());

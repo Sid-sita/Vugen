@@ -1,0 +1,30 @@
+{
+  "bagDescriptor" : [
+      {"type": "D" , "desc" : "Dual hybrid combined material"},
+	    {"type" : "L" , "desc" : "Leather"},
+	    {"type" : "M" , "desc" : "Metal"},
+	    {"type" : "R" , "desc" : "Rigid"},
+	    {"type" : "T" , "desc" : "Tweed"},
+    	{"type" : "B" , "desc" : "Single item in a box"},
+      {"type" : "K" , "desc" : "Cabin sized baggage, carry on"},
+      {"type" :	"C" ,"desc" : "Combination locks"},
+	    {"type" : "H" ,"desc" : "Retractable handles"},
+	    {"type" : "S" ,"desc" : "Straps to close"},
+	    {"type" : "W" ,"desc" : "Wheels/rollers"},
+	    {"type" : "X" ,"desc" : "No external descriptive elements"}
+    ],
+    "codeKeys": {
+      "D" : "Dual hybrid combined material",
+      "L" : "Leather",
+      "M" : "Metal",
+      "R" : "Rigid",
+      "T" : "Tweed",
+      "B" : "Single item in a box",
+      "K" : "Cabin sized baggage, carry on",
+      "C" : "Combination locks",
+      "H" : "Retractable handles",
+      "S" : "Straps to close",
+      "W" : "Wheels/rollers",
+      "X" : "No external descriptive elements"
+    }
+}

@@ -1,0 +1,2 @@
+"{"user":{"userId":"WTDADMIN","companyId":"LH","applicationId":"WTD","resourceId":"FORWARDBAG"}"
+","captcha":{"capId":"No_Captcha"}}"

@@ -1,0 +1,168 @@
+<div class="modal fade" id="reactivateFileDelayed">
+      <div class="modal-dialog scroll" style="width: 770px;">
+        <div class="modal-content">
+          <div class="modal-header customModalHeader">                            
+              <!--<span class="resetPwd-pop reactivatePwdPopup" ng-if="epicName === 'ONHANDBAG' && hidepasswordLabel && !(restriction.indexOf('PASSWORD')!=-1) && !(restrictionDis.indexOf('PASSWORD')!=-1)">						    
+                  <span class="fa-stack fa-lg blue">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-key fa-stack-1x fa-inverse fa-rotate-180"></i>
+                  </span>
+                  <a href="" shift-tab-focus ng-click="clickPasswordLabelReactivate()" class="blue makeBold">Password</a>                
+              </span>-->
+              <h4 class="modal-title customModalTitle pull-left col-sm-9 col-lg-9">Reactivate File - {{FileToReactivate}}</h4>
+              <a href="" ng-click="clearReactivate();" aria-label="Close" data-dismiss="modal" class="pull-right" shift-tab-focus><i class="close fa fa-times"></i></a>
+          </div>
+      <!-- <div class="modal-title add-all-padding" style="background-color: #eee;">
+            <p class="h5"><h5><span><b style="color:black">Reactivate File -{{FileToReactivate}}</b></span><h5>
+          <span class="pull-right"><i class="close fa fa-times" data-dismiss="modal" aria-label="Close"></i></span></p>
+        </div> -->
+        <div class="clearit"></div>
+            <div class="modal-body">
+              <alert ng-if="reactivatePasswordError" type="danger" id="GridErrorReactivate" close="GridWarningCloseMsgReactivate('GridErrorReactivate')">{{reactivatePasswordError}}</alert>
+					  <!--<div class="setPwd-text-reasign margin-left-15" style="display: block;" ng-show="passwordLabel === true">
+              <p>Provide password if action is protected</p>
+              <div class="col-sm-3 margin-left--15">
+                <div>
+                  <span></span>
+                  <input type="password" class="form-control" maxlength="4" ng-model="setPasswordReactivateModel" tooltip-trigger='focus' error-validate validation-rule="alphaNum4" ng-blur="disableReactivateButton(0);"  id="setPasswordReactivate" autocomplete="new-password">
+                </div>
+              </div>
+              <div class="clearfix"></div>
+					  </div>-->
+              <div ng-if="!(restriction.indexOf('DELIVERMATCHMESSAGETOHEADQUARTERS')!=-1)">
+            <span localize>Deliver match messages to headquarters?</span>
+            <div class="btn-group selection" role="group">
+              <button type="button" class="btn btn-default" ng-disabled="(restrictionDis.indexOf('DELIVERMATCHMESSAGETOHEADQUARTERS')!=-1)" ng-click="reActivateButtonYesNo(true)" ng-class="{'active':reActivateYes}" id="reActivateButtonYes" localize>Yes</button>
+              <button type="button" class="btn btn-default" ng-click="reActivateButtonYesNo(false)"ng-class="{'active':!reActivateYes}" id="reActivateButtonNo" localize>No</button>
+            </div>
+          </div>
+
+          <div class="margin-bottom-10">
+            <span localize>Expand Contents in order to update it.</span>
+          </div>
+          <div class="clearfix"></div>
+          <div class="modal-body">
+              <table class=" no-padding-left no-padding-right reactivateTable" style="width:100%">
+                <thead>
+                  <tr>
+                <th  class="reactivateHeader" style=" width: 20px;padding:8px;"></th>
+                <th  class="reactivateHeader" style=" width: 95px;padding:8px;"><strong localizeg>Tag Number</strong></th>
+                <th  class="reactivateHeader" style=" width: 170px;padding:8px;"><strong localize>Color / Type / Descriptive Elements</strong></th>
+                <th  class="reactivateHeader" style=" width: 130px;padding:8px;"><strong localize>Brand Information</strong></th>
+                <th  class="reactivateHeader" style="width: 93px;padding:8px;"><strong localize>Bag Contents</strong></th>
+              </tr>
+              </thead>
+
+                <tbody  class="pt-10 trAll{{parent_index}} reactivateTable2"  ng-repeat="bag in totalBags" ng-class="{'Add-Bottom': !$last}">
+                  <tr  ng-init="parent_index=$index"  style="height:53px" class="tr{{$index}}">
+                  <td>
+                    {{($index+1)}}
+                  </td>
+                  <td  ng-if="bag.BagTag.LicenseNumber.TagType">
+                   {{bag.BagTag.LicenseNumber.TagType}}{{bag.BagTag.LicenseNumber.IssuerCode}}{{bag.BagTag.TagSequence}}
+                   </td>
+
+                   <td    ng-if="!bag.BagTag.LicenseNumber.TagType">
+                       {{bag.BagTag.AirlineCode}}{{bag.BagTag.TagSequence}}
+                    </td>
+                    <td >
+                      {{newColorArr[parent_index]}}, {{bag.ColorTypeDesc.TypeCode}} - {{sortedTypeBag[parent_index]}}, {{bag.ColorTypeDesc.Descriptor.MtrlElement}}{{bag.ColorTypeDesc.Descriptor.OtherElement[0]}}{{bag.ColorTypeDesc.Descriptor.OtherElement[1]}}
+                    </td>
+                  <td  style="word-break: break-word;"> {{bag.BrandInfo.value}}</td>
+
+                  <td  ><a class="table-expand blue-link" href="" ng-click="ExpandContents(parent_index);">
+                                <span  ng-show="bag.BagContents">
+                                  <i class="fa fa-lg fa-chevron-circle-right"></i>
+                                  <span class="icon-text">Contents({{bag.BagContents.Content.length}})</span>
+                                </span>
+                                <span ng-show="!bag.BagContents">
+                                  <i class="fa fa-lg fa-chevron-circle-right"></i>
+                                  <span class="icon-text" localize>Contents(0)</span>
+                                </span>
+                            </a>
+
+                  </td>
+                </tr>
+
+                <tr class="table-expanded-row trc{{parent_index}}" >
+                  <td colspan="5">
+                    <strong localize>General Contents: </strong>{{bag.ContentsDesc.value}}<br>
+              <strong localize>Bag Contents:</strong>
+              <div class="clearfix"></div>
+
+              <div class="row margin-top-10" ng-repeat="content in reactiveAddcontents[parent_index]" id="reactOnhandAddMoreContBlock_{{parent_index}}_{{$index}}">
+                <div class="col-sm-3" ng-if="!(restriction.indexOf('CONTENTCATEGORY_CC')!=-1)">
+                  <label for="category" ng-if="$index==0" localize>Category</label>
+                  <div ng-class="{'input-group required': reactivate['Description1'+parent_index+'_'+$index] || reactivate['Category'+parent_index+'_'+$index] || reactivate['Description2'+parent_index+'_'+$index]}">
+
+                  <span ng-class="{'input-group-addon mandatory-bar':reactivate['Description1'+parent_index+'_'+$index] || reactivate['Category'+parent_index+'_'+$index] || reactivate['Description2'+parent_index+'_'+$index]} ">
+                  </span>
+
+                  <input type="text"  validation-rule="alpha3-12" data-title="" data-toggle="tooltip" error-validate maxlength="12" typeahead="state as state.name for state in bagContent | filter:$viewValue:bagContentSubstring | orderBy:'name'" autocomplete="off" typeaheadscroll type-ahead-init-scroll ng-disabled="(restrictionDis.indexOf('CONTENTCATEGORY_CC')!=-1)"
+                           typeahead-input-formatter="bagContentsplit($model)" ng-blur="duplicateCategoryNotAllowed(parent_index,$index);
+                           disableReactivateButton(parent_index);"
+                            ng-keypress="disable_specialChars($event)" tooltip="{{reactivate['generalcontents_err_'+parent_index+'_'+$index]}}"
+                          ng-required="reactivate['Description1'+parent_index+'_'+$index] || reactivate['Category'+parent_index+'_'+$index] || reactivate['Description2'+parent_index+'_'+$index]" class="form-control" ng-model="reactivate['Category'+parent_index+'_'+$index]" id="reactivateCategory{{parent_index}}{{$index}}" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);handleSmartSearchErrorBorder('reactivateCategory'+parent_index+$index)">
+                         </div>
+                </div>
+
+                <div class="col-sm-3" ng-if="!(restriction.indexOf('DESCRIPTIONOFCONTENT_CC')!=-1)">
+                  <label for="desc1" ng-if="$index==0" localize>Description 1</label>
+                  <div ng-class="{'input-group required':reactivate['Description1'+parent_index+'_'+$index] || reactivate['Description2'+parent_index+'_'+$index]}" >
+
+                  <span ng-class="{'input-group-addon mandatory-bar':reactivate['Description1'+parent_index+'_'+$index] || reactivate['Description2'+parent_index+'_'+$index]}"></span>
+
+                  <input type="text" class="form-control"  validation-rule="freeForm1-45" data-title="" ng-disabled="(restrictionDis.indexOf('DESCRIPTIONOFCONTENT_CC')!=-1)" data-toggle="tooltip" error-validate maxlength="45" ng-blur="disableReactivateButton(parent_index);"  ng-required="reactivate['Description1'+parent_index+'_'+$index] || reactivate['Description2'+parent_index+'_'+$index]" ng-model="reactivate['Description1'+parent_index+'_'+$index]" id="reactivateDescription1{{parent_index}}{{$index}}">
+                </div>
+
+                </div>
+
+                <div class="col-sm-3" ng-if="!(restriction.indexOf('ADDITIONALDESCRIPTION_CC')!=-1)">
+                  <label for="desc2" ng-if="$index==0" localize>Description 2</label>
+                  <div><span></span>
+                  <input type="text" class="form-control" ng-disabled="(restrictionDis.indexOf('ADDITIONALDESCRIPTION_CC')!=-1)"  validation-rule="freeForm1-45"  maxlength="45" size="45"  data-title="" data-toggle="tooltip" error-validate ng-blur="disableReactivateButton(parent_index);"  ng-model="reactivate['Description2'+parent_index+'_'+$index]" id="reactivateDescription2{{parent_index}}{{$index}}">
+                </div>
+                </div>
+
+
+                <div class="col-sm-3">
+                  <div id="removeact" ng-if="($index) >0">
+                            <div class="remove removeFields" ng-click="removeCategory(parent_index,$index,reactiveAddcontents[parent_index].length)" >
+                              <a href=""><i class="icon-text fa fa-lg fa-minus-circle "></i></a>
+                              <span localize>Remove</span>
+                            </div>
+                          </div>
+                </div>
+                </div>
+
+              <div  ng-if="!(restriction.indexOf('CONTENTCATEGORY_CC')!=-1) || !(restriction.indexOf('DESCRIPTIONOFCONTENT_CC')!=-1) || !(restriction.indexOf('ADDITIONALDESCRIPTION_CC')!=-1)">
+                            <div class="add-another add-another-contents margin-top-10" ng-click = "addcontents(parent_index)" id="contents{{$index}}" ng-if="($index) <12">
+                              <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg" ng-class="{'add-another hide':reactiveAddcontents[parent_index].length===12}"></i></a>
+                              <div ng-class="{'add-another hide':reactiveAddcontents[parent_index].length===12}"
+                              localize>Add more contents</div>
+                              <div class="clearfix"></div>
+                            </div>
+                <div class="clearfix"></div>
+              </div>
+                        </td>
+                        </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+
+          <div class="clearfix"></div>
+
+            <div class="modal-footer">
+              <div class="col-sm-4 col-sm-offset-4">
+                <button type="button" class="btn btn-primary btn-block forEnterButtonModal" id="reactivateButton" ng-click="reactivateFileFunction();"   localize>Reactivate</button>
+              </div>
+              <div class="col-sm-4">
+                <a href="#" tab-btn-focus class="pull-right margin-top-5 blue" data-dismiss="modal" ng-click="clearReactivate();" id="cancelReactivate"><i class="fa fa-times-circle"></i> <span localize>Cancel</span></a>
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
+</div>

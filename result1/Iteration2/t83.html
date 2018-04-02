@@ -1,0 +1,246 @@
+<div data-ng-show="showTemp3" class="rushCheck3">
+	<input type="button" id="flightsHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1037, null, null, null );" class="hide"/>
+	<input type="button" id="wTRHelpClose" value="Close contextual help" onclick="FMCCloseHelp ();"  class="hide"/>
+<input type="button" id="wTRHelpOpen" value="Delayed bag contextual help" onclick="FMCOpenHelp (1000, null, null, null );" class="hide"/>
+
+<!-- error message div -->
+<!-- <div class="col-sm-12 margin-top-20" data-ng-show="RushBag.RushBagError">
+ <div class="alert alert-danger alert-dismissible fade in" role="alert" id="rushError">
+	 <button type="button" class="close" ng-click="RushBag.RushBagError=false" aria-label="Close">
+		 <span aria-hidden="true">×</span>
+	 </button>
+		 {{RushBag.RushBagError}}
+ </div>
+</div> -->
+
+	<div class="padding-top-14">
+		<h5 ng-if="!(restriction.indexOf('HANDLEDAIRLINECOPY_HC')!=-1)" localize>Rush Bag Option</h5>
+		<div class="default">
+			<div class="col-sm-4" ng-if="!(restriction.indexOf('HANDLEDAIRLINECOPY_HC')!=-1)">
+				<label for="handledAirline" localize>Handled Airline Copy</label>
+				<div class="dropdown"ng-class="{'mandatory':(ids.indexOf('HC')!=-1)}">
+					<span ng-class="{'input-group-addon mandatory-bar':(ids.indexOf('HC')!=-1)}"></span>
+						<button prevent-closing-dropdown class="btn btn-default form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="handledAirline" ng-disabled="(restrictionDis.indexOf('HANDLEDAIRLINECOPY_HC')!=-1)" ng-focus="isFocus1" ng-focus-lost="loseFocus()" autofocus="true" ng-required="(ids.indexOf('HC')!=-1)" updatevalue="{{WTR_RushBagsCreateRQ.HandledAirlineCopyInd}}">
+							<span ng-model="WTR_RushBagsCreateRQ.HandledAirlineCopyInd"
+							ng-if="WTR_RushBagsCreateRQ.HandledAirlineCopyInd">{{RushBag.handleCopy}}</span>
+							<span localize ng-model="WTR_RushBagsCreateRQ.HandledAirlineCopyInd" ng-if="!WTR_RushBagsCreateRQ.HandledAirlineCopyInd">Select Handled Airline Copy</span>
+							<i class="fa fa-chevron-down pull-right"></i>
+						</button>
+
+						<ul class="dropdown-menu z-index-5">
+						<li class="dropdown-header" ng-class="{'selected': !WTR_RushBagsCreateRQ.HandledAirlineCopyInd}" ng-click="WTR_RushBagsCreateRQ.HandledAirlineCopyInd='';RushBag.handleCopy=''"><a href="">Select Handled Airline Copy</a></li>
+						<li ng-class="{'selected': handleCopy.code == WTR_RushBagsCreateRQ.HandledAirlineCopyInd}" ng-repeat="handleCopy in handled"  ng-click="WTR_RushBagsCreateRQ.HandledAirlineCopyInd=handleCopy.code;RushBag.handleCopy=(($index+1)+'. ')+handleCopy.item"><a href="">{{(($index+1)+'. ')}}{{handleCopy.item}}</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+
+
+		<h5 localize>Teletype Address</h5>
+	<div class="default">
+		<div class="col-sm-12 padding-left-none" ng-repeat="item in addAnotherTeletypes">
+			<div class="col-sm-3">
+				<div>
+					<span></span>
+					<input autofocus="true" class="form-control"  ng-class="{'TX': $index == 0}" type="text" id="teleType{{$index}}" data-title="" data-toggle="tooltip" error-validate="" maxlength="7" size="16"
+					key-listener validation-rule="teletypes7"
+					ng-model="WTR_RushBagsCreateRQ.TeletypeAddresses.TeletypeAddress[$index]" ng-disabled="(restrictionDis.indexOf('TELETYPEADDRESSES_TX')!=-1)"
+					tooltip="{{more['teleType' + $index]}}" ng-blur="checkValidateTeletype1($index)">
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-3 margin-top-10" ng-if="addAnotherTeletypes.length==1">
+					<div class="add-another margin-0" ng-click="addAnotherTeletype()">
+						<a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg"></i></a>
+						<span class="margin-top--2" localize>Add another teletype address</span>
+					</div>
+				</div>
+			<div class="col-sm-3" ng-if="($index) >0">
+				<div class="remove" ng-click="removeTeletype($index, addAnotherTeletypes.length)">
+				<a href=""><i class="fa fa-lg fa-minus-circle"></a></i><span localize>Remove</span>
+			</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="col-sm-4 margin-bottom-10" ng-if="addAnotherTeletypes.length >1" ng-class="{'add-another hide':addAnotherTeletypes.length===10}" >
+			<div class="add-another margin-0" ng-click="addAnotherTeletype()">
+				<a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg"></i></a>
+					<span class="margin-top--2" localize>Add another teletype address</span>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+</div>
+
+		<h5 ng-if="!(restriction.indexOf('COMMENTSONLOSS_RC')!=-1)||
+!(restriction.indexOf('REASONFORLOSS_RL')!=-1)||
+!(restriction.indexOf('FAULTSTATION_FS')!=-1)||
+!(restriction.indexOf('FAULTTERMINAL_FT')!=-1)" localize>Fault Information</h5>
+		<div class="default" >
+			<div ng-if="!(restriction.indexOf('COMMENTSONLOSS_RC')!=-1)||
+!(restriction.indexOf('REASONFORLOSS_RL')!=-1)||
+!(restriction.indexOf('FAULTSTATION_FS')!=-1)||
+!(restriction.indexOf('FAULTTERMINAL_FT')!=-1)">
+			<div class="col-sm-12" ng-if="!(restriction.indexOf('COMMENTSONLOSS_RC')!=-1)">
+				<label for="deliveryInfo" localize>Comments on Loss</label>
+				<div>
+					<span></span>
+				<input class="form-control RC" value="" type="text" id="deliveryInfo"
+				validation-rule="freeForm1-58" error-validate="" data-toggle="tooltip" data-title="" maxlength="58"
+				ng-model="WTR_RushBagsCreateRQ.LossComments" ng-disabled="((restrictionDis.indexOf('COMMENTSONLOSS_RC')!=-1))" ng-focus="isFocus2" ng-focus-lost="loseFocus()">
+			</div>
+		</div>
+
+			<div class="col-sm-3" ng-if="!(restriction.indexOf('REASONFORLOSS_RL')!=-1)">
+				<label for="" localize>Reason for Loss</label>
+				<div class="position-static reasonForLossList">
+					<span></span>
+				<input type="text" class="form-control RL" maxlength="2" id="ReasonForLoss"
+				validation-rule="RushLossCode" key-listener error-validate="" typeahead-focus-first ='true' data-toggle="tooltip" data-title=""
+				typeahead-focus typeahead-focus-on-select ="false" ng-keydown="keyIsPressed($event);closeTypeAhedPopup($event,'deliveryInfo','faultStation');"
+				typeahead="state.code as state.code +' '+ state.name for state in lossCode | filter:$viewValue:stationSearchPreferance | orderBy:'code'" autocomplete="off" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);handleSmartSearchErrorBorder('ReasonForLoss');" typeaheadscroll type-ahead-init-scroll
+				ng-model="WTR_RushBagsCreateRQ.LossReasonCode" ng-disabled="((restrictionDis.indexOf('REASONFORLOSS_RL')!=-1))" ng-blur="closeTypeAhedPopup($event,'deliveryInfo','faultStation');">
+			</div>
+		</div>
+
+			<div class="col-sm-3" ng-if="!(restriction.indexOf('FAULTSTATION_FS')!=-1)">
+				<label for="faultStation" localize>Fault Station</label>
+				<div class="position-static" ng-class="{'input-group required':(WTR_RushBagsCreateRQ.FaultTerminal ||(ids.indexOf('FT')!=-1) ||(ids.indexOf('FS')!=-1)) &&((!WTR_RushBagsCreateRQ.FaultStationCode)  &&(!(ids.indexOf('FS')!=-1)))}">
+					<span ng-class="{'input-group-addon mandatory-bar':(WTR_RushBagsCreateRQ.FaultTerminal ||(ids.indexOf('FT')!=-1) ||(ids.indexOf('FS')!=-1)) &&((!WTR_RushBagsCreateRQ.FaultStationCode)  &&(!(ids.indexOf('FS')!=-1)))}"></span>
+				<input type="text" class="form-control FS" ng-model="WTR_RushBagsCreateRQ.FaultStationCode" validation-rule="from-station"
+				typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);groundIconFlightDisplay($index);handleSmartSearchErrorBorder('faultStation');" typeahead-select-on-exact ="true" typeahead-focus-first ="true" id="faultStation"
+				typeahead="state.code as formTypeaheadResult(state) for state in airportsInfoSource | filter:$viewValue:stationSearchPreferance | orderBy:'code' | limitTo:20" autocomplete="off" typeaheadscroll type-ahead-init-scroll type-ahead-exact-match ng-blur="validateStationInTrainingMode();faultStationRestriction(WTR_RushBagsCreateRQ.FaultStationCode,'faultStation','rush');"
+				ng-required="(WTR_RushBagsCreateRQ.FaultTerminal ||(ids.indexOf('FT')!=-1) ||(ids.indexOf('FS')!=-1)) &&((!WTR_RushBagsCreateRQ.FaultStationCode)  &&(!(ids.indexOf('FS')!=-1)))" ng-keypress="disable_specialChars($event)" error-validate="" data-toggle="tooltip" maxlength="3" tooltip="{{faultStationrushBag}}"
+				style="border-bottom-right-radius: 4px;border-top-right-radius: 4px;" ng-disabled="((restrictionDis.indexOf('FAULTSTATION_FS')!=-1))">
+			</div></div>
+
+			<div class="col-sm-3" ng-if="!(restriction.indexOf('FAULT_AIRLINE')!=-1)">
+					<label for="faultAirline">Fault Airline</label>
+					<div class="position-static" ng-class="{'input-group required':(ids.indexOf('FA')!=-1)}">
+						<span ng-class="{'input-group-addon mandatory-bar':(ids.indexOf('FA')!=-1)}"></span>
+					<input type="text" class="form-control" id="faultAirline" ng-model="WTR_RushBagsCreateRQ.FaultAirline" maxlength="3"  validation-rule="airline-char" data-toggle="tooltip" data-title=""  value="" autocomplete="off" typeaheadscroll type-ahead-init-scroll class="form-control" ng-keypress="disable_specialCharsWithSpace($event)" error-validate="" typeahead="state.code as state.code +' - '+ state.name for state in airlinesInfo | filter:$viewValue:stationSearchPreferance | limitTo:20 | orderBy:'code'"  typeahead-select-on-exact ="true"
+					ng-blur="validatingFaultAirline();" ng-disabled="((restrictionDis.indexOf('FAULT_AIRLINE')!=-1))" ng-required="(ids.indexOf('FA')!=-1)" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);handleSmartSearchErrorBorder('faultAirline');">
+				</div>
+			</div>
+
+			<div  class="col-sm-3" ng-if="!(restriction.indexOf('FAULTTERMINAL_FT')!=-1)">
+				<label for="" localize>Fault Terminal</label>
+				<div class="position-static">
+				<span></span>
+				<input type="text" 	data-toggle="tooltip" validation-rule="Fault-Terminal" class="form-control FT" ng-model="WTR_RushBagsCreateRQ.FaultTerminal"
+				 maxlength="2" error-validate="" data-toggle="tooltip" id="faultTerminal" ng-disabled="((restrictionDis.indexOf('FAULTTERMINAL_FT')!=-1))">
+			</div>
+		</div>
+</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<h5 ng-if="!(restriction.indexOf('SUPPLEMENTARYINFORMATION_SI')!=-1)" localize>Supplementary Information</h5>
+		<div class="default">
+
+			<div  ng-if="!(restriction.indexOf('SUPPLEMENTARYINFORMATION_SI')!=-1)">
+				<div class="padding-left-none">
+					<div class="col-sm-12">
+					<div>
+				<span></span>
+				<input class="form-control SI" value="" type="text" id="suppInfo"
+				validation-rule="freeForm1-58" maxlength="58" size="58" error-validate="" data-toggle="tooltip" data-title=""
+				ng-model="WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[0]" ng-focus="isFocus3" ng-focus-lost="loseFocus()" ng-disabled="((restrictionDis.indexOf('SUPPLEMENTARYINFORMATION_SI')!=-1))">
+						</div>
+			</div>
+		</div>
+
+
+			<div ng-if="!(restriction.indexOf('SUPPLEMENTARYINFORMATION_SI')!=-1)">
+				<div class="col-sm-12">
+					<div>
+				<span></span>
+				<input class="form-control" value="" type="text" id="suppInfo2"
+				validation-rule="freeForm1-58" maxlength="58" size="58" error-validate="" data-toggle="tooltip" data-title=""
+				ng-model="WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[1]" ng-disabled="((restrictionDis.indexOf('SUPPLEMENTARYINFORMATION_SI')!=-1))">
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="!(restriction.indexOf('SUPPLEMENTARYINFORMATION_SI')!=-1)">
+			<div class="col-sm-12">
+				<div>
+			<span></span>
+			<input class="form-control" value="" type="text" id="suppInfo3"
+			validation-rule="freeForm1-58" maxlength="58" size="58" error-validate="" data-toggle="tooltip" data-title=""
+			ng-model="WTR_RushBagsCreateRQ.SupplimentalInfo.TextLine[2]" ng-disabled="((restrictionDis.indexOf('SUPPLEMENTARYINFORMATION_SI')!=-1))">
+			</div>
+		</div>
+	</div>
+		<div class="clearfix"></div>
+		</div>
+</div>
+		<h5 ng-if="!(restriction.indexOf('TYPEOFRELATEDFILE_XR')!=-1) || !(restriction.indexOf('FILEREFERENCENUMBER')!=-1)" localize>Related File</h5>
+		<div class="default">
+			<div ng-if="!(restriction.indexOf('TYPEOFRELATEDFILE_XR')!=-1) || !(restriction.indexOf('FILEREFERENCENUMBER')!=-1)">
+			<div class="col-sm-3 col-md-3 col-lg-3" ng-if="!(restriction.indexOf('TYPEOFRELATEDFILE_XR')!=-1)">
+				<label for="handledAirline" localize>File Type</label>
+				<div class="dropdown"
+				 ng-class="{'mandatory':(WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType || WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference ||(ids.indexOf('XR')!=-1))}">
+			<span ng-class="{'input-group-addon mandatory-bar':(WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType || WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference || (ids.indexOf('XR')!=-1))}"></span>
+
+				<button prevent-closing-dropdown class="btn btn-default form-control dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="actionFileArea" ng-disabled="((restrictionDis.indexOf('TYPEOFRELATEDFILE_XR')!=-1))" ng-focus="isFocus4"   updatevalue="{{WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType}}"	ng-required="(WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType || WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference || (ids.indexOf('XR')!=-1))">
+					<span ng-model="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType" ng-if="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType">{{RushBag.fileType}}</span>
+					<span localize ng-model="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType" ng-if="!WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType">Select File Type</span>
+					<i class="fa fa-chevron-down pull-right"></i>
+				</button>
+
+				<ul class="dropdown-menu z-index-5">
+				<li class="dropdown-header" ng-class="{'selected': !WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType}" ng-click="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType='';RushBag.fileType=''"><a href="">Select File Type</a></li>
+				<li ng-class="{'selected': fileType.code == WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType}" ng-repeat="fileType in FileTypeForRush"  ng-click="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType=fileType.code;RushBag.fileType=fileType.name"><a href="">{{fileType.name}}</a></li>
+			</ul>
+
+					<!-- <select class="col-sm-12 col-md-12 col-lg-12 form-control btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+					ng-model="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType" aria-haspopup="true" ng-focus="isFocus4"
+					ng-required="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType || WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference"
+					ng-class="{'removeLeftBorderRadius':WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType || WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference}"
+					ng-options="FileType.code as FileType.name for FileType in FileTypeForRush"
+					aria-expanded="true" id="handledAirline">
+						<span localize>Select file type</span> <i class="fa fa-chevron-down pull-right"></i>
+						<option value='' localize>Select file type</option>
+					</select> -->
+
+		</div>
+		</div>
+
+			<div class="col-sm-6" ng-if="!(restriction.indexOf('FILEREFERENCENUMBER')!=-1)">
+				<label for="" localize>File Reference</label>
+				<div ng-class="{'input-group required':(WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType  || WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference|| (ids.indexOf('XR')!=-1))}">
+				<span ng-class="{'input-group-addon mandatory-bar':(WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType  ||WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference|| (ids.indexOf('XR')!=-1))}"></span>
+				<input  type="text"
+				class="form-control XR" id="Filereference" validation-rule="refrenceNumber" maxlength="11" size="11" error-validate="" data-toggle="tooltip" data-title=""
+				ng-blur="validateStationInFileReference()"
+				tooltip="{{rushRefNumber}}"
+				ng-required="(WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordType  || WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference|| (ids.indexOf('XR')!=-1))"
+				ng-model="WTR_RushBagsCreateRQ.CrossReferenceRecord.RecordReference" ng-disabled="((restrictionDis.indexOf('FILEREFERENCENUMBER')!=-1))">
+			</div></div>
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+		<section class="form-actions" style="padding-top:25px;padding-bottom: 25px;">
+			<div class="col-sm-4 margin-top--5">
+				<a  href="" ng-class="{'active-tab':isSet(2)}" ng-click="setTab(2)" class="pull-left link-primary previous blue"> <i class="fa fa-chevron-left fa-lg"></i> <span localize>Previous</span></a>
+			</div>
+			<div class="col-sm-4">
+				<button href="" class="btn btn-primary btn-block btn-createRush" ng-disabled="(exclamationVariable.value1 || exclamationVariable.value2 || exclamationVariable.value3  || !headerModelsFilled)" ng-click="generateRushTagNumbers()">
+					 <i class="fa fa-plus fa-lg"></i> <span localize>Create</span>
+				</button>
+			</div>
+			<div class="col-sm-4 margin-top--5">
+				<a  href="" ng-class="{'active-tab':isSet(4)}" ng-click="setTab(4);" class="pull-right link-primary next blue" localize>Next <i class="fa fa-chevron-right fa-lg"></i></a>
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="clearfix"></div>
+		</section>
+
+		<div class="clearfix"></div>
+</div>
+</div>

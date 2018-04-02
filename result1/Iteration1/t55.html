@@ -1,0 +1,115 @@
+<style>
+
+  .timeout-div {display: block;}
+  .blackBg.modal-title {color:white!important;}
+  .blackBg.modal-header{background: #378FBD;background-color: #378FBD!important;}
+  .blackBg.fade {opacity:1;}
+  .blackBg {background-color: rgba(0,0,0,0.65);}
+    .col-md-12 { min-height: 0px !important; }
+</style>
+
+<div ng-init="initt();getAirlineMandatory();roleAuthorize()" id="landingPageWTRUI">
+  <div ng-controller="shortController">
+    <div ng-init="newfn()">
+<div ng-controller="mouseMove" session-time-out>
+
+<div class="clearit"></div>
+<div>
+  <shortcut-help></shortcut-help>
+  <a href="" id="OpenShortCutModal"data-toggle="modal" data-target="#shortCutHelpModal" class="hide"><span localize>shortcut</span></a>
+</div>
+<div ui-view></div>
+<!--container -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="modal fade blackBg timeout-div" id="timeout" ng-show="timeOut" style="z-index: 99999;" ng-keyup="cancelPopup($event)">
+        <div class="modal-dialog" style="margin-top:8%;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <a href="" class="pull-right" tab-btn-focus id="sessionTimeOutId" data-dismiss="modal" aria-label="Close" ng-click="cancel()" shift-tab-focus><i class="close fa fa-times"></i></a>
+              <h4 class="modal-title" ng-bind="sid[0].warning"></h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center margin-top-20" ng-bind="sid[0].inactivity"></p>
+              <h3 ="counter" id="counter" style="text-align:center;">5 Minutes 0 seconds</h3>
+              <p class="text-center margin-top-20" ng-bind="sid[0].click"></p>
+            </div>
+          </div>
+<!-- /.modal-content -->
+        </div>
+<!-- /.modal-dialog -->
+      </div>
+<!-- /.modal -->
+    </div>
+  </div>
+<!--ends row -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="modal fade blackBg" id="signout" ng-hide="signOut" style="display:none;z-index: 99999;" ng-keyup="gotoLogin($event)">
+        <div class="modal-dialog" style="margin-top:6%;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button aria-label="Close" class="close" ng-click = "loginBtn()" data-dismiss="modal" type="button" shift-tab-focus>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" ng-bind="sid[0].timeout"></h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center margin-top-20">
+                <div class="text-center" ng-bind="sid[0].logedout"></div>
+                <div>&nbsp;</div>
+                <div class="text-center" ng-bind="sid[0].donotStay"></div>
+
+              </p>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-6">
+                    <a class="btn btn-primary btn-lg btn-block margin-top-20 margin-bottom-30" data-dismiss="modal" id="sessionLoginId" ng-click="loginBtn()" href="" tab-btn-focus ng-bind="sid[0].login"></a>
+                  </div>
+                  <div class="col-sm-3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<!-- /.modal-content -->
+        </div>
+<!-- /.modal-dialog -->
+      </div>
+<!-- /.modal -->
+    </div>
+  </div>
+<!-- ends row-->
+</div>
+
+  <!-- Pop up with warning message for training in offline mode :  -->
+
+  <div class="modal fade ng-scope in blackBg" id="trainingModeOffline" ng-show="bothTrainingOffline" tabindex="-1" role="dialog" style="display: block; padding-right: 17px;">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <a  style="display:none;" href="" class="pull-right" data-dismiss="modal" shift-tab-focus="" aria-label="Close"><i class="close fa fa-times"></i></a>
+                  <h4 localize="" class="modal-title">Warning</h4>
+              </div>
+              <div class="modal-body">
+                  <span localize="">System is now offline. Training mode is not available in offline mode. You will now be logged off. Retry later.</span>
+              </div>
+              <div class="modal-footer">
+                  <div class="col-sm-4 col-sm-offset-4">
+                      <button class="btn btn-primary btn-block submit" id="trainingOkBtn" ng-click="loginBtn()" data-toggle="modal" data-dismiss="modal" tab-btn-focus="" shift-tab-focus>OK</button>
+                  </div>
+                  <div class="col-sm-4" style="display:none;">
+                      <a href="" class="pull-right margin-top-5 blue" tab-btn-focus="" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle"></i> <span localize="">Cancel</span></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- Pop up with warning message for training in offline mode ends   : -->
+
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,7429 @@
+{
+
+   "citynames":[
+
+"AAA Anaa",
+
+"AAE Annaba",
+
+"AAL Aalborg",
+
+"AAM Mala Mala",
+
+"AAN Al Ain",
+
+"AAQ Anapa",
+
+"AAR Aarhus Tirstrup",
+
+"AAT Altay",
+
+"AAX Araxa",
+
+"AAY Al Ghaydah",
+
+"ABA Abakan",
+
+"ABC Albacete",
+
+"ABD Abadan",
+
+"ABE Allentown",
+
+"ABI Abilene",
+
+"ABJ Abidjan",
+
+"ABK Kabri Dar",
+
+"ABL Ambler",
+
+"ABM Bamaga",
+
+"ABQ Albuquerque",
+
+"ABR Aberdeen",
+
+"ABS Abu Simbel",
+
+"ABT AlBaha",
+
+"ABV Abuja",
+
+"ABX Albury",
+
+"ABY Albany Dougherty County",
+
+"ABZ Aberdeen",
+
+"ACA Acapulco",
+
+"ACC Accra",
+
+"ACE Lanzarote",
+
+"ACH Altenrhein",
+
+"ACI Alderney",
+
+"ACK Nantucket",
+
+"ACP Sahand",
+
+"ACS Achinsk",
+
+"ACT Waco",
+
+"ACU Achutupo",
+
+"ACV Arcata/Eureka",
+
+"ACX Xingyi",
+
+"ACZ Zabol",
+
+"ADA Adana",
+
+"ADB Izmir Adnan Menderes",
+
+"ADD Addis Ababa",
+
+"ADE Aden",
+
+"ADF Adiyaman",
+
+"ADJ Amman CivilMarka",
+
+"ADK Adak Island",
+
+"ADL Adelaide",
+
+"ADQ Kodiak",
+
+"ADU Ardabil",
+
+"ADX St Andrews",
+
+"ADZ San Andres Island",
+
+"AEB Baise",
+
+"AEH Abecher",
+
+"AEP Buenos Aires",
+
+"AER Sochi",
+
+"AES Aalesund",
+
+"AET Allakaket",
+
+"AEX Alexandria",
+
+"AEY Akureyri",
+
+"AFA San Rafael",
+
+"AFL Alta Floresta",
+
+"AFS Zarafshan",
+
+"AFT Afutara",
+
+"AFW Dallas/Fort Worth Alliance",
+
+"AFZ Sabzevar",
+
+"AGA Agadir",
+
+"AGF Agen",
+
+"AGH Angelholm/Helsingborg Angelholm",
+
+"AGL Wanigela",
+
+"AGM Tasiilaq",
+
+"AGN Angoon",
+
+"AGP Malaga",
+
+"AGR Agra",
+
+"AGS Augusta Bush Field",
+
+"AGT Ciudad del Este",
+
+"AGU Aguascalientes",
+
+"AGV Acarigua",
+
+"AGX Agatti Island",
+
+"AHB Abha",
+
+"AHE Ahe",
+
+"AHN Athens",
+
+"AHO Alghero",
+
+"AHS Ahuas",
+
+"AIA Alliance",
+
+"AIN Wainwright",
+
+"AIT Aitutaki",
+
+"AIU Atiu Island",
+
+"AJA Ajaccio",
+
+"AJF Jouf",
+
+"AJI Agri",
+
+"AJL Aizawl",
+
+"AJN Anjouan",
+
+"AJR Arvidsjaur",
+
+"AJU Aracaju",
+
+"AKA Ankang",
+
+"AKB Atka",
+
+"AKF Kufrah",
+
+"AKH Al Kharj",
+
+"AKI Akiak",
+
+"AKJ Asahikawa",
+
+"AKK Akhiok",
+
+"AKL Auckland",
+
+"AKN King Salmon",
+
+"AKP Anaktuvuk Pass",
+
+"AKS Auki",
+
+"AKU Aksu",
+
+"AKV Akulivik",
+
+"AKX Aktyubinsk",
+
+"AKY Sittwe",
+
+"ALA Almaty",
+
+"ALB Albany",
+
+"ALC Alicante",
+
+"ALF Alta",
+
+"ALG Algiers",
+
+"ALH Albany",
+
+"ALM Alamogordo",
+
+"ALO Waterloo",
+
+"ALP Aleppo",
+
+"ALS Alamosa",
+
+"ALW Walla Walla",
+
+"ALY Alexandria",
+
+"AMA Amarillo",
+
+"AMD Ahmedabad",
+
+"AMH Arba Mintch",
+
+"AMI Mataram",
+
+"AMM Amman",
+
+"AMQ Ambon",
+
+"AMS Amsterdam",
+
+"AMV Amderma",
+
+"AMY Ambatomainty",
+
+"ANC Anchorage",
+
+"ANE Angers Marce",
+
+"ANF Antofagasta",
+
+"ANG Angouleme",
+
+"ANI Aniak",
+
+"ANM Antalaha",
+
+"ANR AntwerpBrussels North",
+
+"ANU Antigua",
+
+"ANV Anvik",
+
+"ANX Andenes",
+
+"AOC Altenburg",
+
+"AOE Eskisehir",
+
+"AOI Ancona",
+
+"AOJ Aomori",
+
+"AOK Karpathos",
+
+"AOO Altoona",
+
+"AOR Alor Setar",
+
+"APA Denver Arapahoe",
+
+"APF Naples",
+
+"APK Apataki",
+
+"APL Nampula",
+
+"APN Alpena",
+
+"APO Apartado",
+
+"APW Apia Faleolo",
+
+"AQG Anqing",
+
+"AQI Qaisumah",
+
+"AQJ Aqaba",
+
+"AQP Arequipa",
+
+"ARC Arctic Village",
+
+"ARD Alor Island",
+
+"ARH Arkhangelsk",
+
+"ARI Arica",
+
+"ARK Arusha",
+
+"ARM Armidale",
+
+"ARN Stockholm Arlanda",
+
+"ART Watertown",
+
+"ARU Aracatuba",
+
+"ARV Minocqua",
+
+"ARW Arad",
+
+"ASA Assab",
+
+"ASB Ashgabat",
+
+"ASD Andros Town",
+
+"ASE Aspen",
+
+"ASF Astrakhan",
+
+"ASI Georgetown",
+
+"ASJ Amami O Shima",
+
+"ASM Asmara",
+
+"ASO Asosa",
+
+"ASP Alice Springs",
+
+"ASR Kayseri",
+
+"ASU Asuncion",
+
+"ASV Amboseli",
+
+"ASW Aswan",
+
+"ATB Atbara",
+
+"ATC Arthur's Town",
+
+"ATD Atoifi",
+
+"ATH Athens",
+
+"ATK Atqasuk",
+
+"ATL Atlanta",
+
+"ACY Atlantic",
+
+"ATM Altamira",
+
+"ATQ Amritsar",
+
+"ATT Atmautluak",
+
+"ATW Appleton",
+
+"ATY Watertown",
+
+"ATZ Assiut",
+
+"AUA Aruba",
+
+"AUC Arauca",
+
+"AUG Augusta",
+
+"AUH Abu Dhabi",
+
+"AUK Alakanuk",
+
+"AUQ Atuona",
+
+"AUR Aurillac",
+
+"AUS AustinBergstrom",
+
+"AUX Araguaina",
+
+"AUY Aneityum",
+
+"AVL Asheville",
+
+"AVN Avignon Caumont",
+
+"AVP WilkesBarre Scranton",
+
+"AVU Avu Avu",
+
+"AVV Melbourne",
+
+"AWB Awaba",
+
+"AWD Aniwa",
+
+"AWZ Ahwaz",
+
+"AXA Anguilla",
+
+"AXD Alexandroupolis",
+
+"AXM Armenia",
+
+"AXP Spring Point",
+
+"AXR Arutua",
+
+"AXT Akita",
+
+"AXU Axum",
+
+"AYQ Ayers Rock",
+
+"AYT Antalya",
+
+"AZA Phoenix Williams",
+
+"AZD Yazd",
+
+"AZN Andizhan",
+
+"AZO Kalamazoo",
+
+"AZR Adrar",
+
+"AZS Samana",
+
+"BAG Baguio",
+
+"BAH Bahrain",
+
+"BAL Batman",
+
+"BAQ Barranquilla",
+
+"BAS Balalae",
+
+"BAU Bauru",
+
+"BAV Baotou",
+
+"BAX Barnaul",
+
+"BAY Baia Mare",
+
+"BBA Balmaceda",
+
+"BBB Municipal",
+
+"BBI Bhubaneswar",
+
+"BBK Kasane",
+
+"BBN Bario",
+
+"BBO Berbera",
+
+"BBQ Barbuda",
+
+"BBS Blackbushe",
+
+"BBU Bucharest",
+
+"BCA Baracoa",
+
+"BCD Bacolod",
+
+"BCI Barcaldine",
+
+"BCL Barra Colorado",
+
+"BCM Bacau",
+
+"BCN Barcelona",
+
+"BDA Bermuda",
+
+"BDB Bundaberg",
+
+"BDD Badu Island",
+
+"BDH Bandar Lengeh",
+
+"BDJ Banjarmasin",
+
+"BDL Hartford Bradley",
+
+"BDO Bandung",
+
+"BDP Bhadrapur",
+
+"BDQ Vadodara",
+
+"BDR Bridgeport",
+
+"BDS Brindisi",
+
+"BDU Bardufoss",
+
+"BEB Benbecula",
+
+"BEG Belgrade",
+
+"BEL Belem",
+
+"BEN Benghazi",
+
+"BES Brest",
+
+"BET Bethel",
+
+"BEU Bedourie",
+
+"BEW Beira",
+
+"BEY Beirut",
+
+"BFD Bradford",
+
+"BFE Bielefeld",
+
+"BFF Scottsbluff",
+
+"BFI Seattle Boeing Field",
+
+"BFL Bakersfield",
+
+"BFM Mobile Aerospace",
+
+"BFN Bloemfontein",
+
+"BFQ Bahia Pinas",
+
+"BFS Belfast",
+
+"BFV Buri Ram",
+
+"BGA Bucaramanga",
+
+"BGF Bangui",
+
+"BGI Barbados",
+
+"BGM Binghamton",
+
+"BGO Bergen",
+
+"BGR Bangor",
+
+"BGW Baghdad",
+
+"BGY Milan Orio al Serio",
+
+"BHB Bar Harbor",
+
+"BHD Belfast George",
+
+"BHE Blenheim",
+
+"BHG Brus Laguna",
+
+"BHH Bisha",
+
+"BHI Bahia Blanca",
+
+"BHJ Bhuj",
+
+"BHK Bukhara",
+
+"BHM Birmingham",
+
+"BHO Bhopal",
+
+"BHQ Broken Hill",
+
+"BHR Bharatpur",
+
+"BHS Bathurst",
+
+"BHU Bhavnagar",
+
+"BHV Bahawalpur",
+
+"BHX Birmingham",
+
+"BHY Beihai",
+
+"BIA Bastia",
+
+"BID Block Island",
+
+"BIH Bishop",
+
+"BII Bikini Atoll",
+
+"BIK Biak",
+
+"BIL Billings",
+
+"BIM Bimini",
+
+"BIO Bilbao",
+
+"BIQ Biarritz",
+
+"BIR Biratnagar",
+
+"BIS Bismarck",
+
+"BJA Bejaia",
+
+"BJB Bojnord",
+
+"BJF Batsfjord",
+
+"BJI Bemidji",
+
+"BJL Banjul",
+
+"BJM Bujumbura",
+
+"BJR Bahar Dar",
+
+"BJV Bodrum Milas",
+
+"BJW Bajawa",
+
+"BJX Leon/Guanajuato",
+
+"BJZ Badajoz",
+
+"BKA Moscow Bykovo",
+
+"BKC Buckland",
+
+"BKI Kota Kinabalu",
+
+"BKK Bangkok",
+
+"BKL Cleveland Burke Lakefront",
+
+"BKM Bakalalan",
+
+"BKO Bamako",
+
+"BKQ Blackall",
+
+"BKS Bengkulu",
+
+"BKW Beckley",
+
+"BKY Bukavu",
+
+"BLA Barcelona",
+
+"BLE Borlange/Falun",
+
+"BLF Bluefield",
+
+"BLI Bellingham",
+
+"BLJ Batna",
+
+"BLK Blackpool",
+
+"BLL Billund",
+
+"BLQ Bologna",
+
+"BLR Bangalore",
+
+"BLT Blackwater",
+
+"BLV Belleville",
+
+"BLZ Blantyre",
+
+"BMA Stockholm",
+
+"BMD Belo",
+
+"BME Broome",
+
+"BMI BloomingtonNormal",
+
+"BMK Borkum",
+
+"BMO Bhamo",
+
+"BMU Bima",
+
+"BMV Ban Me Thuot",
+
+"BMW Bordj Badji Mokhtar",
+
+"BMY Belep Island",
+
+"BNA Nashville",
+
+"BND Bandar Abbas",
+
+"BNE Brisbane",
+
+"BNI Benin City",
+
+"BNK Ballina",
+
+"BNN Bronnoysund",
+
+"BNS Barinas",
+
+"BNX Banja Luka",
+
+"BNY Bellona",
+
+"BOB Bora Bora",
+
+"BOC Bocas Del Toro",
+
+"BOD Bordeaux",
+
+"BOG Bogota",
+
+"BOH Bournemouth",
+
+"BOI Boise",
+
+"BOJ Bourgas",
+
+"BOM Mumbai",
+
+"BON Bonaire",
+
+"BOO Bodo",
+
+"BOS Boston",
+
+"BOW Bartow",
+
+"BOY Bobo Dioulasso",
+
+"BPN Balikpapan",
+
+"BPS Porto Seguro",
+
+"BPT Beaumont",
+
+"BPX Bangda",
+
+"BPY Besalampy",
+
+"BQA Baler",
+
+"BQK Brunswick Glynco",
+
+"BQL Boulia",
+
+"BQN Aguadilla",
+
+"BQS Blagoveschensk",
+
+"BRA Barreiras",
+
+"BRC San Carlos de Bariloche",
+
+"BRD Brainerd",
+
+"BRE Bremen",
+
+"BRF Bradford",
+
+"BRI Bari",
+
+"BRK Bourke",
+
+"BRL Burlington",
+
+"BRM Barquisimeto",
+
+"BRN Berne Belp",
+
+"BRO Brownsville",
+
+"BRQ Brno Turany",
+
+"BRR Barra",
+
+"BRS Bristol",
+
+"BRU Brussels",
+
+"BRV Bremerhaven",
+
+"BRW Barrow Wiley",
+
+"BSA Bossaso",
+
+"BSB Brasilia",
+
+"BSC Bahia Solano",
+
+"BSD Baoshan",
+
+"BSG Bata",
+
+"BSH Brighton",
+
+"BSK Biskra",
+
+"BSL Basel",
+
+"BSO Basco",
+
+"BSR Basra",
+
+"BSX Bassein",
+
+"BTH Batam",
+
+"BTI Barter Island",
+
+"BTJ Banda Aceh",
+
+"BTK Bratsk",
+
+"BTL Battle Creek",
+
+"BTM Butte",
+
+"BTR Baton Rouge",
+
+"BTS Bratislava",
+
+"BTT Bettles",
+
+"BTU Bintulu",
+
+"BTV Burlington",
+
+"BTZ Bursa",
+
+"BUA Buka",
+
+"BUC Burketown",
+
+"BUD Budapest",
+
+"BUF Buffalo",
+
+"BUG 17 de Setembro",
+
+"BUL Bulolo",
+
+"BUN Buenaventura",
+
+"BUO Burao",
+
+"BUQ Bulawayo",
+
+"BUR Burbank",
+
+"BUS Batumi",
+
+"BUX Bunia",
+
+"BUZ Bushehr",
+
+"BVA Paris",
+
+"BVB Boa Vista",
+
+"BVC Boa Vista",
+
+"BVE BriveLaGaillarde",
+
+"BVG Berlevag",
+
+"BVH Vilhena",
+
+"BVI Birdsville",
+
+"BWA Bhairawa",
+
+"BWD Brownwood",
+
+"BWE Braunschweig",
+
+"BWF BarrowinFurness",
+
+"BWI Baltimore Washington",
+
+"BWK Bol",
+
+"BWN Bandar Seri Begawan",
+
+"BWT Burnie",
+
+"BWW Cayo Las Brujas",
+
+"BXR Bam",
+
+"BXU Butuan",
+
+"BXX Borama",
+
+"BYM Bayamo",
+
+"BYN Bayankhongor",
+
+"BZE Belize City",
+
+"BZG Bydgoszcz",
+
+"BZK Briansk",
+
+"BZL Barisal",
+
+"BZN Bozeman",
+
+"BZO Bolzano/Bozen",
+
+"BZR Beziers",
+
+"BZV Brazzaville",
+
+"BZZ Brize Norton",
+
+"CAB Cabinda",
+
+"CAC Cascavel",
+
+"CAD Cadillac",
+
+"CAE Columbia",
+
+"CAG Cagliari",
+
+"CAH Ca Mau",
+
+"CAI Cairo",
+
+"CAK Akron/Canton",
+
+"CAL Campbeltown",
+
+"CAN Guangzhou",
+
+"CAP Cap Haitien",
+
+"CAX Carlisle",
+
+"CAY Cayenne",
+
+"CAZ Cobar",
+
+"CBB Cochabamba",
+
+"CBE Cumberland",
+
+"CBG Cambridge",
+
+"CBH Bechar",
+
+"CBO Cotabato",
+
+"CBQ Calabar",
+
+"CBR Canberra",
+
+"CBT Catumbela",
+
+"CCC Cayo Coco",
+
+"CCF Carcassonne",
+
+"CCJ Kozhikode",
+
+"CCK Cocos Islands",
+
+"CCM Criciuma",
+
+"CCP Concepcion",
+
+"CCS Caracas",
+
+"CCU Kolkata",
+
+"CCV Craig Cove",
+
+"CCZ Chub Cay",
+
+"CDB Cold Bay",
+
+"CDC Cedar City",
+
+"CDG Paris",
+
+"CDR Chadron",
+
+"CDV Cordova",
+
+"CDW Caldwell",
+
+"CEB Cebu",
+
+"CEC Crescent City",
+
+"CED Ceduna",
+
+"CEE Cherepovets",
+
+"CEG Chester",
+
+"CEI Chiang Rai",
+
+"CEK Chelyabinsk",
+
+"CEM Central",
+
+"CEN Ciudad Obregon",
+
+"CER Cherbourg",
+
+"CEZ Cortez",
+
+"CFC Cacador",
+
+"CFE ClermontFerrand",
+
+"CFG Cienfuegos",
+
+"CFK Chlef",
+
+"CFN Donegal",
+
+"CFR Caen",
+
+"CFS Coffs Harbour",
+
+"CFU Kerkyra",
+
+"CGA Craig",
+
+"CGB Cuiaba",
+
+"CGD Changde",
+
+"CGH Sao Paulo",
+
+"CGI Cape Girardeau",
+
+"CGK Jakarta",
+
+"CGN Cologne/Bonn",
+
+"CGO Zhengzhou",
+
+"CGP Chittagong",
+
+"CGQ Changchun",
+
+"CGR Campo Grande",
+
+"CGY Cagayan de Oro",
+
+"CHA Chattanooga",
+
+"CHC Christchurch",
+
+"CHG Chaoyang",
+
+"CHO Charlottesville",
+
+"CHQ Chania",
+
+"CHS Charleston",
+
+"CHT Chatham Island",
+
+"CHU Chuathbaluk",
+
+"CHX Changuinola",
+
+"CHY Choiseul Bay",
+
+"CIA Rome Ciampino",
+
+"CIC Chico",
+
+"CID Cedar Rapids",
+
+"CIF Chifeng",
+
+"CIH Changzhi",
+
+"CIJ Cobija",
+
+"CIK Chalkyitsik",
+
+"CIM Cimitarra",
+
+"CIP Chipata",
+
+"CIT Shimkent",
+
+"CIU Sault Ste Marie",
+
+"CIX Chiclayo",
+
+"CJA Cajamarca",
+
+"CJB Coimbatore",
+
+"CJC Calama",
+
+"CJJ Cheongju",
+
+"CJL Chitral",
+
+"CJS Ciudad Juarez",
+
+"CJU Jeju",
+
+"CKB Clarksburg",
+
+"CKD Crooked Creek",
+
+"CKG Chongqing",
+
+"CKH Chokurdah",
+
+"CKS Carajas",
+
+"CKX Chicken",
+
+"CKY Conakry",
+
+"CKZ Canakkale",
+
+"CLD San Diego Carlsbad",
+
+"CLE Cleveland Hopkins",
+
+"CLJ Cluj",
+
+"CLL College Station",
+
+"CLM Port Angeles",
+
+"CLO Cali",
+
+"CLP Clarks Point",
+
+"CLQ Colima",
+
+"CLT Charlotte",
+
+"CLY Calvi",
+
+"CMA Cunnamulla",
+
+"CMB Colombo Bandaranaike",
+
+"CME Ciudad Del Carmen",
+
+"CMF Chambery",
+
+"CMG Corumba",
+
+"CMH Columbus",
+
+"CMI Champaign",
+
+"CMN Casablanca",
+
+"CMU Kundiawa",
+
+"CMW Camaguey",
+
+"CMX Hancock",
+
+"CNB Coonamble",
+
+"CNC Coconut Island",
+
+"CND Constanta",
+
+"CNF Belo Horizonte",
+
+"CNJ Cloncurry",
+
+"CNM Carlsbad",
+
+"CNP Neerlerit Inaat",
+
+"CNQ Corrientes",
+
+"CNS Cairns",
+
+"CNX Chiang Mai",
+
+"CNY Moab",
+
+"COD Cody",
+
+"COK Kochi",
+
+"COL Coll",
+
+"COO Cotonou",
+
+"COQ Choibalsan",
+
+"COR Cordoba",
+
+"COS Colorado",
+
+"COU Columbia",
+
+"CPC San Martin de Los Andes",
+
+"CPD Coober Pedy",
+
+"CPE Campeche",
+
+"CPH Copenhagen",
+
+"CPO Copiapo",
+
+"CPQ Campinas",
+
+"CPR Casper",
+
+"CPT Cape Town",
+
+"CPV Campina Grande",
+
+"CPX Culebra",
+
+"CQD ShahreKord",
+
+"CQM Ciudad Real",
+
+"CRA Craiova",
+
+"CRD Comodoro Rivadavia",
+
+"CRI Crooked Island",
+
+"CRK Luzon Island",
+
+"CRL Brussels",
+
+"CRM Catarman",
+
+"CRP Corpus Christi",
+
+"CRW Charleston",
+
+"CSA Colonsay Island",
+
+"CSG Columbus",
+
+"CSH Solovetsky",
+
+"CSK Cap Skirring",
+
+"CSX Changsha",
+
+"CSY Cheboksary",
+
+"CTA Catania",
+
+"CTC Catamarca",
+
+"CTD Chitre",
+
+"CTE Carti",
+
+"CTG Cartagena",
+
+"CTL Charleville",
+
+"CTM Chetumal",
+
+"CTS Sapporo Chitose",
+
+"CTU Chengdu",
+
+"CUC Cucuta",
+
+"CUE Cuenca",
+
+"CUF Cuneo",
+
+"CUK Caye Caulker",
+
+"CUL Culiacan",
+
+"CUM Cumana",
+
+"CUN Cancun",
+
+"CUP Carupano",
+
+"CUR Curacao",
+
+"CUU Chihuahua",
+
+"CUZ Cuzco",
+
+"CVG Cincinnati",
+
+"CVM Ciudad Victoria",
+
+"CVN Clovis",
+
+"CVO Corvallis",
+
+"CVQ Carnarvon",
+
+"CVT Coventry",
+
+"CVU Corvo Island",
+
+"CWA Wausau Central Wisconsin",
+
+"CWB Curitiba Afonso Pena",
+
+"CWC Chernovtsy",
+
+"CWL Cardiff",
+
+"CXB Cox's Bazar",
+
+"CXJ Caxias Do Sul",
+
+"CXR Nha Trang",
+
+"CYB Cayman Brac",
+
+"CYI Chiayi",
+
+"CYO Cayo Largo del Sur",
+
+"CYP Calbayog",
+
+"CYS Cheyenne",
+
+"CYX Cherskiy",
+
+"CYZ Cauayan",
+
+"CZE Coro",
+
+"CZH Corozal",
+
+"CZJ Corazon de Jesus",
+
+"CZL Constantine",
+
+"CZM Cozumel",
+
+"CZN Chisana",
+
+"CZS Cruzeiro Do Sul",
+
+"CZU Corozal",
+
+"CZX Changzhou",
+
+"DAB Daytona Beach",
+
+"DAC Dhaka",
+
+"DAD Da Nang",
+
+"DAL Dallas",
+
+"DAM Damascus",
+
+"DAR Dar Es Salaam",
+
+"DAT Datong",
+
+"DAU Daru",
+
+"DAV David",
+
+"DAX Daxian",
+
+"DAY Dayton",
+
+"DBA Dalbandin",
+
+"DBO Dubbo",
+
+"DBQ Dubuque",
+
+"DBV Dubrovnik",
+
+"DCA Washington",
+
+"DCF Dominica",
+
+"DCM Castres",
+
+"DCN Derby",
+
+"DDC Dodge City",
+
+"DDG Dandong",
+
+"DEA Dera",
+
+"DEC Decatur",
+
+"DED Dehra Dun",
+
+"DEF Dezful",
+
+"DEL Delhi",
+
+"DEN Denver",
+
+"DEZ Deirezzor",
+
+"DFW Dallas/Fort Worth",
+
+"DGA Dangriga",
+
+"DGE Mudgee",
+
+"DGM Dongguan",
+
+"DGO Durango",
+
+"DGT Dumaguete",
+
+"DHM Dharamsala",
+
+"DHN Dothan",
+
+"DIB Dibrugarh",
+
+"DIE Antsiranana",
+
+"DIG Diqing",
+
+"DIK Dickinson",
+
+"DIL Dili",
+
+"DIN Dien Bien Phu",
+
+"DIR Dire Dawa",
+
+"DIU Diu",
+
+"DIY Diyarbakir",
+
+"DJB Jambi",
+
+"DJE Djerba",
+
+"DJG Djanet",
+
+"DJJ Jayapura",
+
+"DKR Dakar",
+
+"DLA Douala",
+
+"DLC Dalian",
+
+"DLG Dillingham",
+
+"DLH Duluth",
+
+"DLI Dalat",
+
+"DLM Dalaman",
+
+"DLU Dali City",
+
+"DLY Dillons Bay",
+
+"DLZ Dalanzadgad",
+
+"DMD Doomadgee Mission",
+
+"DME Moscow Domodedovo",
+
+"DMK Bangkok Don Mueang",
+
+"DMM Dammam",
+
+"DMU Dimapur",
+
+"DNA Okinawa",
+
+"DND Dundee",
+
+"DNH Dunhuang",
+
+"DNK Dnepropetrovsk",
+
+"DNR Dinard",
+
+"DNZ Denizli",
+
+"DOG Dongola",
+
+"DOH Doha",
+
+"DOK Donetsk",
+
+"DOL Deauville",
+
+"DOM Dominica Melville",
+
+"DOP Dolpa",
+
+"DOU Dourados",
+
+"DOY Dongying",
+
+"DPL Dipolog",
+
+"DPO Devonport",
+
+"DPS Denpasar Bali",
+
+"DRG Deering",
+
+"DRO Durango La Plata",
+
+"DRS Dresden",
+
+"DRT Del Rio",
+
+"DRW Darwin",
+
+"DSA Doncaster",
+
+"DSK Dera",
+
+"DSM Des Moines",
+
+"DSN Dongsheng",
+
+"DTE Daet",
+
+"DTM Dortmund",
+
+"DTW Detroit Wayne County",
+
+"DUB Dublin",
+
+"DUD Dunedin",
+
+"DUE Dundo",
+
+"DUJ Dubois",
+
+"DUQ Duncan",
+
+"DUR Durban",
+
+"DUS Dusseldorf",
+
+"DUT Dutch Harbor",
+
+"DVL Devils Lake",
+
+"DVO Davao",
+
+"DWB Soalala",
+
+"DWD Dawadmi",
+
+"DXB Dubai",
+
+"DYG Dayong",
+
+"DYR Anadyr",
+
+"DYU Dushanbe",
+
+"DZA Dzaoudzi",
+
+"DZN Zhezkazgan",
+
+"EAA Eagle",
+
+"EAE Emae",
+
+"EAL Kwajalein Atoll",
+
+"EAM Nejran",
+
+"EAR Kearney",
+
+"EAS San Sebastian",
+
+"EAT Wenatchee",
+
+"EAU Eau Claire",
+
+"EBA Elba Island",
+
+"EBB Entebbe/Kampala",
+
+"EBD El Obeid",
+
+"EBJ Esbjerg",
+
+"EBL Erbil",
+
+"ECN Ercan",
+
+"EDA Edna Bay",
+
+"EDI Edinburgh",
+
+"EDL Eldoret",
+
+"EDO Edremit/Korfez",
+
+"EDR Edward River",
+
+"EEK Eek",
+
+"EFL Kefallinia",
+
+"EGC Bergerac",
+
+"EGE Vail/Eagle County",
+
+"EGN Geneina",
+
+"EGO Belgorod",
+
+"EGS Egilsstadir",
+
+"EGV Eagle River",
+
+"EGX Egegik",
+
+"EIB Eisenach",
+
+"EIE Eniseysk",
+
+"EIK Eisk",
+
+"EIN Eindhoven",
+
+"EIS Beef Island",
+
+"EJA Barrancabermeja",
+
+"EJH Wedjh",
+
+"EKA Eureka",
+
+"EKO Elko",
+
+"ELC Elcho Island",
+
+"ELF El Fasher",
+
+"ELG El Golea",
+
+"ELH North Eleuthera",
+
+"ELI Elim",
+
+"ELM Elmira/Corning",
+
+"ELP El Paso",
+
+"ELQ Gassim",
+
+"ELS East London",
+
+"ELU El Oued",
+
+"ELV Elfin Cove",
+
+"ELY Ely",
+
+"EMA Nottingham",
+
+"EMD Emerald",
+
+"EME Emden",
+
+"EMK Emmonak",
+
+"ENA Kenai",
+
+"ENE Ende",
+
+"ENF Enontekio",
+
+"ENH Enshi",
+
+"ENS Enschede",
+
+"ENU Enugu",
+
+"ENW Kenosha",
+
+"ENY Yan'an",
+
+"EOH Medellin Enrique",
+
+"EOI Eday",
+
+"EOZ Elorza",
+
+"EPA El Palomar",
+
+"EPR Esperance",
+
+"EQS Esquel",
+
+"ERC Erzincan",
+
+"ERF Erfurt",
+
+"ERH Errachidia",
+
+"ERI Erie",
+
+"ERM Erechim",
+
+"ERR Errol",
+
+"ERS Windhoek Eros",
+
+"ERZ Erzurum",
+
+"ESB Ankara Esenboga",
+
+"ESC Escanaba",
+
+"ESD Eastsound",
+
+"ESH Shoreham",
+
+"ESM Esmeraldas",
+
+"ESR El Salvador",
+
+"ESS Essen",
+
+"ESU Essaouira",
+
+"ETH Elat",
+
+"ETZ Metz/Nancy",
+
+"EUA Eua",
+
+"EUG Eugene",
+
+"EUM Neumunster",
+
+"EUN Laayoune",
+
+"EUX St Eustatius",
+
+"EVE HarstadNarvik",
+
+"EVG Sveg",
+
+"EVN Yerevan",
+
+"EVV Evansville",
+
+"EWB New Bedford",
+
+"EWN New Bern",
+
+"EWR Newark Liberty",
+
+"EXT Exeter",
+
+"EYK Beloyarsky",
+
+"EYP El Yopal",
+
+"EYW Key West",
+
+"EZE Buenos Aires",
+
+"EZS Elazig",
+
+"EZV Berezovo",
+
+"FAB Farnborough",
+
+"FAC Faaite",
+
+"FAE Faroe Islands",
+
+"FAI Fairbanks",
+
+"FAO Faro",
+
+"FAR Fargo",
+
+"FAT Fresno Yosemite",
+
+"FAV Fakarava",
+
+"FAY Fayetteville",
+
+"FBM Lubumbashi",
+
+"FCA Kalispell",
+
+"FCN Cuxhaven",
+
+"FCO Rome Fiumicino",
+
+"FDE Forde",
+
+"FDF Fort de France",
+
+"FDH Friedrichshafen",
+
+"FDY Findlay",
+
+"FEG Fergana",
+
+"FEN Fernando De Noronha",
+
+"FEZ Fez",
+
+"FGU Fangatau",
+
+"FHZ Fakahina",
+
+"FIH Kinshasa N'Djili",
+
+"FJR AlFujairah",
+
+"FKB Karlsruhe/Baden Baden",
+
+"FKI Kisangani",
+
+"FKL Franklin Chess Lamberton",
+
+"FKQ Fak Fak",
+
+"FKS Fukushima",
+
+"FLA Florencia",
+
+"FLG Grand Canyon",
+
+"FLL Fort Lauderdale",
+
+"FLN Florianopolis",
+
+"FLO Florence Dillon County",
+
+"FLR Florence Peretola",
+
+"FLW Flores Island",
+
+"FMA Formosa",
+
+"FMM Memmingen",
+
+"FMN Farmington",
+
+"FMO Munster",
+
+"FMY Fort Myers Page Field",
+
+"FNA Freetown Lungi",
+
+"FNC Funchal",
+
+"FNI Nimes",
+
+"FNJ Pyongyang",
+
+"FNL Fort Collins",
+
+"FNT Flint",
+
+"FOC Fuzhou",
+
+"FOD Fort Dodge",
+
+"FOG Foggia",
+
+"FOR Fortaleza",
+
+"FPO Freeport",
+
+"FRA Frankfurt",
+
+"FRC Franca",
+
+"FRD Friday Harbor",
+
+"FRE Fera Island",
+
+"FRL Forli",
+
+"FRO Floro",
+
+"FRS Flores",
+
+"FRU Bishkek",
+
+"FRW Francistown",
+
+"FSC Figari",
+
+"FSD Sioux Falls",
+
+"FSM Fort Smith",
+
+"FSP St Pierre",
+
+"FSZ Shizuoka",
+
+"FTA Futuna Island",
+
+"FTE El Calafate",
+
+"FTU Fort Dauphin",
+
+"FTY Fulton County",
+
+"FUE Fuerteventura",
+
+"FUG Fuyang",
+
+"FUJ Fukue",
+
+"FUK Fukuoka",
+
+"FUN Funafuti Atol",
+
+"FUT Futuna",
+
+"FWA Fort Wayne Baer Field",
+
+"FWM Fort William Heliport",
+
+"FYU Fort Yukon",
+
+"FZO Filton",
+
+"GAE Gabes",
+
+"GAF Gafsa",
+
+"GAJ Yamagata",
+
+"GAL Galena",
+
+"GAM Gambell",
+
+"GAN Gan Island",
+
+"GAO Guantanamo Los Canos",
+
+"GAU Guwahati",
+
+"GAX Gamba",
+
+"GAY Gaya",
+
+"GBD Great Bend",
+
+"GBE Gaborone",
+
+"GBJ Marie Galante",
+
+"GBT Gorgan",
+
+"GCC Gillette",
+
+"GCI Guernsey",
+
+"GCK Garden City",
+
+"GCM Grand Cayman Island",
+
+"GDE Gode",
+
+"GDL Guadalajara",
+
+"GDN Gdansk",
+
+"GDO Guasdualito",
+
+"GDQ Gondar",
+
+"GDT Grand Turk",
+
+"GDX Magadan",
+
+"GEA Noumea Magenta",
+
+"GEG Spokane",
+
+"GEL Santo Angelo",
+
+"GEO Georgetown",
+
+"GER Nueva Gerona",
+
+"GES General Santos",
+
+"GET Geraldton",
+
+"GEV Gallivare",
+
+"GFF Griffith",
+
+"GFK Grand Forks",
+
+"GFN Grafton",
+
+"GGG Longview",
+
+"GGS Gobernador Gregores",
+
+"GGT George Town",
+
+"GHA Ghardaia",
+
+"GHB Governors Harbour",
+
+"GHE Garachine",
+
+"GHT Ghat",
+
+"GIB Gibraltar",
+
+"GIC Boigu Island",
+
+"GIG Rio de Janeiro",
+
+"GIL Gilgit",
+
+"GIS Gisborne",
+
+"GIZ Jazan",
+
+"GJA Guanaja",
+
+"GJL Jijel",
+
+"GJT Grand Junction",
+
+"GKA Goroka",
+
+"GLA Glasgow",
+
+"GLF Golfito",
+
+"GLH Greenville",
+
+"GLK Galcaio",
+
+"GLN Goulimime",
+
+"GLO Gloucester",
+
+"GLR Gaylord",
+
+"GLT Gladstone",
+
+"GLV Golovin",
+
+"GMA Gemena",
+
+"GMB Gambela",
+
+"GMP Seoul Gimpo",
+
+"GMR Gambier Island",
+
+"GMZ San Sebastian de la Gomera",
+
+"GNB Lyon Grenoble Saint Geoirs",
+
+"GND Grenada",
+
+"GNU Goodnews Bay",
+
+"GNV Gainesville",
+
+"GNY Sanliurfa",
+
+"GOA Genoa",
+
+"GOH Nuuk",
+
+"GOI Goa",
+
+"GOJ Nizhniy Novgorod",
+
+"GOM Goma",
+
+"GOP Gorakhpur",
+
+"GOQ Golmud",
+
+"GOT Gothenburg Landvetter",
+
+"GOU Garoua",
+
+"GOV Gove",
+
+"GPA Patras",
+
+"GPI Guapi",
+
+"GPS Galapagos Islands",
+
+"GPT Gulfport/Biloxi",
+
+"GRB Green Bay",
+
+"GRI Grand Island",
+
+"GRJ George",
+
+"GRK Killeen Gray AAF",
+
+"GRO Gerona",
+
+"GRQ Groningen",
+
+"GRR Grand Rapids",
+
+"GRU Sao Paulo Guarulhos",
+
+"GRV Groznyj",
+
+"GRW Graciosa Island",
+
+"GRX Granada",
+
+"GRY Grimsey",
+
+"GRZ Graz",
+
+"GSE Gothenburg Saeve",
+
+"GSM Gheshm",
+
+"GSO Greensboro/High Point",
+
+"GSP Greenville/Spartanburg",
+
+"GST Gustavus",
+
+"GSY Grimsby",
+
+"GTA Gatokae",
+
+"GTE Groote Eylandt",
+
+"GTF Great Falls",
+
+"GTO Gorontalo",
+
+"GTR Columbus Golden Triangle Regional",
+
+"GTS Granites",
+
+"GUA Guatemala City",
+
+"GUC Gunnison",
+
+"GUM Guam Antonio B Won Pat",
+
+"GUP Gallup",
+
+"GUR Alotau",
+
+"GUW Atyrau",
+
+"GVA Geneva",
+
+"GVN Sovetskaya Gavan",
+
+"GVR Governador Valadares",
+
+"GWD Gwadar",
+
+"GWL Gwalior",
+
+"GWT Westerland",
+
+"GWY Galway",
+
+"GXF Seiyun",
+
+"GXG Negage",
+
+"GYA Guayaramerin",
+
+"GYD Baku Heydar Aliyev",
+
+"GYE Guayaquil",
+
+"GYL Argyle",
+
+"GYM Guaymas",
+
+"GYN Goiania",
+
+"GZO Gizo",
+
+"GZT Gaziantep",
+
+"HAA Hasvik",
+
+"HAC Hachijo Jima",
+
+"HAD Halmstad",
+
+"HAE Havasupai",
+
+"HAH MoroniPrince Said",
+
+"HAJ Hanover",
+
+"HAK Haikou",
+
+"HAM Hamburg",
+
+"HAN Hanoi",
+
+"HAQ Hanimaadhoo",
+
+"HAS Hail",
+
+"HAU Haugesund",
+
+"HAV Havana",
+
+"HBA Hobart",
+
+"HBE Alexandria Borg",
+
+"HBT Hafr Albatin",
+
+"HBX Hubli",
+
+"HCN Hengchun",
+
+"HCR Holy Cross",
+
+"HDB Heidelberg",
+
+"HDD Hyderabad",
+
+"HDF Heringsdorf",
+
+"HDG Handan",
+
+"HDM Hamadan",
+
+"HDN Steamboat Springs Hayden Yampa Valley",
+
+"HDS Hoedspruit",
+
+"HDY Hat Yai",
+
+"HEA Herat",
+
+"HEH Heho",
+
+"HEI HeideBuesum",
+
+"HEK Heihe",
+
+"HEL Helsinki",
+
+"HER Heraklion",
+
+"HET Hohhot",
+
+"HFA Haifa",
+
+"HFE Hefei",
+
+"HFS Hagfors",
+
+"HFT Hammerfest",
+
+"HGA Hargeisa",
+
+"HGD Hughenden",
+
+"HGH Hangzhou",
+
+"HGL Helgoland",
+
+"HGN Mae Hong Son",
+
+"HGU Mount Hagen",
+
+"HHH Hilton Head Island",
+
+"HHN Frankfurt Hahn",
+
+"HHQ Hua Hin",
+
+"HHZ Hikueru",
+
+"HIB Hibbing/Chisholm",
+
+"HID Horn Island",
+
+"HII Lake Havasu City",
+
+"HIJ Hiroshima",
+
+"HIL Shillavo",
+
+"HIN Jinju",
+
+"HIR Honiara",
+
+"HJJ Huai hua",
+
+"HJR Khajuraho",
+
+"HKB Healy Lake",
+
+"HKD Hakodate",
+
+"HKG Hong Kong",
+
+"HKK Hokitika",
+
+"HKN Hoskins",
+
+"HKT Phuket",
+
+"HLA Johannesburg Lanseria",
+
+"HLD Hailar",
+
+"HLH Ulanhot",
+
+"HLN Helena",
+
+"HLY Holyhead",
+
+"HLZ Hamilton",
+
+"HMA KhantyMansiysk",
+
+"HME Hassi Messaoud",
+
+"HMO Hermosillo",
+
+"HMV Hemavan",
+
+"HNA Hanamaki",
+
+"HND Tokyo Haneda",
+
+"HNH Hoonah",
+
+"HNL Honolulu",
+
+"HNM Hana",
+
+"HNS Haines",
+
+"HOB Hobbs Lea County",
+
+"HOD Hodeidah",
+
+"HOE Houeisay",
+
+"HOF Alahsa",
+
+"HOG Holguin",
+
+"HOH Hohenems",
+
+"HOI Hao Island",
+
+"HOM Homer",
+
+"HON Huron",
+
+"HOQ Hof",
+
+"HOR Horta",
+
+"HOU Houston Hobby",
+
+"HOV OrstaVolda",
+
+"HPA Ha'apai",
+
+"HPB Hooper Bay",
+
+"HPH Haiphong",
+
+"HPN Westchester County",
+
+"HRB Harbin",
+
+"HRE Harare",
+
+"HRG Hurghada",
+
+"HRK Kharkov",
+
+"HRL Harlingen",
+
+"HRT Harrogate",
+
+"HSG Saga",
+
+"HSK Huesca",
+
+"HSL Huslia",
+
+"HSN Zhoushan",
+
+"HSV Huntsville",
+
+"HTA Chita",
+
+"HTG Hatanga",
+
+"HTI Hamilton Island",
+
+"HTN Hotan",
+
+"HTS Huntington",
+
+"HTY Hatay",
+
+"HUH Huahine",
+
+"HUI Hue",
+
+"HUN Hualien",
+
+"HUQ Houn",
+
+"HUS Hughes",
+
+"HUV Hudiksvall",
+
+"HUX Huatulco",
+
+"HUY Humberside",
+
+"HUZ Huizhou",
+
+"HVA Analalava",
+
+"HVB Hervey Bay",
+
+"HVD Khovd",
+
+"HVG Honningsvag",
+
+"HVN New Haven",
+
+"HVR Havre",
+
+"HYA Hyannis",
+
+"HYD Shamshabad",
+
+"HYG Hydaburg",
+
+"HYL Hollis",
+
+"HYN Huangyan",
+
+"HYS Hays",
+
+"HZG Hanzhong",
+
+"HZH Liping City",
+
+"IAA Igarka",
+
+"IAD Washington Dulles",
+
+"IAG Niagara Falls",
+
+"IAH Houston",
+
+"IAM In Amenas",
+
+"IAN Kiana",
+
+"IAS Iasi",
+
+"IBA Ibadan",
+
+"IBE Ibague",
+
+"IBZ Ibiza",
+
+"ICI Cicia",
+
+"ICN Seoul Incheon",
+
+"ICT Wichita MidContinent",
+
+"IDA Idaho Falls",
+
+"IDR Indore",
+
+"IDY Ile d'Yeu",
+
+"IEG Zielona Gora",
+
+"IEV Kiev Zhulyany",
+
+"IFJ Isafjordur",
+
+"IFN Isfahan",
+
+"IFO IvanoFrankovsk",
+
+"IFP Bullhead City",
+
+"IGA Inagua",
+
+"IGG Igiugig",
+
+"IGR Iguazu",
+
+"IGS IngolstadtManching",
+
+"IGU Iguassu Falls",
+
+"IHR Iran Shahr",
+
+"IJK Izhevsk",
+
+"IKA Tehran Imam Khomeini",
+
+"IKS Tiksi",
+
+"IKT Irkutsk",
+
+"ILF Ilford",
+
+"ILI Iliamna",
+
+"ILM Wilmington",
+
+"ILN Wilmington",
+
+"ILO Iloilo",
+
+"ILP Ile Des Pins",
+
+"ILR Ilorin",
+
+"ILY Islay",
+
+"ILZ Zilina",
+
+"IMF Imphal",
+
+"IMK Simikot",
+
+"IMP Imperatriz",
+
+"IMT Iron Mountain",
+
+"INC Yinchuan",
+
+"IND Indianapolis",
+
+"ING Lago Argentino",
+
+"INH Inhambane",
+
+"INI Nis",
+
+"INLFalls",
+
+"INN Innsbruck",
+
+"INT WinstonSalem",
+
+"INU Nauru Island",
+
+"INV Inverness",
+
+"INZ In Salah",
+
+"IOA Ioannina",
+
+"IOM Isle Of Man",
+
+"ION Impfondo",
+
+"IOS Ilheus",
+
+"IPA Ipota",
+
+"IPC Easter Island",
+
+"IPH Ipoh",
+
+"IPI Ipiales",
+
+"IPL Imperial County",
+
+"IPN Ipatinga",
+
+"IPT Williamsport",
+
+"IPW Ipswich",
+
+"IQM Qiemo",
+
+"IQN Qingyang",
+
+"IQQ Iquique",
+
+"IQT Iquitos",
+
+"IRA Kirakira",
+
+"IRC Circle",
+
+"IRJ La Rioja",
+
+"IRM Igrim",
+
+"ISA Mount Isa",
+
+"ISB Islamabad",
+
+"ISC Isles of Scilly St Mary's",
+
+"ISG Ishigaki",
+
+"ISN Williston",
+
+"ISP Long Island MacArthur",
+
+"IST Istanbul Ataturk",
+
+"ITB Itaituba",
+
+"ITH Ithaca",
+
+"ITM Osaka",
+
+"ITO Hilo",
+
+"IUE Niue",
+
+"IVC Invercargill",
+
+"IVL Ivalo",
+
+"IVR Inverell",
+
+"IWD Ironwood",
+
+"IWJ Iwami",
+
+"IXA Agartala",
+
+"IXB Bagdogra",
+
+"IXC Chandigarh",
+
+"IXD Allahabad",
+
+"IXE Mangalore",
+
+"IXG Belgaum",
+
+"IXI Lilabari",
+
+"IXJ Jammu",
+
+"IXL Leh",
+
+"IXM Madurai",
+
+"IXR Ranchi",
+
+"IXS Silchar",
+
+"IXU Aurangabad",
+
+"IXW Jamshedpur",
+
+"IXY Kandla",
+
+"IXZ Port Blair",
+
+"IYK Inyokern",
+
+"IZO Izumo",
+
+"JAC Jackson",
+
+"JAI Jaipur",
+
+"JAL Jalapa",
+
+"JAN JacksonEvers",
+
+"JAV Ilulissat",
+
+"JAX Jacksonville",
+
+"JCB Joacaba",
+
+"JCH Qasigiannguit",
+
+"JCK Julia Creek",
+
+"JCU Ceuta",
+
+"JDF Juiz De Fora",
+
+"JDH Jodhpur",
+
+"JDO Juazeiro Do Norte",
+
+"JDR Sao Joao Del Rei",
+
+"JDZ Jingdezhen",
+
+"JED Jeddah",
+
+"JEF Jefferson City",
+
+"JEG Aasiaat",
+
+"JEJ Jeh",
+
+"JER Jersey",
+
+"JFK New York J F Kennedy",
+
+"JFR Paamiut",
+
+"JGA Jamnagar",
+
+"JGC Grand Canyon H/P",
+
+"JGN Jiayuguan",
+
+"JGO Qeqertarsuaq",
+
+"JGS Ji an",
+
+"JHB Johor Bahru",
+
+"JHG Jinghong",
+
+"JHM Kapalua",
+
+"JHS Sisimiut",
+
+"JHW Jamestown",
+
+"JIB Djibouti",
+
+"JIJ Jijiga",
+
+"JIK Ikaria Island",
+
+"JIM Jimma",
+
+"JIU Jiujiang",
+
+"JJA Jajao",
+
+"JJN Jinjiang",
+
+"JJU Qaqortoq",
+
+"JKG Jonkoping",
+
+"JKH Chios",
+
+"JKL Kalymnos Island",
+
+"JLD Landskrona",
+
+"JLN Joplin",
+
+"JLR Jabalpur",
+
+"JMK Mikonos",
+
+"JMS Jamestown",
+
+"JMU Jiamusi",
+
+"JNB Johannesburg",
+
+"JNN Nanortalik",
+
+"JNS Narsaq",
+
+"JNU Juneau",
+
+"JNX Naxos Is",
+
+"JNZ Jinzhou",
+
+"JOE Joensuu",
+
+"JOG Yogyakarta",
+
+"JOI Joinville",
+
+"JOL Jolo",
+
+"JPA Joao Pessoa",
+
+"JPR JiParana",
+
+"JQA Qaarsut",
+
+"JRB New York Downtown Manhattan H/P",
+
+"JRH Jorhat",
+
+"JRO Kilimanjaro",
+
+"JSA Jaisalmer",
+
+"JSH Sitia",
+
+"JSI Skiathos",
+
+"JSR Jessore",
+
+"JST Johnstown",
+
+"JSU Maniitsoq",
+
+"JSY Syros Island",
+
+"JTR Thira",
+
+"JTY Astypalaia Island",
+
+"JUB Juba",
+
+"JUJ Jujuy",
+
+"JUL Juliaca",
+
+"JUM Jumla",
+
+"JUV Upernavik",
+
+"JUZ Juzhou",
+
+"JVA Ankavandra",
+
+"JYR Jiroft",
+
+"JYV Jyvaskyla",
+
+"JZH Song Pan",
+
+"KAC Kameshli",
+
+"KAD Kaduna",
+
+"KAE Kake",
+
+"KAJ Kajaani",
+
+"KAL Kaltag",
+
+"KAN Kano",
+
+"KAO Kuusamo",
+
+"KAT Kaitaia",
+
+"KAW Kawthaung",
+
+"KAX Kalbarri",
+
+"KBC Birch Creek",
+
+"KBL Kabul",
+
+"KBP Kiev Borispol",
+
+"KBR Kota Bharu",
+
+"KBV Krabi",
+
+"KCA Kuqa",
+
+"KCC Coffman Cove",
+
+"KCF Kadanwari",
+
+"KCG Chignik Fisheries",
+
+"KCH Kuching",
+
+"KCL Chignik Lagoon",
+
+"KCM Kahramanmaras",
+
+"KCQ Chignik Lake",
+
+"KCZ Kochi",
+
+"KDH Kandahar",
+
+"KDI Kendari",
+
+"KDL Kardla",
+
+"KDM Kaadedhdhoo",
+
+"KDO Kadhdhoo",
+
+"KDU Skardu",
+
+"KDV Kadava",
+
+"KEB Nanwalek",
+
+"KEF Reykjavik Keflavik",
+
+"KEJ Kemerovo",
+
+"KEK Ekwok",
+
+"KEM Kemi/Tornio",
+
+"KEP Nepalganj",
+
+"KER Kerman",
+
+"KET Kengtung",
+
+"KEW Keewaywin",
+
+"KFA Kiffa",
+
+"KFP False Pass",
+
+"KGA Kananga",
+
+"KGC Kingscote",
+
+"KGD Kaliningrad",
+
+"KGE Kagau",
+
+"KGF Karaganda",
+
+"KGI Kalgoorlie",
+
+"KGK Koliganek",
+
+"KGL Kigali",
+
+"KGP Kogalym",
+
+"KGS Kos",
+
+"KGX Grayling",
+
+"KHG Kashi",
+
+"KHH Kaohsiung",
+
+"KHI Karachi",
+
+"KHM Khamti",
+
+"KHN Nanchang",
+
+"KHS Khasab",
+
+"KHV Khabarovsk",
+
+"KHY Khoy",
+
+"KHZ Kauehi",
+
+"KID Kristianstad",
+
+"KIF Kingfisher Lake",
+
+"KIH Kish Island",
+
+"KIJ Niigata",
+
+"KIK Kirkuk",
+
+"KIM Kimberley",
+
+"KIN Kingston Norman Manley",
+
+"KIR Kerry County",
+
+"KIS Kisumu",
+
+"KIT Kithira",
+
+"KIV Chisinau",
+
+"KIX Osaka Kansai",
+
+"KJA Krasnoyarsk",
+
+"KKA Koyuk",
+
+"KKC Khon Kaen",
+
+"KKD Kokoda",
+
+"KKE Kerikeri",
+
+"KKH Kongiganak",
+
+"KKI Akiachak",
+
+"KKJ Kita Kyushu",
+
+"KKK Air Station",
+
+"KKN Kirkenes",
+
+"KKR Kaukura Atoll",
+
+"KKU Ekuk",
+
+"KLG Kalskag",
+
+"KLH Kolhapur",
+
+"KLL Levelock",
+
+"KLN Larsen Bay",
+
+"KLO Kalibo",
+
+"KLR Kalmar",
+
+"KLU Klagenfurt",
+
+"KLV Karlovy Vary",
+
+"KLW Klawock",
+
+"KLX Kalamata",
+
+"KMA Kerema",
+
+"KMC King Khalid Military City",
+
+"KME Kamembe",
+
+"KMG Kunming",
+
+"KMI Miyazaki",
+
+"KMJ Kumamoto",
+
+"KMO Manokotak",
+
+"KMQ Komatsu",
+
+"KMS Kumasi",
+
+"KMV Kalemyo",
+
+"KND Kindu",
+
+"KNF Kings Lynn",
+
+"KNG Kaimana",
+
+"KNH Kinmen",
+
+"KNK Kakhonak",
+
+"KNQ Kone",
+
+"KNS King Island",
+
+"KNU Kanpur",
+
+"KNW New Stuyahok",
+
+"KNX Kununurra",
+
+"KOA Kona",
+
+"KOC Koumac",
+
+"KOE Kupang",
+
+"KOI Kirkwall",
+
+"KOJ Kagoshima",
+
+"KOK Kokkola/Pietarsaari",
+
+"KOP Nakhon Phanom",
+
+"KOT Kotlik",
+
+"KOU Koulamoutou",
+
+"KOW Ganzhou",
+
+"KOZ Ouzinkie",
+
+"KPB Point Baker",
+
+"KPC Port Clarence",
+
+"KPN Kipnuk",
+
+"KPO Pohang",
+
+"KPV Perryville",
+
+"KRF Kramfors",
+
+"KRI Kikori",
+
+"KRK Krakow",
+
+"KRL Korla",
+
+"KRN Kiruna",
+
+"KRP Karup",
+
+"KRR Krasnodar",
+
+"KRS Kristiansand Kjevik",
+
+"KRT Khartoum",
+
+"KRY Karamay",
+
+"KSA Kosrae",
+
+"KSC Kosice",
+
+"KSD Karlstad",
+
+"KSF Kassel",
+
+"KSH Kermanshah",
+
+"KSJ Kasos Island",
+
+"KSL Kassala",
+
+"KSM St Marys",
+
+"KSN Kostanay",
+
+"KSO Kastoria",
+
+"KSQ Karshi",
+
+"KSU Kristiansund",
+
+"KSY Kars",
+
+"KSZ Kotlas",
+
+"KTA Karratha",
+
+"KTB Thorne Bay",
+
+"KTE Kerteh",
+
+"KTG Ketapang",
+
+"KTM Kathmandu",
+
+"KTN Ketchikan",
+
+"KTS Teller Mission",
+
+"KTT Kittila",
+
+"KTW Katowice",
+
+"KUA Kuantan",
+
+"KUF Samara",
+
+"KUG Kubin Island",
+
+"KUH Kushiro",
+
+"KUK Kasigluk",
+
+"KUL Kuala Lumpur",
+
+"KUN Kaunas",
+
+"KUO Kuopio",
+
+"KUS Kulusuk Island",
+
+"KUU Kulu",
+
+"KUV Gunsan",
+
+"KVA Kavala",
+
+"KVB Skovde",
+
+"KVC King Cove",
+
+"KVD Gyandzha",
+
+"KVG Kavieng",
+
+"KVK Kirovsk",
+
+"KVL Kivalina",
+
+"KVR Kavalerovo",
+
+"KWA Kwajalein",
+
+"KWE Guiyang",
+
+"KWF Waterfall",
+
+"KWI Kuwait",
+
+"KWJ Gwangju",
+
+"KWK Kwigillingok",
+
+"KWL Guilin",
+
+"KWM Kowanyama",
+
+"KWN Quinhagak",
+
+"KWT Kwethluk",
+
+"KWZ Kolwezi",
+
+"KXA Kasaan",
+
+"KXF Koro Island",
+
+"KXK Komsomolsk Na Amure",
+
+"KXU Katiu",
+
+"KYA Konya",
+
+"KYK Karluk",
+
+"KYN Milton Keynes",
+
+"KYP Kyaukpyu",
+
+"KYS Kayes",
+
+"KYU Koyukuk",
+
+"KYZ Kyzyl",
+
+"KZI Kozani",
+
+"KZN Kazan",
+
+"KZO KzylOrda",
+
+"KZS Kastelorizo",
+
+"LAD Luanda",
+
+"LAE Lae",
+
+"LAI Lannion",
+
+"LAJ Lages",
+
+"LAK Aklavik",
+
+"LAN Lansing",
+
+"LAO Laoag",
+
+"LAP La Paz",
+
+"LAQ Beida",
+
+"LAR Laramie",
+
+"LAS Las Vegas McCarran",
+
+"LAU Lamu",
+
+"LAW Lawton",
+
+"LAX Los Angeles",
+
+"LBA Leeds Bradford",
+
+"LBB Lubbock Preston Smith",
+
+"LBC Hamburg Luebeck",
+
+"LBD Khudzhand",
+
+"LBE Latrobe",
+
+"LBF North Platte",
+
+"LBJ Labuan Bajo",
+
+"LBL Liberal",
+
+"LBP Long Banga",
+
+"LBS Labasa",
+
+"LBU Labuan",
+
+"LBV Libreville",
+
+"LCA Larnaca",
+
+"LCE La Ceiba",
+
+"LCG La Coruna",
+
+"LCH Lake Charles",
+
+"LCJ Lodz",
+
+"LCK Columbus Rickenbacker",
+
+"LCR La Chorrera",
+
+"LCX Longyan",
+
+"LCY London City",
+
+"LDB Londrina",
+
+"LDE Lourdes/Tarbes",
+
+"LDG Leshukonskoye",
+
+"LDH Lord Howe Island",
+
+"LDN Lamidanda",
+
+"LDU Lahad Datu",
+
+"LDV Landivisiau",
+
+"LDY Londonderry",
+
+"LEA Learmonth",
+
+"LEB Lebanon",
+
+"LED St Petersburg Pulkovo",
+
+"LEH Le Havre",
+
+"LEI Almeria",
+
+"LEJ Leipzig/Halle",
+
+"LEN Leon",
+
+"LEQ Lands End",
+
+"LER Leinster",
+
+"LET Leticia",
+
+"LEV Bureta",
+
+"LEX Lexington Blue Grass",
+
+"LFM Lamerd",
+
+"LFR La Fria",
+
+"LFT Lafayette Regional",
+
+"LFW Lome",
+
+"LGA New York La Guardia",
+
+"LGB Long Beach",
+
+"LGC Callaway",
+
+"LGD La Grande",
+
+"LGG Liege Bierset",
+
+"LGI Deadmans Cay",
+
+"LGK Langkawi",
+
+"LGL Long Lellang",
+
+"LGP Legaspi",
+
+"LGQ Lago Agrio",
+
+"LGW London Gatwick",
+
+"LHA Black Forest",
+
+"LHE Lahore",
+
+"LHG Lightning Ridge",
+
+"LHI Lereh",
+
+"LHK Laohekou",
+
+"LHP Lehu",
+
+"LHR London Heathrow",
+
+"LHW Lanzhou",
+
+"LIF Lifou",
+
+"LIG Limoges",
+
+"LIH Kauai Island",
+
+"LIL Lille Lesquin",
+
+"LIM Lima",
+
+"LIN Milan Linate",
+
+"LIO Limon",
+
+"LIR Liberia",
+
+"LIS Lisbon",
+
+"LIT Little Rock",
+
+"LIW Loikaw",
+
+"LIX Likoma Island",
+
+"LJG Lijiang City",
+
+"LJU Ljubljana",
+
+"LKA Larantuka",
+
+"LKB Lakeba",
+
+"LKG Lokichoggio",
+
+"LKH Long Akah",
+
+"LKL Lakselv",
+
+"LKN Leknes",
+
+"LKO Lucknow",
+
+"LLA Lulea",
+
+"LLB Libo City",
+
+"LLF Ling Ling",
+
+"LLI Lalibela",
+
+"LLU Alluitsup Paa",
+
+"LLW Lilongwe",
+
+"LMA Lake Minchumina",
+
+"LMC Lamacarena",
+
+"LMM Los Mochis",
+
+"LMN Limbang",
+
+"LMP Lampedusa",
+
+"LMT Klamath Falls",
+
+"LMY Lake Murray",
+
+"LNB Lamen Bay",
+
+"LNE Lonorore",
+
+"LNJ Lincang",
+
+"LNK Lincoln",
+
+"LNO Leonora",
+
+"LNV Lihir Island",
+
+"LNY Lanai City",
+
+"LNZ Linz",
+
+"LOD Longana",
+
+"LOH Loja",
+
+"LOS Lagos",
+
+"LOU Louisville",
+
+"LOV Monclova",
+
+"LPA Las Palmas",
+
+"LPB La Paz",
+
+"LPD La Pedrera",
+
+"LPI Linkoping",
+
+"LPK Lipetsk",
+
+"LPL Liverpool",
+
+"LPM Lamap",
+
+"LPP Lappeenranta",
+
+"LPQ Luang Prabang",
+
+"LPS Lopez Island",
+
+"LPT Lampang",
+
+"LPX Liepaya",
+
+"LPY Le Puy",
+
+"LQM Puerto Leguizamo",
+
+"LRD Laredo",
+
+"LRE Longreach",
+
+"LRH La Rochelle",
+
+"LRM La Romana",
+
+"LRR Lar",
+
+"LRS Leros",
+
+"LRT Lorient",
+
+"LSA Losuia",
+
+"LSC La Serena",
+
+"LSE La Crosse",
+
+"LSH Lashio",
+
+"LSI Shetland Islands Sumburgh",
+
+"LSP Las Piedras",
+
+"LSS TerredeHaut",
+
+"LST Launceston",
+
+"LSY Lismore",
+
+"LTD Ghadames",
+
+"LTI Altai",
+
+"LTK Latakia",
+
+"LTN London Luton",
+
+"LTO Loreto",
+
+"LTQ Le Touquet",
+
+"LTU Latur",
+
+"LTX Latacunga",
+
+"LUA Lukla",
+
+"LUD Luderitz",
+
+"LUF Phoenix Luke AFB",
+
+"LUG Lugano",
+
+"LUM Luxi",
+
+"LUN Lusaka",
+
+"LUO Luena",
+
+"LUP Kalaupapa",
+
+"LUQ San Luis",
+
+"LUR Cape Lisburne",
+
+"LUV Langgur",
+
+"LUX Luxembourg",
+
+"LVI Livingstone",
+
+"LVO Laverton",
+
+"LWB Lewisburg",
+
+"LWE Lewoleba",
+
+"LWN Gyoumri",
+
+"LWO Lviv",
+
+"LWS Lewiston",
+
+"LWT Lewistown",
+
+"LWY Lawas",
+
+"LXA Lhasa",
+
+"LXG Luang Namtha",
+
+"LXR Luxor",
+
+"LXS Limnos",
+
+"LYA Luoyang",
+
+"LYB Little Cayman",
+
+"LYC Lycksele",
+
+"LYG Lianyungang",
+
+"LYH Lynchburg",
+
+"LYI Linyi",
+
+"LYP Faisalabad",
+
+"LYR Longyearbyen",
+
+"LYS Lyon Saint Exupery",
+
+"LYU Ely",
+
+"LYX Lydd",
+
+"LZC Lazaro Cardenas",
+
+"LZH Liuzhou",
+
+"LZN Nangan",
+
+"LZO Luzhou",
+
+"LZY Lin Zhi",
+
+"MAA Chennai",
+
+"MAB Maraba",
+
+"MAD Madrid Barajas",
+
+"MAF Midland Odessa Regional",
+
+"MAG Madang",
+
+"MAH Menorca",
+
+"MAJ Majuro",
+
+"MAK Malakal",
+
+"MAM Matamoros",
+
+"MAN Manchester",
+
+"MAO Manaus",
+
+"MAR Maracaibo",
+
+"MAS Manus Island",
+
+"MAU Maupiti Island",
+
+"MAZ Mayaguez",
+
+"MBA Mombasa",
+
+"MBD Mmabatho",
+
+"MBE Monbetsu",
+
+"MBH Maryborough",
+
+"MBJ Montego Bay",
+
+"MBL Manistee",
+
+"MBS Saginaw",
+
+"MBT Masbate",
+
+"MBU Mbambanakira",
+
+"MCE Merced Macready Regional",
+
+"MCG McGrath",
+
+"MCI Kansas City",
+
+"MCK McCook",
+
+"MCM Monte Carlo",
+
+"MCN Macon Lewis B Wilson",
+
+"MCO Orlando",
+
+"MCP Macapa",
+
+"MCT Muscat",
+
+"MCV McArthur River",
+
+"MCW Mason City",
+
+"MCX Makhachkala",
+
+"MCY Sunshine Coast",
+
+"MCZ Maceio",
+
+"MDC Manado",
+
+"MDE Medellin Jose Maria Cordova",
+
+"MDG Mudanjiang",
+
+"MDK Mbandaka",
+
+"MDL Mandalay",
+
+"MDQ Mar del Plata",
+
+"MDS Middle Caicos",
+
+"MDT Harrisburg",
+
+"MDU Mendi",
+
+"MDW Chicago Midway",
+
+"MDZ Mendoza",
+
+"MEA Macae",
+
+"MEC Manta",
+
+"MED Madinah",
+
+"MEE Mare",
+
+"MEG Malange",
+
+"MEH Mehamn",
+
+"MEI Meridian",
+
+"MEL Melbourne",
+
+"MEM Memphis",
+
+"MES Medan",
+
+"MEX Mexico City Juarez",
+
+"MEY Meghauli",
+
+"MFE McAllen",
+
+"MFJ Moala",
+
+"MFK Matsu",
+
+"MFM Macau",
+
+"MFR Medford",
+
+"MFU Mfuwe",
+
+"MGA Managua",
+
+"MGB Mount Gambier",
+
+"MGF Maringa",
+
+"MGH Margate",
+
+"MGM Montgomery Dannelly Field",
+
+"MGQ Mogadishu",
+
+"MGS Mangaia Island",
+
+"MGT Milingimbi",
+
+"MGW Morgantown",
+
+"MGZ Myeik",
+
+"MHD Mashad",
+
+"MHG Mannheim",
+
+"MHH Marsh Harbour",
+
+"MHK Manhattan",
+
+"MHQ Mariehamn",
+
+"MHR Sacramento Mather AFB",
+
+"MHT Manchester",
+
+"MIA Miami",
+
+"MID Merida",
+
+"MIG Mian Yang",
+
+"MII Marilia",
+
+"MIM Merimbula",
+
+"MIR Monastir",
+
+"MIS Misima Island",
+
+"MJA Manja",
+
+"MJD Mohenjodaro",
+
+"MJF Mosjoen",
+
+"MJI Mitiga",
+
+"MJK Monkey Mia",
+
+"MJL Mouila",
+
+"MJM MbujiMayi",
+
+"MJN Majunga",
+
+"MJR Miramar",
+
+"MJT Mytilene",
+
+"MJV Murcia",
+
+"MJZ Mirnyj",
+
+"MKE Milwaukee General Mitchell",
+
+"MKG Muskegon",
+
+"MKK Hoolehua",
+
+"MKM Mukah",
+
+"MKP Makemo",
+
+"MKQ Merauke",
+
+"MKR Meekatharra",
+
+"MKU Makokou",
+
+"MKW Manokwari",
+
+"MKY Mackay",
+
+"MLA Malta",
+
+"MLB Melbourne",
+
+"MLE Male",
+
+"MLG Malang",
+
+"MLH Mulhouse",
+
+"MLI Moline",
+
+"MLL Marshall",
+
+"MLM Morelia",
+
+"MLN Melilla",
+
+"MLO Milos",
+
+"MLS Miles City",
+
+"MLU Monroe",
+
+"MLW Monrovia SpriggPayne",
+
+"MLX Malatya",
+
+"MLY Manley Hot Springs",
+
+"MMB Memambetsu",
+
+"MME Durham Tees Valley",
+
+"MMG Mount Magnet",
+
+"MMH Mammoth Lakes",
+
+"MMK Murmansk",
+
+"MMM Middlemount",
+
+"MMO Maio",
+
+"MMX Malmo Sturup",
+
+"MMY Miyako Jima",
+
+"MNF Mana Island",
+
+"MNG Maningrida",
+
+"MNI Montserrat",
+
+"MNJ Mananjary",
+
+"MNL Manila Ninoy Aquino",
+
+"MNT Minto",
+
+"MNU Maulmyine",
+
+"MNY Mono",
+
+"MOA Moa",
+
+"MOB Mobile",
+
+"MOC Montes Claros",
+
+"MOD Modesto",
+
+"MOF Maumere",
+
+"MOG Mong Hsat",
+
+"MOI Mitiaro Island",
+
+"MOL Molde",
+
+"MOQ Morondava",
+
+"MOT Minot",
+
+"MOU Mountain Village",
+
+"MOV Moranbah",
+
+"MOZ Moorea",
+
+"MPA Mpacha",
+
+"MPH Caticlan",
+
+"MPL Montpellier Mediterranee",
+
+"MPM Maputo",
+
+"MPN Mount Pleasant",
+
+"MPP Mulatupo",
+
+"MQF Magnitogorsk",
+
+"MQH Minacu",
+
+"MQI Quincy",
+
+"MQL Mildura",
+
+"MQM Mardin",
+
+"MQN Mo I Rana",
+
+"MQP Nelspruit",
+
+"MQT Marquette",
+
+"MQX Makale",
+
+"MRA Misurata",
+
+"MRD Merida",
+
+"MRE Mara Lodges",
+
+"MRO Masterton",
+
+"MRS Marseille Provence",
+
+"MRU Mauritius",
+
+"MRV Mineralnye Vody",
+
+"MRY Monterey Peninsula",
+
+"MRZ Moree",
+
+"MSA Muskrat Dam",
+
+"MSE Manston",
+
+"MSJ Misawa",
+
+"MSL Muscle Shoals",
+
+"MSN Madison",
+
+"MSO Missoula",
+
+"MSP Minneapolis",
+
+"MSQ Minsk 2",
+
+"MSR Mus",
+
+"MSS Massena",
+
+"MST Maastricht/Aachen DE",
+
+"MSU Maseru",
+
+"MSW Massawa",
+
+"MSY New Orleans",
+
+"MSZ Namibe",
+
+"MTH Marathon",
+
+"MTJ Montrose",
+
+"MTM Metlakatla",
+
+"MTR Monteria",
+
+"MTS Manzini",
+
+"MTT Minatitlan",
+
+"MTV Mota Lava",
+
+"MTY Monterrey General Mariano Escobedo",
+
+"MUA Munda",
+
+"MUB Maun",
+
+"MUC Munich",
+
+"MUE Kamuela",
+
+"MUH Mersa Matruh",
+
+"MUK Mauke Island",
+
+"MUN Maturin",
+
+"MUR Marudi",
+
+"MUX Multan",
+
+"MUZ Musoma",
+
+"MVB Franceville",
+
+"MVD Montevideo",
+
+"MVP Mitu",
+
+"MVR Maroua",
+
+"MVS Mucuri",
+
+"MVT Mataiva",
+
+"MVY Martha's Vineyard",
+
+"MWA Marion",
+
+"MWF Maewo",
+
+"MWH Moses Lake Grant County",
+
+"MWQ Magwe",
+
+"MWX Muan",
+
+"MWZ Mwanza",
+
+"MXH Moro",
+
+"MXL Mexicali",
+
+"MXM Morombe",
+
+"MXN Morlaix",
+
+"MXP Milan Malpensa",
+
+"MXT Maintirano",
+
+"MXV Moron",
+
+"MXX Mora",
+
+"MXZ Meixian",
+
+"MYA Moruya",
+
+"MYD Malindi",
+
+"MYE Miyake Jima",
+
+"MYG Mayaguana",
+
+"MYI Murray Island",
+
+"MYJ Matsuyama",
+
+"MYL McCall",
+
+"MYR Myrtle Beach AFB",
+
+"MYT Myitkyina",
+
+"MYU Mekoryuk",
+
+"MYW Mtwara",
+
+"MYY Miri",
+
+"MZG Makung",
+
+"MZH Amasya",
+
+"MZI Mopti",
+
+"MZL Manizales",
+
+"MZO Manzanillo",
+
+"MZR MazarISharif",
+
+"MZT Mazatlan",
+
+"MZV Mulu",
+
+"NAA Narrabri",
+
+"NAC Naracoorte",
+
+"NAG Nagpur",
+
+"NAJ Nakhichevan",
+
+"NAN Nadi",
+
+"NAO Nanchong",
+
+"NAP Naples Capodichino",
+
+"NAQ Qaanaaq",
+
+"NAS Nassau",
+
+"NAT Natal",
+
+"NAU Napuka Island",
+
+"NAV Nevsehir",
+
+"NAW Narathiwat",
+
+"NAY Beijing Nanyuan",
+
+"NBC Nizhnekamsk",
+
+"NBO Nairobi",
+
+"NBW Guantanamo NAS",
+
+"NBX Nabire",
+
+"NCA North Caicos",
+
+"NCE Nice",
+
+"NCL Newcastle",
+
+"NCN New Chenega",
+
+"NCU Nukus",
+
+"NCY Annecy",
+
+"NDB Nouadhibou",
+
+"NDC Nanded",
+
+"NDG Qiqihar",
+
+"NDJ Ndjamena",
+
+"NDR Nador",
+
+"NDY Sanday",
+
+"NEC Necochea",
+
+"NER Neryungri",
+
+"NEV Nevis",
+
+"NFO Niuafo'ou",
+
+"NGB Ningbo",
+
+"NGE Ngaoundere",
+
+"NGI Ngau Island",
+
+"NGO Nagoya Chubu",
+
+"NGS Nagasaki",
+
+"NHA Nha Trang",
+
+"NHV Nuku Hiva",
+
+"NIB Nikolai",
+
+"NIM Niamey",
+
+"NIP Jacksonville NAS",
+
+"NIU Niau",
+
+"NJC Nizhnevartovsk",
+
+"NKC Nouakchott",
+
+"NKG Nanjing",
+
+"NKI Naukiti",
+
+"NKM Nagoya Komaki",
+
+"NLA Ndola",
+
+"NLD Nuevo Laredo",
+
+"NLF Darnley Island",
+
+"NLG Nelson Lagoon",
+
+"NLK Norfolk Island",
+
+"NLV Nikolaev",
+
+"NMA Namangan",
+
+"NMC Norman's Cay",
+
+"NME Nightmute",
+
+"NNB Santa Ana Island",
+
+"NNG Nanning",
+
+"NNL Nondalton",
+
+"NNM NaryanMar",
+
+"NNT Nan",
+
+"NNY Nanyang",
+
+"NOB Nosara Beach",
+
+"NOC Knock",
+
+"NOJ Nojabrxsk",
+
+"NOS NossiBe",
+
+"NOU Noumea Tontouta",
+
+"NOV Huambo",
+
+"NOZ Novokuznetsk",
+
+"NPA Pensacola NAS",
+
+"NPE NapierHastings",
+
+"NPL New Plymouth",
+
+"NQA Memphis NAS",
+
+"NQL Niquelandia",
+
+"NQN Neuquen",
+
+"NQU Nuqui",
+
+"NQY Newquay",
+
+"NRA Narrandera",
+
+"NRK Norrkoping",
+
+"NRL North Ronaldsay",
+
+"NRN Dusseldorf Niederrhein",
+
+"NRT Tokyo Narita",
+
+"NSH Now Shahr",
+
+"NSI Yaounde Nsimalen",
+
+"NSK Norilsk",
+
+"NSN Nelson",
+
+"NST Nakhon Si Thammarat",
+
+"NTE Nantes Atlantique",
+
+"NTG Nantong",
+
+"NTL Newcastle Williamtown",
+
+"NTN Normanton",
+
+"NTQ Wajima",
+
+"NTT Niuatoputapu",
+
+"NUE Nuremberg",
+
+"NUI Nuiqsut",
+
+"NUK Nukutavake",
+
+"NUL Nulato",
+
+"NUP Nunapitchuk",
+
+"NUS Norsup",
+
+"NUX Novy Urengoy",
+
+"NVA Neiva",
+
+"NVI Navoi",
+
+"NVK Narvik",
+
+"NVR Novgorod",
+
+"NVT Navegantes",
+
+"NWA Moheli",
+
+"NWI Norwich",
+
+"NYA Nyagan",
+
+"NYK Nanyuki",
+
+"NYM Nadym",
+
+"NYO Stockholm Skavsta",
+
+"NYU NyaungU",
+
+"NZH Manzhouli",
+
+"OAG Orange",
+
+"OAJ Jacksonville",
+
+"OAK Oakland",
+
+"OAL Cacoal",
+
+"OAM Oamaru",
+
+"OAX Oaxaca",
+
+"OBN Oban Connel",
+
+"OBO Obihiro",
+
+"OBU Kobuk",
+
+"OBX Obo",
+
+"OCC Coca",
+
+"ODN Long Seridan",
+
+"ODS Odessa",
+
+"ODW Oak Harbor",
+
+"ODY Oudomxay",
+
+"OER Ornskoldsvik",
+
+"OES San Antonio Oeste",
+
+"OFI OuangoFitini",
+
+"OFK Norfolk",
+
+"OGG Kahului",
+
+"OGN Yonaguni Jima",
+
+"OGS Ogdensburg",
+
+"OGX Ouargla",
+
+"OGZ Vladikavkaz",
+
+"OHD Ohrid",
+
+"OHE Mohe County",
+
+"OHH Okha",
+
+"OHO Okhotsk",
+
+"OIA Ourilandia",
+
+"OIM Oshima",
+
+"OIT Oita",
+
+"OKA Okinawa Naha",
+
+"OKC Oklahoma City Will Rogers",
+
+"OKD Sapporo Okadama",
+
+"OKJ Okayama",
+
+"OKR Yorke Island",
+
+"OKY Oakey",
+
+"OLA Orland",
+
+"OLB Olbia",
+
+"OLF Wolf Point",
+
+"OLJ Olpoi",
+
+"OLP Olympic Dam",
+
+"OMA Omaha Eppley",
+
+"OMC Ormoc",
+
+"OMD Oranjemund",
+
+"OME Nome",
+
+"OMH Urmieh",
+
+"OMK Omak",
+
+"OMO Mostar",
+
+"OMR Oradea",
+
+"OMS Omsk",
+
+"OND Ondangwa",
+
+"ONG Mornington Island",
+
+"ONJ Odate Noshiro",
+
+"ONL Oneill",
+
+"ONP Newport",
+
+"ONT Ontario LA/Ontario",
+
+"OOK Toksook Bay",
+
+"OOL Gold Coast",
+
+"OPF Miami Opa Locka",
+
+"OPO Porto",
+
+"OPS Sinop",
+
+"OPU Balimo",
+
+"ORB Orebro",
+
+"ORD Chicago O'Hare",
+
+"ORF Norfolk",
+
+"ORH Worcester",
+
+"ORI Port Lions",
+
+"ORK Cork",
+
+"ORM Northampton",
+
+"ORN Oran Es Senia",
+
+"ORV Noorvik",
+
+"ORY Paris Orly",
+
+"OSD Ostersund",
+
+"OSI Osijek",
+
+"OSK Oskarshamn",
+
+"OSL Oslo",
+
+"OSM Mosul",
+
+"OSR Ostrava",
+
+"OSS Osh",
+
+"OST Ostend",
+
+"OSW Orsk",
+
+"OSY Namsos",
+
+"OTD Contadora",
+
+"OTH North Bend",
+
+"OTP Bucharest Otopeni",
+
+"OTR Coto 47",
+
+"OTZ Kotzebue",
+
+"OUA Ouagadougou",
+
+"OUD Oujda",
+
+"OUE Ouesso",
+
+"OUL Oulu",
+
+"OUZ Zouerate",
+
+"OVB Novosibirsk",
+
+"OVD Asturias",
+
+"OVS Sovetsky",
+
+"OXB Bissau",
+
+"OXF Oxford",
+
+"OXR Oxnard/Ventura",
+
+"OYE Oyem",
+
+"OYG Moyo",
+
+"OZC Ozamis",
+
+"OZH Zaporozhye",
+
+"OZZ Ouarzazate",
+
+"PAC Panama City Paitilla",
+
+"PAD Paderborn",
+
+"PAH Paducah",
+
+"PAI Pailin",
+
+"PAP Port au Prince",
+
+"PAS Paros",
+
+"PAT Patna",
+
+"PAZ Poza Rica",
+
+"PBC Puebla",
+
+"PBD Porbandar",
+
+"PBG Plattsburgh",
+
+"PBH Paro",
+
+"PBI West Palm Beach",
+
+"PBJ Paama",
+
+"PBM Paramaribo Johan A Pengel",
+
+"PBO Paraburdoo",
+
+"PBP Punta Islita",
+
+"PBU Putao",
+
+"PCL Pucallpa",
+
+"PCR Puerto Carreno",
+
+"PDA Puerto Inirida",
+
+"PDB Pedro Bay",
+
+"PDG Padang",
+
+"PDL Ponta Delgada",
+
+"PDP Punta Del Este",
+
+"PDS Piedras Negras",
+
+"PDT Pendleton",
+
+"PDX Portland",
+
+"PED Pardubice",
+
+"PEE Perm",
+
+"PEG Perugia",
+
+"PEI Pereira",
+
+"PEK Beijing Capital",
+
+"PEM Puerto Maldonado",
+
+"PEN Penang",
+
+"PER Perth",
+
+"PES Petrozavodsk",
+
+"PET Pelotas",
+
+"PEU Puerto Lempira",
+
+"PEW Peshawar",
+
+"PEX Pechora",
+
+"PEZ Penza",
+
+"PFB Passo Fundo",
+
+"PFN Panama City Bay County",
+
+"PFO Paphos",
+
+"PFQ Parsabad",
+
+"PGA Page",
+
+"PGF Perpignan",
+
+"PGK Pangkalpinang",
+
+"PGM Port Graham",
+
+"PGU Asaloyeh",
+
+"PGV Greenville",
+
+"PGX Perigueux",
+
+"PHC Port Harcourt",
+
+"PHE Port Hedland",
+
+"PHF Newport News",
+
+"PHG Port Harcourt City",
+
+"PHL Philadelphia",
+
+"PHO Point Hope",
+
+"PHS Phitsanulok",
+
+"PHW Phalaborwa",
+
+"PHX Phoenix Sky Harbor",
+
+"PIA Peoria",
+
+"PIB Laurel",
+
+"PIE Tampa",
+
+"PIF Pingtung",
+
+"PIH Pocatello",
+
+"PIK Glasgow Prestwick",
+
+"PIN Parintins",
+
+"PIP Pilot Point",
+
+"PIR Pierre",
+
+"PIS Poitiers Biard",
+
+"PIT Pittsburgh",
+
+"PIU Piura",
+
+"PIW Pikwitonei",
+
+"PIX Pico Island",
+
+"PIZ Point Lay",
+
+"PJA Pajala",
+
+"PJG Panjgur",
+
+"PJM Puerto Jimenez",
+
+"PKA Napaskiak",
+
+"PKB Parkersburg/Marietta",
+
+"PKC PetropavlovskKamchats",
+
+"PKE Parkes",
+
+"PKG Pangkor",
+
+"PKK Pakokku",
+
+"PKN Pangkalanbun",
+
+"PKP Puka Puka",
+
+"PKR Pokhara",
+
+"PKU Pekanbaru",
+
+"PKY Palangkaraya",
+
+"PKZ Pakse",
+
+"PLD Playa Samara",
+
+"PLH Plymouth",
+
+"PLJ Placencia",
+
+"PLM Palembang",
+
+"PLN Pellston",
+
+"PLO Port Lincoln",
+
+"PLQ Klaipeda/Palanga",
+
+"PLS Providenciales",
+
+"PLU Belo Horizonte Pampulha",
+
+"PLW Palu",
+
+"PLX Semipalatinsk",
+
+"PLZ Port Elizabeth",
+
+"PMA Pemba",
+
+"PMC Puerto Montt",
+
+"PMD Palmdale",
+
+"PME Portsmouth",
+
+"PMF Milan Parma",
+
+"PMI Palma Mallorca",
+
+"PML Port Moller",
+
+"PMO Palermo",
+
+"PMR Palmerston North",
+
+"PMV Porlamar",
+
+"PMW Palmas",
+
+"PMY Puerto Madryn",
+
+"PMZ Palmar",
+
+"PNA Pamplona",
+
+"PND Punta Gorda",
+
+"PNH Phnom Penh",
+
+"PNI Pohnpei",
+
+"PNK Pontianak",
+
+"PNL Pantelleria",
+
+"PNP Popondetta",
+
+"PNQ Pune",
+
+"PNR Pointe Noire",
+
+"PNS Pensacola",
+
+"PNZ Petrolina",
+
+"POA Porto Alegre",
+
+"POG Port Gentil",
+
+"POL Pemba",
+
+"POM Port Moresby",
+
+"POP Puerto Plata",
+
+"POR Pori",
+
+"POS Port of Spain",
+
+"POX Paris Cergy Pontoise",
+
+"POZ Poznan",
+
+"PPB President Prudente",
+
+"PPG Pago Pago",
+
+"PPK Petropavlovsk",
+
+"PPL Phaplu",
+
+"PPN Popayan",
+
+"PPP Proserpine",
+
+"PPS Puerto Princesa",
+
+"PPT Papeete",
+
+"PPV Port Protection",
+
+"PPW Papa Westray",
+
+"PQC Phuquoc",
+
+"PQI Presque Isle",
+
+"PQQ Port Macquarie",
+
+"PQS Pilot Station",
+
+"PRA Parana",
+
+"PRC Prescott",
+
+"PRG Prague",
+
+"PRI Praslin Island",
+
+"PRN Pristina",
+
+"PSA Pisa",
+
+"PSC Pasco",
+
+"PSD Port Said",
+
+"PSE Ponce",
+
+"PSG Petersburg",
+
+"PSO Pasto",
+
+"PSP Palm Springs",
+
+"PSR Pescara",
+
+"PSS Posadas",
+
+"PSU Putussibau",
+
+"PSZ Puerto Suarez",
+
+"PTA Port Alsworth",
+
+"PTF Malololailai",
+
+"PTG Polokwane",
+
+"PTH Port Heiden",
+
+"PTP PointeaPitre",
+
+"PTU Platinum",
+
+"PTY Panama City",
+
+"PUB Pueblo",
+
+"PUD Puerto Deseado",
+
+"PUF Pau",
+
+"PUJ Punta Cana",
+
+"PUK Pukarua",
+
+"PUQ Punta Arenas",
+
+"PUS Busan",
+
+"PUU Puerto Asis",
+
+"PUW Pullman",
+
+"PUY Pula",
+
+"PVA Providencia",
+
+"PVC Provincetown",
+
+"PVD Providence",
+
+"PVE El Porvenir",
+
+"PVG Shanghai Pudong",
+
+"PVH Porto Velho",
+
+"PVK Preveza/Lefkas",
+
+"PVR Puerto Vallarta",
+
+"PWE Pevek",
+
+"PWK Chicago Palwaukee",
+
+"PWM Portland",
+
+"PWQ Pavlodar",
+
+"PXM Puerto Escondido",
+
+"PXO Porto Santo",
+
+"PXU Pleiku",
+
+"PYC Playon Chico",
+
+"PYH Puerto Ayacucho",
+
+"PYJ Polyarnyj",
+
+"PYY Pai",
+
+"PZB Pietermaritzburg",
+
+"PZE Penzance",
+
+"PZI Pan Zhi Hua",
+
+"PZO Puerto Ordaz",
+
+"PZU Port Sudan",
+
+"QBC Bella Coola",
+
+"QOW Owerri",
+
+"QRO Queretaro",
+
+"QRW Warri",
+
+"QSF Setif",
+
+"RAB Rabaul",
+
+"RAE Arar",
+
+"RAH Rafha",
+
+"RAI Praia",
+
+"RAJ Rajkot",
+
+"RAK Marrakech",
+
+"RAO Ribeirao Preto",
+
+"RAP Rapid City Regional",
+
+"RAR Rarotonga",
+
+"RAS Rasht",
+
+"RBA Rabat",
+
+"RBG Roseburg",
+
+"RBQ Rurrenabaque",
+
+"RBR Rio Branco",
+
+"RBV Ramata",
+
+"RBX Rumbek",
+
+"RBY Ruby",
+
+"RCB Richards Bay",
+
+"RCE Roche Harbor",
+
+"RCH Riohacha",
+
+"RCL Redcliffe",
+
+"RCM Richmond",
+
+"RCP Cinder River",
+
+"RDB Red Dog",
+
+"RDD Redding",
+
+"RDM Redmond",
+
+"RDN Redang",
+
+"RDU Raleigh/Durham",
+
+"RDV Red Devil",
+
+"RDZ Rodez",
+
+"REA Reao",
+
+"REC Recife",
+
+"REG Reggio Calabria",
+
+"REL Trelew",
+
+"REN Orenburg",
+
+"REP Siem Reap",
+
+"RES Resistencia",
+
+"RET Rost",
+
+"REU Reus",
+
+"REX Reynosa",
+
+"RFD Chicago Rockford",
+
+"RFP Raiatea Island",
+
+"RGA Rio Grande",
+
+"RGI Rangiroa Island",
+
+"RGL Rio Gallegos",
+
+"RGN Yangon",
+
+"RGS Burgos",
+
+"RHI Rhinelander",
+
+"RHO Rhodes",
+
+"RIA Santa Maria",
+
+"RIB Riberalta",
+
+"RIC Richmond",
+
+"RIG Rio Grande",
+
+"RIS Rishiri",
+
+"RIV Riverside March",
+
+"RIW Riverton",
+
+"RIX Riga",
+
+"RIY Riyan Mukalla",
+
+"RJA Rajahmundry",
+
+"RJK Rijeka",
+
+"RJL Logrono",
+
+"RKA Aratika",
+
+"RKD Rockland",
+
+"RKS Rock Springs",
+
+"RKT Ras Al Khaimah",
+
+"RKV Reykjavik",
+
+"RLG RostockLaage",
+
+"RMA Roma",
+
+"RMF Marsa Alam",
+
+"RMI Rimini",
+
+"RMP Rampart",
+
+"RMQ Taichung",
+
+"RMT Rimatara",
+
+"RNA Arona",
+
+"RNB Ronneby",
+
+"RNL Rennell",
+
+"RNN Bornholm",
+
+"RNO Reno",
+
+"RNP Rongelap Island",
+
+"RNS Rennes",
+
+"ROA Roanoke",
+
+"ROB Monrovia Roberts",
+
+"ROC Rochester",
+
+"ROI Roi Et",
+
+"ROK Rockhampton",
+
+"ROO Rondonopolis",
+
+"ROP Rota",
+
+"ROR Koror",
+
+"ROS Rosario",
+
+"ROT Rotorua",
+
+"ROV Rostov",
+
+"ROW Roswell",
+
+"RPR Raipur",
+
+"RRG Rodrigues Island",
+
+"RRR Raroia",
+
+"RRS Roros",
+
+"RSA Santa Rosa",
+
+"RSD Rock Sound",
+
+"RSH Russian Mission",
+
+"RSI Rio Sidra",
+
+"RSJ Rosario",
+
+"RST Rochester",
+
+"RSU Yeosu",
+
+"RSW Florida",
+
+"RTA Rotuma Island",
+
+"RTB Roatan",
+
+"RTG Ruteng",
+
+"RTM Rotterdam",
+
+"RTW Saratov",
+
+"RUA Arua",
+
+"RUD Shahrood",
+
+"RUH Riyadh",
+
+"RUK Rukumkot",
+
+"RUM Rumjatar",
+
+"RUN St Denis de la Reunion",
+
+"RUR Rurutu",
+
+"RUT Rutland",
+
+"RVA Farafangana",
+
+"RVE Saravena",
+
+"RVK Roervik",
+
+"RVN Rovaniemi",
+
+"RVT Ravensthorpe",
+
+"RVV Rairua",
+
+"RXS Roxas",
+
+"RYG Oslo MossRygge",
+
+"RYK Rahim Yar Khan",
+
+"RZA Santa Cruz",
+
+"RZE Rzeszow",
+
+"RZP Taytay Sandoval",
+
+"RZR Ramsar",
+
+"RZS Sawan",
+
+"SAB Saba",
+
+"SAH Sanaa",
+
+"SAL San Salvador",
+
+"SAN San Diego",
+
+"SAP San Pedro Sula",
+
+"SAQ San Andros",
+
+"SAT San Antonio",
+
+"SAV Savannah",
+
+"SAW Istanbul",
+
+"SAX Sambu",
+
+"SBA Santa Barbara",
+
+"SBH St Barthelemy",
+
+"SBL Santa Ana",
+
+"SBN South Bend",
+
+"SBP San Luis",
+
+"SBR Saibai Island",
+
+"SBW Sibu",
+
+"SBY SalisburyOcean City",
+
+"SBZ Sibiu",
+
+"SCC Prudhoe Bay/Deadhorse",
+
+"SCE State College",
+
+"SCK Sacramento Stockton",
+
+"SCL Santiago Arturo",
+
+"SCM Scammon Bay",
+
+"SCN Saarbrucken",
+
+"SCO Aktau",
+
+"SCQ Santiago",
+
+"SCT Socotra",
+
+"SCU Santiago",
+
+"SCV Suceava",
+
+"SCW Syktyvkar",
+
+"SCX Salina Cruz",
+
+"SCY San Cristobal",
+
+"SCZ Santa Cruz",
+
+"SDD Lubango",
+
+"SDE Santiago",
+
+"SDF Louisville",
+
+"SDJ Sendai",
+
+"SDK Sandakan",
+
+"SDL Sundsvall",
+
+"SDN Sandane",
+
+"SDP Sand Point",
+
+"SDQ Santo Domingo Las Americas",
+
+"SDR Santander",
+
+"SDT Saidu Sharif",
+
+"SDU Rio de Janeiro Santos Dumont",
+
+"SDV Tel Aviv Yafo Sde Dov",
+
+"SDY Sidney",
+
+"SEA Seattle/Tacoma",
+
+"SEB Sebha",
+
+"SEN Southend",
+
+"SEZ Mahe Island",
+
+"SFA Sfax",
+
+"SFB Orlando Sanford",
+
+"SFD San Fernando de Apure",
+
+"SFG St Martin Esperance",
+
+"SFJ Kangerlussuaq",
+
+"SFL Sao Filipe",
+
+"SFN Santa Fe",
+
+"SFO San Francisco",
+
+"SFS Subic Bay",
+
+"SFT Skelleftea",
+
+"SGC Surgut",
+
+"SGD Sonderborg",
+
+"SGF Springfield",
+
+"SGN Ho Chi Minh City",
+
+"SGO St George",
+
+"SGU St George",
+
+"SGY Skagway",
+
+"SHA Shanghai Hongqiao",
+
+"SHB Nakashibetsu",
+
+"SHC Indaselassie",
+
+"SHD Staunton",
+
+"SHE Shenyang",
+
+"SHG Shungnak",
+
+"SHH Shishmaref",
+
+"SHJ Sharjah",
+
+"SHL Shillong",
+
+"SHM Nanki Shirahama",
+
+"SHP Qinhuangdao",
+
+"SHR Sheridan",
+
+"SHV Shreveport Regional",
+
+"SHW Sharurah",
+
+"SHX Shageluk",
+
+"SHY Shinyanga",
+
+"SIA Xi An Xiguan",
+
+"SIC Sinop",
+
+"SID Sal",
+
+"SIF Simara",
+
+"SIG San Juan Isla Grande",
+
+"SIN Singapore Changi",
+
+"SIP Simferopol",
+
+"SIT Sitka",
+
+"SJC San Jose",
+
+"SJD San Jose Cabo",
+
+"SJE San Jose del Guaviare",
+
+"SJI San Jose",
+
+"SJJ Sarajevo",
+
+"SJK Sao Jose Dos Campos",
+
+"SJO San Jose Juan Santamaria",
+
+"SJP Sao Jose Do Rio Preto",
+
+"SJT San Angelo",
+
+"SJU San Juan Luis Munoz Marin",
+
+"SJW Shijiazhuang",
+
+"SJY Seinajoki",
+
+"SJZ Sao Jorge Island",
+
+"SKB St Kitts",
+
+"SKC Suki",
+
+"SKD Samarkand",
+
+"SKE Skien",
+
+"SKG Thessaloniki",
+
+"SKH Surkhet",
+
+"SKK Shaktoolik",
+
+"SKN Stokmarknes",
+
+"SKO Sokoto",
+
+"SKP Skopje",
+
+"SKT Sialkot",
+
+"SKU Skiros",
+
+"SKW Skwentna",
+
+"SKZ Sukkur",
+
+"SLA Salta",
+
+"SLC Salt Lake City",
+
+"SLE Salem",
+
+"SLH Sola",
+
+"SLI Solwezi",
+
+"SLK Saranac Lake",
+
+"SLL Salalah",
+
+"SLM Salamanca",
+
+"SLN Salina",
+
+"SLP San Luis Potosi",
+
+"SLQ Sleetmute",
+
+"SLU St Lucia Vigie",
+
+"SLV Simla",
+
+"SLW Saltillo",
+
+"SLX Salt Cay",
+
+"SLY Salekhard",
+
+"SLZ Sao Luiz",
+
+"SMA Santa Maria",
+
+"SMF Sacramento",
+
+"SMI Samos",
+
+"SMK St Michael",
+
+"SML Stella Maris",
+
+"SMN Salmon",
+
+"SMR Santa Marta",
+
+"SMS Ste Marie",
+
+"SMX Santa Maria",
+
+"SNA Santa Ana John Wayne",
+
+"SNC Salinas",
+
+"SNE Sao Nicolau",
+
+"SNN Shannon",
+
+"SNO Sakon Nakhon",
+
+"SNP St Paul Island",
+
+"SNR St Nazaire",
+
+"SNU Santa Clara",
+
+"SNW Thandwe",
+
+"SOB Balaton",
+
+"SOC Solo City",
+
+"SOF Sofia",
+
+"SOG Sogndal",
+
+"SOH Solita",
+
+"SOJ Sorkjosen",
+
+"SOM San Tome",
+
+"SON Espiritu Santo",
+
+"SOO Soderhamn",
+
+"SOQ Sorong",
+
+"SOU Southampton",
+
+"SOV Seldovia",
+
+"SOW Show Low",
+
+"SOY Stronsay",
+
+"SPC Santa Cruz de la Palma",
+
+"SPD Saidpur",
+
+"SPI Springfield",
+
+"SPN Saipan",
+
+"SPP Menongue",
+
+"SPR San Pedro",
+
+"SPS Wichita Falls Sheppard AFB",
+
+"SPU Split",
+
+"SQO Storuman",
+
+"SRA Santa Rosa",
+
+"SRE Sucre",
+
+"SRG Semarang",
+
+"SRJ San Borja",
+
+"SRP Stord",
+
+"SRQ Sarasota/Bradenton",
+
+"SRV Stony River",
+
+"SRX Sert",
+
+"SRY Sary",
+
+"SRZ Santa Cruz El Trompillo",
+
+"SSA Salvador",
+
+"SSG Malabo",
+
+"SSH Sharm El Sheikh",
+
+"SSJ Sandnessjoen",
+
+"SSR Sara",
+
+"SST Santa Teresita",
+
+"SSY M'Banza Congo",
+
+"STC St Cloud",
+
+"STD Santo Domingo",
+
+"STG St George Island",
+
+"STI Santiago",
+
+"STL St Louis Lambert",
+
+"STM Santarem",
+
+"STN London Stansted",
+
+"STR Stuttgart",
+
+"STS Santa Rosa",
+
+"STT St Thomas Cyril E King",
+
+"STV Surat",
+
+"STW Stavropol",
+
+"STX St Croix Henry E. Rohlsen",
+
+"SUB Surabaya",
+
+"SUF Lamezia Terme",
+
+"SUG Surigao",
+
+"SUJ Satu Mare",
+
+"SUN Sun Valley Friedman Memorial",
+
+"SUR Summer Beaver",
+
+"SUV Suva",
+
+"SUX Sioux City",
+
+"SVA Savoonga",
+
+"SVB Sambava",
+
+"SVC Silver City",
+
+"SVD St Vincent",
+
+"SVG Stavanger",
+
+"SVI San Vicente del Caguan",
+
+"SVJ Svolvaer",
+
+"SVL Savonlinna",
+
+"SVO Moscow Sheremetyevo",
+
+"SVQ Seville",
+
+"SVS Stevens Village",
+
+"SVU Savusavu",
+
+"SVX Ekaterinburg",
+
+"SWA Shantou",
+
+"SWF Newburgh",
+
+"SWJ South West Bay",
+
+"SWK Milan Segrate",
+
+"SWQ Sumbawa",
+
+"SWS Swansea",
+
+"SXB Strasbourg",
+
+"SXF Berlin Schoenefeld",
+
+"SXL Sligo",
+
+"SXM St Maarten",
+
+"SXP Sheldon Point",
+
+"SXR Srinagar",
+
+"SXV Salem",
+
+"SYD Sydney Kingsford Smith",
+
+"SYJ Sirjan",
+
+"SYM Simao",
+
+"SYO Shonai",
+
+"SYR Syracuse",
+
+"SYU Warraber Island",
+
+"SYX Sanya",
+
+"SYY Stornoway",
+
+"SYZ Shiraz",
+
+"SZA Soyo",
+
+"SZB Kuala Lumpur",
+
+"SZD Sheffield",
+
+"SZF Samsun Carsamba",
+
+"SZG Salzburg",
+
+"SZV Suzhou",
+
+"SZX Shenzhen",
+
+"SZZ Szczecin",
+
+"TAB Tobago",
+
+"TAC Tacloban",
+
+"TAE Daegu",
+
+"TAG Tagbilaran",
+
+"TAH Tanna",
+
+"TAI Taiz",
+
+"TAK Takamatsu",
+
+"TAL Tanana",
+
+"TAM Tampico",
+
+"TAO Qingdao",
+
+"TAP Tapachula",
+
+"TAS Tashkent",
+
+"TAT Poprad/Tatry",
+
+"TBB Tuyhoa",
+
+"TBG Tabubil",
+
+"TBH Tablas",
+
+"TBI The Bight",
+
+"TBJ Tabarka",
+
+"TBN Fort Leonard Wood",
+
+"TBO Tabora",
+
+"TBP Tumbes",
+
+"TBS Tbilisi",
+
+"TBU Nuku'Alofa",
+
+"TBW Tambov",
+
+"TBZ Tabriz",
+
+"TCB Treasure Cay",
+
+"TCH Tchibanga",
+
+"TCO Tumaco",
+
+"TCP Taba",
+
+"TCQ Tacna",
+
+"TCR Tuticorin",
+
+"TCT Takotna",
+
+"TDD Trinidad",
+
+"TDX Trat",
+
+"TEB Teterboro",
+
+"TEE Tbessa",
+
+"TEK Tatitlek",
+
+"TEN Tongren",
+
+"TER Terceira",
+
+"TET Tete Matunda",
+
+"TEX Telluride",
+
+"TFI Tufi",
+
+"TFN Tenerife Norte",
+
+"TFS Tenerife Sur Reina Sofia",
+
+"TGC Tanjung Manis",
+
+"TGD Podgorica",
+
+"TGG Kuala Terengganu",
+
+"TGH Tongoa",
+
+"TGJ Tiga",
+
+"TGM Tirgu Mures",
+
+"TGO Tongliao",
+
+"TGR Touggourt",
+
+"TGU Tegucigalpa",
+
+"TGZ Tuxtla Gutierrez",
+
+"THE Teresina",
+
+"THF Berlin Tempelhof",
+
+"THL Tachilek",
+
+"THN Trollhattan",
+
+"THO Thorshofn",
+
+"THQ Tianshui",
+
+"THR Tehran Mehrabad",
+
+"THS Sukhothai",
+
+"THU Pituffik",
+
+"TIA Tirana",
+
+"TIF Taif",
+
+"TIH Tikehau Atoll",
+
+"TIJ Tijuana",
+
+"TIM Tembagapura",
+
+"TIN Tindouf",
+
+"TIP Tripoli",
+
+"TIQ Tinian",
+
+"TIR Tirupati",
+
+"TIU Timaru",
+
+"TIV Tivat",
+
+"TIZ Tari",
+
+"TJA Tarija",
+
+"TJM Tyumen",
+
+"TJN Takume",
+
+"TJQ Tanjung Pandan",
+
+"TJU Kulyab",
+
+"TKE Tenakee",
+
+"TKG Bandar Lampung",
+
+"TKJ Tok",
+
+"TKK Truk",
+
+"TKN Tokunoshima",
+
+"TKP Takapoto",
+
+"TKQ Kigoma",
+
+"TKS Tokushima",
+
+"TKU Turku",
+
+"TKV Tatakoto",
+
+"TKX Takaroa",
+
+"TLA Teller",
+
+"TLC Mexico City Toluca",
+
+"TLE Tulear",
+
+"TLH Tallahassee",
+
+"TLJ Tatalina",
+
+"TLL Tallinn",
+
+"TLM Tlemcen",
+
+"TLN Toulon",
+
+"TLS Toulouse Blagnac",
+
+"TLT Tuluksak",
+
+"TLV Tel Aviv Ben Gurion",
+
+"TLY Plastun",
+
+"TMC Tambolaka",
+
+"TMJ Termez",
+
+"TML Tamale",
+
+"TMM Tamatave",
+
+"TMP Tampere",
+
+"TMR Tamanrasset",
+
+"TMS Sao Tome Island",
+
+"TMT Trombetas",
+
+"TMU Tambor",
+
+"TMW Tamworth",
+
+"TMX Timimoun",
+
+"TNA Jinan",
+
+"TNC Tin City",
+
+"TNG Tangier",
+
+"TNJ Tanjung Pinang",
+
+"TNK Tununak",
+
+"TNN Tainan",
+
+"TNO Tamarindo",
+
+"TNR Antananarivo",
+
+"TNZ Tosontsengel",
+
+"TOD Tioman",
+
+"TOE Tozeur",
+
+"TOF Tomsk",
+
+"TOG Togiak",
+
+"TOH Torres",
+
+"TOL Toledo Express",
+
+"TOM Tombouctou",
+
+"TOS Tromso",
+
+"TOU Touho",
+
+"TOY Toyama",
+
+"TPA Tampa",
+
+"TPE Taipei Taiwan Taoyuan",
+
+"TPJ Taplejung",
+
+"TPP Tarapoto",
+
+"TPQ Tepic",
+
+"TPS Trapani",
+
+"TQR San Domino Island",
+
+"TRC Torreon",
+
+"TRD Trondheim Vaernes",
+
+"TRE Tiree",
+
+"TRF Oslo Torp",
+
+"TRG Tauranga",
+
+"TRI TriCities Regional",
+
+"TRK Tarakan",
+
+"TRN Turin Torino Caselle",
+
+"TRO Taree",
+
+"TRS Trieste",
+
+"TRU Trujillo",
+
+"TRV Thiruvananthapuram",
+
+"TRW Tarawa",
+
+"TRZ Tiruchirapally",
+
+"TSA Taipei Sung Shan",
+
+"TSE Astana",
+
+"TSF Venice Treviso",
+
+"TSJ Tsushima",
+
+"TSL Tamuin",
+
+"TSN Tianjin",
+
+"TSO Isles of Scilly Tresco",
+
+"TSR Timisoara",
+
+"TSS New York East",
+
+"TST Trang",
+
+"TSV Townsville",
+
+"TTA Tan Tan",
+
+"TTE Ternate",
+
+"TTJ Tottori",
+
+"TTQ Tortuquero",
+
+"TTT Taitung",
+
+"TUA Tulcan",
+
+"TUB Tubuai",
+
+"TUC Tucuman",
+
+"TUD Tambacounda",
+
+"TUE Tupile",
+
+"TUF Tours St Symphorien",
+
+"TUG Tuguegarao",
+
+"TUI Turaif",
+
+"TUK Turbat",
+
+"TUL Tulsa",
+
+"TUN Tunis",
+
+"TUO Taupo",
+
+"TUP Tupelo",
+
+"TUR Tucurui",
+
+"TUS Tucson",
+
+"TUU Tabuk",
+
+"TUW Tubala",
+
+"TVA Morafenobe",
+
+"TVC Traverse City",
+
+"TVF Thief River Falls",
+
+"TVU Taveuni",
+
+"TVY Dawe",
+
+"TWA Twin Hills",
+
+"TWB Toowoomba",
+
+"TWF Twin Falls",
+
+"TWT Tawitawi",
+
+"TWU Tawau",
+
+"TXK Texarkana",
+
+"TXL Berlin Tegel",
+
+"TXN Tunxi",
+
+"TYF Torsby",
+
+"TYN Taiyuan",
+
+"TYR Tyler",
+
+"TYS Knoxville",
+
+"TZA Belize City",
+
+"TZN South Andros",
+
+"TZX Trabzon",
+
+"UAH Ua Huka",
+
+"UAK Narsarsuaq",
+
+"UAP Ua Pou",
+
+"UAQ San Juan",
+
+"UAS Samburu",
+
+"UBA Uberaba",
+
+"UBJ Ube",
+
+"UBP Ubon Ratchathani",
+
+"UCT Ukhta",
+
+"UDI Uberlandia",
+
+"UDJ Uzhgorod",
+
+"UDR Udaipur",
+
+"UEL Quelimane",
+
+"UEO Kume Jima",
+
+"UET Quetta",
+
+"UFA Ufa",
+
+"UGB Pilot Point Ugashik Bay",
+
+"UGC Urgench",
+
+"UIB Quibdo",
+
+"UIH Quinhon",
+
+"UII Utila",
+
+"UIN Quincy",
+
+"UIO Quito",
+
+"UIP Quimper",
+
+"UKB Osaka Kobe",
+
+"UKI Ukiah",
+
+"UKK UstKamenogorsk",
+
+"ULA San Julian",
+
+"ULB Ulei",
+
+"ULN Ulaanbaatar",
+
+"ULO Ulaangom",
+
+"ULP Quilpie",
+
+"ULU Gulu",
+
+"ULY Ulyanovsk",
+
+"UMD Uummannaq",
+
+"UME Umea",
+
+"UNG Kiunga",
+
+"UNK Unalakleet",
+
+"UNN Ranong",
+
+"UPB Havana",
+
+"UPG Ujung Pandang",
+
+"UPN Uruapan",
+
+"URA Uralsk",
+
+"URC Urumqi",
+
+"URE Kuressaare",
+
+"URG Uruguaiana",
+
+"URJ Uraj",
+
+"URO Rouen",
+
+"URS Kursk",
+
+"URT Surat Thani",
+
+"URY Gurayat",
+
+"USH Ushuaia",
+
+"USK Usinsk",
+
+"USM Koh Samui",
+
+"USN Ulsan",
+
+"USQ Usak",
+
+"USU Busuanga",
+
+"UTH Udon Thani",
+
+"UTN Upington",
+
+"UTP Utapao",
+
+"UTT Umtata",
+
+"UTU Ustupo",
+
+"UUA Bugulma",
+
+"UUD UlanUde",
+
+"UUN BaruunUrt",
+
+"UUS YuzhnoSakhalinsk",
+
+"UUU Manumu",
+
+"UVE Ouvea",
+
+"UVF St Lucia",
+
+"UYL Nyala",
+
+"UYN Yulin",
+
+"UYU Uyuni",
+
+"VAA Vaasa",
+
+"VAI Vanimo",
+
+"VAK Chevak",
+
+"VAN Van",
+
+"VAO Suavanao",
+
+"VAR Varna",
+
+"VAS Sivas",
+
+"VAV Vava'u",
+
+"VAW Vardoe",
+
+"VBS Verona Brescia",
+
+"VBV Vanuabalavu",
+
+"VBY Visby",
+
+"VCE Venice Marco Polo",
+
+"VCL Tamky",
+
+"VCP Sao Paulo Viracopos",
+
+"VCS Con Dao",
+
+"VCT Victoria",
+
+"VCV Victorville",
+
+"VDA Ovda",
+
+"VDB Fagernes",
+
+"VDC Vitoria da Conquista",
+
+"VDE Valverde",
+
+"VDH Dong Hoi",
+
+"VDM Viedma",
+
+"VDS Vadso",
+
+"VDY Vidyanagar",
+
+"VDZ Valdez",
+
+"VEE Venetie",
+
+"VEL Vernal",
+
+"VER Veracruz",
+
+"VEY Vestmannaeyjar",
+
+"VFA Victoria Falls",
+
+"VGA Vijayawada",
+
+"VGO Vigo",
+
+"VGZ Mocoa",
+
+"VHC Saurimo",
+
+"VHM Vilhelmina",
+
+"VHZ Vahitahi",
+
+"VIE Vienna",
+
+"VIG El Vigia",
+
+"VII Vinh City",
+
+"VIJ Virgin Gorda",
+
+"VIL Dakhla",
+
+"VIS Visalia",
+
+"VIT Vitoria",
+
+"VIX Vitoria",
+
+"VKG Rachgia",
+
+"VKO Moscow Vnukovo",
+
+"VKT Vorkuta",
+
+"VLC Valencia",
+
+"VLD Valdosta Regional",
+
+"VLI Port Vila",
+
+"VLL Valladolid",
+
+"VLN Valencia",
+
+"VLS Valesdir",
+
+"VLV Valera",
+
+"VLY Anglesey",
+
+"VNO Vilnius",
+
+"VNS Varanasi",
+
+"VNT Ventspils",
+
+"VNX Vilanculos",
+
+"VOG Volgograd",
+
+"VOL Volos",
+
+"VOZ Voronezh",
+
+"VPE Ongiva",
+
+"VPN Vopnafjordur",
+
+"VPS Valparaiso Fort Walton Beach",
+
+"VPY Chimoio",
+
+"VQS Vieques",
+
+"VRA Varadero Juan Gualberto Gomez",
+
+"VRB Vero Beach",
+
+"VRC Virac",
+
+"VRK Varkaus",
+
+"VRN Verona",
+
+"VRY Vaeroy",
+
+"VSA Villahermosa",
+
+"VSG Lugansk",
+
+"VST Stockholm Vasteras",
+
+"VTE Vientiane",
+
+"VTU Las Tunas",
+
+"VTZ Vishakhapatnam",
+
+"VUP Valledupar",
+
+"VVC Villavicencio",
+
+"VVI Santa Cruz Viru Viru",
+
+"VVO Vladivostok",
+
+"VVZ Illizi",
+
+"VXC Lichinga",
+
+"VXE Sao Vicente",
+
+"VXO Vaxjo",
+
+"WAA Wales",
+
+"WAE Wadi Ad Dawasir",
+
+"WAG Wanganui",
+
+"WAQ Antsalova",
+
+"WAT Waterford",
+
+"WAW Warsaw",
+
+"WBB Stebbins",
+
+"WBQ Beaver",
+
+"WDH Windhoek",
+
+"WEF Weifang",
+
+"WEH Weihai",
+
+"WEI Weipa",
+
+"WGA Wagga Wagga",
+
+"WGE Walgett",
+
+"WGP Waingapu",
+
+"WHF Wadi Halfa",
+
+"WHK Whakatane",
+
+"WIC Wick",
+
+"WIL Nairobi Wilson",
+
+"WIN Winton",
+
+"WJA Woja",
+
+"WJU Wonju",
+
+"WKA Wanaka",
+
+"WKJ Wakkanai",
+
+"WKK Aleknagik",
+
+"WLG Wellington",
+
+"WLH Walaha",
+
+"WLK Selawik",
+
+"WLS Wallis Island",
+
+"WMK Meyers Chuck",
+
+"WMN Maroantsetra",
+
+"WMO White Mountain",
+
+"WMR Mananara",
+
+"WNA Napakiak",
+
+"WNH Wenshan",
+
+"WNN Wunnummin Lake",
+
+"WNP Naga",
+
+"WNR Windorah",
+
+"WNS Nawabshah",
+
+"WNZ Wenzhou",
+
+"WPM Wipim",
+
+"WRE Whangarei",
+
+"WRG Wrangell",
+
+"WRL Worland",
+
+"WRO Wroclaw",
+
+"WRY Westray",
+
+"WSN South Naknek",
+
+"WST Westerly",
+
+"WSX Westsound",
+
+"WSZ Westport",
+
+"WTK Noatak",
+
+"WTL Tuntutuliak",
+
+"WTS Tsiroanomandidy",
+
+"WUA Wu Hai",
+
+"WUH Wuhan",
+
+"WUN Wiluna",
+
+"WUS Wuyishan",
+
+"WUX Wuxi",
+
+"WUZ Wuzhou",
+
+"WVB Walvis Bay",
+
+"WWK Wewak",
+
+"WWP Whale Pass",
+
+"WWT Newtok",
+
+"WXN Wanxian",
+
+"WYA Whyalla",
+
+"WYS West Yellowstone",
+
+"XAP Chapeco",
+
+"XBE Bearskin Lake",
+
+"XBJ Birjand",
+
+"XBR Brockville",
+
+"XCH Christmas Island",
+
+"XCM Chatham",
+
+"XCR Paris Vatry",
+
+"XFN Xiangfan",
+
+"XGR Kangiqsualujjuaq",
+
+"XIC Xichang",
+
+"XIL Xilinhot",
+
+"XIY Xi an Xianyang",
+
+"XKH Xieng Khouang",
+
+"XKS Kasabonika",
+
+"XLB Lac Brochet",
+
+"XMH Manihi",
+
+"XMN Xiamen",
+
+"XMS Macas",
+
+"XMY Yam Island",
+
+"XNA Fayetteville",
+
+"XNN Xining",
+
+"XQP Quepos",
+
+"XQU Qualicum",
+
+"XRY Jerez de la Frontera",
+
+"XSC South Caicos",
+
+"XSI South Indian Lake",
+
+"XSP Singapore Seletar",
+
+"XTG Thargomindah",
+
+"XTL Tadoule Lake",
+
+"XUZ Xuzhou",
+
+"XZM Macao",
+
+"YAA Anahim Lake",
+
+"YAC Cat Lake",
+
+"YAG Fort Frances",
+
+"YAK Yakutat",
+
+"YAM Sault Ste Marie",
+
+"YAP Yap",
+
+"YAT Attawapiskat",
+
+"YAX Angling Lake",
+
+"YAY St Anthony",
+
+"YBB Pelly Bay",
+
+"YBC Baie Comeau",
+
+"YBG Bagotville",
+
+"YBI Black Tickle",
+
+"YBK Baker Lake",
+
+"YBL Campbell River",
+
+"YBP Yibin",
+
+"YBR Brandon",
+
+"YBT Brochet",
+
+"YBV Berens River",
+
+"YBW Bedwell Harbor",
+
+"YBX Blanc Sablon",
+
+"YCA Courtenay",
+
+"YCB Cambridge Bay",
+
+"YCC Cornwall",
+
+"YCD Nanaimo Cassidy",
+
+"YCG Castlegar",
+
+"YCK Colville Lake",
+
+"YCM St Catharines",
+
+"YCO Kugluktuk Coppermine",
+
+"YCR Cross Lake",
+
+"YCS Chesterfield Inlet",
+
+"YCU Yun Cheng",
+
+"YCY Clyde River",
+
+"YDA Dawson City",
+
+"YDF Deer Lake",
+
+"YDN Dauphin",
+
+"YDP Nain",
+
+"YDQ Dawson Creek",
+
+"YEG Edmonton",
+
+"YEI Bursa",
+
+"YEK Arviat",
+
+"YER Fort Severn",
+
+"YES Yasouj",
+
+"YEV Inuvik",
+
+"YFA Fort Albany",
+
+"YFB Iqaluit",
+
+"YFC Fredericton",
+
+"YFH Fort Hope",
+
+"YFJ Snare Lake",
+
+"YFO Flin Flon",
+
+"YFS Fort Simpson",
+
+"YFX Fox Harbour",
+
+"YGB Gillies Bay",
+
+"YGG Ganges Harbor",
+
+"YGH Fort Good Hope",
+
+"YGJ Yonago",
+
+"YGK Kingston Norman Rogers",
+
+"YGL La Grande",
+
+"YGO Gods Narrows",
+
+"YGP Gaspe",
+
+"YGR Iles de la Madeleine",
+
+"YGT Igloolik",
+
+"YGV Havre St Pierre",
+
+"YGW Kuujjuarapik",
+
+"YGX Gillam",
+
+"YGZ Grise Fiord",
+
+"YHA Port Hope Simpson",
+
+"YHB Hudson Bay",
+
+"YHD Dryden",
+
+"YHG Charlottetown",
+
+"YHI Ulukhaktok",
+
+"YHK Gjoa Haven",
+
+"YHM Toronto John C Munro Hamilton",
+
+"YHO Hopedale",
+
+"YHP Poplar Hill",
+
+"YHR Chevery",
+
+"YHS Sechelt",
+
+"YHU Montreal St Hubert",
+
+"YHY Hay River",
+
+"YHZ Halifax Stanfield",
+
+"YIF Pakuashipi",
+
+"YIH Yichang",
+
+"YIK Ivujivik",
+
+"YIN Yining",
+
+"YIO Pond Inlet",
+
+"YIP Detroit Willow Run",
+
+"YIV Island Lake/Garden Hill",
+
+"YIW Yiwu",
+
+"YJT Stephenville",
+
+"YKA Kamloops",
+
+"YKF Kitchener/Waterloo",
+
+"YKG Kangirsuk",
+
+"YKL Schefferville",
+
+"YKM Yakima",
+
+"YKQ Waskaganish",
+
+"YKS Yakutsk",
+
+"YKT Klemtu",
+
+"YKU Chisasibi",
+
+"YLC Kimmirut/Lake Harbour",
+
+"YLE Wha Ti Lac la Martre",
+
+"YLH Lansdowne House",
+
+"YLL Lloydminster",
+
+"YLQ La Tuque",
+
+"YLW Kelowna",
+
+"YMH Mary's Harbour",
+
+"YMM Fort McMurray",
+
+"YMN Makkovik",
+
+"YMO Moosonee",
+
+"YMT Chibougamau",
+
+"YMX Montreal Mirabel",
+
+"YNA Natashquan",
+
+"YNB Yanbu",
+
+"YNC Wemindji",
+
+"YND Ottawa Gatineau",
+
+"YNE Norway House",
+
+"YNG Youngstown",
+
+"YNJ Yanji",
+
+"YNO North Spirit",
+
+"YNP Natuashish",
+
+"YNS Nemiscau",
+
+"YNT Yantai",
+
+"YNZ Yancheng",
+
+"YOC Old Crow",
+
+"YOG Ogoki",
+
+"YOH Oxford House",
+
+"YOJ High Level",
+
+"YOO Oshawa",
+
+"YOP Rainbow Lake",
+
+"YOW Ottawa McDonald Cartier",
+
+"YPB Port Alberni",
+
+"YPC Paulatuk",
+
+"YPH Inukjuak",
+
+"YPJ Aupaluk",
+
+"YPL Pickle Lake",
+
+"YPM Pikangikum",
+
+"YPO Peawanuck",
+
+"YPR Prince Rupert Digby Island",
+
+"YPW Powell River",
+
+"YPX Puvirnituq",
+
+"YPZ Burns Lake",
+
+"YQB Quebec",
+
+"YQC Quaqtaq",
+
+"YQD The Pas",
+
+"YQF Red Deer",
+
+"YQG Windsor",
+
+"YQK Kenora",
+
+"YQL Lethbridge",
+
+"YQM Greater Moncton",
+
+"YQN Nakina",
+
+"YQQ Comox",
+
+"YQR Regina",
+
+"YQT Thunder Bay",
+
+"YQU Grande Prairie",
+
+"YQX Gander",
+
+"YQY Sydney",
+
+"YQZ Quesnel",
+
+"YRA Rae Lakes",
+
+"YRB Resolute",
+
+"YRF Cartwright",
+
+"YRG Rigolet",
+
+"YRJ Roberval",
+
+"YRL Red Lake",
+
+"YRS Red Sucker Lake",
+
+"YRT Rankin Inlet",
+
+"YSB Sudbury",
+
+"YSG Lutselke Snowdrift",
+
+"YSH Smith Falls",
+
+"YSJ St John",
+
+"YSK Sanikiluaq",
+
+"YSM Fort Smith",
+
+"YSO Postville",
+
+"YSR Nanisivik",
+
+"YST Ste Therese Point",
+
+"YSY Sachs Harbour",
+
+"YTD Thicket Portage",
+
+"YTE Cape Dorset",
+
+"YTF Alma",
+
+"YTH Thompson",
+
+"YTL Big Trout Lake",
+
+"YTM Mont Tremblant",
+
+"YTQ Tasiujuaq",
+
+"YTS Timmins",
+
+"YTZ Toronto City Centre",
+
+"YUB Tuktoyaktuk",
+
+"YUD Umiujaq",
+
+"YUL Montreal Pierre Elliott Trudeau",
+
+"YUM Yuma",
+
+"YUT Repulse Bay",
+
+"YUX Hall Beach",
+
+"YUY Rouyn",
+
+"YVA Moroni Iconi",
+
+"YVB Bonaventure",
+
+"YVM Qikiqtarjuaq",
+
+"YVO Val D'Or",
+
+"YVP Kuujjuaq",
+
+"YVQ Norman Wells",
+
+"YVR Vancouver",
+
+"YVZ Deer Lake",
+
+"YWB Kangiqsujuaq",
+
+"YWG Winnipeg",
+
+"YWH Victoria",
+
+"YWJ Deline",
+
+"YWK Wabush",
+
+"YWL Williams Lake",
+
+"YWM Williams Harbour",
+
+"YWP Webequie",
+
+"YXC Cranbrook",
+
+"YXE Saskatoon",
+
+"YXH Medicine Hat",
+
+"YXJ Fort St John",
+
+"YXL Sioux Lookout",
+
+"YXN Whale Cove",
+
+"YXP Pangnirtung",
+
+"YXS Prince George",
+
+"YXT Terrace",
+
+"YXU London",
+
+"YXX Abbotsford",
+
+"YXY Whitehorse",
+
+"YYB North Bay",
+
+"YYC Calgary",
+
+"YYD Smithers",
+
+"YYE Fort Nelson",
+
+"YYF Penticton",
+
+"YYG Charlottetown",
+
+"YYH Taloyoak",
+
+"YYJ Victoria",
+
+"YYL Lynn Lake",
+
+"YYQ Churchill",
+
+"YYR Goose Bay",
+
+"YYT St Johns",
+
+"YYU Kapuskasing",
+
+"YYY Mont Joli",
+
+"YYZ Toronto",
+
+"YZF Yellowknife",
+
+"YZG Salluit",
+
+"YZP Sandspit",
+
+"YZR Sarnia",
+
+"YZS Coral Harbour",
+
+"YZT Port Hardy",
+
+"YZV SeptIles",
+
+"YZZ Trail",
+
+"ZAC York Landing",
+
+"ZAD Zadar",
+
+"ZAG Zagreb",
+
+"ZAH Zahedan",
+
+"ZAL Valdivia",
+
+"ZAM Zamboanga",
+
+"ZAT Zhaotong",
+
+"ZAZ Zaragoza",
+
+"ZBF Bathurst",
+
+"ZBL Biloela",
+
+"ZBR ChahBahar",
+
+"ZCL Zacatecas",
+
+"ZCO Temuco",
+
+"ZEL Bella Bella",
+
+"ZEM East Main",
+
+"ZFM Fort McPherson",
+
+"ZFN Tulita Fort Norman",
+
+"ZGI Gods River",
+
+"ZGS Gethsemani",
+
+"ZGU Gaua",
+
+"ZHA Zhanjiang",
+
+"ZIG Ziguinchor",
+
+"ZIH Ixtapa/Zihuatanejo",
+
+"ZKE Kaschechewan",
+
+"ZKG Kegaska",
+
+"ZLO Manzanillo",
+
+"ZLT La Tabatiere",
+
+"ZMT Masset",
+
+"ZNE Newman",
+
+"ZNZ Zanzibar",
+
+"ZOS Osorno",
+
+"ZPB Sachigo Lake",
+
+"ZQN Queenstown",
+
+"ZQW Saarbrucken Zweibruecken",
+
+"ZRH Zurich",
+
+"ZRJ Round Lake",
+
+"ZSA San Salvador",
+
+"ZSE St Pierre de la Reunion",
+
+"ZSJ Sandy Lake",
+
+"ZTA Tureia",
+
+"ZTB TeteaLa Baleine",
+
+"ZTH Zakinthos",
+
+"ZTM Shamattawa",
+
+"ZUH Zhuhai",
+
+"ZUM Churchill Falls",
+
+"ZVK Savannakhet",
+
+"ZYL Sylhet",
+
+"ZZO Zonalnoe",
+
+"HDQ Headquarters",
+
+"BER Berlin"
+
+]}

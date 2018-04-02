@@ -1,0 +1,113 @@
+{
+
+  "Landing" :[
+   {
+    "Hello" : "Welcome",
+    "Welcome" : "Welcome",
+  "ManageFiles" : "Manage Files",
+  "PassengerProcessing":"Passenger Processing",
+  "DelayedBag" : "Delayed Bag",
+
+  "Create" : "Create",
+  "Manage" : "Manage",
+  "Search" : "Search",
+  "Trace" : "Trace",
+  "SearchManage": "Search & Manage",
+
+  "DamagedBag" : "Damaged Bag",
+
+  "BagProcessing" : "Bag Processing",
+
+  "RushBag" : "Rush Bag",
+  "OnHandBag" : "On-Hand Bag",
+
+  "ActionFiles" : "Action Files",
+
+  "StationInbox" : "Station Inbox",
+  "View" : "View",
+  "SendMessage" : "Send Message",
+   "HeadquartersInbox" : "Headquarters Inbox",
+
+   "Other" : "Other",
+   "Claims" : "Claims",
+   "LostandFound" : "Lost & Found Property",
+
+   "Utilities" : "Utilities",
+
+"Miscellaneous" : "Miscellaneous",
+"SendTeletypeMessage" : "Send Teletype Message",
+"ConvertCurrency" : "Convert Currency",
+"ReceivedatHeadquarters" : "Received at Headquarters",
+"CustomsDateEntry" : "Customs Date Entry",
+"ClaimsEntry" : "Claims Entry",
+"MembershipList" : "Membership List",
+"ContentsDictionary" : "Contents Dictionary",
+"DeliveryCost" : "Delivery Cost",
+"PassengersBoarded" : "Passengers Boarded",
+"GeographicAreas" : "Geographic Areas",
+"Station" : "Station",
+"Airline" : "Airline",
+"Reports" : "Reports",
+"ReportsStatistics": "Reports and Statistics",
+"Configuration" : "Configuration",
+"Administration" : "Administration",
+"NewMessage" : "New Message",
+"fileRefList" : "File Reference List",
+"stationList" : "Station Log",
+"stationPerf" : "Station Performance",
+"borderClearance": "Border Clearance",
+"FlightDate" : "Flight",
+"FlightDate1" : "Flight/Date",
+"ActivityFlight":"Activity Status by Flight/Date",
+"FaultFlight": "Fault/Flight",
+"WorstFlight": "Worst/Filght",
+"Activity" : "Activity",
+"ActStatus" : "Activity Status",
+"ActStatusFlight" : "Activity Status by Flight Date",
+"electronicInputs" : "Electronic Message Inputs",
+"OtherReports" : "Other",
+"Pilfered":"Damaged/Pilfered List",
+"BaggageDelivery":"Baggage Delivery",
+"FaultStaionList":"Fault Station Log",
+"FaultStaion":"Fault Station",
+"PerformanceByFile": "Performance by File",
+"PercentageOfMishandlings" : "Percentage of Mishandlings",
+"MishandledConnection" : "Mishandled Connection",
+"PerformanceByBag" : "Performance by Bag",
+"ManagementInput": "Management Inputs",
+"callCenter" : "Call Center",
+"FaultStationCost" : "Fault Station Cost",
+"TracingInput":"Tracing Inputs",
+"ManagementDates" : "Management Dates",
+"statistics" : "Statistics"
+  }
+],
+
+"side" : [
+  {
+  "delbag" : "Delayed Bag",
+"ohbag" : "On-Hand Bag",
+"rusbag" : "Rush Bag",
+"dambag" : "Damaged Bag",
+"found" : "Found Property",
+"los" : "Lost Property",
+"af" : "Action Files",
+"misc" : "Miscellaneous",
+"clai" : "Claims",
+"adm" : "Administration",
+"conf" : "Configuration",
+"rep" : "Reports",
+
+"warning" : "Session timeout warning!",
+"inactivity" : "Due to inactivity, your session will timeout in:",
+"click" : "Press any key or move the mouse to continue working",
+"timeout" : "Session timed out",
+"logedout" : "Your session has timed out. Please login again.",
+"donotStay": "DO NOT STAY ON PAGE",
+"login" : "OK",
+"cancel" : "CANCEL"
+  }
+]
+
+
+}

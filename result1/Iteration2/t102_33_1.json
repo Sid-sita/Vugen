@@ -1,0 +1,58 @@
+{
+"bagTypeimagesDesc" : [
+  {
+  "bagTypeimages" : [{
+        "imagehdr": "Un-Zippered Bags",
+            "imageCodeno": [{ "imageCode": "01" },{ "imageCode": "02" },{ "imageCode": "03" },{ "imageCode": "05" },{"imageCode": "06"},
+                        {"imageCode": "07"},{ "imageCode": "08" },{ "imageCode": "09" },{ "imageCode": "10" },{ "imageCode": "12" }
+                      ]
+    },
+    {
+          "imagehdr": "Zippered Bags",
+              "imageCodeno": [{"imageCode": "20" },{"imageCode": "22"},{"imageCode": "22D"},{"imageCode": "22R"},{"imageCode": "23"},
+                          {"imageCode": "25"},{"imageCode": "26"},{"imageCode": "27"},{"imageCode": "28"},{"imageCode": "29"}
+                        ]
+      },
+      {
+            "imagehdr": "Miscellaneous Articles",
+                "imageCodeno": [{"imageCode": "50" },{"imageCode": "51"},{"imageCode": "52"},{"imageCode": "53"},{"imageCode": "54"},
+                            {"imageCode": "55"},{"imageCode": "56"},{"imageCode": "57"},{"imageCode": "58"},{"imageCode": "59"}
+                            ,{"imageCode": "60"},{"imageCode": "61"},{"imageCode": "62"},{"imageCode": "63"},{"imageCode": "64"}
+                            ,{"imageCode": "65"},{"imageCode": "66"},{"imageCode": "67"},{"imageCode": "68"},{"imageCode": "69"}
+                            ,{"imageCode": "71"},{"imageCode": "72"},{"imageCode": "73"},{"imageCode": "74"},{"imageCode": "75"},
+                            {"imageCode": "81"},{"imageCode": "82"},{"imageCode": "83"},{"imageCode": "85"},{"imageCode": "89"}
+                            ,{"imageCode": "90"},{"imageCode": "92"},{"imageCode": "93"},{"imageCode": "94"},{"imageCode": "95"},
+                            {"imageCode": "96"},{"imageCode": "97"},{"imageCode": "98"},{"imageCode": "99"}
+                          ]
+        }]
+    },
+	{
+		"bagDescimages" : [{
+        "imagehdr": "Material Elements",
+            "imageCodeno": [{ "imageCode": "D","imageCodeNum":"1" },{ "imageCode": "L","imageCodeNum":"2" },{ "imageCode": "M","imageCodeNum":"3" },{ "imageCode": "R","imageCodeNum":"4" },{ "imageCode": "T","imageCodeNum":"5" },{ "imageCode": "X","imageCodeNum":"6" }]
+						},{
+        "imagehdr": "Basic Elements",
+            "imageCodeno": [{ "imageCode": "B","imageCodeNum":"7" },{ "imageCode": "K","imageCodeNum":"8" },{ "imageCode": "X","imageCodeNum":"9" }]
+						},
+						{
+        "imagehdr": "External Elements",
+            "imageCodeno": [{ "imageCode": "C","imageCodeNum":"10" },{ "imageCode": "H","imageCodeNum":"11" },{ "imageCode": "S","imageCodeNum":"12" },{ "imageCode": "W","imageCodeNum":"13" },{ "imageCode": "X","imageCodeNum":"14" }]
+						}]
+	},
+  {
+    "bagColorimages" : [
+      { "imageCode": "WT", "color" : "White" },
+      { "imageCode": "BK", "color" : "Black" },
+      { "imageCode": "GY", "color" : "Gray" },
+      { "imageCode": "BU", "color" : "Blue" },
+      { "imageCode": "RD", "color" : "Red" },
+      { "imageCode": "YW", "color" : "Yellow" },
+      { "imageCode": "BE", "color" : "Beige" },
+      { "imageCode": "BN", "color" : "Brown" },
+      { "imageCode": "GN", "color" : "Green" },
+      { "imageCode": "MC", "color" : "Multicolored" },
+      { "imageCode": "PU", "color" : "Purple" },
+      { "imageCode": "PR", "color" : "Patterned" }
+    ]
+  }
+]}

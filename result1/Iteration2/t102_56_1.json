@@ -1,0 +1,244 @@
+{
+	"MultiStationUpdateType": [{
+		"index": 1,
+		"key": "1. All Stations",
+		"value": "ALL"
+	}, {
+		"index": 2,
+		"key": "2. Regions",
+		"value": "REGIONS"
+	}, {
+		"index": 3,
+		"key": "3. Stations",
+		"value": "STATIONS"
+	}],
+	"StationAttributes": {
+		"LeftStationAttributes": [{
+			"index": 1,
+			"key": "OHD Inventory Acknowledgement",
+			"value": "OHD_Ack",
+      "Id" : "OHD",
+			"DisplayValue": false
+		}, {
+			"index": 2,
+			"key": "Tag number match to the action area inbox",
+			"value": "TNT_Match",
+      "Id" : "TNT",
+			"DisplayValue": false
+		}, {
+			"index": 3,
+			"key": "Use file reference mandatory elements",
+			"value": "Ref_Mandatories",
+      "Id" : "FRM",
+			"DisplayValue": false
+		}, {
+			"index": 4,
+			"key": " Use file reference mandatory passwords",
+			"value": "Password_Mandatories",
+      "Id" : "FRMP",
+			"DisplayValue": false
+		},{
+			"index": 5,
+			"key": "Secondary Reason for Loss",
+			"value": "Secondary_RL",
+      "Id" : "SRL",
+			"DisplayValue": false
+		},{
+			"index": 6,
+			"key": "Action File Menu",
+			"value": "Menu",
+      "Id" : "AFM",
+			"DisplayValue": false
+		}, {
+			"index": 7,
+			"key": "Expanded Action File",
+			"value": "Expand",
+      "Id" : "AFE",
+			"DisplayValue": false
+		}, {
+			"index": 8,
+			"key": "LM area to user/Teletype Address",
+			"value": "User",
+      "Id" : "LMA",
+			"DisplayValue": false
+		}],
+		"RightStationAttributes": [ {
+			"index": 1,
+			"key": "Allow station automated SMS",
+			"value": "Auto",
+      "Id" : "ASMS",
+			"DisplayValue": false
+		}, {
+			"index": 2,
+			"key": "Automated SEA",
+			"value": "Auto",
+      "Id" : "AEML",
+			"DisplayValue": false
+		}, {
+			"index": 3,
+			"key": "Allow SMS from DSM",
+			"value": "DSM",
+      "Id" : "DSM",
+			"DisplayValue": false
+		}, {
+			"index": 4,
+			"key": "Allow manual SMS",
+			"value": "Manual",
+      "Id" : "MSMS",
+			"DisplayValue": false
+		}, {
+			"index": 5,
+			"key": "Allow SEA from DSE",
+			"value": "DSE",
+      "Id" : "DSE",
+			"DisplayValue": false
+		}, {
+			"index": 6,
+			"key": "Allow manual SEA ",
+			"value": "Manual",
+      "Id" : "MEML",
+			"DisplayValue": false
+		}, {
+			"index": 7,
+			"key": "Use file reference airline system prompts",
+			"value": "System",
+      "Id" : "SP",
+			"DisplayValue": true
+		}]
+	},
+	"QOHFileDuration": [{
+  "index": 0,
+  "key": "Select QOH File Life",
+  "value": ""
+},{
+		"index": 1,
+		"key": "1. 24 hours",
+		"value": 1
+	}, {
+		"index": 2,
+		"key": "2. 48 hours",
+		"value": 2
+	}, {
+		"index": 3,
+		"key": "3. 72 hours",
+		"value": 3
+	}, {
+		"index": 4,
+		"key": "4. 96 hours",
+		"value": 4
+	}, {
+		"index": 5,
+		"key": "5. 120 hours",
+		"value": 5
+	}],
+	"DefaultLanguage": [{
+		"index": 1,
+		"key": "1. Afrikaans",
+		"value": "AF"
+	}, {
+		"index": 2,
+		"key": "2. Arabic",
+		"value": "AR"
+	}, {
+		"index": 3,
+		"key": "3. Croatian",
+		"value": "CR"
+	}, {
+		"index": 4,
+		"key": "4. Czech",
+		"value": "CZ"
+	}, {
+		"index": 5,
+		"key": "5. Danish",
+		"value": "DA"
+	}, {
+		"index": 6,
+		"key": "6. Dutch",
+		"value": "DU"
+	}, {
+		"index": 7,
+		"key": "7. English",
+		"value": "EN"
+	}, {
+		"index": 8,
+		"key": "8. Finnish",
+		"value": "FI"
+	}, {
+		"index": 9,
+		"key": "9. French",
+		"value": "FR"
+	}, {
+		"index": 10,
+		"key": "10. German",
+		"value": "GE"
+	}, {
+		"index": 11,
+		"key": "11. Greek",
+		"value": "GR"
+	}, {
+		"index": 12,
+		"key": "12. Hungarian",
+		"value": "HU"
+	}, {
+		"index": 13,
+		"key": "13. Italian",
+		"value": "IT"
+	}, {
+		"index": 14,
+		"key": "14. Malaysian",
+		"value": "MA"
+	}, {
+		"index": 15,
+		"key": "15. Norwegian",
+		"value": "NO"
+	}, {
+		"index": 16,
+		"key": "16. Polish",
+		"value": "PL"
+	}, {
+		"index": 17,
+		"key": "17. Portuguese",
+		"value": "PO"
+	}, {
+		"index": 18,
+		"key": "18. Russian",
+		"value": "RU"
+	}, {
+		"index": 19,
+		"key": "19. Serbian",
+		"value": "SE"
+	}, {
+		"index": 20,
+		"key": "20. Slovene",
+		"value": "SL"
+	}, {
+		"index": 21,
+		"key": "21. Spanish",
+		"value": "SP"
+	}, {
+		"index": 22,
+		"key": "22. Swedish",
+		"value": "SW"
+	}, {
+		"index": 23,
+		"key": "23. Turkish",
+		"value": "TU"
+	}, {
+		"index": 24,
+		"key": "24. Vietnamese",
+		"value": "VN"
+	}],
+	"MasterRecordConfigurationTypeList" :[
+		{ "Key": "Usage", "Value": "SYSTEM USAGE", "Id": 0 , "hide": false},
+		{ "Key": "Headquarters", "Value": "HEADQUARTERS OPTIONS", "Id": 1, "hide": false},
+		{ "Key": "Matching", "Value": "MATCHING OPTIONS", "Id": 2, "hide": false},
+		{ "Key": "Config", "Value": "SYSTEM OPTIONS", "Id": 3, "hide": false},
+		{ "Key": "Communications", "Value": "COMMUNICATIONS", "Id": 4, "hide": false},
+		{ "Key": "Interfaces", "Value": "INTERFACE SYSTEMS", "Id": 5, "hide": false},
+		{ "Key": "Mandatory Elements", "Value": "MANDATORY ELEMENTS", "Id": 6, "hide": false},
+		{ "Key": "Reports", "Value": "REPORTS/FILE ADDRESSING", "Id": 7, "hide": false},
+		{ "Key": "Security", "Value": "SECURITY PASSWORDS AIRLINE", "Id": 8, "hide": false},
+		{ "Key": "Prompts", "Value": "PROMPTS", "Id": 9, "hide": false},
+		{ "Key": "Contacts", "Value": "CONTACT INFORMATION", "Id": 10, "hide": false}
+	]
+}

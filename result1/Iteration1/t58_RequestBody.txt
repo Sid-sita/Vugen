@@ -1,0 +1,2 @@
+"{"WTR_StationAttributesReadRQ":{"POS":{"Source":[{"AirlineVendorID":"LH"}]},"StationAirline":{"
+""AirlineCode":"LH","StationCode":"AAA"},"AgentID":"WTDADMIN","Version":0.1}}"

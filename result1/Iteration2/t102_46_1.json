@@ -1,0 +1,209 @@
+{
+"actionFiles" : [
+
+  {"type" : "Action Message Address","componentId" : "action-mess-address","id":"action-mess-address","isHide":false},
+  {"type" : "All Stations","componentId" : "all-stations","id":"all-stations" ,"isHide":false},
+  {"type" : "Region","componentId" : "region","id":"region","isHide":false},
+  {"type" : "All Handled","componentId" : "DMA","id":"ahs","isHide":false}
+
+],
+"selectArea" : [
+
+  {"type" : "Additional prompts","code": "AP"},
+  {"type" : "Action messages","code": "AA"},
+  {"type" : "Forward messages","code": "FW"},
+  {"type" : "Local Manager","code": "LM"}
+],
+
+"selectAreaMsgBroadcast" : [
+
+  {"type" : "Additional prompts","code": "AP"},
+  {"type" : "Action messages","code": "AA"},
+  {"type" : "Forward messages","code": "FW"}
+
+],
+"inboxAreaForReactivatePastdateFile" : [
+  {"type" : "Additional prompts","code": "AP"}
+],
+
+"selectAreaHDQ" : [
+  {"type" : "Additional prompts","code": "AP"},
+  {"type" : "Action messages","code": "AA"},
+  {"type" : "Forward messages","code": "FW"},
+  {"type" : "User defined items","code": "XX"},
+  {"type" : "Management Items","code": "HQ"},
+  {"type" : "Insurance ","code": "IN"}
+],
+"PastDateReactivateInboxAreaTypeHDQ" : [ {"type" : "User defined","code": "XX"},
+                                         {"type" : "Insurance ","code": "IN"},
+                                         {"type" : "Management ","code": "HQ"}],
+
+"FileType" : [
+    {"type" : "Damaged","code": "DAMAGED"},
+  {"type" : "Delayed","code": "DELAYED"},
+    {"type" : "On-Hand","code": "ON-HAND"}
+],
+"HoursTime" : ["00:00","01:00","02:00","03:00",
+              "04:00","05:00","06:00","07:00",
+              "08:00","09:00","10:00","11:00",
+              "12:00","13:00","14:00","15:00",
+              "16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"
+            ],
+
+"actionMsgForCopyMessage" : [
+
+              {"type" : "Teletype Address","componentId" : ""},
+              {"type" : "Action Message","componentId" : ""},
+              {"type" : "Email Address","componentId" : ""}
+            ],
+
+"emailNotification" : [
+  {"type" : "Email","componentId" : "EMAIL","code" : "email"},
+  {"type" : "SMS","componentId" : "SMS","code" : "sms"},
+  {"type" : "Both","componentId" : "BOTH","code" : "both"}
+],
+"FileTypeForTransfer" : [
+  {"name" : "Delayed Bag File","code": "DELAYED"},
+  {"name" : "On-Hand Bag File","code": "ON-HAND"},
+  {"name" : "Damaged Bag File","code": "DAMAGED"}
+],
+
+"FileTypeForCopyMessage" : [
+  {"name" : "Delayed Bag File","code": "DELAYED"},
+  {"name" : "On-Hand Bag File","code": "ON-HAND"},
+  {"name" : "Damaged Bag File","code": "DAMAGED"}
+],
+"copyMessageErrors":{
+  "maxLength"  : "Transfer cannot be done for messages exceeding 2000 characters.",
+  "invalidStaAir": "Invalid Station/Airline",
+  "9999"       : "Unexpected Exception (HAL Schema Validation Error). Please contact your system administrator.",
+  "2046"       : "Invalid Reference Number",
+  "noMatching" : "File reference does not exist.",
+  "2038"       : "Action File Message not found, refresh the list",
+  "4101"       : "Invalid Area",
+  "2004"       :"Airline not found",
+  "unexpected" : "An unexpected exception has been encountered.",
+  "matchingAreaFull" : "Cannot update Matching File area as already full." ,
+  "allowed"    : "Agent is not allowed to transfer to selected station",
+  "trainingStaAirNotAllowed" : "Invalid Station/Airline for training mode."
+},
+"transferErrors":{
+    "maxLength"  : "Transfer cannot be done for messages exceeding 2000 characters.",
+    "1000"       : "Invalid Station/Airline",
+    "9999"       : "Unexpected Exception (HAL Schema Validation Error). Please contact your system administrator.",
+    "2046"       : "Invalid Reference Number",
+    "1001"       : "No matching file found.",
+    "2038"       : "Action File Message not found, refresh the list",
+    "4101"       : "Invalid Area",
+    "2004"       :"Airline not found",
+    "unexpected" : "An unexpected exception has been encountered.",
+    "success"    : "Success - Message Successfully Transferred",
+    "allowed"    : "Agent is not allowed to transfer to selected station",
+    "successROH" : "Success - Message Transferred.Proceed to Request the bag."
+},
+"FileTypeRush" : [
+  {"name" : "1. Delayed Bag File","code": "DELAYED"},
+  {"name" : "2. Damaged Bag File","code": "DAMAGED"}
+],
+"CustomerInfo": ["Customs Information","Permanent Address","Mobile","Combination Lock","Passport Number","Temporary Address","Phone","Keys Collected"],
+
+"fileArea": [
+          {"code":"ALL","value":"All","isSelected":false,"indexValue":"1"},
+          {"code":"SHO","value":"Shortened Display","isSelected":false,"indexValue":"2"},
+          {"code":"CLM","value":"Claim","isSelected":false,"indexValue":"a"},
+          {"code":"PAX","value":"Passenger","isSelected":false,"indexValue":"b"},
+          {"code":"DLV","value":"Delivery","isSelected":false,"indexValue":"c"},
+          {"code":"DRY","value":"Diary","isSelected":false,"indexValue":"d"},
+          {"code":"BAG","value":"General Bag","isSelected":false,"indexValue":"e"},
+          {"code":"MCH","value":"Match File","isSelected":false,"indexValue":"f"},
+          {"code":"MSG","value":"Miscellaneous Messages","isSelected":false,"indexValue":"g"},
+          {"code":"EML","value":"Email Messages","isSelected":false,"indexValue":"h"},
+          {"code":"SMS","value":"SMS Messages","isSelected":false,"indexValue":"i"},
+          {"code":"OSI","value":"Supplemental","isSelected":false,"indexValue":"j"},
+          {"code":"INT","value":"Internet Messages","isSelected":false,"indexValue":"k"},
+          {"code":"HIS","value":"All History","isSelected":false,"indexValue":"3"},
+          {"code":"HIS/A","value":"File History","isSelected":false,"indexValue":"a"},
+          {"code":"HIS/M","value":"Match History","isSelected":false,"indexValue":"b"}
+
+
+
+],
+"travelMonth" : [
+  {
+    "item" : "Jan",
+    "code" : "01"
+  },
+  {
+    "item" : "Feb",
+    "code" : "02"
+  },
+  {
+    "item" : "Mar",
+    "code" : "03"
+  },
+  {
+    "item" : "Apr",
+    "code" : "04"
+  },
+  {
+    "item" : "May",
+    "code" : "05"
+  },
+  {
+    "item" : "Jun",
+    "code" : "06"
+  },
+  {
+    "item" : "Jul",
+    "code" : "07"
+  },
+  {
+    "item" : "Aug",
+    "code" : "08"
+  },
+  {
+    "item" : "Sep",
+    "code" : "09"
+  },
+  {
+    "item" : "Oct",
+    "code" : "10"
+  },
+  {
+    "item" : "Nov",
+    "code" : "11"
+  },
+  {
+    "item" : "Dec",
+    "code" : "12"
+  }
+],
+"fileTypeForPast" : [
+  {
+    "item" : "Delayed Bag",
+    "code" : "DELAYED"
+  },
+  {
+    "item" : "Damaged Bag",
+    "code" : "DAMAGED"
+  },
+  {
+    "item" : "On-Hand Bag",
+    "code" : "ON-HAND"
+  }
+],
+"fileTypeForClaimsEntry" : [
+  {
+    "item" : "1. Delayed",
+    "code" : "DELAYED"
+  },
+  {
+    "item" : "2. Damaged",
+    "code" : "DAMAGED"
+  },
+  {
+    "item" : "3. On-Hand",
+    "code" : "ON-HAND"
+  }
+]
+}

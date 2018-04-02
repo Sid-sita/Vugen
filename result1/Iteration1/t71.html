@@ -1,0 +1,61 @@
+<div class="modal fade" id="reassignFile" style="display: none;">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	    		<div class="modal-header customModalHeader">			        			        
+					<span class="resetPwd-pop" ng-if="(epicName === 'ONHANDBAG' || epicName === 'DAMAGEDBAG') && hidepasswordLabel && !(restriction.indexOf('PASSWORD')!=-1) && !(restrictionDis.indexOf('PASSWORD')!=-1)" ng-click="clickPasswordLabelReassign()">						
+							<span class="fa-stack fa-lg blue">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-key fa-stack-1x fa-inverse fa-rotate-180"></i>
+							</span>
+							<a href="" shift-tab-focus class="blue makeBold">Password</a>	
+					</span>
+					<h4 class="modal-title customModalTitle pull-left col-sm-8 col-lg-8">Reassign - {{reassignRef}}</h4>
+					<a href="" ng-if="hidepasswordLabel"  data-dismiss="modal" aria-label="Close" ng-click="cancelReassign();" class="pull-right"  id="closeBtn"><i class="close fa fa-times"></i></a>
+					<a href="" ng-if="!hidepasswordLabel" shift-tab-focus  data-dismiss="modal" aria-label="Close" ng-click="cancelReassign();" class="pull-right"  id="closeBtn"><i class="close fa fa-times"></i></a>
+			    </div>
+
+	      		<div class="modal-body">
+					  <alert ng-if="reassignPasswordError" type="danger" id="GridErrorReassign" close="GridWarningCloseMsgreassign('GridErrorReassign')">{{reassignPasswordError}}</alert>
+					  <div class="setPwd-text-reasign margin-left-15" style="display: block;" ng-show="passwordLabel === true">
+						<p>Provide password if action is protected</p>
+						<div class="col-sm-3 margin-left--15">
+							<div>
+								<span></span>
+								<input type="password" class="form-control" maxlength="4" ng-model="setPasswordModelReassign" tooltip-trigger='focus' error-validate validation-rule="alphaNum4" ng-blur="disableReassignButton();" id="setPasswordreassign" autocomplete="new-password">
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+	        		<div class="col-sm-3">
+						<label for="selectStation" localize>Station</label>
+						<div class="input-group required">
+							<span class="input-group-addon mandatory-bar"></span>
+							<input tooltip-on-blur class="form-control required" value="" placeholder="" maxlength="3" size="3" type="text"
+								ng-model="Delayed.reassignstation" id="selectStationreass" required="" data-title="" data-toggle="tooltip" autocomplete="off" typeaheadscroll type-ahead-init-scroll	typeahead="state.code as formTypeaheadResult(state) for state in airportsInfoSource | filter:$viewValue:stationSearchPreferance | orderBy:'code' | limitTo:20" type-ahead-exact-match fieldtype="mandatory"	aria-autocomplete="list" aria-expanded="false"  typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);ReassginHandleSmartSearchErrorBorder('selectStationreass')" data-original-title="" error-validate tooltip="{{Delayed.reassignStationTooltip}}" validation-rule="from-station" ng-blur="checkValidStationCode(Delayed.reassignstation,'selectStationreass');validateStationInTraningMode()">
+						</div>
+
+					</div>
+
+					<div class="col-sm-3">
+						<label for="selectAirline" localize>Airline</label>
+						<div class="input-group required">
+							<span class="input-group-addon mandatory-bar"></span>
+							<input autocomplete="off" typeaheadscroll type-ahead-init-scroll tooltip-on-blur class="form-control required" value=""placeholder="" maxlength="3" size="3" type="text" ng-model="Delayed.reassignairline"
+								  id="selectAirlinereass" required="" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);ReassginHandleSmartSearchErrorBorder('selectAirlinereass')"data-title="" data-toggle="tooltip" fieldtype="mandatory" data-original-title=""
+									typeahead="state.code as state.code +' - '+ state.name for state in airlinesInfo | filter:$viewValue:stationSearchPreferance | limitTo:20 | orderBy:'code'" aria-autocomplete="list" aria-expanded="false" validation-rule="airline-char"
+									 data-original-title="" error-validate ng-blur="checkValidAirlineCode(Delayed.reassignairline,'selectAirlinereass')" >
+						</div>
+					</div>
+					<div class="clearfix"></div>
+	      		</div>
+	      		<div class="modal-footer">
+	      			<div class="col-sm-4 col-sm-offset-4">
+	      				<button type="button" class="btn btn-primary btn-block reassignButton forEnterButtonModal" ng-disabled="!Delayed.reassignstation || !Delayed.reassignairline" ng-click="reassignfilefunc(Delayed.reassignstation,Delayed.reassignairline,setPasswordModelReassign)" id="reassignButton"><span localize>Reassign</span></button>
+	      			</div>
+	        		<div class="col-sm-4">
+	      				<a href="#" tab-btn-focus class="pull-right margin-top-5 blue" data-dismiss="modal" ng-click="cancelReassign();"  id="cancelBtn"><i class="fa fa-times-circle"></i><span localize> Cancel</span></a>
+	      			</div>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	</div>

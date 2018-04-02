@@ -1,0 +1,17 @@
+{
+    "userInactiveDetails":{
+        "frequency": 60000,
+        "expiryTime": 1500000,
+        "signOutTime":300000
+		  },
+      "disableLoadingTimeoutTime":{
+        "time": 200000
+      },
+      "marginValue":"36pt",
+      "veiwPortWidth":"70",
+      "noOfRefresh":"10",
+      "historyHideLinksAfterIndex": 100,
+
+      "HostEnvConfiguredForLinePtr":["","CUTE","CUPPS","AES"],
+      "successMsgTimeOutTime": 10000
+}

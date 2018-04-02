@@ -1,0 +1,460 @@
+<!-- <style>
+  .dropdown-menu li:hover {
+    background: #378FBD;
+  }
+  .dropdown-menu li a:hover {
+    background: #378FBD;
+  }
+</style> -->
+
+<div class="modal parentDiv fade in enterModal" id="newMessage" tabindex="-1"  ng-init="setFocusModal()" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="" class="pull-right" data-dismiss="modal" aria-label="Close" ng-click="refreshModal()" shift-tab-focus><i class="close fa fa-times"></i></a>
+        <h4 class="modal-title" id="clickedonHeader">{{messagePopupHeader}}</h4>
+      </div>
+
+      <div class="modal-body newMessgeContainer" ng-keydown="preventPopup($event)">
+        <alert ng-if="GridErrorNewMessage" type="danger" id="GridErrorNewMessage" close="GridWarningClose('GridErrorNewMessage')">{{GridErrorNewMessage}}</alert>
+        <div class="col-sm-3">
+          <span><span localize>From</span>:</span>
+
+          <div class="input-group required">
+            <span class="input-group-addon mandatory-bar"></span>
+                  <input id="fromHeadStation" class="form-control" ng-hide="IsOpenFromHDQ == false" ng-disabled="newMessage.OriginStation == 'HDQ'" value="Headquarters">
+              <input class="form-control position-static" maxlength="3" autocomplete="off" typeaheadscroll type-ahead-init-scroll
+                     typeahead="state.code as formTypeaheadResult(state) for state in stationList | filter:$viewValue:stationSearchPreferance | orderBy:'code' | limitTo:20" type-ahead-exact-match
+                     ng-keypress="disable_specialCharsWithSpace($event)" ng-model="newMessage.OriginStation" id="fromStation"
+                     validation-rule="from-station" error-validate data-title="" data-toggle="tooltip" tooltip="{{fromStationTooltip}}" value="" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);ActiOnHandHandleSmartSearchErrorBorder('fromStation')" type="text"
+                     required ng-change="validateFunction();" data-original-title="" tooltip-trigger="" ng-blur="validateFunction();trainingModevalidation(newMessage.OriginStation,'fromStation')"
+                     ng-hide="IsOpenFromHDQ == true">
+
+
+          </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-6">
+          <span>To:</span>
+            <div class="dropdown input-group required mandatory selectwrap">
+                <span class="input-group-addon mandatory-bar" style="height: 35px; left: 0; margin-top: 0;"></span>
+                <button class="btn btn-default dropdown-toggle "  prevent-closing-dropdown autofocus="true" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="SelectDestinationType">
+                    <span localize ng-show="!toDestination">Select Destination</span>
+                    <span ng-show="toDestination" ng-model="toDestination">{{SelectDestinationShow}}</span> <i class="fa fa-chevron-down pull-right"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header" ng-class="{'selected': (SelectDestinationShow == 'Select Destination')}" ng-click="MRDSelectDestination('Select Destination');"><a href="">Select Destination</a></li>
+                    <li ng-class="{'selected': (typetList.type==toDestination)}" ng-repeat="typetList in actionList | filter: { isHide: 'false' }" ng-click="validateFunction(typetList.id);MRDDisplayDestination(typetList.type);selectAction(typetList);">
+                        <a href="">{{(($index+1)+'. ')}}{{typetList.type}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div ng-hide="!toDestination">
+        <!-- ALL STATIONS LAYOUT -->
+        <div class="all-stations AS" componentId = "AS" >
+          <!-- area -->
+          <div class="margin-top-10">
+            <h5 localize>Area</h5>
+          </div>
+              <div class="col-sm-5 col-md-4">
+              <div class="dropdown input-group required mandatory selectwrap">
+                  <span class="input-group-addon mandatory-bar"></span>
+                  <button prevent-closing-dropdown autofocus="true" class="btn btn-default dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="AllSta" ng-disabled="(restrictionDis.indexOf('ACTIONFILEAREA')!=-1)">
+                      <span localize ng-show="!allStationArea">Select Area</span>
+                      <span ng-show="allStationArea" ng-model="allStationArea">{{SelectFileAreaShow}}</span><i class="fa fa-chevron-down pull-right"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li class="dropdown-header " ng-class="{'selected': (SelectFileAreaShow == 'Select Area')}"><a href="">Select Area</a></li>
+                      <li ng-click="SetActionArea(selectAreaMsg.type)"ng-class="{'selected': (selectAreaMsg.code==allStationArea)}" ng-repeat="selectAreaMsg in selectAreaMsgBroadcast">
+                          <a href="">{{(($index+1)+'. ')}}{{selectAreaMsg.type}}</a>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+          <div class="clearfix"></div>
+
+          <!-- teletype address -->
+            <h5 ng-if="!(restriction.indexOf('TELETYPEADDRESSES_TX')!=-1)" localize>Teletype Address</h5>
+          <!-- adding upto 5 rows added div -->
+          <label class="margin-left-15" ng-if="!(restriction.indexOf('TELETYPEADDRESSES_TX')!=-1)" localize>Teletype Address</label>
+          <div class = "tele_field_second_newMessage" ng-repeat="item in teleObj2" ng-if="!(restriction.indexOf('TELETYPEADDRESSES_TX')!=-1)">
+
+          <div class="col-sm-4 col-md-3">
+              <div>
+                  <span></span>
+                  <input  class="form-control" id="teletypeNewMessages2{{$index}}" ng-model="newMessage['allstation'+$index]" error-validate
+                         validation-rule="teletypes7" data-toggle="tooltip"  type="text" ng-blur="validateFunction('all-stations')"  maxlength="7" ng-change="validateFunction('all-stations');"
+                         ng-disabled="(restrictionDis.indexOf('TELETYPEADDRESSES_TX')!=-1)">
+              </div>
+          </div>
+
+
+              <div class="col-sm-6 col-md-4" ng-class="{'add-another hidden':teleObj2.length===5}"  id="addtele{{$index}}" ng-if="teleObj2.length== 1">
+                  <div class="add-another margin-top-10" ng-click="addTeletypeNewMessage()">
+                  <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg margin-top-5" ></i>
+                  </a>
+                  <span localize>Add another teletype address</span>
+                  </div>
+              </div>
+              <div class="col-sm-4" id="removeact" ng-if="($index) >0">
+                <div class="remove" ng-click="removeTeletypeNewMessage($index,teleObj2.length)">
+                    <a href="" ><i class=" icon-text fa fa-lg fa-minus-circle"></i>  </a>
+                  <span localize>Remove</span>
+                </div>
+              </div>
+          <div class="clearit"></div>
+
+        </div>
+        <div class="col-sm-6 col-md-4" ng-class="{'add-another hidden':teleObj2.length===5}"  id="addtele{{$index}}" ng-if="teleObj2.length > 1">
+            <div class="add-another margin-top-10" ng-click="addTeletypeNewMessage()">
+            <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg margin-top-5"></i>
+            </a>
+            <span localize>Add another teletype address</span>
+            </div>
+        </div>
+        <div class="clearit"></div>
+        </div>
+
+        <div class="clearfix"></div>
+        <!-- ACTION MESSAGE ADDRESS LAYOUT -->
+        <div class="action-mess-address AMA" componentId = "AMA">
+          <!-- schedule for later -->
+        <div id="scheduleForLater" ng-if="!(restriction.indexOf('SCHEDULEFORLATEROPTION')!=-1)">
+          <div class="col-sm-12 margin-top-10" ng-if="!(restriction.indexOf('SCHEDULEFORLATEROPTION')!=-1)">
+            <span style="display: inline-block;" ng-if="!(restriction.indexOf('SCHEDULEFORLATEROPTION')!=-1)"><span localize>Schedule for later</span>?</span>
+            <div class="btn-group selection" role="group" id="scheduleMessage" style="display: inline-block;" >
+              <button type="button" class="btn btn-default Yesfield" data-dates="" id="buttonNewMessageYes" ng-class="{'isYesError':newMessage.isScheduleSelected}"data-status="yes" ng-click="addEnable=false;showDateFields('YES')" ng-disabled="(restrictionDis.indexOf('SCHEDULEFORLATEROPTION')!=-1)" localize>Yes</button>
+              <button type="button" class="btn btn-default active Nofield addRightCurve" data-status="no" ng-click="addEnable=true;showDateFields('NO')" ng-disabled="(restrictionDis.indexOf('SCHEDULEFORLATEROPTION')!=-1)" localize>No</button>
+              <input type="checkbox" class="hidden" data-schedule="later">
+            </div>
+            <div class="clearfix"></div>
+          </div>
+			       <div class="clearfix"></div>
+          <div class="col-sm-3 schedule-visible hidden"><label for="fromDate" localize>Date From</label>
+            <div class="input-group required custom-input-group" id="divfromDate">
+              <span class="input-group-addon mandatory-bar"></span>
+              <input  class="form-control" type="text"
+              show-button-bar="false" show-weeks="false" is-open="status.opened2"  datepicker-options="dateOptions" id="fromDate"
+              validation-rule="date"  ng-model="newMessageAction.dateFrom" datepicker-popup="ddMMM" maxlength="5" size="5" ng-change="validateFunction('action-mess-address');" error-validate
+              required ng-blur="validateFunction('action-mess-address');onDateSelectFrom(this);" ng-keyup="manualFromDate(newMessageAction.dateFrom);">
+              <i class="fa fa-lg fa-calendar right-icon" ng-click="openDateFrom2($event)"></i>
+            </div>
+          </div>
+
+          <div class="col-sm-3 schedule-visible hidden" ng-if="!(restriction.indexOf('TODATE')!=-1)">
+            <label for="toDate" localize>Date To</label>
+            <div class="required custom-input-group">
+              <span></span>
+              <input  class="form-control"   type="text" is-open="status2.opened"
+              show-button-bar="false" show-weeks="false"  datepicker-options="dateOptions" id="toDate" error-validate
+               ng-change="validateFunction('action-mess-address');" validation-rule="date"  ng-model="newMessageAction.dateTo" datepicker-popup="ddMMM"
+              ng-blur="validateFunction('action-mess-address');onDateSelectTo(this);"
+              ng-disabled="(restrictionDis.indexOf('TODATE')!=-1)" maxlength="5" size="5" ng-keyup="manualToDate(newMessageAction.dateTo);">
+              <i class="fa fa-lg fa-calendar right-icon" ng-click="(restrictionDis.indexOf('TODATE')!=-1) ? '' : openDateTo2($event)"></i>
+            </div>
+          </div>
+
+          <div class="col-sm-3 schedule-visible hidden"><label for="selectTime" localize>Time GMT</label>
+            <div class="dropdown mandatory selectcopymsg selectwrap" id="timeSelected">
+                <span class="input-group-addon mandatory-bar newMessageTimeGMT" ng-style="{'background-color':(timeGMTError ? '#CD0000':null)}"></span>
+                <button prevent-closing-dropdown autofocus="true" class="btn btn-default dropdown-toggle reportsErrorOutline" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="selectTime" >
+                    <span localize ng-show="!newMessageAction.timeHours">Select Time GMT</span>
+                    <span ng-show="newMessageAction.timeHours" ng-model="newMessageAction.timeHours">{{newMessagetimeHours}}</span><i class="fa fa-chevron-down pull-right"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header"ng-class="{'selected': (newMessageAction.timeHours == 'Select Time GMT')}"><a href="">Select Time GMT</a></li>
+                    <li ng-repeat="hours in HoursTime"
+                     ng-click="SetGMTTime(hours);selectTime();validateFunction('action-mess-address')"ng-class="{'selected': (hours==newMessageAction.timeHours)}" >
+                        <a href="">{{(($index+1)+'. ')}}{{hours}}</a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+          <!-- station area -->
+            <h5 localize>Station Area</h5>
+
+          <!-- div added for adding another field -->
+         <div class="pass_field margin-top-10" ng-repeat="item in actObj">
+
+          <div class="col-sm-3 col-md-2"><label for="saStation"  ng-show="$index == 0" localize>Station</label>
+            <div class="required input-group"  ng-class="{'input-group-marginbtm': $index > 0 }">
+              <span class="input-group-addon mandatory-bar"></span>
+              <input  class="form-control" id="actStation{{$index}}" autocomplete="off" typeaheadscroll type-ahead-init-scroll ng-model="newMessage['Station'+$index]" ng-blur="handleHDQ(newMessage['Station'+$index], $index);validateFunction('action-mess-address');trainingModevalidation(newMessage['Station'+$index],'actStation',$index)" tooltip={{newMessageStation[$index]}}
+              typeahead="state.code as formTypeaheadResult(state) for state in stationList | filter:$viewValue:stationSearchPreferance | orderBy:'code' | limitTo:20" type-ahead-exact-match ng-change="checkPattern('actStation',$index);"
+              error-validate validation-rule="from-station" typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);ActiOnHandHandleSmartSearchErrorBorder('actStation'+$index)" data-toggle="tooltip"
+              maxlength="3" ng-keypress="disable_specialCharsWithSpace($event)"  type="text" required>
+            </div>
+          </div>
+
+
+          <div class="col-sm-3 col-md-2"><label for="saAirline"  ng-show="$index == 0" localize>Airline</label>
+              <div class="required input-group"  ng-class="{'input-group-marginbtm': $index > 0 }">
+                <span class="input-group-addon mandatory-bar"></span>
+                <input  class="form-control" id="actAirline{{$index}}" ng-model="newMessage['Airline'+$index]" autocomplete="off" typeaheadscroll type-ahead-init-scroll ng-change="checkPattern('actAirline',$index);" ng-blur="handleMandatory();validateFunction('action-mess-address')"
+                  typeahead="state.code as state.code +' - '+ state.name for state in airlinesInfo | filter:$viewValue:stationSearchPreferance | limitTo:20 | orderBy:'code'"
+                  maxlength="3" error-validate validation-rule="airline-handler"  typeahead-on-select="preventEnterFromTypeAhed(isEnterTriggerFromTypeAhead);ActiOnHandHandleSmartSearchErrorBorder('actAirline'+$index)"data-toggle="tooltip"
+                   type="text"  ng-keypress="disable_specialCharsWithSpace($event);" required>
+              </div>
+          </div>
+
+          <div class="col-sm-3 col-md-3 padding-0">
+          <label for="saArea"  ng-show="$index == 0" localize>Area</label>
+              <div class="dropdown mandatory" id="newmessageArea" ng-init="populateMsgArea($index);handleHDQ(newMessage['Station'+$parent.$index],$index);" ng-class="{'error':newMessage.isScheduleSelected}">
+                  <span class="input-group-addon mandatory-bar" style="height: 35px; left: 0; margin-top: 0;" ng-style="{'background-color':(newMessage.isScheduleSelected ? '#CD0000':null)}"></span>
+                  <button class="btn btn-default dropdown-toggle "  ng-click="CheckDropDownList(newMessage['Station'+$index],$index)" prevent-closing-dropdown  autofocus="true" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="selAreaType{{$index}}">
+                      <span localize ng-if="!newMessage['Area'+$index]" ng-model="newMessage['Area'+$parent.$index]">Select Area</span>
+                      <span ng-if="newMessage['Area'+$index]" ng-model="newMessage['Area'+$index]">{{StationAreaShow[$index]}}</span> <i class="fa fa-chevron-down pull-right"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li class="dropdown-header" ng-class="{'selected': (StationAreaShow[$index] == 'Select Area')}">
+                        <a href="">Select Area</a></li>
+                      <li ng-class="{'selected': (typetList.code==newMessage['Area'+$parent.$index])}" ng-repeat="typetList in selectArea[$index]" ng-click="newMessage.isScheduleSelectedTooltip='';newMessage.isScheduleSelected=false;newMessage['Area'+$parent.$index]=typetList.code;
+                      StationAreaShow[$parent.$index]=$index+1+'. '+typetList.type;validateFunction('action-mess-address');removeError();">
+                          <a href="">{{(($index+1)+'. ')}}{{typetList.type}}</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4"  ng-class="{'add-another hidden':actObj.length===5}" ng-if="((actObj.length == 1) && (addEnable==true))">
+              <div class="add-another clsAddAnthr" ng-click="addAnotherStationArea($index)">
+                  <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg margin-top-5"></i></a>
+                  <span  localize>Add another station area</span>
+              </div>
+          </div>
+          <div class="col-sm-2" id="removeact" ng-if="$index >0">
+            <div class="remove" ng-click="removeAnotherStationArea($index,actObj.length)" >
+              <a href=""><i class="icon-text fa fa-lg fa-minus-circle"></i></a>
+              <span localize>Remove</span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          </div>
+          <div class="col-sm-12 col-md-5" ng-class="{'add-another hidden':actObj.length===5}"ng-if="actObj.length > 1">
+              <div class="add-another add-another add-another-teletype margin-top-8" ng-click="addAnotherStationArea($index)">
+                <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg margin-top-5"></i></a>
+                <span localize>Add another station area</span>
+                <div class="clearfix"></div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <!-- teletype address -->
+          <div class="teletype-address">
+
+          <h5 ng-show="addEnable==true;"ng-if="!(restriction.indexOf('TELETYPEADDRESSES_TX')!=-1)" localize>Teletype Address</h5>
+
+          <div class="tele_field_first" ng-show="addEnable==true;" ng-repeat="item in teleObj1" ng-if="!(restriction.indexOf('TELETYPEADDRESSES_TX')!=-1)"> <!-- REMOVED FROM DIV ng-show="!checkboxEvent" -->
+          <div class="col-sm-4 col-md-3">
+              <div>
+                  <span></span>
+                  <input  class="form-control" id="teletypeNewMessages1{{$index}}" ng-model="newMessage['teletypeAddress1'+$index]" error-validate
+                         validation-rule="teletypes7" data-toggle="tooltip" maxlength="7" type="text" ng-blur="validateFunction('action-mess-address')" ng-change="validateFunction('action-mess-address');"
+                         ng-disabled="(restrictionDis.indexOf('TELETYPEADDRESSES_TX')!=-1)">
+              </div>
+          </div>
+
+              <div class="col-sm-6 col-md-4" ng-class="{'add-another hidden':teleObj1.length===5}" ng-click = "addActionTeleFirst()" id="addtele{{$index}}" ng-if="teleObj1.length == 1">
+                <div class="add-another add-another-teletype margin-top-8">
+                  <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg margin-top-5" ></i></a>
+                  <span localize>Add another teletype address</span>
+                </div>
+              </div>
+              <div class="col-sm-2" id="removeact" ng-if="($index) >0">
+                <div class="remove" ng-click="removeActionAnotherFirst($index,teleObj1.length)">
+                  <a href=""><i class="icon-text fa fa-lg fa-minus-circle"></i></a>
+                  <span localize>Remove</span>
+                </div>
+              </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+        <div class="col-sm-6 col-md-4"ng-class="{'add-another hidden':teleObj1.length===5}" ng-click="addActionTeleFirst()" id="addtele{{$index}}"
+        ng-if="addEnable==true  &&teleObj1.length > 1">
+          <div class="add-another add-another-teletype margin-top-8">
+            <a href="" class="pull-left"><i  class="fa fa-plus-circle fa-lg margin-top-5"></i></a>
+            <span localize>Add another teletype address</span>
+          </div>
+        </div>
+          <div class="clearfix"></div>
+          <!-- file identifier -->
+          <div ng-show="addEnable==true;" class="file-identifier" ng-if="!((restriction.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restriction.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1))">
+            <h5 localize>Copy Message to File</h5>
+          </div>
+          <div ng-show="addEnable==true;" class="file_field" ng-repeat="item in fileObj" ng-init="fileRefernece_index=$index" ng-if="!((restriction.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restriction.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1))">
+                <div class="col-sm-3">
+                  <label for="fileType" ng-show="$index == 0" localize>File Type</label>
+                  <div class="dropdown" ng-class="{'mandatory': ((newMessage['File'+$index] || newMessage['fileIdentifierStation'+$index])&&!((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)))}">
+
+                    <span ng-class="{'input-group-addon mandatory-bar': ((newMessage['File'+$index] || newMessage['fileIdentifierStation'+$index])&&!((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)))}"></span>
+
+                    <button prevent-closing-dropdown autofocus="true" class="btn btn-default form-control dropdown-toggle "
+                    ng-required="((newMessage['File'+$index] ||newMessage['fileIdentifierStation'+$index])&&!((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)))"
+                    id="selFileType{{$index}}"
+                    type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true"
+                    fieldType="optional"
+                    tooltip-trigger="focus" ng-style="{'background': (newMessage.IsFileRefrence && $index== 0) ? '#eeeeee': ''}"
+                    ng-disabled="((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)) || (newMessage.IsFileRefrence && $index== 0)" ng-focus-lost="loseFocus()">
+                      <span ng-model="newMessage['File'+$index]"
+                      ng-required="((newMessage['File'+$index] ||newMessage['fileIdentifierStation'+$index])&&!((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)))"
+                      ng-if="newMessage['File'+$index]">{{StationFileShow[$index]}}</span>
+                      <span ng-model="newMessage['File'+$index]"
+                      ng-required="((newMessage['File'+$index] ||newMessage['fileIdentifierStation'+$index])&&!((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)))" ng-if="!newMessage['File'+$index]" localize>Select File Type</span>
+                      <i class="fa fa-chevron-down pull-right"></i>
+                    </button>
+
+                    <ul class="dropdown-menu" style="z-index:3;">
+                      <li class="dropdown-header" ng-class="{'selected': (StationFileShow[fileRefernece_index] == 'Select File Type')}"  ng-click="newMessage['File'+fileRefernece_index]='';
+                      StationFileShow[fileRefernece_index]=''">
+                        <a href="">Select File Type</a></li>
+                      <li ng-class="{'selected': (typetList.code==newMessage['File'+fileRefernece_index])}" ng-repeat="typetList in FileType" ng-click="newMessage['File'+fileRefernece_index]=typetList.code;
+                      StationFileShow[fileRefernece_index]=($index+1)+'. '+typetList.type;selectFileType();validateFunction('action-mess-address')">
+                          <a href="">{{(($index+1)+'. ')}}{{typetList.type}}</a>
+                      </li>
+                  </ul>
+                </div>
+                </div>
+                <div class="col-sm-4 file-identifier">
+                  <label ng-show="$index == 0" for="fileRef" localize>File Reference</label>
+                  <div  ng-class="{' input-group required':((newMessage['fileIdentifierStation'+$index] || newMessage['File'+$index])&& !((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)))}">
+                    <span ng-class="{'input-group-addon mandatory-bar':((newMessage['fileIdentifierStation'+$index] || newMessage['File'+$index])&& !((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)))}"></span>
+                    <input ="" class="form-control ng-valid ng-valid-maxlength ng-valid-error-validate ng-dirty ng-valid-parse ng-touched" id="station{{$index}}" ng-model="newMessage['fileIdentifierStation'+$index]" ng-blur="validateFunction('action-mess-address');checkForValidFileReference($index);validateStationInFileReference($index);" maxlength="11" size="11" validation-rule="5-6NumRefNumber" error-validate="" data-toggle="tooltip" type="text"
+                    ng-disabled="((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)) || (newMessage.IsFileRefrence && $index ==0)" ng-required="((newMessage['fileIdentifierStation'+$index] || newMessage['File'+$index])&& !((restrictionDis.indexOf('FILETYPE_FILEREFERENCENUMBER_XR')!=-1)||(restrictionDis.indexOf('FILETYPE_FILEREFERNCENUMBER_XR')!=-1)))"
+                     data-original-title="" tooltip-trigger="" ng-required ="newMessage['File'+$index]">
+                  </div>
+                </div>
+
+                <div class="col-sm-5">
+                  <div class="add-another add-another-identifier margin-top-30" ng-class="{'add-another hidden':fileObj.length===4}" id="addFileIdentifier{{$index}}" ng-if="fileObj.length==1">
+                      <div ng-if="$index == 0">
+                       <a href="" class="pull-left" ng-click = "addFile()">
+                         <i class="fa fa-plus-circle fa-lg margin-top-5"></i></a>
+                        <span ng-click = "addFile()" localize>Add another file reference</span>
+                      </div>
+                  </div>
+
+                    <div class="clearfix"></div>
+                    <div id="removefile" ng-if="($index) >0">
+                      <div class="remove" ng-click="removeAnotherFileArea($index,fileObj.length)">
+                        <a href=""><i class="fa fa-lg fa-minus-circle"></i></a>
+                        <span localize>Remove</span>
+                      </div>
+                    </div>
+                  </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="col-sm-6 col-md-4" ng-if="fileObj.length>1" ng-class="{'add-another hidden':fileObj.length===4}">
+                <div class=" add-another add-another-identifier margin-top-none" id="addFileIdentifier{{$index}}">
+                    <a href=""  ng-click = "addFile()"class="pull-left">
+                      <i class="fa fa-plus-circle fa-lg margin-top-5" ></i></a>
+                    <span  ng-click = "addFile()" localize>Add another file reference</span>
+                </div>
+              </div>
+                <div class="clearfix"></div>
+        </div>
+
+        <!-- REGION LAYOUT -->
+        <div class="region RE" componentId="RE">
+          <!-- region -->
+
+            <h5 localize>Region</h5>
+            <div class="col-sm-3">
+            <div class="input-group required">
+            <span class="input-group-addon mandatory-bar"></span>
+            <input maxlength="2" class="form-control addRightCurve required" id="regioncode" ng-model="selectedRegionCode" type="text" typeahead ="state for state in regionCode | filter:$viewValue:autoSubStringRegion | limitTo:10" ng-blur="validateFunction('region')"ng-change="validateFunction('region');" ng-keypress="disable_specialCharsWithSpace($event);" data-toggle="tooltip" tooltip = "{{invalidRegionCodeMsg}}" required>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <!-- area -->
+
+            <h5 localize>Area</h5>
+              <div class="col-sm-5 col-md-4">
+
+                <div class="dropdown input-group required mandatory selectwrap" ng-init="populateMsgArea($index);handleHDQ(newMessage['Station'+$index], $index)">
+                    <span class="input-group-addon mandatory-bar"></span>
+                    <button prevent-closing-dropdown autofocus="true" class="btn btn-default dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="RArea">
+                        <span localize ng-show="!regionArea">Select Area</span>
+                        <span ng-show="regionArea" ng-model="regionArea">{{SelectRegionShow}}</span><i class="fa fa-chevron-down pull-right"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header " ng-class="{'selected': (SelectRegionShow == 'Select Area')}"><a href="">Select Area</a></li>
+                        <li ng-repeat="RegionCode in selectAreaMsgBroadcast"
+                         ng-click="SetRegionArea(RegionCode.type)"ng-class="{'selected': (RegionCode.code==regionArea)}" >
+                            <a href="">{{(($index+1)+'. ')}}{{RegionCode.type}}</a>
+                        </li>
+                    </ul>
+                </div>
+          </div>
+          <div class="clearfix"></div>
+
+          <!-- teletype address -->
+            <h5 ng-if="!(restriction.indexOf('TELETYPEADDRESSES_TX')!=-1)" localize>Teletype Address</h5>
+            <label  class="margin-left-15" ng-if="!(restriction.indexOf('TELETYPEADDRESSES_TX')!=-1)" localize>Teletype Address</label>
+          <div class = "tele_field_third" ng-repeat="item in teleObj3" ng-if="!(restriction.indexOf('TELETYPEADDRESSES_TX')!=-1)">
+
+          <div class="col-sm-4 col-md-3">
+              <div>
+                  <span></span>
+                  <input  class="form-control" id="teletypeNewMessages3{{$index}}" ng-model="newMessage['region'+$index]" error-validate
+                         validation-rule="teletypes7" data-toggle="tooltip" type="text" ng-change="validateFunction('region');" ng-blur="validateFunction('region')" maxlength="7"
+                         ng-disabled="(restrictionDis.indexOf('TELETYPEADDRESSES_TX')!=-1)">
+              </div>
+          </div>
+          <div class="col-sm-6 col-md-4"ng-class="{'add-another hidden':teleObj3.length===5}" id="addtele{{teleObj3.length-1}}" ng-if="(teleObj3.length == 1)">
+              <div class="add-another margin-top-5" ng-click="addTeleThird()">
+                  <a href="" class="pull-left"><i  class="fa fa-plus-circle fa-lg margin-top-5"></i></a>
+                  <span localize>Add another teletype address</span>
+                  <div class="clearfix"></div>
+              </div>
+            </div>
+
+            <div class="remove col-sm-4 removeFields" ng-if="$index >0" ng-click="removeAnotherTeleThird($index,teleObj3.length)">
+            <a href=""> <i class="icon-text fa fa-lg fa-minus-circle"></i></a>
+              <span localize>Remove</span>
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-sm-6 col-md-4" id="addtele{{teleObj3.length-1}}" ng-class="{'add-another hidden':teleObj3.length===5}" ng-if="(teleObj3.length > 1)">
+            <div class="add-another margin-top-10" ng-click="addTeleThird()">
+                <a href="" class="pull-left"><i  class="fa fa-plus-circle fa-lg margin-top-5" ></i></a>
+                <span localize>Add another teletype address</span>
+                <div class="clearfix"></div>
+            </div>
+          </div>
+        <div class="clearfix"></div>
+        </div>
+
+
+        <div>
+          <h5 localize>Message</h5>
+          <div class="col-sm-12">
+            <div class="input-group required">
+            <span class="input-group-addon mandatory-bar"></span>
+          <textarea copy-paste class="form-control" ng-model="newMessage.message" id="messageArea" validation-rule="freeForm1-3000"
+          error-validate data-toggle="tooltip" maxlength="3000" required  size="3000" fieldType="mandatory"
+          draggable="false" rows="10" ng-blur="validateFunction()" ng-change="validateFunction();"> </textarea>
+        </div>
+      </div>
+      </div>
+    </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="col-sm-4 col-sm-offset-4">
+          <button type="button" class="btn btn-primary btn-block submit forEnterButtonModal" id="sendButton" ng-click="validateFunction(null,'FromSend',newMessage,newMessageAction.timeHours);" ng-disabled="isSendMessage" localize>Send</button>
+        </div>
+
+        <div class="col-sm-4">
+          <a href="" class="pull-right margin-top-5 blue" data-dismiss="modal" id ="sendMessageCancelButton" ng-click="refreshModal()" aria-label="Close" tab-btn-focus><i class="fa fa-times-circle"></i><span localize>Cancel</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

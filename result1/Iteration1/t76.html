@@ -1,0 +1,154 @@
+<div class="modal fade in" id="sendTeleAdd" tabindex="-1" role="dialog" style="display: none;" ng-init="setFocusModal();">
+	  	<div class="modal-dialog" role="document" style="margin-top:1px;">
+	    	<div class="modal-content">
+		    	<div class="modal-header">
+			        <a href="" shift-tab-focus class="pull-right" data-dismiss="modal" aria-label="Close"><i class="close fa fa-times fontSize"></i></a>
+			        <h4 class="modal-title" localize>Send Teletype Address</h4>
+			    </div>
+
+		    	<div class="modal-body" ng-keydown="preventPopup($event)">
+						<alert ng-if="TelePopupError" type="danger" id="TelePopupError"  close="TelePopupClose('TelePopupError')">{{TelePopupError}}</alert>
+				    <alert ng-if="GridWarningFileRef" type="warning" id="GridWarningFileRef" dismiss-on-timeout="{{successMsgTimeOutTime}}" close="GridWarningClose('GridWarningFileRef')" style="margin-bottom:0px">{{GridWarningFileRef}}</alert>
+		    		<h5 localize>Origin Teletype Address</h5>
+				<div class="col-sm-6 padding-right-0 originTeletypeAddressWidth">
+					<div class="input-group required">
+					<span class="input-group-addon mandatory-bar"></span>
+					<input class="form-control" id="originTele" type="text"  ng-model="teleType.Origin"  error-validate="" validation-rule="teletypeValid" data-toggle="tooltip" maxlength="7" ng-keypress="validateTeltype('originTele');" ng-keyup="validateTeltype('originTele');" ng-blur="validateTeltype('originTele');" data-original-title="" tooltip="{{OriginTeleTypeToolTip['originToolTip']}}" tooltip-trigger="focus select mouseover blur mouseleave never" required >
+				</div>
+			</div>
+				<div class="clearfix"></div>
+
+				<h5 localize>Destination Address</h5>
+				<div class="col-sm-12">
+					<label for="destTele" localize>Teletype Address</label>
+
+					<div class="tele_field_first" ng-repeat="item in teleObj">
+					<div class="col-sm-6 padding-0">
+						<div class="input-group required">
+					<span class="input-group-addon mandatory-bar"></span>
+						<input tooltip-on-blur class="form-control"  id="teletypedestination{{$index}}" ng-model="teleType['destination'+$index]" error-validate ng-keypress="validateDestTeltype('teletypedestination',$index);" ng-keyup="validateDestTeltype('teletypedestination',$index);" ng-blur="validateDestTeltype('teletypedestination',$index);"
+						validation-rule="teletypeValid" data-toggle="tooltip" tooltip="{{DestinationToolTip['destToolTip'+$index]}}" maxlength="7" type="text" tooltip-trigger="focus mouseover blur mouseleave never" required>
+					</div>
+				</div>
+					<div class="col-sm-6">
+						<div ng-if="$index == 0">
+							<div class="add-another margin-top-5" ng-click = "addTeleFirst()" id="addtele{{$index}}" ng-if="$index===(teleObj.length-1)">
+									<a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg" ng-class="{'add-another hidden':teleObj.length===5}"></i></a>
+									<div class="margin-bottom-half" ng-class="{'add-another hidden':teleObj.length===5}" localize>Add another teletype address</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="col-sm-12" id="removeact" ng-if="($index) >0">
+								<div class="remove removeFields margin-top-6" ng-click="removeAnotherTeleFirst($index,teleObj.length)">
+									<a href=""><i class="icon-text fa fa-lg fa-minus-circle"></i></a>
+									<span localize>Remove</span>
+								</div>
+							</div>
+					</div>
+
+				 <div class="clearit"></div>
+				 <div ng-if="$index > 0">
+					<div class="add-another margin-top-5" ng-click = "addTeleFirst()" id="addtele{{$index}}" ng-if="$index===(teleObj.length-1) && teleObj.length!==8">
+							<a href="" class="pull-left" ><i class="fa fa-plus-circle fa-lg"></i></a>
+							<div  class="margin-bottom-half" localize>Add another teletype address</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+
+				</div>
+
+				</div>
+				<div class="clearfix"></div>
+				<h5 ng-if="(!(restriction.indexOf('CHARGEABLEAIRLINE') != -1))" localize>Chargeable Airline</h5>
+				<div class="col-sm-4" ng-if="(!(restriction.indexOf('CHARGEABLEAIRLINE') != -1))">
+					<div class="position-static">
+						<span></span>
+					<input autocomplete="off" typeaheadscroll type-ahead-init-scroll class="form-control" type="text"  ng-model="teleType.chargeableAirline" id="teleAirline"  typeahead="state.code as state.code +' '+ state.name for state in airlinesInfo | filter:$viewValue:airlinesTypeaheadFilter | orderBy:'code'" maxlength="3" size="3" data-title="" ng-blur="validateTeleAirline()" data-toggle="tooltip" error-validate="" validation-rule="airline-char" data-original-title="" ng-disabled="((restrictionDis.indexOf('CHARGEABLEAIRLINE') != -1))" typeahead-on-select="handleSmartSearchErrorBorder('teleAirline');">
+					</div>
+				</div>
+				<div class="clearfix"></div>
+
+				<h5 ng-if="((!(restriction.indexOf('FILETYPE') != -1)) || (!(restriction.indexOf('FILEREFERENCE') != -1)))" localize>Copy Message to File</h5>
+				<div  class = "file_field" ng-repeat="item in teleFileObj" ng-if="((!(restriction.indexOf('FILETYPE') != -1)) || (!(restriction.indexOf('FILEREFERENCE') != -1)))">
+					<div class="col-sm-4" ng-if="(!(restriction.indexOf('FILETYPE') != -1))">
+							<label for="dateType" ng-if="($index==0)" localize>File Type</label>
+							<div class="dropdown mandatory">
+								<div class="" ng-class="{' required':(teleType['teleSeqNo'+$index] ||  teleType['File'+ $index])}">
+								<span ng-class="{'input-group-addon mandatory-bar': (teleType['teleSeqNo'+$index] ||  teleType['File'+ $index])}"></span>
+									<button prevent-closing-dropdown ng-required="(teleType['teleSeqNo'+$index] ||  teleType['File'+ $index])" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dateTypeLostFound{{$index}}" ng-disabled="((restrictionDis.indexOf('FILETYPE') != -1))">
+										<span class="DateTypeField" ng-if="(teleType['File'+ $index])">{{teleType['File'+ $index]}}</span>
+										<span class="DateTypeField" ng-if="!(teleType['File'+ $index])" localize>Select File Type</span>
+											<i class="fa fa-chevron-down pull-right"></i>
+									</button>
+									<ul class="dropdown-menu dateTypeSelectDropdown" style="border-radius:4px;min-width:160px">
+											<li class="dropdown-header" ng-click="selectFileType(selected,'',$index);validateRefNum($index);" class="dropDownList" ng-class="{'selected':!selectedItem}"><a href="" style="padding: 0px 0px 0px 5px;font-weight: 400;"><span localize>Select File Type</span></a></li>
+											<li ng-repeat="fileType in fileTypeTeletype" ng-click="selectFileType(fileType,$index,$parent.$index);lostAndFoundSearchParameters.handledConditionalShowHide();validateRefNum($parent.$index);" class="dropDownList" ng-class="{'selected':selectedItem === fileType.item}">
+													<a style="padding: 0px 0px 0px 5px;font-weight: 400;" class="dateTypeDropdown" href=""><span class="dropDownText">{{fileType.item}}</span></a>
+											</li>
+									</ul>
+							</div>
+						</div>
+					</div>
+					 <!-- tooltip-trigger="focus mouseover blur mouseleave never"  tooltip-validate -->
+							<div class="col-sm-3 no-padding-left padding-right-half" ng-if="(!(restriction.indexOf('FILEREFERENCE') != -1))">
+								<span ng-if="$index == 0" localize>File Reference</span>
+								<div class="" ng-class="{'input-group required':(teleType['teleSeqNo'+$index] || teleType['File'+ $index])}">
+									<span ng-class="{'input-group-addon mandatory-bar': (teleType['teleSeqNo'+$index] || teleType['File'+ $index])}"></span>
+									<input class="form-control"  id="teleTypestation{{$index}}" ng-model="teleType['teleSeqNo'+$index]" ng-blur="validateRefNum($index)" ng-keyup="validateRefNum($index)" maxlength="12" size="12" validation-rule="ReferenceNumMisscelaneous" error-validate data-toggle="tooltip" type="text"
+									ng-required ="(teleType['teleSeqNo'+$index] ||  teleType['File'+ $index])" ng-disabled="((restrictionDis.indexOf('FILEREFERENCE') != -1))">
+								</div>
+							</div>
+							<div class="col-sm-5">
+								<div ng-if="$index == 0">
+									<div class="add-another margin-left--20" ng-click = "addTeleFile()" id="addFileIdentifier{{$index}}" ng-if="$index===(teleFileObj.length-1) && teleFileObj.length!==4">
+
+										 <a href="" class="pull-left"><i class="fa fa-plus-circle fa-lg"></i></a>
+											<div class="margin-bottom-half" localize>Add another file reference</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+									<div id="removefile"  ng-if="$index > 0" >
+										<div class="remove removeFields"  ng-click="removeTeleFileArea($index,teleFileObj.length)">
+											<a href=""><i class="icon-text fa fa-lg fa-minus-circle"></i></a>
+											<span localize>Remove</span>
+										</div>
+									</div>
+							</div>
+							<div class="clearit"></div>
+							<div ng-if="$index > 0">
+							<div class="add-another  margin-top-5 margin-left-15 pull-left" ng-click = "addTeleFile()" id="addFileIdentifier{{$index}}" ng-if="$index===(teleFileObj.length-1)">
+
+									<a href="" class="pull-left" ng-class="{'add-another hidden':teleFileObj.length===4}"><i class="fa fa-plus-circle fa-lg"></i></a>
+									<div  class="margin-bottom-half pull-left" ng-class="{'add-another hidden':teleFileObj.length===4}" localize>Add another file reference</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="clearit"></div>
+						</div>
+
+				<div class="clearfix"></div>
+
+				<h5 localize>Message</h5>
+				<div class="col-sm-12">
+					<div  class="input-group required">
+				<span class="input-group-addon mandatory-bar"></span>
+								<textarea class="form-control"  ng-model="teleType.message" id="teleMessageArea" validation-rule="freeForm4-1000"
+			          error-validate data-toggle="tooltip" ng-keypress="validateMsgArea('teleMessageArea');" ng-keyup="validateMsgArea('teleMessageArea');" ng-blur="validateMsgArea('teleMessageArea');" maxlength="1000" fieldType="mandatory" required
+			          draggable="false" rows="10"></textarea>
+	        		</div>
+						</div>
+		    		<div class="clearfix"></div>
+		      	</div>
+
+		      	<div class="modal-footer">
+					<div class="col-sm-4 col-sm-offset-4">
+		      			<button type="button" class="btn btn-primary btn-block submit forEnterButtonModal" id="teleSubmit" ng-click="teleSubmit()" data-toggle="modal" data-dismiss="modal" disabled localize>Send</button>
+		      		</div>
+
+		      		<div class="col-sm-4">
+		      			<a href="#" tab-btn-focus class="pull-right margin-top-5 blue" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle"></i> <span localize>Cancel</span></a>
+		      		</div>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
